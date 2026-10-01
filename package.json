@@ -6,22 +6,46 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "vitest run",
+    "services": "./scripts/dev-services.sh",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "typecheck": "next typegen && tsc --noEmit",
+    "eval": "tsx scripts/eval.ts",
+    "ingest": "tsx scripts/ingest-range.ts",
+    "local-search": "tsx scripts/local-search.ts",
+    "eval:sweep": "tsx scripts/eval-sweep.ts",
+    "embed:backfill": "tsx scripts/embed-backfill.ts"
   },
   "dependencies": {
+    "@ai-sdk/anthropic": "^4.0.69",
+    "@mendable/firecrawl-js": "^4.42.0",
+    "@openrouter/ai-sdk-provider": "^3.1.0",
+    "ai": "^7.0.123",
+    "domhandler": "^6.0.1",
+    "domutils": "^4.0.2",
+    "drizzle-orm": "^0.45.3",
+    "htmlparser2": "^12.0.0",
     "next": "16.3.7",
+    "postgres": "^3.4.9",
     "react": "19.2.8",
-    "react-dom": "19.2.8"
+    "react-dom": "19.2.8",
+    "zod": "^4.6.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "dotenv": "^18.0.4",
+    "drizzle-kit": "^0.31.11",
     "eslint": "^9",
     "eslint-config-next": "16.3.7",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "tsx": "^4.23.15",
+    "typescript": "^5",
+    "vitest": "^5.0.2"
   },
   "packageManager": "pnpm@10.34.5"
 }

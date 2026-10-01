@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --background: #fbfaf7;
+  --surface: #ffffff;
+  --foreground: #1c1b19;
+  --muted: #6b6860;
+  --border: #e6e2d8;
+  --accent: #7a3e12;
+  --para-tint: #fff7e6;
+  --quote-hl: #ffe08a;
+  --clause-hl: #cfe6ff;
+  --clause-border: #3b82c4;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #141412;
+    --surface: #1c1c1a;
+    --foreground: #ecebe6;
+    --muted: #a19d93;
+    --border: #34322d;
+    --accent: #f0a868;
+    --para-tint: #2a2416;
+    --quote-hl: #6b5510;
+    --clause-hl: #173450;
+    --clause-border: #5ea3e0;
   }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-para-tint: var(--para-tint);
+  --color-quote-hl: var(--quote-hl);
+  --color-clause-hl: var(--clause-hl);
+  --color-clause-border: var(--clause-border);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+mark.hl-quote {
+  background: var(--quote-hl);
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+mark.hl-clause {
+  background: var(--clause-hl);
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+.term-underline {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+:target {
+  scroll-margin-top: 5rem;
 }

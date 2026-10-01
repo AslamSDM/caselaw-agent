@@ -1,0 +1,1 @@
+ALTER TABLE "searches" ADD COLUMN "filters" jsonb;

@@ -1,0 +1,634 @@
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:uk="https://caselaw.nationalarchives.gov.uk/akn">
+  <judgment name="judgment">
+    <meta>
+      <identification source="#tna">
+	<FRBRWork>
+	  <FRBRthis value="https://caselaw.nationalarchives.gov.uk/id/ewhc/qb/2005/1"/>
+	  <FRBRuri value="https://caselaw.nationalarchives.gov.uk/id/ewhc/qb/2005/1"/>
+	  <FRBRdate date="2005-01-10" name="judgment"/>
+	  <FRBRauthor href="#ewhc-qbd"/>
+	  <FRBRcountry value="GB-UKM"/>
+	  <FRBRnumber value="1"/>
+	  <FRBRname value="Customs &amp; Excise v Total Network SL"/>
+	</FRBRWork>
+	<FRBRExpression>
+	  <FRBRthis value="https://caselaw.nationalarchives.gov.uk/ewhc/qb/2005/1"/>
+	  <FRBRuri value="https://caselaw.nationalarchives.gov.uk/ewhc/qb/2005/1"/>
+	  <FRBRdate date="2005-01-10" name="judgment"/>
+	  <FRBRauthor href="#ewhc-qbd"/>
+	  <FRBRlanguage language="eng"/>
+	</FRBRExpression>
+	<FRBRManifestation>
+	  <FRBRthis value="https://caselaw.nationalarchives.gov.uk/ewhc/qb/2005/1/data.xml"/>
+	  <FRBRuri value="https://caselaw.nationalarchives.gov.uk/ewhc/qb/2005/1/data.xml"/>
+	  <FRBRdate date="2024-10-13T06:01:35" name="transform"/>
+	  <FRBRdate date="2024-11-16T04:47:11" name="tna-enriched"/>
+	  <FRBRauthor href="#tna"/>
+	  <FRBRformat value="application/xml"/>
+	</FRBRManifestation>
+      </identification>
+      <lifecycle source="#">
+	<eventRef date="2005-01-10" refersTo="#judgment" source="#"/>
+      </lifecycle>
+      <references source="#tna">
+	<TLCOrganization eId="ewhc-qbd" href="https://www.gov.uk/courts-tribunals/queens-bench-division-of-the-high-court" shortForm="The Queen's Bench Division" showAs="The Queen's Bench Division of the High Court"/>
+	<TLCOrganization eId="tna" href="https://www.nationalarchives.gov.uk/" showAs="The National Archives"/>
+	<TLCEvent eId="judgment" href="#" showAs="judgment"/>
+	<TLCPerson eId="commissioners-of-customs-&amp;-excise" href="" showAs="Commissioners of Customs &amp; Excise"/>
+	<TLCPerson eId="total-network-sl" href="" showAs="Total Network SL"/>
+	<TLCRole eId="before-the-v" href="" showAs="Before The V"/>
+	<TLCRole eId="after-the-v" href="" showAs="After The V"/>
+	<TLCPerson eId="judge-the-honourable-mr-justice-hodge" href="/judge-the-honourable-mr-justice-hodge" showAs="THE HONOURABLE MR JUSTICE HODGE"/>
+      </references>
+      <proprietary source="#">
+	<uk:court>EWHC-QBD</uk:court>
+	<uk:year>2005</uk:year>
+	<uk:number>1</uk:number>
+	<uk:cite>[2005] EWHC 1 (QB)</uk:cite>
+	<uk:parser>0.26.8</uk:parser>
+	<uk:hash>9e5da265f8d2c10b6708feaf68ff3b10ae801096e61799b28862bc5b22ade5ea</uk:hash>
+	<uk:tna-enrichment-engine>6.0.2</uk:tna-enrichment-engine>
+      </proprietary>
+      <presentation source="#">
+	<html:style>
+#judgment { font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .Normal { font-size: 12pt; }
+#judgment .Heading1 { text-align: justify; margin-left: 0.5in; font-size: 12pt; }
+#judgment .Heading2 { text-align: justify; margin-left: 0.98in; font-size: 12pt; }
+#judgment .Heading3 { text-align: justify; margin-left: 1.48in; font-size: 12pt; }
+#judgment .Heading4 { text-align: justify; margin-left: 1.97in; font-size: 12pt; }
+#judgment .Heading5 { text-align: justify; margin-left: 2.46in; font-size: 12pt; }
+#judgment .Heading6 { text-align: justify; margin-left: 2.95in; font-size: 12pt; }
+#judgment .Heading7 { text-align: justify; margin-left: 3.45in; font-size: 12pt; }
+#judgment .Heading8 { text-align: justify; margin-left: 3.94in; font-size: 12pt; }
+#judgment .Heading9 { text-align: justify; margin-left: 4.43in; font-size: 12pt; }
+#judgment .Header { font-family: Univers; font-size: 12pt; }
+#judgment .Footer { font-family: Univers; font-size: 12pt; }
+#judgment .ParaNoNumber { text-align: justify; font-size: 12pt; }
+#judgment .CoverDesc { text-align: center; font-weight: bold; font-size: 18pt; }
+#judgment .Heading { font-size: 12pt; }
+#judgment .CoverMain { font-weight: bold; text-decoration-line: underline; text-decoration-style: solid; font-size: 12pt; }
+#judgment .CoverText { text-align: right; text-decoration-line: underline; text-decoration-style: solid; font-size: 12pt; }
+#judgment .Quote { text-align: justify; margin-left: 1in; margin-right: 0.5in; font-size: 12pt; }
+#judgment .Heading1Char { font-weight: bold; font-size: 16pt; }
+#judgment .Heading2Char { font-style: italic; font-weight: bold; font-size: 14pt; }
+#judgment .Heading3Char { font-weight: bold; font-size: 13pt; }
+#judgment .Heading4Char { font-weight: bold; font-size: 14pt; }
+#judgment .Heading5Char { font-style: italic; font-weight: bold; font-size: 13pt; }
+#judgment .Heading6Char { font-weight: bold; }
+#judgment .Heading7Char { font-size: 12pt; }
+#judgment .Heading8Char { font-style: italic; font-size: 12pt; }
+#judgment .Heading9Char { }
+#judgment .HeaderChar { font-size: 12pt; }
+#judgment .FooterChar { font-size: 12pt; }
+#judgment .QuoteChar { font-style: italic; font-size: 12pt; color: #404040; }
+</html:style>
+      </presentation>
+    </meta>
+    <header>
+      <p class="CoverText">Case No: <docketNumber>HQ03X02063</docketNumber></p>
+      <p class="CoverText"><docketNumber>HQ03X02560</docketNumber></p>
+      <p><span style="font-weight:bold;text-decoration-line:underline;text-decoration-style:solid">Neutral Citation Number: </span><neutralCitation style="font-weight:bold;text-decoration-line:underline;text-decoration-style:solid">[2005] EWHC 1 (QB)</neutralCitation></p>
+      <p class="CoverMain"><courtType refersTo="#ewhc-qbd">IN THE HIGH COURT OF JUSTICE</courtType></p>
+      <p class="CoverMain"><courtType refersTo="#ewhc-qbd">QUEEN&#8217;S BENCH DIVISION</courtType></p>
+      <p class="CoverText">Royal Courts of Justice</p>
+      <p class="CoverText">Strand, London, WC2A 2LL</p>
+      <p class="CoverText">Date: <docDate date="2005-01-10" refersTo="#judgment">10th January 2005</docDate></p>
+      <p><span style="font-weight:bold">Before</span>:</p>
+      <p class="CoverMain" style="text-align:center"><judge refersTo="#judge-the-honourable-mr-justice-hodge">THE HONOURABLE MR JUSTICE HODGE</judge></p>
+      <p style="text-align:center">- - - - - - - - - - - - - - - - - - - - -</p>
+      <p style="text-align:center"><span style="font-weight:bold">Between:</span></p>
+      <table uk:widths="0.96in 4.63in 1.01in">
+	<tr>
+	  <td style="border-style:none">
+	    <p/>
+	  </td>
+	  <td style="border-style:none">
+	    <p style="text-align:center"><party as="#before-the-v" refersTo="#commissioners-of-customs-&amp;-excise" style="font-weight:bold">Commissioners of Customs &amp; Excise</party></p>
+	  </td>
+	  <td style="border-style:none">
+	    <p class="CoverMain" style="text-align:right"/>
+	  </td>
+	</tr>
+	<tr>
+	  <td style="border-style:none">
+	    <p/>
+	  </td>
+	  <td style="border-style:none">
+	    <p style="text-align:center"><span style="font-weight:bold">- and -</span></p>
+	  </td>
+	  <td style="border-style:none">
+	    <p class="CoverMain" style="text-align:right"/>
+	  </td>
+	</tr>
+	<tr>
+	  <td style="border-style:none">
+	    <p/>
+	  </td>
+	  <td style="border-style:none">
+	    <p style="text-align:center"><party as="#after-the-v" refersTo="#total-network-sl" style="font-weight:bold"> Total Network SL</party></p>
+	  </td>
+	  <td style="border-style:none">
+	    <p class="CoverMain" style="text-align:right"/>
+	  </td>
+	</tr>
+      </table>
+      <p style="text-align:center">- - - - - - - - - - - - - - - - - - - - -</p>
+      <p style="text-align:center">- - - - - - - - - - - - - - - - - - - - -</p>
+      <p style="text-align:center"><span style="font-weight:bold"> John Martin QC &amp; Philip Coppel </span>(instructed by <span style="font-weight:bold">Customs &amp; Excise Solicitors Office</span>) for the Claimants</p>
+      <p style="text-align:center"><span style="font-weight:bold">Charles Flint QC &amp; Tom Weisselberg </span>(instructed by <span style="font-weight:bold"> Byrne &amp; Partners Solicitors) </span>for the <span style="font-weight:bold"> Defendant    </span></p>
+      <p style="text-align:center">Hearing dates: 23<span style="vertical-align:super;font-size:smaller">rd</span>   November 2004</p>
+      <p style="text-align:center">- - - - - - - - - - - - - - - - - - - - -</p>
+      <p class="CoverDesc">JUDGMENT</p>
+    </header>
+    <judgmentBody>
+      <decision>
+	<level class="author">
+	  <content>
+	    <p><span style="font-weight:bold">The Honourable Mr Justice Hodge:</span></p>
+	  </content>
+	</level>
+	<level eId="lvl_1">
+	  <paragraph eId="para_1">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">1.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">This case concerns a series of alleged Carousel Frauds.  The British taxpayer is the loser in this particular form of dishonesty. Between &#163;1.7 and &#163;2.6 billion were estimated to be lost through such frauds in 2000-2001. The frauds can arise because of the VAT rules that affect cross-border trade within the European Union. High value items such as computer chips and mobile phones are usually "traded" in these frauds.</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_2">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">2.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">At their simplest Carousel Frauds operate as follows.  A VAT registered trader in one European Union member state (A co) sells taxable goods to a VAT registered trader in the UK (B co).  This sale is zero rated in A co&#8217;s member state for VAT purposes.  B co should declare the purchase and pay acquisition tax in the UK, its own member state but it does not do so.  Instead B co sells the goods on to C co, a UK VAT registered trader and charges VAT.  C co then re-sells the goods out of the UK back to A co within the other member state of the EU.  No VAT is charged.</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_3">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">3.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">B co should account to the Customs and Excise for the VAT paid to it by C co.  It does not; it disappears and becomes &#8220;a missing trader&#8221;.  C co has paid VAT but its sale back to A co across EU borders is zero-rated.  It can, however, reclaim from the Customs and Excise the VAT it paid to B co from the Customs and Excise.  B co has charged VAT but not accounted for it.  C co is paid its reclaim.  There is an overall loss to the British taxpayer of the VAT involved.</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_4">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">4.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">Such frauds are generally more complicated than this simple example.  There are often a series of transactions and a number of companies involved.  There can be genuine purchasers in the chain of transactions.  The ultimate sale out of the jurisdiction may not be to the original seller.  But for the fraud to work there will be a &#8220;missing trader&#8221; and usually a company that acts as &#8220;broker&#8221; (C co in these examples). Carousel Frauds are also known as "Missing Trader Inter-Community Frauds&#8221;. </p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_5">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">5.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">The Defendant is a Spanish company. The Claimants allege that the Defendant is part of a conspiracy to cheat the Customs and Excise in the UK. The Defendant is said to be in the position of A company in the example above. The Defendant denies it is part of a conspiracy. It also says the Claimants have no cause of action against it. It is that last issue which forms the preliminary issue tried in this case. </p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_2">
+	  <heading style="text-align:justify"><span style="font-weight:bold;text-decoration-line:underline;text-decoration-style:solid">Factual Background</span></heading>
+	  <paragraph eId="para_6">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">6.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">Under <ref href="http://www.legislation.gov.uk/id/ukpga/1979/2/section/6/2" uk:canonical="" uk:origin="TNA" uk:type="legislation">Section 6(2)</ref> <ref href="http://www.legislation.gov.uk/id/ukpga/1979/2" uk:canonical="1979 c. 2" uk:origin="TNA" uk:type="legislation">Customs and Excise Management Act 1979</ref> the Claimants are responsible for collecting and accounting for and otherwise managing the revenues of Customs and Excise.  They are responsible for the care and management of Value Added Tax (Schedule 11 para. 1(1) <ref href="http://www.legislation.gov.uk/id/ukpga/1994/23" uk:canonical="1994 c. 23" uk:origin="TNA" uk:type="legislation">Value Added Tax Act 1994</ref>).  The Defendant company is incorporated in Spain and based in Barcelona.  It has two bank accounts in the United Kingdom but is not taxable here.  Its business includes the buying and selling of mobile telephones.  It is not and never has been registered for VAT in this country.</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_7">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">7.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">The Defendant is said by the Claimants to have been involved in a series of Carousel Frauds in relation to the sale of mobile phones from Spain to the United Kingdom.  The particulars of claim refer to thirteen occasions during the period June to October 2002 in which the Defendant and other named companies -</p>
+	      <block name="embeddedStructure"><embeddedStructure>
+		  <level>
+		    <content>
+		      <p style="text-align:justify;margin-left:0.5in"><span style="font-style:italic">&#8220;With intent to cheat the claimants of revenue and/or to defraud the revenue, conspired and combined together to cheat and/or defraud the claimants by unlawful means&#8221;  </span></p>
+		    </content>
+		  </level>
+		</embeddedStructure></block>
+	    </content>
+	  </paragraph>
+	  <level eId="lvl_2_1">
+	    <content>
+	      <p style="text-align:justify;margin-left:0.25in">"The unlawful means" said to have been adopted within the conspiracy was the common law offence of cheating the Public Revenue.  The Claimants claim to have suffered losses as the result of these alleged conspiracies totalling more than &#163;1.9 million pounds.</p>
+	    </content>
+	  </level>
+	  <paragraph eId="para_8">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">8.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">The thirteen alleged conspiracies follow a broadly similar pattern.  The first conspiracy alleged in the claim form provides an example.  The Defendant on 15 October 2002 sold 3,780 Nokia mobile phones to Redlaw Ltd a company incorporated in England and Wales for the sum of &#163;1,672,224.75p.  That company, on the same day, sold the phones on to Lockparts Ltd for a sum of &#163;1,423,170 plus VAT in the sum of &#163;249,050.75.  The total price was, therefore, &#163;1,672,224.75.  Lockparts Ltd again on the same day then sold the phones on for slightly greater sums, including VAT, to GAK Ltd.  That company again sold the phones on for slightly greater sums to Accessory People PLC who sold the phones for a further slightly increased sum to Alldech Ltd. That company paid &#163;1,447,740 plus &#163;253,345 VAT for the phones.  Again on the same day, 15th October, Alldech Ltd sold the phones back to the Defendant for &#163;1,508,020.  That sale being out of the United Kingdom was zero-rated.</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_9">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">9.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">GAK Ltd, one of the companies in the chain, on the 15 October 2002 on the written instructions of Lockparts Ltd paid the Defendant the sum of &#163;1,672,224.75 by a payment into the Defendant&#8217;s United Kingdom bank account.  This avoided the money passing through the accounts of either Redlaw Ltd or Lockparts Ltd who were both liable to pay VAT upon the sale of the phones.  </p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_10">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">10.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">Redlaw Ltd and Lockparts Ltd have both ceased to trade and have not paid the VAT due on the transactions.  Alldech Ltd acquired the mobile phones on the 15 October 2002 with VAT value of &#163;253,345.50.  They sold the phones on the same day zero-rated.  Had the transactions been genuine Customs and Excise would have been entitled to a total of &#163;253,345 in VAT but would have been obliged to make repayment to Alldech Ltd in the same amount.  In fact they made the repayment to Alldech but received from other parties in the Carousel chain only &#163;3,298.  The loss which the Claimants say they have suffered in this conspiracy is, therefore, &#163;250,047. </p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_11">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">11.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">The other 12 conspiracies follow a similar pattern.  All the transactions occurred on or about the same day.  They all involve what would have been a substantial drop in price between the first and second transactions had the importing company intended to pay VAT.</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_12">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">12.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">In July and August 2003 two freezing orders were obtained by the Claimants in respect of the Defendant&#8217;s London bank account.  By consent those two orders were replaced by a single freezing order on the 10 November 2003.  Two claims were also issued by the Claimants.  They have been consolidated into this claim.  </p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_13">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">13.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">The Defendant denies being party to any conspiracy, or combination of conspiracies to cheat or defraud the Claimants by unlawful means.  It denies it had any intent so to do and asserts there is no truth to the allegations made by the Claimants.  </p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_14">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">14.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">As well as denying that there was any combination, intention or conspiracy as alleged by the Claimants the Defendant also denies that the complainants' allegations are capable of constituting a cause of action for the purposes of the tort of conspiracy.  </p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_3">
+	  <heading style="text-align:justify"><span style="font-weight:bold;text-decoration-line:underline;text-decoration-style:solid">Preliminary Issue</span></heading>
+	  <paragraph eId="para_15">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">15.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">The denial by the Defendant that there is any cause of action in conspiracy available to the Claimants has given rise to the Preliminary Issue.  By a consent agreement set out in an order sealed on the 13 July 2004 it was agreed that the proceedings in the consolidated claim be stayed and there by a trial of the following Preliminary Issue.</p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_4">
+	  <heading style="text-align:justify"><span style="font-style:italic">&#8220;Do the Claimants have, as a matter of law, a cause of action in conspiracy against the defendant as pleaded in the consolidated and amended particulars of claim?&#8221;</span></heading>
+	  <paragraph eId="para_16">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">16.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">The parties have agreed the Court should approach the Preliminary Issue on the basis of an assumption that the Claimants will be able to establish the factual case it has pleaded.  Accordingly this matter has proceeded on the basis that it is to be assumed in relation to each of the thirteen sales that the Defendant was a party to a conspiracy whose intention was to cheat the  Claimants by unlawful means, that the transactions took place as pleaded and that the transactions had no other economic purpose than to cheat and/or defraud the Claimants.  It is important to note that from the Defendant&#8217;s point of view the agreed factual basis for deciding the Preliminary Issue continues in fact to be denied.  </p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_5">
+	  <heading style="text-align:justify"><span style="font-weight:bold;text-decoration-line:underline;text-decoration-style:solid">The Claimant's Case</span></heading>
+	  <paragraph eId="para_17">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">17.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">As a result of the alleged conspiracies the Customs and Excise has paid out more than &#163;1.9 million. The proceedings are brought to recover that money.  In each Carousel some monies by way of purchase price were paid into the Defendant&#8217;s London bank account.  The missing trader never paid any VAT. A trader further down the line, in the example given GAK Ltd, paid the price direct to the Defendant&#8217;s bank account. The Claimants have no effective remedy against the missing trader even if it can be found.</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_18">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">18.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">The Claimants rely on an unlawful means conspiracy.  To succeed they must establish that two or more persons have combined together to do an unlawful act with the intention but not necessarily the predominate intention, of damaging the Claimants and that damage has in fact resulted to the Claimants.</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_19">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">19.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">In  <span style="font-style:italic">Kuwait Oil Tankers Co. SA v Al Bader and others <ref href="#" uk:canonical="[2000] 2 All ER 271" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="2000">[2000] 2 All ER 271</ref> (Comm)</span><span/><span style="font-style:italic">at para 106</span><span/><span style="font-style:italic">onwards</span>, the Court of Appeal considered the legal principles involved in the tort of conspiracy.  They described a conspiracy to injure by unlawful means at para 108 as follows: -</p>
+	      <block name="embeddedStructure"><embeddedStructure>
+		  <level>
+		    <content>
+		      <p style="text-align:justify;margin-left:1in"><span style="font-style:italic">&#8220;A conspiracy to injure by unlawful means is actionable where the claimant proves that he has suffered loss or damage as the result of unlawful action taken pursuant to a combination or agreement between the defendant and another person or persons to injure him by unlawful means, whether or not it is the predominant purpose of the defendant to do so.&#8221;</span></p>
+		    </content>
+		  </level>
+		</embeddedStructure></block>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_20">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">20.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">The unlawful means alleged is the commission of the common law offence of cheating the Revenue.  In <span style="font-style:italic">R v Hudson[1956] 2 QB 252</span> it was decided that to make a false statement whether written or not relating to Income Tax with intent to defraud the Revenue, or to deliver or to cause to be delivered a false document relating to Income Tax with similar intent, amounts to a common law offence and is indictable as such.  In <span style="font-style:italic">R v Mavji, 84 Cr.App. R 34</span> Hudson was applied.  The appellant in Mavji had a statutory duty to make VAT returns and to pay over to the Crown the VAT due.  He had done neither and was found guilty of cheating the Crown and the Public Revenue. The common law offence of cheating the revenue exists and continues to be indicted. But here the Customs and Excise are said to have been &#8220;conned&#8221; out of money.  Cheating can be any form of conduct, which results in diverting money from the Revenue.  The Claimants assert that the transactions involved here had no economic purpose. So no VAT was chargeable.  The party who commits the criminal offence of cheating the revenue directly is the last in the carousel chain. It claims a repayment to which it is not entitled.  A false representation is made.  Others might be liable as accessories.  The end result is that the Revenue is deprived of money.</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_21">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">21.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in;text-indent:0in"> The Claimants deny they are attempting to impose a liability to pay VAT on the Defendant a foreign company which is neither a taxable person in the UK nor required to account to the Claimants for VAT.  The Claimants are not attempting to collect "revenue". They seek to recover payments, which they have been induced to make by a successful plan, of which the Defendant was part on the basis of the assumed facts, to defraud the customs by putting together a chain of transactions with the sole purpose of making it appear that a claim to repayment of VAT was valid. The Claimants say &#8220;In substance what the Defendant is asserting is that it is at liberty to take steps to defraud the Customs and Excise out of very substantial sums and there is nothing short of legislation that the Customs and Excise can do about it.  The advantage of a claim in conspiracy is that it may be used to bring to account those against whom the Claimants might have no direct redress.&#8221;</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_22">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">22.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">The common law offence of cheating does not necessarily require a false representation either by words or conduct.  Cheating can include any form of fraudulent conduct which results in diverting money from the Revenue and depriving the Revenue of money to which it is entitled. <span style="font-style:italic">R v Mavji [1987] 2</span><span/><span style="font-style:italic">All ER 758  CA  at page 761</span>. This say the Claimants is what has happened here.</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_23">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">23.</num>
+	    <content>
+	      <p class="Heading" style="text-align:justify;margin-left:0.5in">The Claimants accept that there is a wide-ranging statutory scheme for the recovery of wrongly paid or overpaid VAT. By Section 60 of the Value Added Tax 1994 dishonest evasion of liability to VAT attracts penalties.  Evading VAT in these circumstances includes obtaining refunds, obtaining VAT credits and<span style="font-style:italic"/>obtaining VAT repayments.<span style="font-style:italic"/>By <ref href="http://www.legislation.gov.uk/id/ukpga/1994/23/section/72" uk:canonical="" uk:origin="TNA" uk:type="legislation">Section 72</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1994/23" uk:canonical="1994 c. 23" uk:origin="TNA" uk:type="legislation">the Act</ref><span style="font-style:italic"> &#8220;If any person is knowingly concerned in, or in the taking of steps with a view to, the fraudulent evasion of VAT by him or any other person, he shall be liable &#8230; on conviction on indictment to a penalty of any amount or to imprisonment for a term not exceeding 7 years or to both.&#8221; </span> Again the evasion of VAT includes the obtaining of VAT credits, refunds or repayments (<ref href="http://www.legislation.gov.uk/id/ukpga/1994/23/section/72/2" uk:canonical="" uk:origin="TNA" uk:type="legislation">Section 72 (2)</ref>). This claim however is not a tax recovery problem. Monies were in fact paid out by Customs and Excise as a result of a deception.  The Defendant is part of an agreement, which facilitated that deception. The Claimants say they are not prevented from using such methods as may be available to them to recover the monies involved here. </p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_6">
+	  <heading style="text-align:justify"><span style="font-weight:bold;text-decoration-line:underline;text-decoration-style:solid">The Defendants Case</span></heading>
+	  <paragraph eId="para_24">
+	    <num style="font-weight:bold;margin-left:0.5in;text-indent:-0.25in">24.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in"> In essence the Defendant says this action is an attempt to circumvent the statutory scheme under the VAT legislation for recovering overpaid or wrongly paid VAT. The Claimants are purporting to rely on an action for civil conspiracy as an addition to their statutory powers of recovery of wrongly- paid VAT. They say in terms that there can be no cause of action in conspiracy where, as in this case, the allegedly unlawful means relied upon is the common law offence of cheating the Public Revenue.</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_25">
+	    <num style="font-weight:bold;margin-left:0.5in;text-indent:-0.25in">25.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in">They argue that there is no authority to support the Claimant&#8217;s contention of entitlement to bring a civil claim relying on a continuous cause of action of conspiracy to cheat the Public Revenue.  To allow such an action would require an extension of the common law.  Such an extension would be an unjustified incursion into an area regulated by Statute.  </p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_26">
+	    <num style="font-weight:bold;margin-left:0.5in;text-indent:-0.25in">26.</num>
+	    <intro>
+	      <p style="text-align:justify;margin-left:0.5in">The Defendant is a Spanish company.  It is not a taxable person for the purposes of the <ref href="http://www.legislation.gov.uk/id/ukpga/1994/23" uk:canonical="1994 c. 23" uk:origin="TNA" uk:type="legislation">Value Added Tax Act 1994</ref>.  It has no liability to the UK Tax Authorities in relation to any UK levy of Value Added Tax. Accordingly the Defendant says it cannot be liable for any penalties or offences provided for in the <ref href="http://www.legislation.gov.uk/id/ukpga/1994/23" uk:canonical="1994 c. 23" uk:origin="TNA" uk:type="legislation">Value Added Tax Act 1994</ref>.  To attempt to recover monies purportedly repaid by the Customs and Excise as VAT refunds to companies within the United Kingdom from the Defendant Spanish company has no Statutory basis and is wrong. The Bills of Rights Act 1688 is relied on by the Defendant. &#8220;Levying Money for or to the Use of the Crown, by Pretence of Prerogative without Grant of Parliament for longer Time, or in other Manner than the same is or shall be granted, is illegal.&#8221; Or as it was put in argument there can be &#8220;no taxation without representation&#8221;. The Defendants case is supported by three main submissions:</p>
+	    </intro>
+	    <subparagraph>
+	      <num style="font-style:italic;margin-left:1.25in;text-indent:-0.5in">1.</num>
+	      <content>
+		<p style="text-align:justify;margin-left:1.25in"><span style="font-style:italic">The Claimants action would circumvent the statutory scheme for the collection of taxes and would provide the Claimants with an alternative to their statutory powers for the collection of tax, without any statutory foundation. </span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-style:italic;margin-left:1.25in;text-indent:-0.5in">2.</num>
+	      <content>
+		<p style="text-align:justify;margin-left:1.25in"><span style="font-style:italic">The facts relied on by the Claimants do not and could not amount to &#8220;unlawful means&#8221; to found an unlawful means conspiracy.</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-style:italic;font-weight:bold;margin-left:1.25in;text-indent:-0.5in">3.</num>
+	      <content>
+		<p style="text-align:justify;margin-left:1.25in"><span style="font-style:italic">An action in conspiracy does not lie where there has been no harm to or interference with the Claimants trade or business.</span></p>
+	      </content>
+	    </subparagraph>
+	  </paragraph>
+	</level>
+	<level eId="lvl_7">
+	  <heading style="text-align:justify"><span style="font-weight:bold;text-decoration-line:underline;text-decoration-style:solid">  Does the conspiracy alleged circumvent the Statutory Scheme </span></heading>
+	  <paragraph eId="para_27">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">27.</num>
+	    <intro>
+	      <p class="Heading1" style="margin-left:0.5in">Attempts have been made to curb Carousel Frauds. The <ref href="http://www.legislation.gov.uk/id/ukpga/2003/14" uk:canonical="2003 c. 14" uk:origin="TNA" uk:type="legislation">Finance Act 2003</ref> <ref href="http://www.legislation.gov.uk/id/ukpga/2003/14/section/18/4" uk:canonical="" uk:origin="TNA" uk:type="legislation">S18 (4)</ref> inserted <ref href="http://www.legislation.gov.uk/id/ukpga/2003/14/section/77" uk:canonical="" uk:origin="TNA" uk:type="legislation">Section 77</ref>A into the <ref href="http://www.legislation.gov.uk/id/ukpga/1994/23" uk:canonical="1994 c. 23" uk:origin="TNA" uk:type="legislation">Value Added Tax Act 1994</ref> in relation to trade in various goods including telephones, computers and other similar equipment. It provides that: -</p>
+	    </intro>
+	    <subparagraph>
+	      <content>
+		<p class="Heading1" style="margin-left:1in"><span style="font-style:italic">"</span><span/><span style="font-style:italic">(2) Where -</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-style:italic">(a)</num>
+	      <content>
+		<p class="Heading1" style="margin-left:1in;text-indent:0.5in"><span style="font-style:italic">a taxable supply of goods to which this section applies has been made to a taxable person, and </span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-style:italic">(b)</num>
+	      <content>
+		<p class="Heading1" style="margin-left:1in;text-indent:0.5in"><span style="font-style:italic">at the time of the supply the person knew or had reasonable grounds to suspect that some or all of the VAT payable in respect of that supply, or on any previous or subsequent supply of those goods, would go unpaid,</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <content>
+		<p class="Heading1" style="margin-left:1in"><span style="font-style:italic">the Commissioners may serve on him a Notice specifying the amount of VAT so payable that is unpaid and stating the effect of the notice.</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-style:italic;margin-left:1.5in;text-indent:-0.5in">(3)</num>
+	      <content>
+		<p class="Heading1" style="margin-left:1.5in"><span style="font-style:italic">The effect of a notice under this section is that</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-style:italic">(a)</num>
+	      <content>
+		<p class="Heading1" style="margin-left:1in;text-indent:1in"><span style="font-style:italic">the person served with the notice, and</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-style:italic">(b)</num>
+	      <content>
+		<p class="Heading1" style="margin-left:1in;text-indent:1in"><span style="font-style:italic">the person liable, apart from this section for the amount specified in the notice, </span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <content>
+		<p class="Heading1" style="margin-left:1.5in;text-indent:-0.5in"><span style="font-style:italic">are jointly and severally liable to the Commissioners for that amount".</span></p>
+	      </content>
+	    </subparagraph>
+	  </paragraph>
+	  <paragraph eId="para_28">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">28.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in">That Section came into force on the 10<span style="vertical-align:super;font-size:smaller">th</span> April 2003 after the frauds alleged in this series of transactions.  Joint and several liability in cases where there are reasonable grounds to suspect that VAT is to go unpaid no doubt catches more organisations within a Carousel Fraud than the &#8220;missing trader&#8221; but it would not include the Defendant.  If this claim is right says the Defendant then the whole statutory scheme for collection and recovery of VAT payments can be sidestepped which is in principle wrong.  </p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_29">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">29.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> Mr Flint highlighted both in his skeleton and in argument that the VAT Act establishes civil, regulatory and criminal means for enforcing the collection of VAT.  Paragraph (5)( 1) of schedule 11 to the VAT Act 1994 provides that VAT due from any person can be recoverable by a civil action as a debt due to the  Crown. <ref href="http://www.legislation.gov.uk/id/ukpga/1994/23/section/72" uk:canonical="" uk:origin="TNA" uk:type="legislation">Section 72</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1994/23" uk:canonical="1994 c. 23" uk:origin="TNA" uk:type="legislation">the Act</ref> establishes that it is a criminal offence for any person to be knowingly concerned in or in the taking of steps with a view to the fraudulent evasion of VAT by him or any other person. <ref href="http://www.legislation.gov.uk/id/ukpga/1994/23/section/60" uk:canonical="" uk:origin="TNA" uk:type="legislation">Section 60</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1994/23" uk:canonical="1994 c. 23" uk:origin="TNA" uk:type="legislation">the Act</ref> imposes penalties for dishonest VAT evasion in circumstances where a person has not been convicted of an offence. So Parliament has made extensive provisions for the recovery of VAT. But these provisions do not extend to cover the Defendant. Indeed Mr Flint said this was not a case of the court being invited to deal with an obvious mischief as VAT frauds have been addressed by Parliament. </p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_30">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">30.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> There is a mischief here but it is facilitated because of the zero rating of goods for VAT purposes as they move across EU boundaries. It is in my judgment an &#8220;<span style="font-style:italic">obvious mischief</span>&#8221; that these rules can facilitate frauds of the nature considered here. An amendment to the EU VAT rules might achieve change. But the Defendant says the Customs and Excise is extending the reach of the taxing statute by taking these proceedings and so attempting to make the Defendant, a foreign corporation, liable for the acts or omissions of a taxpayer in the UK. They contend there is no statutory authority for this.</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_31">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">31.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> They also argue that extending the common law into the field of VAT recovery by an illegitimate use of the tort of conspiracy would create significant problems. For instance the degree of knowledge required to create liability under <ref href="http://www.legislation.gov.uk/id/ukpga/2003/14/section/77" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 77</ref>A(2)(b) of the VAT Act 1994 as set out above is precise and is not mirrored in the tort of conspiracy. Further it is said the principle of statutory interpretation "to express one thing is to exclude another" should be applied.  In Bennion on Statutory Interpretation 2002 4th Edition section 392 it is said "<span style="font-style:italic">where an Act sets out specific remedies, penalties or procedures it is presumed that other remedies, penalties or procedures that might have been applicable are by implication excluded" </span>This presumption should operate in the present case says the Defendant so as to exclude what is an alternative method of tax collection via a civil claim based on the  tort of conspiracy by unlawful means.   </p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_32">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">32.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> In this case monies have been lost to the Customs and Excise as a result of them making a payment of monies to a registered taxpayer apparently due to that taxpayer because of the operation of the VAT scheme. The Defendant asserts that the only way in which monies wrongly paid out to a taxable person within the auspices of the VAT scheme can be reclaimed is through the statutory machinery of the Value Added Tax legislation.  </p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_33">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">33.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> Not so say the Claimants. They are not attempting to collect revenue or obtain any repayment of wrongly refunded VAT. They are not seeking to impose a liability to VAT on the Defendant. They are seeking to recover payments, which they have been induced to make by a successful plan, of which the Defendant was part, to defraud them by putting together a chain of transactions with the sole purpose of making it appear that a claim to repayment of VAT was valid. There is a distinction between attempting to levy tax and suing to recover wrongly- paid monies as here. In any event it has been assumed for the purpose of this preliminary issue that the transactions in the various alleged carousel frauds had no genuine economic purpose and were in fact designed to cheat and/or defraud the Claimants.  </p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_34">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">34.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> In <span style="font-style:italic">Bond House Systems Ltd v Commissioners for Customs and Excise  [2003] BVC 2319, [2003] VDDR 210, [2003] STI 1431 </span>there were similar transactions to those involved in this case. Bond House traded in high value computer chips and was registered with the Commissioners of Customs and Excise for VAT. They became embroiled in a series of carousel frauds whose objective was fraudulent, although Bond House was ignorant of the fraudulent objective and was innocent of any wrong doing. Computer chips were "sold" in a carousel from Ireland to the UK and through various companies back to Ireland. There were 26 high value "trades" involved. </p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_35">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">35.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> Bond House bought the computer chips from UK VAT registered companies. They paid VAT on their purchase. They sold the computer chips on to a company in Ireland without charging VAT in a cross border trade. Bond House then claimed a credit in the sum of more than &#163;16 million from the Customs and Excise for the VAT on various of these transactions. In this case in the example at paragraph 10 above Alldech was in the position of Bond House. But Alldech was in fact paid more than &#163;250,000 by way of repayment of VAT.</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_36">
+	    <num style="font-style:italic;margin-left:0.5in;text-indent:-0.25in">36.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> The Tribunal in the Bond House case held that the relevant transactions were devoid of economic substance. The transactions were not within the contemplation of the Sixth VAT Directive. They were not economic activities. At paragraph 158 the Tribunal summarised its position as follows <span style="font-style:italic">"we conclude that, as   the objectively determined characteristics of the 26 purchases show that they were entered into, not in the course of distributing goods to a final consumer, but with a view to obtaining an advantage by fraud, they cannot be regarded as economic activities within the meaning of the Sixth Directive, and are correspondingly outside the scope of VAT. We agree with the Commissioners that the sums claimed by Bond House as input tax, in respect of those 26 transactions, are not VAT".</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_37">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">37.</num>
+	    <intro>
+	      <p class="Heading1" style="margin-left:0.5in"> UK legislation has correctly implemented the Sixth Directive and article 2 of that Directive reads: </p>
+	    </intro>
+	    <subparagraph>
+	      <intro>
+		<p class="Heading1" style="margin-left:1in"><span style="font-style:italic">"the following shall be subject to value added tax....</span></p>
+	      </intro>
+	      <subparagraph>
+		<num style="font-style:italic;margin-left:1.88in;text-indent:-0.5in">(a)</num>
+		<content>
+		  <p class="Heading1" style="margin-left:1.88in"><span style="font-style:italic">the supply of goods or services effected for consideration within the territory by a taxable person acting as such;</span></p>
+		</content>
+	      </subparagraph>
+	      <subparagraph>
+		<num style="font-style:italic">(b)</num>
+		<content>
+		  <p class="Heading1" style="margin-left:1.38in;text-indent:0.12in"><span style="font-style:italic">the importation of goods".</span></p>
+		</content>
+	      </subparagraph>
+	    </subparagraph>
+	  </paragraph>
+	  <paragraph eId="para_38">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">38.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> A "taxable person" is defined by article 4.1 as a person who carries out " any economic activity". That is defined by article 4.2 to "comprise all activities of producers, traders and persons supplying services including mining and agricultural activities and activities of the professions". In Bond House the tribunal held (at para 137) the definition is "intended to encompass supplies ordinarily made by those engaged in legitimate business activities". </p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_39">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">39.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> In Bond House the Customs and Excise declined to meet an apparently clear claim for repayment of input tax on the basis that payments made by Bond House were not VAT. The trader appealed to the VAT and Duties Tribunal so using the Statutory Scheme to assert its entitlement to repayment. It was unsuccessful.</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_40">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">40.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> Here too the agreed facts indicate that the transactions had no other economic purpose than to cheat the Claimants. They did not in any proper sense contribute to the process of production or distribution. There were a series of contracts to buy and sell mobile phones. That series had nothing to do with distribution to any final consumer. Given that position, which on the agreed facts is clear, in my judgment the transactions involved here had nothing to do with economic activities. They were designed to defraud or " con" monies from the Claimants. The Defendant is a Spanish company. It is not subject to the UK VAT regime because it is not "a taxable person" for the purposes of the UK VAT legislation (section 3 of the VAT Act 1994). It has monies in its UK bank account that were used in one or more of the bogus transactions referred to in the particulars of claim. That money is not recoverable using the VAT legislation in any event. So the contention that the VAT legislation is the only proper vehicle for obtaining recovery of payments made wrongly in this series of transactions is itself wrong. The conspiracy alleged is not then circumventing the statutory scheme. It stands alone as a possible method of recovery against Total Network SL the Defendant, a company registered outside the UK. </p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_41">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">41.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in"> The Defendants raises a generalised concern that the use of a tortious conspiracy claim will lead to attempts by the Commissioners of Customs and Excise to sidetrack the VAT legislation when proceeding against UK tax payers.   That is not this case.   The Defendant is not subject to the United Kingdom&#8217;s VAT legislation.   On the agreed facts it appears to have wrongly benefited from that legislation.   The conspiracy alleged is not in my judgment being used by the Claimants to circumvent the statutory scheme for the collection of taxes by way of providing the Claimants with an alternative to their statutory powers for the collection of tax, without statutory foundation.</p>
+	    </content>
+	  </paragraph>
+	  <level eId="lvl_7_1">
+	    <content>
+	      <p class="Heading1" style="margin-left:0.25in"><span style="font-weight:bold;text-decoration-line:underline;text-decoration-style:solid">No Unlawful Means Conspiracy on the facts</span></p>
+	    </content>
+	  </level>
+	  <paragraph eId="para_42">
+	    <num style="font-weight:bold;margin-left:0.5in;text-indent:-0.25in">42.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> The second submission from the Defendant is that the facts relied on by the Claimants do not amount to "unlawful means" so as to found any unlawful means conspiracy.</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_43">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">43.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> In a very full skeleton Mr Flint analysed the origins of the tort of conspiracy. He says it has developed as a tort to protect commercial interests only. Wrongful means conspiracy is a form of secondary liability. It allows the victim of a tort to claim compensation from a wider range of "secondary" defendants. The presence of a primary civil wrong is fundamental to unlawful means conspiracy. </p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_44">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">44.</num>
+	    <intro>
+	      <p class="Heading1" style="margin-left:0.5in"> The law in this field has developed through cases where the Claimants commercial interests may have been affected and he has been injured in his trade or business. However as Nourse L.J. said in <span style="font-style:italic">Kuwait Oil</span><span/><span style="font-style:italic">Tanker co SAK v Al Bader and others </span>[2000] 2 All ER. (Comm) 271 at para 114</p>
+	    </intro>
+	    <subparagraph>
+	      <content>
+		<p class="Heading1" style="margin-left:1in"><span style="font-style:italic">"Mr Brodie (counsel for the defendant) submitted that the tort of conspiracy is limited to the class of case where the Claimant is injured in his trade or business. He drew attention to the fact that conspiracy is a comparatively modern tort which has been developed in the context of trade disputes and industrial relation disputes. It is true that in the case of</span><span style="font-style:italic;font-weight:bold"> lawful </span><span style="font-style:italic">means conspiracy the tort has been developed principally in that sphere, but there is no authority to support Mr Brodies submission in the context of an </span><span style="font-style:italic;font-weight:bold">unlawful</span><span/><span style="font-style:italic">means conspiracy and we cannot accept it". </span>(emphasis added)<span style="font-style:italic"/>Indeed Lord Bridge had not in anyway limited the tort to damage to commercial interests in <span style="font-style:italic">Lonrho plc v Fayed <ref href="#" uk:canonical="[1992] 1 AC 448" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1992">[1992] 1 AC 448</ref> at page 465h where he said "But when conspirators intentionally injure the plaintiff and use unlawful means to do so, it is no defence for them to show that their primary purpose was to further or protect their own interests; it is sufficient to make their actions tortious that the means used were unlawful"</span></p>
+	      </content>
+	    </subparagraph>
+	  </paragraph>
+	  <paragraph eId="para_45">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">45.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> It follows that I do not accept that the notion of "unlawfulness" in unlawful means conspiracy is limited to civil wrongdoing, breaches of contract and breaches of fiduciary duty, which may themselves give rise to compensation. The unlawful means present in this case on the Claimant's submissions is the commission of the common law offence of cheating the revenue. It is common to indict alleged conspirators in carousel frauds such as this one with conspiracy to cheat Her Majesty and the public revenue by the evasion of Value Added Tax. There appears to be no authority for the proposition that cheating the public revenue itself constitutes a civil cause of action. </p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_46">
+	    <num style="font-style:italic;margin-left:0.5in;text-indent:-0.25in">46.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> The Defendant says that the general principle is that criminal prohibitions do not create actionable private rights <span style="font-style:italic">(Gouriet v UPOW [1978]  AC 435). </span>But breach of a criminal statute can constitute "unlawful means" where the statute also gives rise to an actionable private right. In <span style="font-style:italic">Cutler v Wandsworth Stadium</span><span/><span style="font-style:italic">LD <ref href="#" uk:canonical="[1949] AC 398" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1949">[1949] AC 398</ref> at 407</span> Lord Simonds said when considering whether a private right of action arises where there is a statutory obligation which could have been enforced by criminal penalties <span style="font-style:italic">"The only rule which in all circumstances is valid is that the answer must depend on  consideration of the whole Act and the circumstances, including the pre-existing law, in which it was enacted".</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_47">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">47.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> As the Claimants put it in argument there is some controversy as to whether the commission of a crime is "unlawful means" for the purpose of the tort of unlawful means conspiracy. But cheating includes any form of fraudulent conduct, which results in diverting money from the Revenue. Whatever the position on crime generally fraud is always unlawful means for the purpose of this tort see <span style="font-style:italic">Crofter Hand-Woven Harris Tweed Co Ltd v Veitch <ref href="#" uk:canonical="[1942] AC 435" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1942">[1942] AC 435</ref> at 462 and Sorell v Smith <ref href="#" uk:canonical="[1925] AC 700" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1925">[1925] AC 700</ref> at 714</span>. So fraud is unlawful of itself and fraud automatically amounts to "unlawful means" within the tort considered here.</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_48">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">48.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> The Defendant contends that if tax obligations concerned private wrong doing as opposed to public wrong doing then article 6 "European Convention on Human Rights" would be applicable to tax matters. The European Court of Human Rights has decided that tax matters do not constitute civil rights and obligations within the meaning of article 6 (1) <span style="font-style:italic">(Ferrazzini v Italy [2002] 34 EHRR 1041 para 29).</span> But in my judgment this case is not concerned with taxing matters and is a claim against a foreign defendant who is not subject to our VAT system. I accept as indicated above that the Customs and Excise is attempting to recover money wrongly paid out as a result of actions which amount to frauds and which various parties to the carousel frauds have on the agreed facts conspired together to achieve. </p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_49">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">49.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> It is in any event contended by the Claimants that they have a cause of action independent of their conspiracy claim against at least one of the conspirators. So they are able to satisfy the tests in <span style="font-style:italic">Michaels v Taylor Woodrow</span><span/><span style="font-style:italic">Developments Ltd <ref href="#" uk:canonical="[2001] Ch 493" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="2001">[2001] Ch 493</ref></span>. <span style="font-style:italic">"in a "conspiracy by unlawful means" the means must be actionable in their own right against at least some of the conspirators" (Laddie J as para 66) </span>The Claimants rely on the assumed facts under which this transaction had no genuine economic purpose. Accordingly as in <span style="font-style:italic">Bond House Systems Ltd</span> no VAT was chargeable at any point. Payments of monies by Customs and Excise to the broker companies at the end of the carousel fraud chains are accordingly recoverable as monies paid under a mistake of fact or because the payments were beyond the powers of the Revenue or because the payments were induced by fraudulent misrepresentations by the broker companies that a repayment was due.</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_50">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">50.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> The agreed facts show that the Defendant was party to a conspiracy whose intention was to cheat the Claimants by unlawful means by a series of transactions that had no other economic purpose than to cheat and  to defraud the Claimants of revenue. The authorities establish that subject to statutory interpretation where a statute imposes criminal sanctions it may be open to the parties adversely affected by apparent breaches of the criminal sanctions to bring civil proceedings. In my judgment the authorities also show fraud itself can establish that element of "unlawful means" required for unlawful means conspiracy. There is fraud here. An agreement to cheat the Revenue is in place under the agreed facts. A claim in the tort of conspiracy can therefore be used to bring to account a party such as the Defendant, a Spanish Company, against whom the Claimants would otherwise have no direct redress.  </p>
+	    </content>
+	  </paragraph>
+	  <level eId="lvl_7_2">
+	    <content>
+	      <p class="Heading1" style="margin-left:0.25in"><span style="font-weight:bold;text-decoration-line:underline;text-decoration-style:solid">Harm to the Claimants Business</span></p>
+	    </content>
+	  </level>
+	  <paragraph eId="para_51">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">51.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> It is the Defendant's assertion that the tort of conspiracy to use unlawful means is an economic tort and has only developed and is intended to protect the economic interests of companies and private individuals. It is correct that many of the leading cases refer to "interference with trade or business " when considering the ambit of the tort of conspiracy by unlawful means. The leading cases <span style="font-style:italic">Sorrell v Smith <ref href="#" uk:canonical="[1925] AC 700" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1925">[1925] AC 700</ref>, ST Stratford &amp; Sons</span> v <span style="font-style:italic">Lindley <ref href="#" uk:canonical="[1965] AC 269" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1965">[1965] AC 269</ref>,  Lonrho  Ltd v Shell Petroleum (2)[1982]  AC 173,</span><span/><span style="font-style:italic">and Lonrho  Plc v Fayed <ref href="#" uk:canonical="[1992] 1 AC 448" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1992">[1992] 1 AC 448</ref>,</span> were all concerned with claims based on injuries to the business of the original Plaintiffs. There is recognition in some of the cases that fraud itself may constitute unlawful means. But the tort is analysed in <span style="font-style:italic">Clerk and Lindsell 18th edition</span> as requiring a combination to injure involving two or more persons. That combination, if it does damage to the Claimants by fraud, is said to be actionable. Nowhere is it asserted that it is a sine qua non that the damage must be to the commercial interests or trade or business in the commercial sense of the Claimant's. Indeed the <span style="font-style:italic">Crofter </span>case refers clearly to conspiracies where the "acts in themselves wrongful, such as to deceive or defraud" are a different matter in relation to the conspiracy. And the <span style="font-style:italic">Kuwait Oil Tanker</span> case confirms in terms that there is no authority to support the assertion that the tort is limited to cases where the claimant is injured in his trade or business. </p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_52">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">52.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> The Defendant says the ratio of the Kuwait case "was merely to allow recovery for fraud committed against the Claimants by former senior managers of the first Claimant's Company, which it was considered, might not constitute a harm to the trade or business of the company". In the Kuwait case the Court of Appeal fully analysed the tort of conspiracy to injure by unlawful means. The court said "the essence of the unlawful means conspiracy means injury to the Claimant as a result of an unlawful act or acts where two or more people have combined to cause the injury".  They say in terms the tort is not limited to injury to trade or business.  I do not accept the submission that the ratio is as limited as contended for. Indeed there are some comparators here. The Claimant in the Kuwait company was "a large organisation of such wealth that even a conspiracy of the magnitude found by the Judge would not significantly affect their trade or business" in the submission of counsel for the defendants in that case. That court rejected the making of any distinction between rich and poor claimants of that kind. That appears to be the position in this case. </p>
+	    </content>
+	  </paragraph>
+	  <level eId="lvl_7_3">
+	    <content>
+	      <p class="Heading1" style="margin-left:0.25in"><span style="font-weight:bold;text-decoration-line:underline;text-decoration-style:solid">Pleadings</span></p>
+	    </content>
+	  </level>
+	  <paragraph eId="para_53">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">53.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"> Throughout the particulars of claim in this case the Claimants referred to goods being sold within the United Kingdom for a set sum " plus VAT". In a letter to the Defendant solicitors dated 3rd February 2004 the Claimants described this phrase plus VAT wherever it occurs as a mistake and that it should read "plus an amount charged as VAT". It is the Claimants case in essence that they are claiming money wrongly paid over which cannot properly be described as VAT. The Defendant says it needs to know the details of the alleged misrepresentations made and the nature of the falsity alleged. They point out it has to be implied from the pleadings that the transactions are not genuine   and they have no economic purpose other than to cheat. If this matter is to continue some further consideration is needed of this part of the particulars of claim. </p>
+	    </content>
+	  </paragraph>
+	  <level eId="lvl_7_4">
+	    <content>
+	      <p class="Heading1" style="margin-left:0.25in"><span style="font-weight:bold;text-decoration-line:underline;text-decoration-style:solid">Conclusions</span></p>
+	    </content>
+	  </level>
+	  <paragraph eId="para_54">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">54.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in"> An action for damages based on an alleged conspiracy by unlawful means is not limited to cases where there has been harm to or interference with a Claimant's trade or business.   Here on the agreed facts there has been a cheating of the public revenue and so a series of frauds.   Such frauds themselves constitute &#8220;unlawful means&#8221; for the purposes of the tort.</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_55">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">55.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in"> On the agreed facts the transactions set out in the Particulars of Claim had no other economic purpose than to cheat the Claimants.   The Claimants would have a cause of action against other parties to the alleged conspiracy on the basis at least that the payments were made by the Claimants as a result of fraudulent misrepresentation.</p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_56">
+	    <num style="margin-left:0.5in;text-indent:-0.25in">56.</num>
+	    <content>
+	      <p style="text-align:justify;margin-left:0.5in"> The Defendant, as a foreign corporation, is not subject to the UK VAT legislation.  The implication that the only proper method to recover payments made by the Claimants in respect of the transactions challenged is by way of the recovery or enforcement provisions provided for in the UK legislation is not sustainable. The contention that proceeding by way of this claim in tort is wrong and circumvents the UK VAT legislation is not on the facts correct.   </p>
+	    </content>
+	  </paragraph>
+	</level>
+      </decision>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

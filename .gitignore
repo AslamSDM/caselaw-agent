@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+!.env.example
+
+# eval judge cache (runs/ is kept for history)
+/evals/.cache/
+logs/
+
+# git worktrees used by parallel sessions
+/.claude/worktrees/

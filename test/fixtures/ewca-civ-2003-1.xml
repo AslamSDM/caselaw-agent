@@ -1,0 +1,1245 @@
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:uk="https://caselaw.nationalarchives.gov.uk/akn">
+  <judgment name="judgment">
+    <meta>
+      <identification source="#tna">
+	<FRBRWork>
+	  <FRBRthis value="https://caselaw.nationalarchives.gov.uk/id/ewca/civ/2003/1"/>
+	  <FRBRuri value="https://caselaw.nationalarchives.gov.uk/id/ewca/civ/2003/1"/>
+	  <FRBRdate date="2003-01-17" name="judgment"/>
+	  <FRBRauthor href="#ewca-civil"/>
+	  <FRBRcountry value="GB-UKM"/>
+	  <FRBRnumber value="1"/>
+	  <FRBRname value="Roe v Sheffield City Council &amp; Ors"/>
+	</FRBRWork>
+	<FRBRExpression>
+	  <FRBRthis value="https://caselaw.nationalarchives.gov.uk/ewca/civ/2003/1"/>
+	  <FRBRuri value="https://caselaw.nationalarchives.gov.uk/ewca/civ/2003/1"/>
+	  <FRBRdate date="2003-01-17" name="judgment"/>
+	  <FRBRauthor href="#ewca-civil"/>
+	  <FRBRlanguage language="eng"/>
+	</FRBRExpression>
+	<FRBRManifestation>
+	  <FRBRthis value="https://caselaw.nationalarchives.gov.uk/ewca/civ/2003/1/data.xml"/>
+	  <FRBRuri value="https://caselaw.nationalarchives.gov.uk/ewca/civ/2003/1/data.xml"/>
+	  <FRBRdate date="2024-09-11T23:08:09" name="transform"/>
+	  <FRBRdate date="2024-11-18T14:22:55" name="tna-enriched"/>
+	  <FRBRauthor href="#tna"/>
+	  <FRBRformat value="application/xml"/>
+	</FRBRManifestation>
+      </identification>
+      <references source="#tna">
+	<TLCOrganization eId="ewca-civil" href="https://www.gov.uk/courts-tribunals/court-of-appeal-civil-division" shortForm="Court of Appeal Criminal Division" showAs="The Court of Appeal of England and Wales (Civil Division)"/>
+	<TLCOrganization eId="tna" href="https://www.nationalarchives.gov.uk/" showAs="The National Archives"/>
+	<TLCPerson eId="william-roe" href="" showAs="WILLIAM ROE"/>
+	<TLCPerson eId="a-patient-who-sues-by-his-next-friend-miss-julie-jones" href="" showAs="(a Patient who sues by his Next Friend MISS JULIE JONES)"/>
+	<TLCPerson eId="and:" href="" showAs="and:"/>
+	<TLCPerson eId="sheffield-city-council" href="" showAs="SHEFFIELD CITY COUNCIL"/>
+	<TLCPerson eId="south-yorkshire-light-rail-limited" href="" showAs="SOUTH YORKSHIRE LIGHT RAIL LIMITED"/>
+	<TLCPerson eId="south-yorkshire-supertram-limited" href="" showAs="SOUTH YORKSHIRE SUPERTRAM LIMITED"/>
+	<TLCRole eId="respondent" href="" showAs="Respondent"/>
+	<TLCRole eId="appellant" href="" showAs="Appellant"/>
+	<TLCRole eId="defendant" href="" showAs="Defendant"/>
+	<TLCPerson eId="judge-lord-justice-pill" href="/judge-lord-justice-pill" showAs="LORD JUSTICE PILL"/>
+	<TLCPerson eId="judge-lord-justice-sedley" href="/judge-lord-justice-sedley" showAs="LORD JUSTICE SEDLEY"/>
+	<TLCPerson eId="judge-lady-justice-hale-dbe" href="/judge-lady-justice-hale-dbe" showAs="LADY JUSTICE HALE DBE"/>
+      </references>
+      <proprietary source="#">
+	<uk:court>EWCA-Civil</uk:court>
+	<uk:year>2003</uk:year>
+	<uk:number>1</uk:number>
+	<uk:cite>[2003] EWCA Civ 1</uk:cite>
+	<uk:parser>0.26.2</uk:parser>
+	<uk:hash>3d16610a42b44c662847e0ebc1f17157f4c3138353a5d7df352388619895057b</uk:hash>
+	<uk:tna-enrichment-engine>6.0.2</uk:tna-enrichment-engine>
+      </proprietary>
+      <presentation source="#">
+	<html:style>
+#judgment { font-size: 12pt; font-family: 'Times New Roman'; }
+#judgment .Normal { font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .Heading1 { text-align: justify; margin-left: 0.5in; font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .Heading2 { text-align: justify; margin-left: 0.98in; font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .Heading3 { text-align: justify; margin-left: 1.48in; font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .Heading4 { text-align: justify; margin-left: 1.97in; font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .Heading5 { text-align: justify; margin-left: 2.46in; font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .Heading6 { text-align: justify; margin-left: 2.95in; font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .Heading7 { text-align: justify; margin-left: 3.45in; font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .Heading8 { text-align: justify; margin-left: 3.94in; font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .Heading9 { text-align: justify; margin-left: 4.43in; font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .Header { font-family: Univers; font-size: 12pt; }
+#judgment .Footer { font-family: Univers; font-size: 12pt; }
+#judgment .DocumentMap { font-family: Tahoma; font-size: 12pt; }
+#judgment .CoverDesc { text-align: center; font-weight: bold; font-family: 'Times New Roman'; font-size: 18pt; }
+#judgment .CoverMain { font-weight: bold; text-decoration-line: underline; text-decoration-style: solid; font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .CoverText { text-align: right; text-decoration-line: underline; text-decoration-style: solid; font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .Heading { font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .Quote { text-align: justify; margin-left: 1in; margin-right: 1in; font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .ParaNoNumber { text-align: justify; font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .BlockText { text-align: justify; margin-left: 1in; margin-right: 0.58in; font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .Title { text-align: center; font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .BodyText { text-align: justify; font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .BodyText2 { margin-left: 0.5in; font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .Heading1Char { font-weight: bold; font-size: 16pt; }
+#judgment .Heading2Char { font-style: italic; font-weight: bold; font-size: 14pt; }
+#judgment .Heading3Char { font-weight: bold; font-size: 13pt; }
+#judgment .Heading4Char { font-weight: bold; font-size: 14pt; }
+#judgment .Heading5Char { font-style: italic; font-weight: bold; font-size: 13pt; }
+#judgment .Heading6Char { font-weight: bold; }
+#judgment .Heading7Char { font-size: 12pt; }
+#judgment .Heading8Char { font-style: italic; font-size: 12pt; }
+#judgment .Heading9Char { }
+#judgment .HeaderChar { font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .FooterChar { font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .PageNumber { font-size: 10pt; }
+#judgment .LineNumber { font-size: 10pt; }
+#judgment .DocumentMapChar { font-family: 'Segoe UI'; font-size: 8pt; }
+#judgment .QuoteChar { font-style: italic; font-family: 'Times New Roman'; font-size: 12pt; color: #404040; }
+#judgment .TitleChar { font-weight: bold; font-size: 16pt; }
+#judgment .BodyTextChar { font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .BodyText2Char { font-family: 'Times New Roman'; font-size: 12pt; }
+</html:style>
+      </presentation>
+    </meta>
+    <header>
+      <p style="text-align:right"><docketNumber style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">B3/2002/0098/B</docketNumber><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt"> &amp; </span><docketNumber style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">B3/2002/0342/A</docketNumber></p>
+      <p class="CoverMain"><span style="font-weight:normal;font-size:10pt">Neutral Citation No </span><neutralCitation style="font-weight:normal;font-size:10pt">[2003] EWCA Civ 01</neutralCitation></p>
+      <p><courtType refersTo="#ewca-civil" style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">IN THE SUPREME COURT OF JUDICATURE</courtType></p>
+      <p><courtType refersTo="#ewca-civil" style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">COURT OF APPEAL (CIVIL DIVISION)</courtType></p>
+      <p><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">ON APPEAL FROM THE HIGH COURT OF JUSTICE</span></p>
+      <p><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">QUEEN&#8217;S BENCH DIVISION</span></p>
+      <p><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">(THE HON MR JUSTICE HOLLAND)</span></p>
+      <p style="text-align:right"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">The Royal Courts of Justice</span></p>
+      <p style="text-align:right"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">Strand</span></p>
+      <p style="text-align:right"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">London WC2A 2LL</span></p>
+      <p style="text-align:right"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">Friday 17 Jnauary 2003</span></p>
+      <p style="text-align:center"><span style="font-size:10pt">Before:</span></p>
+      <p style="text-align:center"><judge refersTo="#judge-lord-justice-pill" style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">LORD JUSTICE PILL</judge></p>
+      <p style="text-align:center"><judge refersTo="#judge-lord-justice-sedley" style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">LORD JUSTICE SEDLEY</judge></p>
+      <p style="text-align:center"><judge refersTo="#judge-lady-justice-hale-dbe" style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">LADY JUSTICE HALE DBE</judge></p>
+      <p style="text-align:center"><span style="font-size:10pt">- - - - - - - - - - - - -</span></p>
+      <p><span style="font-size:10pt">Between:</span></p>
+      <p style="text-align:center"><party as="#respondent" refersTo="#william-roe" style="font-size:10pt">WILLIAM ROE </party></p>
+      <p style="text-align:center"><party as="#respondent" refersTo="#a-patient-who-sues-by-his-next-friend-miss-julie-jones" style="font-size:10pt">(a Patient who sues by his Next Friend MISS JULIE JONES)</party></p>
+      <p style="text-align:right"><role refersTo="#respondent" style="font-size:10pt">Claimant/Respondent</role></p>
+      <p style="text-align:center"><party as="#respondent" refersTo="#and:" style="font-size:10pt">and:</party></p>
+      <p style="text-align:center"><party as="#respondent" refersTo="#sheffield-city-council" style="font-size:10pt">SHEFFIELD CITY COUNCIL</party></p>
+      <p style="text-align:right"><role refersTo="#respondent" style="font-size:10pt">1st Defendant/Respondent</role></p>
+      <p style="text-align:center"><party as="#appellant" refersTo="#south-yorkshire-light-rail-limited" style="font-size:10pt">SOUTH YORKSHIRE LIGHT RAIL LIMITED</party></p>
+      <p style="text-align:right"><role refersTo="#appellant" style="font-size:10pt">2nd Defendant/Appellant</role></p>
+      <p style="text-align:center"><party as="#defendant" refersTo="#south-yorkshire-supertram-limited" style="font-size:10pt">SOUTH YORKSHIRE SUPERTRAM LIMITED</party></p>
+      <p style="text-align:right"><role refersTo="#defendant" style="font-size:10pt">3rd Defendant</role></p>
+      <p style="text-align:center"><span style="font-size:10pt">BALFOUR BEATTY POWER CONSTRUCTION LIMITED</span></p>
+      <p style="text-align:right"><span style="font-size:10pt">4th Defendant</span></p>
+      <p style="text-align:center"><span style="font-size:10pt">TURNER AND TOWNSEND PROJECT MANAGEMENT LIMITED</span></p>
+      <p style="text-align:right"><span style="font-size:10pt">5th Defendant</span></p>
+      <p style="text-align:center"><span style="font-size:10pt">KENNEDY AND DONKIN TRANSPORTATION LIMITED</span></p>
+      <p style="text-align:right"><span style="font-size:10pt">6th Defendant</span></p>
+      <p style="text-align:center"><span style="font-size:10pt">THE HEALTH AND SAFETY EXECUTIVE</span></p>
+      <p style="text-align:center"><span style="font-size:10pt">(originally sued as HER MAJESTY&#8217;S RAILWAY INSPECTORATE)</span></p>
+      <p style="text-align:right"><span style="font-size:10pt">7th Defendant</span></p>
+      <p style="text-align:center"><span style="font-size:10pt">- - - - - - - - - - - - -</span></p>
+      <p><span style="font-size:10pt">Richard Maxwell QC and Susan J Cooper (instructed by Keeble Hawson (Sheffield)) appeared on behalf of the 2nd Defendant/Appellant</span></p>
+      <p><span style="font-size:10pt">Gary Burrell QC, Graham Robinson and Siobhan Kelly (instructed by Atteys (Doncaster)) appeared on behalf of the Claimant/Respondent</span></p>
+      <p><span style="font-size:10pt">Alan Jeffreys QC and Michael Nicholson (instructed by the Solicitor for Sheffield County Council) appeared on behalf of the 1st Defendant/Respondent</span></p>
+      <p><span style="font-size:10pt">Neil Block QC (instructed by Weightman Vizards (London)) appeared on behalf of the 4th-7th Defendants/Respondents</span></p>
+      <p><span style="font-size:10pt">Philip Sales and Karen Steyn (instructed by the Treasury Solicitor (London)) appeared on behalf of the Interested Party, the Secretary of State for Transport</span></p>
+      <p style="text-align:center"><span style="font-size:10pt">- - - - - - - - - - - - -</span></p>
+      <p style="text-align:center"><span style="font-size:10pt">(Transcript of the Handed Down Judgment of</span></p>
+      <p style="text-align:center"><span style="font-size:10pt">Smith Bernal Wordwave Limited, 190 Fleet Street</span></p>
+      <p style="text-align:center"><span style="font-size:10pt">London EC4A 2AG</span></p>
+      <p style="text-align:center"><span style="font-size:10pt">Tel No: 020 7421 4040,  Fax No:  020 7831 8838</span></p>
+      <p style="text-align:center"><span style="font-size:10pt">Official Shorthand Writers to the Court)</span></p>
+      <p style="text-align:center"><span style="font-size:10pt">- - - - - - - - - - - - -</span></p>
+      <p style="text-align:center"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:20pt">Judgment</span></p>
+      <p style="text-align:center"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:20pt">As Approved by the Court</span></p>
+      <p style="text-align:center"><span style="font-size:8pt">Crown Copyright &#169;</span></p>
+    </header>
+    <judgmentBody>
+      <decision>
+	<level class="author">
+	  <content>
+	    <p><span style="font-size:10pt">Lord Justice Pill: </span></p>
+	  </content>
+	</level>
+	<level eId="lvl_1">
+	  <paragraph eId="para_1">
+	    <num style="font-size:10pt">1.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">This is an appeal against the judgment of Holland J given on 20 December 2001 whereby, in a claim for damages for personal injuries, he gave judgment for William Roe (&#8220;the claimant&#8221;) against South Yorkshire Light Rail Ltd (&#8220;the Company&#8221;) for damages to be assessed. Judgment was given for the Sheffield City Council (&#8220;the Council&#8221;) against the claimant. The scope of the action requires further definition because it did not dispose of all issues between the parties. At an earlier hearing on 31 July 2001, the judge had ordered that a part of the claimant&#8217;s claim against the Council be struck out with the remainder to be stayed pending the resolution of the outstanding issues between the claimant and the Company. That order was superseded by the judgment in favour of the Council already mentioned. The Council was given permission to be represented at the trial between the claimant and the Company. By the order of 31 July, claims against four other defendants were struck out and judgment entered in their favour. The claimant has permission to appeal against the striking out of his action against the fourth, fifth, sixth and seventh defendants.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_2">
+	    <num style="font-size:10pt">2.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Part 20 proceedings between the Company and the Council are in existence but have not as yet been pursued and are not before this Court. The Council took up their permission to appear at the trial between the claimant and the Company but did not make submissions. They have made submissions to this Court. The Council made an application for permission to rely on further evidence. In the course of the hearing that application was dismissed by consent. </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_3">
+	    <num style="font-size:10pt">3.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The third defendant, in whose favour there is a judgment, can be ignored. The fourth to sixth defendants, parties concerned with the design and construction of the tramway, and, the seventh defendant, the Health and Safety Executive, have also been represented at the hearing of the appeal. Their counsel has not elected to make submissions. It appearing that points of general importance arose in the case and, with other parties seeking to intervene, Hale LJ gave permission for the Secretary of State to intervene upon the hearing of the appeal. In making the application to intervene, the Secretary of State has referred to his responsibility for public transport policy and to the importance of light rail schemes in that context.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_4">
+	    <num style="font-size:10pt">4.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The Council and the Company were sued in nuisance and negligence and for breach of statutory duty. At management conferences held in a commendable attempt to narrow the scope of issues, the judge made clear that in his view the case turned on the construction of the Tramways Act 1870 (&#8220;the 1870 Act&#8221;) and the South Yorkshire Light Rail Transit Act 1988 (&#8220;the 1988 Act&#8221;). From the beginning, the judge considered the question of rail heights to be crucial. The judge maintained that view, stating in his judgment his view &#8220;from the outset&#8221; that &#8220;my primary concern would be statutory liability (if any); common law liability (if any) would be a secondary consideration&#8221;. The judge stated (paragraph 52) that, &#8220;for whatever reason, the claimant&#8217;s advisers sought to bolster his case as based on statutory liability with a supplementary case based on alleged common law negligence&#8221;. It is common ground that the common law claim against the Company remains in existence and was not determined at the trial.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_5">
+	    <num style="font-size:10pt">5.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">It was also agreed that a common law claim may be brought. In </span><span style="font-style:italic;font-size:10pt">Sadler v The South Staffordshire and Birmingham District Steam Tramways Company </span><span style="font-size:10pt">(1889) <ref href="#" uk:canonical="23 QBD 17" uk:isNeutral="false" uk:origin="TNA" uk:type="case">23 QBD 17</ref>, the company were authorised by statute to run tramcars over a line along the highway. Points on the line were defective and a tramcar went off the line and injured the plaintiff. It was held that the statutory authority did not provide a defence. The company were &#8220;doing a dangerous thing on a highway which they were not authorised to do&#8221; (per Lord Esher MR, p 22).The authority &#8220;was to use machinery in proper condition, not to use it in an improper and defective condition&#8221; (per Lopes LJ, p 23)</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_6">
+	    <num style="font-size:10pt">6.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Taking the view he did, the judge gave directions as to what evidence could be called at the trial. As will appear, he made findings of facts as to how the accident happened and reached conclusions about it. Judgments were delivered on 11 May 2001, 31 July 2001 and what was regarded as a comprehensive judgment on 20 December 2001.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_7">
+	    <num style="font-size:10pt">7.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">At a late stage of the hearing of the appeal, Mr Burrell QC, for the claimant, sought leave to appeal out of time against the dismissal of the claim against the Council, insofar as that claim had alleged a breach of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> of the <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">Highways Act 1980</ref> (&#8220;<ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">the 1980 Act</ref>&#8221;). For reasons I will give later in this judgment, the application was granted.</span></p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_2">
+	  <heading class="Heading"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">The accident</span></heading>
+	  <paragraph eId="para_8">
+	    <num style="font-size:10pt">8.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">On 19 May 1995, the claimant, then 35 years old, was driving his Ford Sierra motor car along Norton Avenue, Sheffield when he lost control of it on a left-hand bend and collided with a post on the central reservation. The road is a dual carriageway road with two lanes in each direction. The speed limit on the road is 40 mph. On the outer lane, in the direction towards the city centre in which the claimant was travelling, there is a tramway. The claimant was seriously injured. On his behalf, it was argued that the condition of the road surface, including that constituted by the tramway, caused the loss of control.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_9">
+	    <num style="font-size:10pt">9.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Tramways became a feature of urban landscapes in the late 19</span><span style="vertical-align:super;font-size:10pt">th</span><span style="font-size:10pt"> Century. The 1870 Act often applied to them. Most fell into disuse. Towards the end of the 20</span><span style="vertical-align:super;font-size:10pt">th</span><span style="font-size:10pt"> Century, there was a revival of the tramway as a means of urban transportation. That introduced in Sheffield was authorised by the 1988 Act, which adopted, with additions and modification, provisions of the 1870 Act.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_10">
+	    <num style="font-size:10pt">10.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Because of the seriousness of the injuries he sustained, the claimant had no recollection of the accident. There is no doubt that he was driving to work and was alone in the vehicle. The judge considered the evidence of two eye-witnesses who were driving motor vehicles in the same direction. In his statement, Mr Bowers stated: &#8220;As the Sierra was negotiating the left hand bend I saw the front &#8216;kick&#8217; to the left then veer to its right. The car&#8217;s front wheels appeared to lift from the road and mount the central reservation. The car collided with an electric pylon of the Supertram. When I describe a &#8216;kick&#8217;, I mean the front of the car moved violently for a short distance to the nearside before being moved back to the offside as if the driver was steering to correct the original kick&#8221;.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_11">
+	    <num style="font-size:10pt">11.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The site of the accident was inspected by PC Bashforth. The road surface was wet. The officer measured the height of the tramway rail in relation to the adjacent concrete on that part of the highway where the loss of control occurred. At distances of 8, 10, 14, 18 and 22 metres from the datum point, the upper surface of the offside rail was proud of the adjoining concrete by, respectively, 10 mm, 4 mm, 6 mm, 8 mm and 5 mm. The nearside rail better approximated the concrete in height but at 18 metres it too was proud, by 4 mm. PC Bashforth stated that the construction of a radial tyre was such that once supported on a proud rail there could not be contact with the road surface through &#8220;droop&#8221; on either side of the rail.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_12">
+	    <num style="font-size:10pt">12.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">PC Bashforth and another expert witness, Mr Greatrix, gave evidence of the very low coefficient of friction in such circumstances. Subsequent research has indicated a potential for vehicles losing control following contact with tram rails at shallow angles, even at moderate speed. Evidence was given of 53 road accidents, each involving some bodily injury, which had claimed attribution to contact between vehicle or cycle wheels and tram tracks between August 1994, when the Sheffield Supertram began operation, and January 1997. Of the 77 casualties, two were fatalities and 12 involved serious injuries. None of these accidents had occurred in Norton Avenue the relevant section of which had been certified as completed for traffic on 5 March 1995.</span></p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_3">
+	  <heading class="Heading"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">The judge&#8217;s findings</span></heading>
+	  <paragraph eId="para_13">
+	    <num style="font-size:10pt">13.</num>
+	    <intro>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Having considered the evidence, the judge made the following findings of fact:</span></p>
+	    </intro>
+	    <subparagraph>
+	      <num style="font-size:10pt;margin-left:1.47in;text-indent:-0.49in">a)</num>
+	      <content>
+		<p class="Heading3" style="margin-left:1.47in"><span style="font-size:10pt">The claimant drove into the bend at about 40 mph.</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-size:10pt;margin-left:1.47in;text-indent:-0.49in">b)</num>
+	      <content>
+		<p class="Heading3" style="margin-left:1.47in"><span style="font-size:10pt">In the event the nearside and offside wheels of his car were for a time respectively on and supported by the tram rails. This arose from the state of the rails and his angle of approach to them.</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-size:10pt;margin-left:1.47in;text-indent:-0.49in">c)</num>
+	      <content>
+		<p class="Heading3" style="margin-left:1.47in"><span style="font-size:10pt">In the result, given the height and wet state of the upper surfaces of these rails, his car slid along them.</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-size:10pt;margin-left:1.47in;text-indent:-0.49in">d)</num>
+	      <content>
+		<p class="Heading3" style="margin-left:1.47in"><span style="font-size:10pt">The car then slid off the rails to its nearside so that the front wheels suddenly contacted the immediately adjacent concrete. The concomitant and violent change in terms of friction caused the front of the car to &#8220;snatch&#8221; or &#8220;kick&#8221;.</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-size:10pt;margin-left:1.47in;text-indent:-0.49in">e)</num>
+	      <content>
+		<p class="Heading3" style="margin-left:1.47in"><span style="font-size:10pt">Mr Roe sought to correct by turning these wheels to the offside, that is, from the nearside lane and Mr Brier&#8217;s [the other eyewitness] car.</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-size:10pt;margin-left:1.47in;text-indent:-0.49in">f)</num>
+	      <content>
+		<p class="Heading3" style="margin-left:1.47in"><span style="font-size:10pt">Thereafter the claimant lost control so that the car proceeded as postulated by PC Bashforth.</span></p>
+	      </content>
+	    </subparagraph>
+	  </paragraph>
+	  <paragraph eId="para_14">
+	    <num style="font-size:10pt">14.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The judge&#8217;s conclusion was:</span></p>
+	      <block name="embeddedStructure"><embeddedStructure>
+		  <level>
+		    <content>
+		      <p class="Quote" style="margin-left:1in"><span style="font-size:10pt">&#8220;In the result I am satisfied on the balance of probability this part of the highway in its then state wholly caused the claimant&#8217;s accident. The crucial features were the rails and the configuration of such within this highway which meant that a motorist properly utilising this outside lane could drive onto and along them before abruptly contacting the adjacent concrete. I am satisfied that Mr Roe&#8217;s driving made no material contribution to this accident.&#8221;</span></p>
+		    </content>
+		  </level>
+		</embeddedStructure></block>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The causative breach found was of section 25 of the 1870 Act, though expressed as a wrongful act or default in section 55 terms. The sections are set out at paragraphs 20 and 25 below.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_15">
+	    <num style="font-size:10pt">15.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The judge also noted the changes that had been made to the surface of the road between the date of the accident and the taking of photographs in January 1999. The white line marking the division between lanes in the direction the claimant was travelling had been moved to the nearside and the road surface between the offside rail and the central reservation had been coloured red with a white prohibition line laid immediately alongside the offside rail. The combination of these measures was greatly to reduce the possibility that nearside and offside wheels of a vehicle would be in contact with nearside and offside rails. Vehicles would be driven further to the left and in a position in which neither set of vehicle wheels came into contact with the rails. Moreover, material had been laid on the compound in use between rail and concrete to build up its height in relation to the rails. A warning notice has also been placed on the central reservation.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_16">
+	    <num style="font-size:10pt">16.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">At the opening of the appeal, I expressed surprise that the judge had not adjudicated upon the common law claim against the Company. The judge had before him and considered evidence, including expert evidence and, on the basis of it, made many of those findings of fact, including scientific findings, necessary to the adjudication of a claim in negligence against whichever party was responsible for the relevant part of the highway. Having decided upon that course, I am unable (of course I have the considerable benefit of hindsight) to understand why the judge refused Mr Burrell&#8217;s application to proceed at the trial with the claimant&#8217;s common law claim. We cannot adjudicate upon that claim but I would add that, on the judge&#8217;s findings of fact, there appears to me to be a good arguable case, though evidence of foreseeability has not been considered. The combination of the differences in level between rail and concrete, the left-hand bend, the road markings then in place and the speed at which vehicles were likely to use the road provides evidence of hazardous conditions for drivers. While there has been considerable scientific study since the accident, it is strongly arguable that the state of knowledge at the time of the accident was such that the extent of the hazard was, or should have been, known to the Company. Moreover,  on the judge&#8217;s findings, I do not see a defence based on causation.</span></p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_4">
+	  <heading class="Heading"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">The issues on the statutes</span></heading>
+	  <paragraph eId="para_17">
+	    <num style="font-size:10pt">17.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">For whatever reason, the judge did not address the common law issues in relation to the Company. It is necessary to consider the judge&#8217;s finding that there was a breach of section 25 of the 1870 Act which, we are told by counsel, the judge regarded, with its reference to level, as the key to the case. Sections 25, 28, 29 and 55 of the 1870 Act are incorporated (as amended in the case of section 25) with and form part of the 1988 Act under which the tramway was constructed and operated.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_18">
+	    <num style="font-size:10pt">18.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">It is necessary to consider section 28 of the 1870 Act and, now that a limited permission to appeal has been granted to the claimant against the Council, <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41/1" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41(1)</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">the 1980 Act</ref>. Whether there is a breach of that section, if it applies to the relevant part of the highway, cannot be determined on the present state of the evidence. </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_19">
+	    <num style="font-size:10pt">19.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Section 15 of the 1988 Act also requires analysis. That was considered at the hearing on the basis of the submissions on behalf of the Council that it provided an additional reason for exculpating them, at the time of the accident, from responsibility for the relevant part of the highway.</span></p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_5">
+	  <heading class="Heading"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">Statutory provisions</span></heading>
+	  <paragraph eId="para_20">
+	    <num style="font-size:10pt">20.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Section 25 of the 1870 Act, as originally enacted, provided:</span></p>
+	      <block name="embeddedStructure"><embeddedStructure>
+		  <level>
+		    <content>
+		      <p class="Quote" style="margin-left:1in"><span style="font-size:10pt">&#8220;Every tramway which is hereafter authorised by special Act shall be constructed on such gauge as may prescribed by such special Act, and if no gauge is thereby prescribed, on such gauge as will admit of the use upon such tramways of carriages constructed for use upon railways of a gauge of four feet eight inches and a half an inch, and shall be laid and maintained in such manner that the uppermost surface of the rail shall be on a level with the surface of the road, and shall not be opened for public traffic until the same has been inspected and certified to be fit for such traffic, in the prescribed manner.&#8221;</span></p>
+		    </content>
+		  </level>
+		</embeddedStructure></block>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Section 4(2)(b) of the 1988 Act provides that: &#8220;<ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> shall have effect as if, for the words &#8216;the road&#8217;, there were substituted the words &#8216;the part of the road in which it is laid&#8217;.&#8221; The words &#8220;and shall not be opened&#8221; onwards have been repealed by section 65(1)(b), 68(1) and Schedule 4 to the <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42" uk:canonical="1992 c. 42" uk:origin="TNA" uk:type="legislation">Transport and Works Act 1992</ref> (&#8220;<ref href="http://www.legislation.gov.uk/id/ukpga/1992/42" uk:canonical="1992 c. 42" uk:origin="TNA" uk:type="legislation">the 1992 Act</ref>&#8221;). The rest of <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> and <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> are repealed by <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42" uk:canonical="1992 c. 42" uk:origin="TNA" uk:type="legislation">the 1992 Act</ref> but except as &#8220;incorporated in, or otherwise applied by any Act of Parliament &#8230; .&#8221;, so they remain in force as part of the 1988 Act. <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">Section 41</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42" uk:canonical="1992 c. 42" uk:origin="TNA" uk:type="legislation">the 1992 Act</ref> makes provision for regulations requiring the approval of the Secretary of State before new works, plant or equipment are first brought into use.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_21">
+	    <num style="font-size:10pt">21.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Sections 8(4) and 8(5) of the 1988 Act contemplate differences in level between the tramway and what adjoins it but only in circumstances where other traffic will not share the ground used by the tramway. Section 9(4) imposes an obligation on the tramway company, where the level of the carriageway is altered, to &#8220;alter their rails so that the uppermost surface thereof shall be on a level with the surface of the carriageway as altered&#8221;. The language of <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> of the 1870 Act is thus maintained.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_22">
+	    <num style="font-size:10pt">22.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt"><ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">Section 28</ref> provides:</span></p>
+	      <block name="embeddedStructure"><embeddedStructure>
+		  <level>
+		    <content>
+		      <p class="Quote" style="margin-left:1in"><span style="font-size:10pt">&#8220;The promoters shall, at their own expense, at all times maintain and keep in good condition and repair, with such materials and in such manner as the road authority shall direct, and to their satisfaction, so much of any road whereon any tramway belonging to them is laid and lies between the rails of the tramway and (where two tramways are laid by the same promoters in any road at a distance of not more than four feet from each other) the portion of the road between the tramways, and in every case so much of the road as extends eighteen inches beyond the rails of and on each side of any such tramway. If the promoters abandon their undertaking, or any part of the same, and take up any tramway or any part of any tramway belonging to them, they shall with all convenient speed, and in all cases within six weeks at the most (unless the road authority otherwise consents in writing), fill in the ground and make good the surface, and, to the satisfaction of the road authority, restore the portion of the road upon which such tramway was laid to as good a condition as that in which it was before such tramway was laid thereon, and clear away all surplus paving or metalling material or rubbish occasioned by such work; and they shall in the meantime cause the place where the road is opened or broken up to be fenced and watched, and to be properly lighted at night. Provided always, that if the promoters fail to comply with the provisions of this section, the road authority, if they think fit, may themselves at any time, after seven days notice to the promoters open and break up the road, and do the works necessary for the repair and maintenance or restoration of the road, to the extent in this section mentioned above, and the expense incurred by the road authority in so doing shall be repaid to them by the promoters.&#8221;</span></p>
+		    </content>
+		  </level>
+		</embeddedStructure></block>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_23">
+	    <num style="font-size:10pt">23.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Each party has underlined the fact that the statutory scheme makes no provision for the maintenance of the rails themselves and, we are told, subsequent regulations have not made provision either. This may be an anomaly, and in some circumstances a defect in the scheme, but it does not appear to me to affect the decisions to be made in this appeal.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_24">
+	    <num style="font-size:10pt">24.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Section 29 provides:</span></p>
+	      <block name="embeddedStructure"><embeddedStructure>
+		  <level>
+		    <content>
+		      <p class="Quote" style="margin-left:1in"><span style="font-size:10pt">&#8220;The road authority on the one hand and the promoters on the other hand may from time to time enter into and carry into effect, and from time to time alter, renew or vary, contracts, agreements, or arrangements with respect to the paving and keeping in repair of the whole or any portion of the roadway of any road on which the promoters shall lay any tramway, and the proportion to be paid by either of them of the expense of any such paving and keeping in repair.&#8221;</span></p>
+		    </content>
+		  </level>
+		</embeddedStructure></block>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_25">
+	    <num style="font-size:10pt">25.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Section 55 provides:</span></p>
+	      <block name="embeddedStructure"><embeddedStructure>
+		  <level>
+		    <content>
+		      <p class="Quote" style="margin-left:1in"><span style="font-size:10pt">&#8220;The promoters or lessees, as the case may be, shall be answerable for all accidents, damages and injuries happening through their act or default, or through the act or default of any person in their employment by reason or in consequence of any of their works or carriages, and shall save harmless all road and other authorities, companies, or bodies, collectively and individually, and their officers and servants, from all damages and costs in respect of such accidents, damages, and injuries.&#8221;</span></p>
+		    </content>
+		  </level>
+		</embeddedStructure></block>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_26">
+	    <num style="font-size:10pt">26.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Section 4(2)(a) of the 1988 Act provides that the expression &#8220;promoters&#8221; in the relevant sections of the 1870 Act means the Executive and section 2(1) provides that the Executive means the South Yorkshire Passenger Transport Executive (&#8220;the Executive&#8221;). The Company are the wholly owned subsidiaries of the Executive.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_27">
+	    <num style="font-size:10pt">27.</num>
+	    <intro>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Section 7(1) of the 1988 Act empowers the Executive to &#8220;make and maintain the works specified in Part I of Schedule 1&#8221; to <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42" uk:canonical="1992 c. 42" uk:origin="TNA" uk:type="legislation">the Act</ref>. Schedule 1, under the heading &#8220;Description of Works specifically authorised&#8221;, includes a long list of works which appears, as &#8220;Work No 15&#8221; &#8220;a railway 1115 metres in length ...&#8221; along Norton Avenue, giving particulars of the route to be followed.</span></p>
+	    </intro>
+	    <subparagraph>
+	      <content>
+		<p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Section 15 of the 1988 Act provides:</span></p>
+		<block name="embeddedStructure"><embeddedStructure>
+		    <level>
+		      <content>
+			<p class="Quote" style="margin-left:1in"><span style="font-size:10pt">&#8220;Any street, or portion thereof, made, diverted or altered under <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42" uk:canonical="1992 c. 42" uk:origin="TNA" uk:type="legislation">this Act</ref> shall, when completed, unless otherwise agreed, be maintained by and at the expense of the Executive for a period of 12 months from the completion thereof and at the expiration of that period shall be maintained by and at the expense of the highway authority.&#8221;</span></p>
+		      </content>
+		    </level>
+		  </embeddedStructure></block>
+	      </content>
+	    </subparagraph>
+	  </paragraph>
+	  <paragraph eId="para_28">
+	    <num style="font-size:10pt">28.</num>
+	    <intro>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt"><ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41/1" uk:canonical="" uk:origin="TNA" uk:type="legislation">Section 41(1)</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">the 1980 Act</ref> provides:</span></p>
+	      <block name="embeddedStructure"><embeddedStructure>
+		  <level>
+		    <content>
+		      <p class="Quote" style="margin-left:1in"><span style="font-size:10pt">&#8220;The authority who are for the time being the highway authority for a highway maintainable at the public expense are under a duty, subject to subsections (2) and (4) below, to maintain the highway.&#8221;</span></p>
+		    </content>
+		  </level>
+		</embeddedStructure></block>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Subsections (2) and (4) have no bearing on the present case.</span></p>
+	    </intro>
+	    <subparagraph>
+	      <content>
+		<p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt"><ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/58/1" uk:canonical="" uk:origin="TNA" uk:type="legislation">Sections 58(1)</ref> and (2) of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">the 1980 Act</ref> provide:</span></p>
+		<block name="embeddedStructure"><embeddedStructure>
+		    <level>
+		      <content>
+			<p class="BlockText" style="margin-left:1in"><span style="font-size:10pt">&#8220;(1).</span><marker name="tab"/><span style="font-size:10pt">In an action against a highway authority in respect of damage resulting from their failure to maintain a highway maintainable at the public expense it is a defence (without prejudice to any other defence or the application of the law relating to contributory negligence) to prove that the authority had taken such care as in all the circumstances was reasonably required to secure that the part of the highway to which the action relates was not dangerous for traffic.</span></p>
+		      </content>
+		    </level>
+		    <paragraph>
+		      <num style="font-size:10pt">(2)</num>
+		      <content>
+			<p class="BlockText" style="margin-left:1in;text-indent:0.5in"><span style="font-size:10pt">For the purposes of a defence under subsection (1) above, the court shall in particular have regard to the following matters:--</span></p>
+		      </content>
+		    </paragraph>
+		    <paragraph>
+		      <num style="font-size:10pt">(a)</num>
+		      <content>
+			<p style="text-align:justify;margin-left:1.5in;margin-right:0.58in"><span style="font-size:10pt">the character of the highway, and the traffic which was reasonably expected to use it;</span></p>
+		      </content>
+		    </paragraph>
+		    <paragraph>
+		      <num style="font-size:10pt;margin-left:1.5in;text-indent:-0.5in">(b)</num>
+		      <content>
+			<p style="text-align:justify;margin-left:1.5in;margin-right:0.58in"><span style="font-size:10pt">the standard of maintenance appropriate for a highway of that character and used by such traffic;</span></p>
+		      </content>
+		    </paragraph>
+		    <paragraph>
+		      <num style="font-size:10pt;margin-left:1.5in;text-indent:-0.5in">(c)</num>
+		      <content>
+			<p style="text-align:justify;margin-left:1.5in;margin-right:0.58in"><span style="font-size:10pt">the state of repair in which a reasonable person would have expected to find the highway;</span></p>
+		      </content>
+		    </paragraph>
+		    <paragraph>
+		      <num style="font-size:10pt;margin-left:1.5in;text-indent:-0.5in">(d)</num>
+		      <content>
+			<p style="text-align:justify;margin-left:1.5in;margin-right:0.58in"><span style="font-size:10pt">whether the highway authority knew, or could reasonably have been expected to know, that the condition of the part of the highway to which the action relates was likely to cause danger to users of the highway;</span></p>
+		      </content>
+		    </paragraph>
+		    <paragraph>
+		      <num style="font-size:10pt;margin-left:1.5in;text-indent:-0.5in">(e)</num>
+		      <content>
+			<p style="text-align:justify;margin-left:1.5in;margin-right:0.58in"><span style="font-size:10pt">where the highway authority could not reasonably have been expected to repair that part of the highway before the cause of action arose, that warning notices of its condition had been displayed;</span></p>
+		      </content>
+		    </paragraph>
+		    <level>
+		      <content>
+			<p class="Quote" style="margin-left:1in"><span style="font-size:10pt">but for the purposes of such a defence it is not relevant to prove that the highway authority had arranged for a competent person to carry out or supervise the maintenance of the part of the highway to which the action relates unless it is also proved that the authority had given him proper instructions with regard to the maintenance of the highway and that he had carried out the instructions.&#8221;</span></p>
+		      </content>
+		    </level>
+		  </embeddedStructure></block>
+	      </content>
+	    </subparagraph>
+	  </paragraph>
+	</level>
+	<level eId="lvl_6">
+	  <heading class="Heading"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">Actionability</span></heading>
+	  <paragraph eId="para_29">
+	    <num style="font-size:10pt">29.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The Company and the Secretary of State have been permitted to argue the point not argued before the judge that, neither <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> nor <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> of the 1870 Act create, in the context of <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42" uk:canonical="1992 c. 42" uk:origin="TNA" uk:type="legislation">the Act</ref>, a private law cause of action. The claimant, supported by the Council, contests that proposition. It was not taken at the trial because of the then perceived effect of the </span><span style="font-style:italic;font-size:10pt">Dublin United Tramways</span><span style="font-size:10pt"> case, to which reference will be made.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_30">
+	    <num style="font-size:10pt">30.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Mr Maxwell QC, for the Company, and Mr Sales, for the Secretary of State, rely on the test propounded by Lord Browne-Wilkinson in </span><span style="font-style:italic;font-size:10pt">X (Minors) v Bedfordshire County Council</span><span style="font-size:10pt"> <ref href="#" uk:canonical="[1995] 2 AC 633" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1995">[1995] 2 AC 633</ref> at 731D:</span></p>
+	      <block name="embeddedStructure"><embeddedStructure>
+		  <level>
+		    <content>
+		      <p class="Quote" style="margin-left:1in"><span style="font-size:10pt">&#8220;The principles applicable in determining whether such statutory cause of action exist are now well established, although the application of those principles in any particular case remains difficult. The basic proposition is that in the ordinary case a breach of statutory duty does not, by itself, give rise to any private law cause of action. However a private law cause of action will arise if it can be shown, as a matter of construction of the statute, that the statutory duty was imposed for the protection of a limited class of the public and that Parliament intended to confer on members of that class a private right of action for breach of the duty. There is no general rule by reference to which it can be decided whether a statute does create such a right of action but there are a number of indicators. If the statute provides no other remedy for its breach and the Parliamentary intention to protect a limited class is shown, that indicates that there may be a private right of action since otherwise there is no method of securing the protection the statute was intended to confer. If the statute does provide some other means of enforcing the duty that will normally indicate that the statutory right was intended to be enforceable by those means and not by private right of action: </span><span style="font-style:italic;font-size:10pt">Cutler v Wandsworth Stadium Ltd</span><span style="font-size:10pt"> <ref href="#" uk:canonical="[1949] AC 398" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1949">[1949] AC 398</ref>; </span><span style="font-style:italic;font-size:10pt">Lonrho Ltd v Shell Petroleum Co Ltd (No 2) </span><span style="font-size:10pt"><ref href="#" uk:canonical="[1982] AC 173" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1982">[1982] AC 173</ref>. However the mere existence of some other statutory remedy is not necessarily decisive. It is still possible to show that on the true construction of the statute the protected class was intended by Parliament to have a private remedy. Thus the specific duties imposed on employers in relation to factory premises are enforceable by an action for damages, notwithstanding the imposition by the statutes of criminal penalties for any breach: see </span><span style="font-style:italic;font-size:10pt">Groves v Wimborne (Lord)</span><span style="font-size:10pt"> <ref href="#" uk:canonical="[1898] 2 QB 402" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1898">[1898] 2 QB 402</ref>.&#8221;</span></p>
+		    </content>
+		  </level>
+		</embeddedStructure></block>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_31">
+	    <num style="font-size:10pt">31.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Lord Browne-Wilkinson stated that no case had been cited &#8220;where it had been held that statutory provisions establishing a regulatory system or a scheme of social welfare for the benefit of the public at large had been held to give rise to a private right of action for damages for breach of statutory duty&#8221;. Lord Browne-Wilkinson added:</span></p>
+	      <block name="embeddedStructure"><embeddedStructure>
+		  <level>
+		    <content>
+		      <p class="Quote" style="margin-left:1in"><span style="font-size:10pt">&#8220;The cases where a private right of action for breach of statutory duty have been held to arise are all cases in which the statutory duty has been very limited and specific as opposed to general administrative functions imposed on public bodies and involving the exercise of administrative decisions.&#8221;</span></p>
+		    </content>
+		  </level>
+		</embeddedStructure></block>
+	      <p class="Heading1" style="margin-left:0.5in;text-indent:-0.5in"><marker name="tab"/><span style="font-style:italic;font-size:10pt">Groves </span><span style="font-size:10pt">was cited in </span><span style="font-style:italic;font-size:10pt">X (Minors) </span><span style="font-size:10pt">and the statement of Vaughan Williams LJ, at p 415, merits re-statement in the present context:</span></p>
+	      <block name="embeddedStructure"><embeddedStructure>
+		  <level>
+		    <content>
+		      <p class="Quote" style="margin-left:1in"><span style="font-size:10pt">&#8220;It cannot be doubted that where a statute provides for the performance by certain persons of a particular duty, and someone belonging to a class of  persons for whose benefit and protection the statute imposes the duty is injured by failure to perform it, prima facie and if there be nothing to the contrary, an action by the person so injured will lie against the person who has so failed to perform the duty.&#8221;</span></p>
+		    </content>
+		  </level>
+		</embeddedStructure></block>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_32">
+	    <num style="font-size:10pt">32.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Mr Sales refers to the pre-1870 tramways introduced in London and elsewhere by Mr George Train. The rails he used were described as step rails because they incorporated a step three-quarters of an inch high. The adjacent surfaces of the road were broadly level with the upper and lower sections of the rail respectively leaving a step of three-quarters of an inch.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_33">
+	    <num style="font-size:10pt">33.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">In </span><span style="font-style:italic;font-size:10pt">R v Train and others</span><span style="font-size:10pt"> [1862] 3 F &amp; F 22, Erle CJ stated:</span></p>
+	      <block name="embeddedStructure"><embeddedStructure>
+		  <level>
+		    <content>
+		      <p class="Quote" style="margin-left:1in"><span style="font-size:10pt">&#8220;I am bound to administer the law according to the legal rights of the public as they now exist, and which are thus aptly defined in the language of pleading &#8211; to pass and repass, on foot and with horses and carriages, at their free will and pleasure, over the said highway, ie over every part of it at their free will and pleasure. Every obstruction which, to a substantial degree, renders the exercise of that right unsafe or inconvenient, is a violation of that right. And I think the authority of parliament is necessary to legalize such a dealing with the highway, as deprives any class of passengers, whether on foot or with horses and carriages, of the use of any part of it.&#8221;</span></p>
+		    </content>
+		  </level>
+		</embeddedStructure></block>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Mr Train was found guilty of causing a public nuisance and the conviction was upheld on appeal. It is also clear from Mr Sales' researches that it was in an attempt to regularise and regulate the operation of tramways that the 1870 Act was passed. Grooved rails rather than step rails were contemplated by <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42" uk:canonical="1992 c. 42" uk:origin="TNA" uk:type="legislation">the Act</ref>.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_34">
+	    <num style="font-size:10pt">34.</num>
+	    <intro>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Mr Maxwell and Mr Sales submit: </span></p>
+	    </intro>
+	    <subparagraph>
+	      <num style="font-size:10pt">(a)</num>
+	      <content>
+		<p class="Heading3" style="margin-left:1.5in"><span style="font-size:10pt">In the absence of clear language creating a cause of action, the more natural inference is that no cause of action was intended and that, subject to the authority granted by the statute, the common law standard would apply.</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-size:10pt">(b)</num>
+	      <content>
+		<p class="Heading5" style="margin-left:1.5in"><span style="font-size:10pt"><ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">Sections 25</ref> and 28 were enacted for the protection of the general public and not for the protection for a limited class of the public.</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-size:10pt">(c)</num>
+	      <content>
+		<p class="Heading5" style="margin-left:1.5in"><span style="font-size:10pt">The 1870 Act was passed to provide tramway companies with authority to install tramways without being subjected to nuisance claims. They would still be liable at common law for negligent installation or maintenance.</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-size:10pt">(d)</num>
+	      <content>
+		<p class="Heading5" style="margin-left:1.5in"><span style="font-size:10pt">Another remedy is available in that <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">sections 25</ref> and 28 impose a mandatory duty which may be enforced by injunction.</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-size:10pt;margin-left:1.5in;text-indent:-0.56in">(e)</num>
+	      <content>
+		<p class="Heading5" style="margin-left:1.5in"><span style="font-size:10pt">       Subject to consideration of the meaning of the word &#8220;level&#8221;, the strictness of the obligation contemplated in <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> indicates that Parliament did not intend to create a private cause of action.</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-size:10pt;margin-left:1.5in;text-indent:-0.56in">(f)</num>
+	      <content>
+		<p class="Heading5" style="margin-left:1.5in"><span style="font-size:10pt">      As originally enacted, <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> provided a mechanism to ensure compliance for inspection and certification prior to opening for public traffic, and a similar requirement is provided by <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42" uk:canonical="1992 c. 42" uk:origin="TNA" uk:type="legislation">the 1992 Act</ref>.</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-size:10pt">(g)</num>
+	      <content>
+		<p class="Heading5" style="margin-left:1.5in"><span style="font-size:10pt">As to <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref>, it is submitted that the section has its own mechanism for enforcement by the provision that the relevant portion of the road shall be maintained &#8220;in such manner as the road authority shall direct, and to their satisfaction&#8221;. It is not suggested that the making of such a direction is a prerequisite to such duty, as may exist on the company, arising (</span><span style="font-style:italic;font-size:10pt">Browne v de Luxe Car Services</span><span style="font-size:10pt"> <ref href="#" uk:canonical="[1941] 1 KB 549" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1941">[1941] 1 KB 549</ref>).</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-size:10pt;margin-left:1.5in;text-indent:-0.56in">(h)</num>
+	      <content>
+		<p class="Heading5" style="margin-left:1.5in"><span style="font-size:10pt">       In some of the reported cases, the claim was put in negligence and not for breach of statutory duty (for example, </span><span style="font-style:italic;font-size:10pt">Elkins v North Metropolitan Tramway Company</span><span style="font-size:10pt"> (1889) 24 LJ 649).</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-size:10pt;margin-left:1.5in;text-indent:-0.56in">(i)</num>
+	      <content>
+		<p class="Heading5" style="margin-left:1.5in"><span style="font-size:10pt">         To create a private law cause of action for maintenance would have been anomalous in 1870 because the obligation of the highway authority did not extend to non-feasance and is anomalous in the light of the 1961 Act because no equivalent to the highway authority&#8217;s defence under <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/58" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 58</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">the 1980 Act</ref> is available to the company, notwithstanding the enactment of the 1988 Act which could readily have provided it.</span></p>
+	      </content>
+	    </subparagraph>
+	  </paragraph>
+	  <paragraph eId="para_35">
+	    <num style="font-size:10pt">35.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-style:italic;font-size:10pt">Dublin United Tramways Co Ltd v Martin Fitzgerald</span><span style="font-size:10pt"> <ref href="#" uk:canonical="[1903] AC 99" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1903">[1903] AC 99</ref> was decided under <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> of the 1870 Act. Stone setts or paving between the rails of a tramway in Grafton Street, Dublin, had become slippery owing to the grit or roughness of setts being worn away. In that state, the paving between the rails was dangerous and a nuisance. It was held that the tramway company were negligent in the omission of sanding and as a result were negligent in the maintenance of the pavement.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_36">
+	    <num style="font-size:10pt">36.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">In the Irish Court of Appeal (The New Irish Jurist and Local Government Review 1902 Vol 2, p 71), it was argued that the injuries complained of by the plaintiff could not be made the subject of an action by an individual for damages. FitzGibbon LJ, with whom Walker and Holmes LJJ agreed, held that: &#8220;So long as the company confines itself to its statutory right of user, and performs the statutory obligation of maintenance, it cannot become liable, but if it fails to perform its statutory duties and danger to the public is directly caused thereby, any individual member of the public, suffering an injury caused by the defendants default, can recover damages&#8221;. Later in his judgment FitzGibbon LJ stated: &#8220;The power conferred on the road authority and the penalty provided for by the section are only collateral methods of enforcing the performance of the duty, and cannot prejudice the right of an individual to compensation&#8221;.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_37">
+	    <num style="font-size:10pt">37.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">In the House of Lords, the appeal turned upon the extent of the duty under <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> and whether the tramway company had performed the duty. The finding of the Irish Court of Appeal that there was a private cause of action was not challenged. The appeal was dismissed, the Earl of Halsbury LC stating that the company were under an obligation both to repair and maintain the relevant portion of the highway. It was &#8220;to keep that portion of the highway in a fit and proper condition for public traffic&#8221;. Mr Sales submits that what Lord Halsbury was addressing was the underlying cause of action at common law.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_38">
+	    <num style="font-size:10pt">38.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Whilst actionability was not argued before their Lordships, the manner in which Lord Halsbury expressed the nature of the duty supports the submission that he concurred with the view that there was a private cause of action. Having expressed the opinion that the judgment of the Court of Appeal was &#8220;perfectly right&#8221;, he stated:</span></p>
+	      <block name="embeddedStructure"><embeddedStructure>
+		  <level>
+		    <content>
+		      <p class="Quote" style="margin-left:1in"><span style="font-size:10pt">&#8220;The tramway company has been permitted to use a public highway subject to certain obligations, which practically means that while they are permitted to use the public highway they shall take care that the safety and convenience of the public shall be preserved. The obligation is cast upon them to keep the highway in a safe and fit condition for public traffic; they are not to have a monopoly of the highway; passengers, horse and foot, are to be allowed to cross these tramways as freely as they were before, except where they will be intercepting or interfering with the use of the tramway as such.&#8221;</span></p>
+		    </content>
+		  </level>
+		</embeddedStructure></block>
+	      <p class="Heading1" style="text-indent:0.5in"><span style="font-size:10pt">Lord Halsbury concluded his judgment by stating:</span></p>
+	      <block name="embeddedStructure"><embeddedStructure>
+		  <level>
+		    <content>
+		      <p class="Quote" style="margin-left:1in"><span style="font-size:10pt">&#8220;the Legislature intended, in giving these special rights to a private company to take part of the highway for their tramway, that they should do that which an ordinary highway authority would be bound to do, namely, to keep it in a fit and proper condition for public traffic. That they have neglected to do, and the accident resulted. I think, therefore, that they are obviously responsible in damages for the neglect of the duty which the jury have found they did neglect.&#8221;</span></p>
+		    </content>
+		  </level>
+		</embeddedStructure></block>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_39">
+	    <num style="font-size:10pt">39.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">In reasoning the matter in that way, Lord Halsbury would not have overlooked the existence of the rule (</span><span style="font-style:italic;font-size:10pt">Russell v Men of Devon</span><span style="font-size:10pt"> (1788) 2 Term Rep 667) that no action lies against a highway authority by a person injured by its being out of repair. Lord Halsbury was party to the decision in </span><span style="font-style:italic;font-size:10pt">Cowley v Newmarket Local Board </span><span style="font-size:10pt"><ref href="#" uk:canonical="[1892] AC 345" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1892">[1892] AC 345</ref> where the existence of the rule was reaffirmed and it remained in existence until its abrogation in section 1(1) of the 1961 Act. Actions for misfeasance by a highway authority were, however, available and in those passages in his speech, Lord Halsbury was in my view likening the position of a claimant against a tramway company to that against a highway authority, but unencumbered by the common law exemption from liability for non-repair. The reasoning suggests a positive view, rather than a mere assumption, that the 1870 Act created a private cause of action. No hint of doubt as to the existence of such a cause of action appears in the concurring speeches in </span><span style="font-style:italic;font-size:10pt">Dublin United Tramways</span><span style="font-size:10pt">. There is no reference in the speeches to <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/55" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 55</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42" uk:canonical="1992 c. 42" uk:origin="TNA" uk:type="legislation">the Act</ref>.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_40">
+	    <num style="font-size:10pt">40.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The judge considered the relevance of <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/55" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 55</ref>. Mr Burrell submits that the section is present to provide an injured road user with a cause of action under the statute and that the expression &#8220;act or default&#8221; includes a breach of the statutory duties. Mr Maxwell and Mr Sales submit that the first part of the section does no more than state the obvious in confirming the existence of common law remedies (e.g. </span><span style="font-style:italic;font-size:10pt">Brocklehurst v Manchester, Bury, Rochdale and Oldham Steam Tramways No </span><span style="font-size:10pt">(1886) <ref href="#" uk:canonical="17 QBD 118" uk:isNeutral="false" uk:origin="TNA" uk:type="case">17 QBD 118</ref> per Denman J at 120). The expression &#8220;act or default&#8221; is appropriate for that purpose. Provision for vicarious liability indicates that the section contemplates common law liability. The second part of the section merely allocates responsibility. The section deals with procedures and consequences.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_41">
+	    <num style="font-size:10pt">41.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">I consider that the inclusion of <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/55" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 55</ref> is capable of explanation on the basis advocated by the Company and the Secretary of State. While confirming the existence of common law remedies, however, it does nothing to cast doubt on the creation of such a cause of action by other provisions of the statute itself.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_42">
+	    <num style="font-size:10pt">42.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Mr Jeffreys QC, for the Council, refers to section 27 of the 1870 Act which provided for the completion of works and reinstatement of the road. It is not a part of the 1988 Act. Unlike <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">sections 25</ref> and 28, it provided a penalty for non-compliance. That is stated to be &#8220;without prejudice to &#8230; any other remedy against them&#8221;. A private cause of action arising from the statute was contemplated, he submits. I do not find that reference decisive.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_43">
+	    <num style="font-size:10pt">43.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">In </span><span style="font-style:italic;font-size:10pt">Simon v Islington Borough Council</span><span style="font-size:10pt"> <ref href="#" uk:canonical="[1943] KB 188" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1943">[1943] KB 188</ref> a cyclist was killed because of the dangerous condition of an abandoned tramway. A rail and the adjoining stone setts were not level with each other. The London Passenger Transport Board had given the highway authority the notice required by statute to the highway authority of their proposal to abandon a tramway. The highway authority gave a statutory counter-notice stating that they proposed themselves to take up, remove and dispose of the tramway equipment and to make good the surface of the highway but they failed to do so. Giving the judgment of this Court, Scott LJ sitting with MacKinnon and Goddard LJJ held that the highway authority were liable for the accident. In analysing the legal position, the Court referred to the duty of the tramway undertaking under <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> and <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> of the 1870 Act and held that, as long as the Board remained in occupation of the tramway equipment, they remained under those duties. In those circumstances, the principle that a highway authority was not liable for non-feasance was wholly irrelevant and the highway authority stood in the shoes of the Board for the sole purpose of removing the Board&#8217;s &#8220;cast off superfluities&#8221; (p 197). As to the position of the plaintiff, the Court stated:</span></p>
+	      <block name="embeddedStructure"><embeddedStructure>
+		  <level>
+		    <content>
+		      <p class="Quote" style="margin-left:1in"><span style="font-size:10pt">&#8220;A breach of that duty causing injury to a person lawfully on the highway was actionable as &#8216;statutory negligence&#8217; the phrase used by Lord Wright in </span><span style="font-style:italic;font-size:10pt">Lochgelly Iron and Coal Co Ltd v M&#8217;Mullan </span><span style="font-size:10pt"><ref href="#" uk:canonical="[1934] AC 1" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1934">[1934] AC 1</ref>, 23</span><span style="font-style:italic;font-size:10pt">, </span><span style="font-size:10pt">and it entitled a person injured thereby to recover damages from the tramway company: see <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/55" uk:canonical="" uk:origin="TNA" uk:type="legislation">s 55</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42" uk:canonical="1992 c. 42" uk:origin="TNA" uk:type="legislation">the Act</ref> 1870, and compare</span><span style="font-style:italic;font-size:10pt"> Dublin United Tramways Co Ltd v Fitzgerald</span><span style="font-size:10pt"> <ref href="#" uk:canonical="[1903] AC 99" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1903">[1903] AC 99</ref>. Alternatively, an action lay in respect of a dangerous condition of the tramway in the public road, causing damage to an individual, for nuisance at common law against the tramway company as owners and occupiers of the plant which gave rise to the nuisance. Even without <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/55" uk:canonical="" uk:origin="TNA" uk:type="legislation">s 55</ref> we think the position would have been the same.&#8221;</span></p>
+		    </content>
+		  </level>
+		</embeddedStructure></block>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_44">
+	    <num style="font-size:10pt">44.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The case was argued on the question of non-feasance which was held to be wholly irrelevant. The duties which arose under the 1870 Act were unencumbered by that consideration. </span><span style="font-style:italic;font-size:10pt">Simon</span><span style="font-size:10pt"> provides further authority for the existence of a private cause of action, though I would respectfully question whether <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/55" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 55</ref> is decisive of the issue. The existence of a private law cause of action arising from <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> also appears to have been assumed in </span><span style="font-style:italic;font-size:10pt">Browne</span><span style="font-size:10pt">.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_45">
+	    <num style="font-size:10pt">45.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The question has arisen as to whether the Court is bound by the </span><span style="font-style:italic;font-size:10pt">Dublin United Tramways </span><span style="font-size:10pt">case. In Halsbury&#8217;s Laws of England (Vol 37, para 1250) it is stated, by reference to authority, that on questions of principle it is desirable that the laws of England and Scotland should be uniform and that a decision of the House of Lords, when founded on principle and not on authority, should be regarded as applicable to both countries, unless the House itself says otherwise. That principle would apply equally to Ireland with respect to a case decided during the then existing Union. While the actionability issue was not, it appears, in issue in </span><span style="font-style:italic;font-size:10pt">Dublin</span><span style="font-size:10pt"> in the House of Lords, I regard the decision as highly persuasive in the circumstances. The assumption was not blindly made; it was accompanied by reasoning which justified the conclusion. The then existing rule in </span><span style="font-style:italic;font-size:10pt">Russell</span><span style="font-size:10pt"> does not support the contrary argument.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_46">
+	    <num style="font-size:10pt">46.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-style:italic;font-size:10pt">Goodes v East Sussex County Council </span><span style="font-size:10pt"><ref href="#" uk:canonical="[2000] 1 WLR 1356" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="2000">[2000] 1 WLR 1356</ref> was concerned with whether a highway authority&#8217;s duty &#8220;to maintain the highway&#8221; (<ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41/1" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41(1)</ref> <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">Highways Act 1980</ref>) included a duty to prevent the formation of ice or remove the accumulation of snow on the road. In that context Lord Hoffman, at page 1363B, considered the scope of the duty before the <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25" uk:canonical="1959 (7 &amp; 8 Eliz. 2) c. 25" uk:origin="TNA" uk:type="legislation">Highways Act 1959</ref> transferred the existing duty to the highway authorities constituted by <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25" uk:canonical="1959 (7 &amp; 8 Eliz. 2) c. 25" uk:origin="TNA" uk:type="legislation">that Act</ref>. Lord Hoffman referred to the 1870 Act as an example of a situation in which &#8220;a special statutory duty to maintain the highway did, exceptionally, create a private cause of action&#8221;. While describing </span><span style="font-style:italic;font-size:10pt">Dublin United Tramways</span><span style="font-size:10pt">, Lord Hoffman noted that &#8220;when the case came before the House of Lords, there seems to have been no dispute that the statute created a private right of action&#8221;. Lord Hoffman expressed no reservation about the principle stated, however, and I would not, with respect, have expected him to refer to &#8220;the tramway cases&#8221; in the way he did if he had such a reservation. </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_47">
+	    <num style="font-size:10pt">47.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Lord Hoffman also found &#8220;completely convincing&#8221; Lord Denning MR&#8217;s analysis in </span><span style="font-style:italic;font-size:10pt">Haydon v Kent County Council</span><span style="font-size:10pt"> <ref href="#" uk:canonical="[1978] QB 343" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1978">[1978] QB 343</ref> of the highway authority&#8217;s duty. The previous exemption was only for non-repair. In </span><span style="font-style:italic;font-size:10pt">Meggs v Liverpool Corporation </span><span style="font-size:10pt"><ref href="#" uk:canonical="[1968] 1 All ER 1137" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1968">[1968] 1 All ER 1137</ref>, Lord Denning MR stated the pre-1961 position succinctly: &#8220;A highway authority were not liable for the bad state of the highway if it was due to non-feasance, that is not doing any repairs. A highway authority were only liable for misfeasance that is, doing things badly&#8221;. </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_48">
+	    <num style="font-size:10pt">48.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The 1870 Act is to be construed in the context of an interference with the highway as explained by Lord Halsbury in </span><span style="font-style:italic;font-size:10pt">Dublin United Tramways</span><span style="font-size:10pt">. The insertion of the tramway on the highway is a positive act quite different from non-repair. In 1870, there was a private cause of action against the ordinary highway authority in relation to the condition of a highway, though only for misfeasance and not for nonfeasance. </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_49">
+	    <num style="font-size:10pt">49.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">It is in my judgment likely that, having authorised an interference with the highway, Parliament intended to create a private cause of action where the duties imposed on the tramway company in the statute conferring the right are breached. The situation is much more akin to the statutes imposing duties on employers than to the schemes of social welfare considered in cases such as </span><span style="font-style:italic;font-size:10pt">X (Minors)</span><span style="font-size:10pt">. The duty is limited to the physical construction and maintenance of works and is quite specific. As to the alleged, though in context somewhat nebulous, requirement for a limited class, road users will be very numerous but are in my judgment sufficiently a class for present purposes. In </span><span style="font-style:italic;font-size:10pt">Phillips v Britannia Hygienic Laundry Co </span><span style="font-size:10pt"><ref href="#" uk:canonical="[1923] 2 KB 832" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1923">[1923] 2 KB 832</ref>, Atkin LJ considered that &#8220;one who cannot be otherwise specified than as a person using the highway&#8221; met the requirement. He could bring himself within the benefit of <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25" uk:canonical="1959 (7 &amp; 8 Eliz. 2) c. 25" uk:origin="TNA" uk:type="legislation">the Act</ref>. The road user&#8217;s position is in the circumstances very different from the beneficiaries of welfare legislation contemplated by Lord Browne-Wilkinson in </span><span style="font-style:italic;font-size:10pt">X (Minors)</span><span style="font-size:10pt">. Moreover, notwithstanding the provision in <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> for intervention by certifiers and by the road authority, there is no method of securing the protection the statute was intended to confer upon road users. </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_50">
+	    <num style="font-size:10pt">50.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">A private law cause of action does arise from both <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> and <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> of the 1870 Act, for the reasons I have given. The arguments to the contrary have somewhat greater force under <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> for the reasons advanced by the Company and the Secretary of State, including the potential stringency of the duty imposed by <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref>. The two sections are intended to operate together, however, and I consider it highly unlikely that Parliament intended to create a cause of action with respect to one and not the other.</span></p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_7">
+	  <heading class="Heading"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">Section 25 of the 1870 Act</span></heading>
+	  <paragraph eId="para_51">
+	    <num style="font-size:10pt">51.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The judge found that <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> created an absolute obligation. While accepting, on the evidence, that the company were unlikely to achieve compliance with the section, he held that the obligation could not be modified so as to match practical expectation. Liability must flow from the section&#8217;s absolute terms if a breach of them causes or materially contributes to an accident. The Company are in effect insurers. The words &#8220;so far as is reasonably practicable&#8221; cannot be read into the section. The judge held that a breach of the duty in the section, arising from the differences in level identified by PC Bashforth (set out at paragraph 11 of this judgment), had occurred. It is not suggested that the amendments to <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> effected in the 1988 and 1992 Acts (paragraph 20 of this judgment) have any bearing upon its construction for present purposes.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_52">
+	    <num style="font-size:10pt">52.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Arguments in this Court range from the submission that the expression &#8220;on a level with&#8221; in <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> meant no more than the &#8220;same general level&#8221; contemplated by the expression &#8220;level crossing&#8221; to the submission that &#8220;level&#8221; meant &#8220;absolutely level&#8221; or &#8220;flush&#8221;. For the Company and the Secretary of State, it is submitted that if Parliament intended to impose a duty to maintain the rails precisely on a level with the adjacent road surface it would have done so in clear terms. The expert witnesses agreed that the achievement of such precision is impossible, though they disagreed (the dispute was not resolved)  about the extent of accuracy which was reasonably practicable. The Court should not construe the word &#8220;level&#8221; as meaning something impossible to achieve in practical terms. Physical phenomena including the fact that the upper surface of a rail is &#8220;domed&#8221;, differential rates of wear as between different materials, differential rates of expansion with changes of temperature, and the presence of water, require that some degree of tolerance with respect to levels must be allowed. Reference is made to the use of the expression &#8220;substantial degree&#8221; by Erle CJ in </span><span style="font-style:italic;font-size:10pt">Train</span><span style="font-size:10pt">. A road surface will almost always be irregular, even today and certainly in 1870, and a flush interface between a rigid rail and such a surface cannot have been contemplated. </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_53">
+	    <num style="font-size:10pt">53.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The submission of the Secretary of State is that the word level should be construed as meaning &#8220;flush subject to such tolerances as are reasonably necessary having regard to current technology&#8221;. The Company submit that the duty has to be performed within the bounds of what is possible, the achievable limits being determined by reference to expert evidence. In written submissions it had been submitted that &#8220;on a level with&#8221; meant &#8220;generally and overall on the same level as&#8221;, without involving precise measurements, and by the Secretary of State, &#8220;reasonably level with the road surface as a whole&#8221;.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_54">
+	    <num style="font-size:10pt">54.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">For the claimant, it is submitted that the expression &#8220;on a level with&#8221; imposes an absolute duty and there should have been a seamless transition between rail and road. Nothing in the section suggests otherwise. The 6 mm tolerance claimed to be necessary was not acceptable when the evidence was that a 2 mm difference created a danger. Issues as to differential rates of wear and similar factors are in any event irrelevant in the absence of findings of fact. If any tolerance was to be permitted, the extent of it should be governed by considerations of risk created by the difference and not by considerations of practicability. This was safety legislation which should not be interpreted by reference to cost and technical feasibility. </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_55">
+	    <num style="font-size:10pt">55.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The differences in level, of which there was evidence in this case of up to 10 mm, are small when compared with differences normally required to establish liability in, for example tripping cases. When the 1870 Act became law, following the Train tramways, obstructions on the highway were the main mischief against which protection was required. The hazard which arose in this case was of a different nature and one which could not have arisen in 1870. It arises from the non-adhesion between rubber tyres travelling at speed and metal rails. That caused or contributed to the loss of control in this case. The evidence was that the loss of adhesion can be caused by an extremely small difference in level between rail and road surface.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_56">
+	    <num style="font-size:10pt">56.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">I see difficulties in the &#8220;risk&#8221; test. It is readily applied when a word such as &#8220;maintain&#8221; is used, as in <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref>, or <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">the 1980 Act</ref>, or when a word such as &#8220;danger&#8221; is used. Such words permit a test by reference to standards of safety and amount of risk. A word such as &#8220;level&#8221; does not lend itself to that approach; it is a word denoting a physical state of affairs and not one obviously related to safety standards.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_57">
+	    <num style="font-size:10pt">57.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Treating the issue, as I do, simply as one of statutory interpretation, some tolerance was, in my judgment, intended by Parliament to be incorporated into the expression &#8220;on a level with the surface of the road&#8221;. <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">Section 25</ref> provides for a gauge, a method of construction and maintenance and for inspection and certification. It provides for a gauge in a manner which clearly contemplates a tolerance, that is, such gauge as will &#8220;admit of the use&#8221; of certain carriages. Methods of construction in 1870 would have required and hazards in contemplation would have permitted a modest tolerance with respect to level. The expression is not one obviously to be read as requiring that the two surfaces be absolutely flush. In the circumstances of this case, I do not consider that a difference of level of 2 millimetres necessarily constitutes a breach of the section even if, given current speeds and materials, such a difference may present a risk of injury. Some tolerance is permitted and it may be considered in relation to technical feasibility as well as to the risk of injury. In the absence of further findings by the judge, it is not possible to decide whether there was a breach of duty under the section.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_58">
+	    <num style="font-size:10pt">58.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">I consider it most unlikely that a claimant will be unfairly prejudiced by this view of <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref>. Under <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref>, as I propose to construe it, the standard of maintenance is to be measured by considerations of safety. Difference of level, as well as other circumstances, will be taken into account. In my judgment the judge was wrong to find a breach of <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> on the basis of what he described as its &#8220;absolute nature&#8221;.</span></p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_8">
+	  <heading class="Heading1"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">Section 28 of the 1870 Act</span></heading>
+	  <paragraph eId="para_59">
+	    <num style="font-size:10pt">59.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt"><ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">Section 28</ref>, on its face, relates to the &#8220;road&#8221; between the rails and for 18 inches on each side and not to the rails themselves. The expression &#8220;<ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> road&#8221; has been used to define that part of the highway. The <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> duty includes, but is broader than, a consideration of the relative level of the rail and the road.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_60">
+	    <num style="font-size:10pt">60.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The judge dealt with the claim under <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> briefly, and incompletely. He referred to the submissions of the parties. While he did not say so in terms, he appears to have rejected the submissions of the Company, save as to the issue of foreseeability. The judge stated that the Company &#8220;must have the opportunity to address the question of reasonable foresight of injury to the claimant as a road user, if necessary with the aid of evidence&#8221;. The judge did not in terms deal with the scope of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> and I do not know what his view was. That became less surprising when Mr Maxwell explained to the Court the manner in which the case had been argued. The emphasis, with the encouragement of the judge already noted, was upon <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> and upon levels. Mr Maxwell argued that if the higher level of the rail in relation to the road did not involve a breach of <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref>, the correspondingly lower level of the road in relation to the rail did not involve a breach of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref>. The case was argued, we are told, on the basis of heights and Mr Maxwell&#8217;s submissions were rejected. In that context, the judge did not find it necessary to make findings on the broader issues which arise from <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref>.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_61">
+	    <num style="font-size:10pt">61.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">In my judgment the expression &#8220;maintain and keep in good condition and repair&#8221;, in <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref>, by the use of the word &#8220;maintain&#8221; involves the same duty as that imposed on a highway authority by <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">the 1980 Act</ref>. It is an absolute duty in the same way that <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> imposes an absolute duty on the highway authority. Perfection is not, however, required. In </span><span style="font-style:italic;font-size:10pt">Rider v Rider</span><span style="font-size:10pt"> <ref href="#" uk:canonical="[1973] QB 505" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1973">[1973] QB 505</ref> Sachs LJ stated, at p 515B, that &#8220;mere unevenness, undulations and minor potholes do not normally constitute a danger &#8230; [in <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> terms]&#8221; and Lawton LJ, at p 518B, used similar language. That duty was expressed in </span><span style="font-style:italic;font-size:10pt">Goodes</span><span style="font-size:10pt"> by Lord Clyde at p 1368H, a passage cited by the learned judge:</span></p>
+	      <block name="embeddedStructure"><embeddedStructure>
+		  <level>
+		    <content>
+		      <p class="Quote" style="margin-left:1in"><span style="font-size:10pt">&#8220;The standard of maintenance is to be measured by considerations of safety. The obligation is to maintain the road so that it is safe for the passage of those entitled to use it. But the question still remains as to precisely what is the scope of that maintenance. It certainly requires the highway to be kept in a structurally sound condition &#8230; . </span></p>
+		    </content>
+		  </level>
+		  <level>
+		    <content>
+		      <p class="Quote" style="margin-left:1in"><span style="font-size:10pt">The matter is one of construction of the statutory language. I have come to the conclusion that the narrower construction [which excludes the removal of ice or snow] is to be preferred. The obligation relates to the physical or structural condition of the highway. To use the words of Diplock LJ in </span><span style="font-style:italic;font-size:10pt">Burnside v Emerson</span><span style="font-size:10pt"> <ref href="#" uk:canonical="[1968] 1 WLR 1490" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1968">[1968] 1 WLR 1490</ref>, 1496-1497 in a passage quoted by Lord Denning MR in </span><span style="font-style:italic;font-size:10pt">Haydon v Kent County Council</span><span style="font-size:10pt"> <ref href="#" uk:canonical="[1978] QB 343" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1978">[1978] QB 343</ref>, 357 the obligation is to keep the highway: &#8216;in such good repair as renders it reasonably passable for the ordinary traffic of the neighbourhood at all seasons of the year without danger caused by its physical condition.&#8217;.&#8221; </span></p>
+		    </content>
+		  </level>
+		</embeddedStructure></block>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">In the case of a highway authority, but not the Company, the special defence provided by <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/58" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 58</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">the 1980 Act</ref> can be relied on. </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_62">
+	    <num style="font-size:10pt">62.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">As in the case of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref>, the standard of maintenance under <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> is to be measured by considerations of safety. That involves not only a consideration of the level of the pavement in relation to the rails but other considerations (such as those which arose in this case) which affect the safety of vehicles being driven on the surface. The word &#8220;maintain&#8221; permits that approach in a way the word &#8220;level&#8221; does not.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_63">
+	    <num style="font-size:10pt">63.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">I see no merit in the Company&#8217;s claim that breaches of duties owed under <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">sections 25</ref> and 28 to the claimant cannot arise because of the newness of the tramway and the fact that it had been approved for use. It is submitted that, on the day of the accident, the road was in the same state as that in which it had been constructed and handed over. That may be so but it does not provide a defence. Responsibilities under those sections for the condition of the tramway rested, on the day of the accident, on the Company, as the judge found.</span></p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_9">
+	  <heading class="Heading"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">Section 15 of the 1988 Act</span></heading>
+	  <paragraph eId="para_64">
+	    <num style="font-size:10pt">64.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">A number of provisions in both the 1870 Act and the 1988 Act regulate the position as between the tramway company and the highway authority. No contract, agreement or arrangement under section 29 of the 1870 Act had been made in this case. At the hearing before the judge, Mr Jeffreys QC, for the Council, relied on section 15 of the 1988 Act as a further ground for exculpating his clients from responsibility for the accident, which occurred within the relevant period of one year. He submits that the work done in the outer lane of Norton Avenue constituted an &#8220;alteration&#8221; of the street within the meaning of section 15. He refers to the frequent use of the word &#8220;alter&#8221; in the 1988 Act and submits that the insertion of the tramway, with the associated changes to the surface and sub-structure of the highway, constituted an alteration. Throughout <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25" uk:canonical="1959 (7 &amp; 8 Eliz. 2) c. 25" uk:origin="TNA" uk:type="legislation">the Act</ref>, the word &#8220;alter&#8221; was used in its ordinary, everyday sense.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_65">
+	    <num style="font-size:10pt;margin-left:0.5in;text-indent:-0.56in">65.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The judge made two findings in relation to section 15. First, he held that altered &#8220;should be given its natural meaning and scope&#8221; and that, by reference to such meaning, the introduction of rails and a <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> road into this offside lane served to &#8220;alter&#8221; this portion of Norton Avenue. Secondly, he held that section 15 excluded that lane from the ambit of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">the 1980 Act</ref> during the relevant year, an issue considered in the next section of this judgment.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_66">
+	    <num style="font-size:10pt">66.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">For the Company, Mr Maxwell submits that the relevant work was not an alteration within the meaning of <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25/section/15" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 15</ref>. Alterations under <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25" uk:canonical="1959 (7 &amp; 8 Eliz. 2) c. 25" uk:origin="TNA" uk:type="legislation">the Act</ref> are those specified as such in Part I of Schedule 1 to <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25" uk:canonical="1959 (7 &amp; 8 Eliz. 2) c. 25" uk:origin="TNA" uk:type="legislation">the Act</ref> which, by virtue of <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25/section/7/1" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 7(1)</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25" uk:canonical="1959 (7 &amp; 8 Eliz. 2) c. 25" uk:origin="TNA" uk:type="legislation">the Act</ref>, the South Yorkshire Passenger Transport Executive may &#8220;make and maintain&#8221;. The relevant reference in the Schedule has been identified at paragraph 27 of this judgment. It is submitted that because the relevant work, and the construction of other railways, is not listed in the Schedule as &#8220;alterations&#8221; they are not alterations. The word &#8220;alteration&#8221; does appear in the description of other of the authorised works. Alternatively, new features or new levels are required if the work is to constitute an alteration.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_67">
+	    <num style="font-size:10pt">67.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The purpose of the section was to impose a duty upon the tramway company for what in other circumstances would be described as a defects liability period. Their responsibility for that part of the street they have &#8220;made, diverted or altered&#8221; does not end with the completion of the work but continues for 12 months from the date of completion. The duty co-exists for one year with the duties in <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">sections 25</ref> and 28 which continue for the entire period the tramway exists. Given the power to interfere with the highway conferred by statute, the presence of the <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25/section/15" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 15</ref> provision is unsurprising. Like the second part of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> and, for example the former section 27, it provides a code under which the tramway company were to operate.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_68">
+	    <num style="font-size:10pt">68.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">In my judgment this issue is susceptible to a simple answer and it is that given by the judge. The word alter is to be given its ordinary meaning and the works required to construct the &#8220;railway&#8221; in Norton Avenue involved a sufficient change or modification to constitute an alteration to the street. What is more difficult is the physical extent of that part of the street affected by the alteration. That is a question of fact. Depending on the work to be done, the area affected is likely to extend beyond the area of the <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> road which it is the duty of the tramway company to maintain. The judge held that the offside lane was subject to the duty on the Company but did not explain why that was the area covered by the duty. It is not possible for this Court, on the evidence available to it, to do so.</span></p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_10">
+	  <heading class="Heading"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">Section 41 of the 1980 Act</span></heading>
+	  <paragraph eId="para_69">
+	    <num style="font-size:10pt">69.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">What remains to be considered is the duty of the highway authority, if any, if a tramway has been inserted into their highway. Having found an &#8220;alteration&#8221; for the purposes of <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25/section/15" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 15</ref>, the judge went on to hold that the section &#8220;served to exclude any part of this stretch of the offside lane from maintenance at public expense and thus from the ambit of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> throughout the year seemingly commencing on about 5</span><span style="vertical-align:super;font-size:10pt">th</span><span style="font-size:10pt"> March 1995&#8221;. The claimant seeks a finding that the <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> duty continues at all times to exist with respect to the entire highway into which the tramway has been inserted.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_70">
+	    <num style="font-size:10pt">70.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">During the hearing, the claimant was permitted to amend his notice of appeal to appeal out of time against the finding of the judge that the Council, as highway authority, could not be liable to him for breach of statutory duty. Permission was granted because the Council had appeared on the hearing of the appeal in order to argue that <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> did not apply and have argued the point fully. The Council have sought to treat the present action as a test case. It was not suggested that they were prejudiced in the presentation of their case by the grant of permission out of time.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_71">
+	    <num style="font-size:10pt">71.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">It is only the legal issue which can be resolved because, if a duty exists, an opportunity to call further evidence on issues, including a possible <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/58" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 58</ref> defence, must be provided before liability can be determined. Questions as to how an apportionment should be made, if concurrent duties exist, have not been the subject of submissions.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_72">
+	    <num style="font-size:10pt">72.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Mr Jeffreys submits that the incorporation of sections of the 1870 Act into the 1988 Act provided a comprehensive framework which laid down with precision the duties imposed on the tramway company and the powers of the Council as highway authority. He accepts that in the absence of any other statutory provision, the duty imposed on the highway authority by <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">the 1980 Act</ref> applies. It can, however, be removed and imposed on others by allocation under further statutory enactment. When that is done, as in this case, there is no concurrent duty on the highway authority, save, as between the Company and the Council, by a maintenance agreement under section 29 of the 1870 Act. The provisions of the 1870 Act incorporated into the 1988 Act displace the duty imposed on the highway authority by <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">the 1980 Act</ref> and apply a different statutory regime. The allocation is confirmed by the presence of <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/55" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 55</ref> in the 1870 Act. </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_73">
+	    <num style="font-size:10pt">73.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">It is further submitted that an anomaly would otherwise arise because in the case of an accident on the <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> road and, on the basis of concurrent responsibility, the Council would have the advantage of a <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/58" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 58</ref> defence whereas the Company would not. Parliament cannot have intended to create that situation. <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25/section/15" uk:canonical="" uk:origin="TNA" uk:type="legislation">Section 15</ref> displaces, on the altered part of the highway, <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> for a period of twelve months and the sole duty with respect to the &#8220;<ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> road&#8221; remains permanently with the tramway company. The situation is different, Mr Jeffreys submits, from that in relation to statutory undertakers under <ref href="http://www.legislation.gov.uk/id/ukpga/1991/22/section/70" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 70</ref> of the <ref href="http://www.legislation.gov.uk/id/ukpga/1991/22" uk:canonical="1991 c. 22" uk:origin="TNA" uk:type="legislation">New Roads and Street Works Act 1991</ref> which imposes only a duty on the undertaker to reinstate and not a duty to maintain.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_74">
+	    <num style="font-size:10pt">74.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">In support of his submission, Mr Jeffreys relies on the absence in the reports of successful claims against highway authorities in cases where there was a duty on a tramway company. It is unusual, submits Mr Jeffreys, for statute to place the same duty upon two different bodies. It is submitted that the difficulties in cases such as </span><span style="font-style:italic;font-size:10pt">Simon </span><span style="font-size:10pt">and</span><span style="font-style:italic;font-size:10pt"> Browne</span><span style="font-size:10pt"> would not have arisen had there been concurrent duties on the highway authority. The force of that submission is in my judgment weakened by the existence, until the coming into force of the  Highways (Miscellaneous Provisions) 1961 Act in 1964, of the rule of law exempting highway authorities from liability for non-repair of highways. That rule is likely to have acted as a deterrent to claims against highway authorities. It is only in recent years that tramways have come back into use in England on any significant scale and the present issues have soon arisen.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_75">
+	    <num style="font-size:10pt;margin-left:0.5in;text-indent:-0.56in">75.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The difficulties which arise upon a division of responsibility are obvious. Someone crossing Norton Avenue at the material time would pass first upon a highway for which the Council were responsible under <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">the 1980 Act</ref>, then an area for which the Company were responsible under <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25/section/15" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 15</ref> of the 1988 Act, then an area over which the Company were responsible under <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> of the 1870 Act and then back to a <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> area. In modern conditions, the safety of a road can be considered only on the basis that it is a single entity with maintenance and traffic management measures arranged  and performed accordingly. Where an accident results from the condition of a road, a combination of factors will often be involved, as they are in the present case.  While practical considerations cannot be determinative of statutory construction they may provide a guide in deciding what, in context, is the extent of the <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> duty upon the Council as highway authority.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_76">
+	    <num style="font-size:10pt">76.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">A conspicuous feature of the statutory scheme is the requirement on the tramway company to comply with inspections and to take action to the satisfaction of the highway authority, as under <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">sections 25</ref> and 28. Section 32 of the 1988 Act, enacted &#8220;for the protection of certain highway authorities&#8221;, also provides in subsection (5) that &#8220;such of the  authorised works as are intended to become public highways, or part thereof, shall be completed in accordance with  reasonable requirements of the local highway authority &#8230; .&#8221; Section 32(11) provides similar protection with respect to parts of any highway temporarily broken up or disturbed. The statute provides safeguards for a highway authority into whose highway a tramway has been inserted and their inclusion is predictable. They are in my judgment  not inconsistent with a continuing duty in the highway authority for the whole of the highway. The statute may confer powers on the highway authority to monitor and even control the work of the tramway company without relieving the highway authority of its <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> duty to members of the public. The existence of powers by which the extent of the burden may be mitigated does not eliminate the duty.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_77">
+	    <num style="font-size:10pt">77.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">My conclusion is that the duty of the Council under <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">the 1980 Act</ref> is not displaced by the regime under the 1988 Act, incorporating as it does provisions of the 1870 Act. <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/36/1" uk:canonical="" uk:origin="TNA" uk:type="legislation">Section 36(1)</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">the 1980 Act</ref> provides that highways which were immediately before the commencement of <ref href="http://www.legislation.gov.uk/id/ukpga/1991/22" uk:canonical="1991 c. 22" uk:origin="TNA" uk:type="legislation">the Act</ref> maintainable at the public expense should continue to be so maintainable. <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41/1" uk:canonical="" uk:origin="TNA" uk:type="legislation">Section 41(1)</ref> imposes in clear terms a duty on the highway authority to maintain the highway. That duty is not in my judgment displaced by the provisions of the 1988 Act. Nothing in the wording of the 1988 Act requires or permits the exclusion of that duty upon the highway as a whole. The highway authority are provided with powers to require appropriate action from the tramway company but their responsibility as highway authority continues. That they have a defence under <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/58" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 58</ref> not available to the tramway company does not require a different conclusion. Moreover, in my view the statutory provisions reflect what is sensible in terms of public needs and  safety by maintaining the highway authority&#8217;s duty to road users. A system under which the highway authority were liable for the maintenance of only part of the highway would be inimical to good management.</span></p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_11">
+	  <heading class="Heading"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">Consequences</span></heading>
+	  <paragraph eId="para_78">
+	    <num style="font-size:10pt">78.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Counsel have, understandably though frustratingly, been reticent as to how responsibility between the Council and the Company is, in the light of that finding, to be apportioned, including the relevance, if any, of the <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47" uk:canonical="1978 c. 47" uk:origin="TNA" uk:type="legislation">Civil Liability (Contribution) Act 1978</ref>. Some of the statutory provisions already considered may bear upon that question. Submissions may also have been relevant to the issue whether concurrent liability exists. While there are part 20 proceedings in existence, as between the Council and the Company, they do not fall for consideration on the hearing of this appeal and submissions have not been made as to the correct approach to be taken. I propose to consider the issue no further. </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_79">
+	    <num style="font-size:10pt">79.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">This appeal has illustrated the problems which may arise when preliminary points are taken at a trial, or where one issue, in this case levels, is seized upon as likely to be determinative and where some, but not all, of the evidence to be relied on is called. I have attempted to reach conclusions on the legal issues  placed before the Court but am conscious of the issues which remain open. To say more in the absence of comprehensive findings of fact would, however, be speculative and unlikely to be of assistance to the parties in solving the problems in this case and others like it. </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_80">
+	    <num style="font-size:10pt">80.</num>
+	    <intro>
+	      <p class="Heading1" style="margin-left:0.44in"><span style="font-size:10pt">To the extent indicated in the course of this judgment, I would allow the appeal and cross-appeal:</span></p>
+	    </intro>
+	    <subparagraph>
+	      <num style="font-size:10pt;margin-left:1.47in;text-indent:-0.49in">a)</num>
+	      <content>
+		<p class="Heading3" style="margin-left:1.47in"><span style="font-size:10pt">A private law cause of action arises from both <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> and <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> of the 1870 Act, as incorporated in the 1988 Act.</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-size:10pt;margin-left:1.47in;text-indent:-0.49in">b)</num>
+	      <content>
+		<p class="Heading3" style="margin-left:1.47in"><span style="font-size:10pt">The judge was wrong in his construction of <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref>, as now incorporated in the 1988 Act.</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-size:10pt;margin-left:1.47in;text-indent:-0.49in">c)</num>
+	      <content>
+		<p class="Heading3" style="margin-left:1.47in"><span style="font-size:10pt">I have expressed my views on <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref>, as incorporated. The judge left an issue open and did not make a general finding.</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-size:10pt;margin-left:1.47in;text-indent:-0.49in">d)</num>
+	      <content>
+		<p class="Heading3" style="margin-left:1.47in"><span style="font-size:10pt">The judge was correct in his construction of <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25/section/15" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 15</ref> of the 1988 Act.</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="font-size:10pt;margin-left:1.48in;text-indent:-0.49in">e)</num>
+	      <content>
+		<p class="Heading3" style="margin-left:1.48in"><span style="font-size:10pt">The judge was wrong to hold that there could be no statutory liability to the claimant by the Council as highway authority.</span></p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <content>
+		<p style="margin-left:0.5in"><span style="font-size:10pt">I would hear further submissions as to the effect of the findings of the Court upon the orders and findings of the judge. </span></p>
+	      </content>
+	    </subparagraph>
+	  </paragraph>
+	</level>
+	<level eId="lvl_12">
+	  <heading class="Heading1"><span style="font-size:10pt">Lord Justice Sedley:</span></heading>
+	  <paragraph eId="para_81">
+	    <num style="font-size:10pt">81.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.44in"><span style="font-size:10pt">I have reached the same conclusion as Pill LJ as to the existence of a cause of action under the statute, though not entirely by the same route. From that point, I regretfully diverge from him and from Hale LJ both on the meaning of &#8220;on a level with&#8221; and as to the respective liabilities of the highway authority and the tramway promoters. In the result I would uphold Holland J&#8217;s decision and dismiss both the appeal and cross- appeal.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_82">
+	    <num style="font-size:10pt">82.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.44in"><span style="font-size:10pt">I wish first, however, to say a word about the role of the Secretary of State for Transport in this appeal.</span></p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_13">
+	  <heading class="BodyText"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">The Secretary of State&#8217;s role</span></heading>
+	  <paragraph eId="para_83">
+	    <num style="font-size:10pt">83.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.44in"><span style="font-size:10pt">Both the Company and the Secretary of State were permitted to take the previously unargued point that no private law cause of action is created by a breach of either <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.25</ref> or <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.28</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47" uk:canonical="1978 c. 47" uk:origin="TNA" uk:type="legislation">the Act</ref> of 1870. It is relevant to note that it was the Secretary of State, not a party but an intervener, who introduced the point, and the Company who gratefully adopted it.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_84">
+	    <num style="font-size:10pt">84.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.44in"><span style="font-size:10pt">The proper role and usefulness of intervening parties is still being worked out by our courts. In this respect we are several generations behind the United States and Canada, but we are finding our own way. The most apparent value of interventions is in public law cases, where aspects of the public interest in a legal issue of general importance may be represented by neither of the two parties before the court. Both NGOs and ministers may play a valuable role here. They have recently done so, for example, in </span><span style="font-style:italic;font-size:10pt">R v North and East Devon Health Authority, ex parte Coughlan</span><span style="font-size:10pt"> <ref href="#" uk:canonical="[2001] QB 213" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="2001">[2001] QB 213</ref>, CA, where the Secretary of State for Health intervened importantly on the interpretation of the statutory National Health Service regime, and in </span><span style="font-style:italic;font-size:10pt">S and Marper v Chief Constable of S Yorks </span><span style="font-size:10pt"><ref href="https://caselaw.nationalarchives.gov.uk/ewca/civ/2002/1275" uk:canonical="[2002] EWCA Civ 1275" uk:isNeutral="true" uk:origin="TNA" uk:type="case" uk:year="2002">[2002] EWCA Civ 1275</ref>, where a submission by the organisation Liberty proved of value to this court in resolving an otherwise polarised argument.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_85">
+	    <num style="font-size:10pt">85.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.44in"><span style="font-size:10pt">There is no reason in principle why the usefulness of interventions by third parties should be confined to public law cases. In the report of the committee set up by Justice and the Public Law Project and chaired by Sir John Laws, </span><span style="font-style:italic;font-size:10pt">A Matter of Public Interest </span><span style="font-size:10pt">(1996), it was pointed out that private law litigation could from time to time raise issues affecting the public interest, but that the provision for first-instance joinders made at that time by RSC Order 15 rule 6(2)(b), in contrast to the larger power given to this court by RSC Order 59 rule 8(1), would not ordinarily admit public interest interventions. The committee&#8217;s recommendations now find expression in CPR 54.17 and in PD 54.13 in relation to judicial review proceedings; but there is no reason why the High Court in the exercise of its inherent jurisdiction should not be able to act likewise; and it is in the exercise of its own inherent jurisdiction that this court has admitted the Secretary of State as an intervener on the present appeal.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_86">
+	    <num style="font-size:10pt">86.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.44in"><span style="font-size:10pt">Since permission to intervene was given at large, it is nevertheless relevant to consider what are and are not proper topics for such an intervention. The Secretary of State&#8217;s skeleton argument declares his interest as the minister responsible for national policy initiatives concerning projects for tramways. This is fully sufficient to justify his being heard on the public policy and public objects of the legislation, and to that extent on its meaning and effect. Mr Sales&#8217; submissions on his behalf, however, have not only addressed the meaning of &#8220;level&#8221; in <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">sections 25</ref> and 28, which can respectably be said to come into this class, but have also for the first time raised the question whether a private law cause of action exists on breach of either section. </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_87">
+	    <num style="font-size:10pt">87.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.44in"><span style="font-size:10pt">While the arguments of Mr Sales and his junior Miss Steyn on the latter issue have, as always, been excellently presented, I am not persuaded that this was a proper subject for the minister&#8217;s intervention. Whether a private law cause of action is generated by the statute is in all relevant respects a question which arises, if at all, between defendant and claimant. Mr Sales&#8217; explanation - that the minister is concerned at the potential risk burden facing tramway promoters &#8211; is not in my view a relevant or sufficient basis for a public interest intervention by a government department. Private law issues frequently have knock-on effects on one area or another of economic activity, but to allow those potentially affected to intervene in the absence of some larger issue is to mix private interests with the public interest; and the two do not become segregated simply because the intervention is a surrogate intervention by a department of state. Thus, as it seems to me, neither a representative body of insurers nor the Department of Trade and Industry could expect to be allowed to intervene in a personal injury action raising a new point on liability or damages, absent some special policy element such as was present in </span><span style="font-style:italic;font-size:10pt">Heil v Rankin </span><span style="font-size:10pt"><ref href="#" uk:canonical="[2001] QB 272" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="2001">[2001] QB 272</ref>.</span></p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_14">
+	  <heading class="BodyText"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">Actionability</span></heading>
+	  <paragraph eId="para_88">
+	    <num style="font-size:10pt">88.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.44in"><span style="font-size:10pt">This said, Mr Maxwell has been emboldened by Mr Sales&#8217; intervention to seek to take the point for the second defendant (the Company), and we have allowed him to do so. Like Pill LJ, I consider that on full consideration the argument fails. I respectfully agree with him that both <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> and <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> meet the classic test set out in </span><span style="font-style:italic;font-size:10pt">Groves v Lord Wimborne </span><span style="font-size:10pt"><ref href="#" uk:canonical="[1898] 2 QB 402" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1898">[1898] 2 QB 402</ref>, so that with or without <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/55" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 55</ref> a cause of action arises if harm is caused by a breach.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_89">
+	    <num style="font-size:10pt">89.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.44in"><span style="font-size:10pt">But, unlike Pill LJ, I consider that <ref href="http://www.legislation.gov.uk/id/ukpga/1992/42/section/55" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 55</ref> is there precisely in order to produce this result. The composition of the section may not have been the brightest jewel in the crown of Lord Thring&#8217;s Parliamentary Counsel Office, but it says plainly enough that anyone who is injured because of the promoter&#8217;s failure to comply with the law is to have a remedy. Picked over, as it has sedulously been by counsel, it comes apart. But all that is then left, as Mr Maxwell and Mr Sales contentedly accept, is a section which says that where there is liability there is liability. I do not think Parliament was wasting time and ink on such vacuities: it was setting out to put beyond doubt the right of a person injured by, among other things, a defective tramway to claim damages. The judgment of this court given by Scott LJ in </span><span style="font-style:italic;font-size:10pt">Simon v Islington Borough Council</span><span style="font-size:10pt"> <ref href="#" uk:canonical="[1943] KB 188" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1943">[1943] KB 188</ref>, in the passage cited by Pill LJ at paragraph 43 above, already so holds.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_90">
+	    <num style="font-size:10pt">90.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.44in"><span style="font-size:10pt">Whether or not this is right, I gratefully adopt the reasoning of Pill LJ which is summarised in paragraph 49 of his judgment and is sufficient to establish the cause of action with which this appeal is concerned.</span></p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_15">
+	  <heading class="Heading1" style="margin-left:0.5in;text-indent:-0.5in"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">The statutory duty</span></heading>
+	  <paragraph eId="para_91">
+	    <num style="font-size:10pt">91.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.44in"><span style="font-size:10pt">Where, to my regret, I part company with Pill LJ and Hale LJ is as to what constitutes a breach of either <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> or <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref>. The 1870 Act was designed not to authorise what the courts had shortly before held to be a nuisance (and what, if the contemporary literature turned up by Miss Steyn&#8217;s research is anything to go by, was being repeatedly denounced as a nuisance), but to ensure that tramways could function </span><span style="font-style:italic;font-size:10pt">without </span><span style="font-size:10pt">creating a nuisance. That is why, as a condition of authorising the laying of rails, it required them to be &#8216;on a level with the surface of the road&#8217; and the road alongside them to be kept in good repair.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_92">
+	    <num style="font-size:10pt">92.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.44in"><span style="font-size:10pt">I can find no warrant for introducing into this simple statutory requirement a proviso that it is to be complied with only so far as technically feasible. Not only were there well-known statutory formulae for saying so if this or something like it was Parliament&#8217;s intention; one of the chief purposes of <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47" uk:canonical="1978 c. 47" uk:origin="TNA" uk:type="legislation">the Act</ref> was to prevent tramways being installed at the price of public safety. Manifestly, grooved rails were by 1870 technically feasible, or Parliament would not have troubled to legislate as it did; but there is nothing in <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47" uk:canonical="1978 c. 47" uk:origin="TNA" uk:type="legislation">the Act</ref> to indicate that Parliament was willing to tolerate grooved rails which, because of the technical difficulty of making them level with the road surface, did exactly what Train&#8217;s rails had done, which was present both a tripping and a steering hazard to road users. The words they used made that plain. They ought not, in my judgment, to be diluted by a construction which not only radically alters the burden of compliance but renders uncertain the standard of safety to which promoters are to be held and road users are to be entitled.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_93">
+	    <num style="font-size:10pt">93.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.44in"><span style="font-size:10pt">Mr Sales has reminded us of Lord Wilberforce&#8217;s encapsulation of the modern law on the construction of statutory powers in his speech in </span><span style="font-style:italic;font-size:10pt">Allen v Gulf Oil Ltd  </span><span style="font-size:10pt"><ref href="#" uk:canonical="[1981] AC 1001" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1981">[1981] AC 1001</ref>, 1011:</span></p>
+	      <block name="embeddedStructure"><embeddedStructure>
+		  <level>
+		    <content>
+		      <p class="Quote" style="margin-left:1in"><span style="font-size:10pt">&#8220;It is now well settled that where Parliament by express direction or by necessary implication has authorised the construction and use of an undertaking or works, that carries with it an authority to do what is authorised with immunity from any action based on nuisance. The right of action is taken away: </span><span style="font-style:italic;font-size:10pt">Hammersmith and City Railway Co v Brand </span><span style="font-size:10pt">(1869) LR 4 HL 171, 215, per Lord Cairns. To this there is made the qualification, or condition, that the statutory powers are exercised without &#8216;negligence&#8217; &#8211; that word being here used in a special sense so as to require the undertaker, as a condition of obtaining immunity from action, to carry out the work and conduct the operation with all reasonable regard and care for the interests of other persons: </span><span style="font-style:italic;font-size:10pt">Geddes v Proprietors of Bann Reservoir </span><span style="font-size:10pt">(1878) 3 App. Cas. 430, 455, per Lord Blackburn. It is within the same principle that immunity from action is withheld where the terms of the statute are permissive only, in which case the powers conferred must be exercised in strict conformity with private rights: </span><span style="font-style:italic;font-size:10pt">Metropolitan Asylum District v Hill </span><span style="font-size:10pt">(1881) 6 App. Cas. 193.&#8221;</span></p>
+		    </content>
+		  </level>
+		</embeddedStructure></block>
+	      <p class="BodyText" style="margin-left:0.5in"><span style="font-size:10pt">The mistake in the appellants&#8217; reasoning has been to treat the &#8216;without negligence&#8217; qualification as a freestanding barrier to the right of action. But the effect of the second limb of the principle, as explained by Lord Wilberforce, is that the use by the promoter of all reasonable care is irrelevant if what it is doing exceeds the permissive statutory power by invading private rights. I see no reason to think that the right of a driver or pedestrian to use a public highway without encountering artificial hazards is any less a private right than the rights at issue in </span><span style="font-style:italic;font-size:10pt">Metropolitan Asylum District v Hill</span><span style="font-size:10pt">. But the real point is that the present case does not depend on these canons of construction of statutory powers: it depends simply on the meaning of Parliament&#8217;s positive prescriptions for the laying of tramways.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_94">
+	    <num style="font-size:10pt">94.</num>
+	    <content>
+	      <p class="BodyText" style="margin-left:0.5in"><span style="font-size:10pt">The corollary of my preferred approach is not a literal &#8211; and, the experts say, unworkable &#8211; application of the words of <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref>. It is a test which, in my judgment, meets the statutory purpose: to enable road users to negotiate tramways without danger to themselves. On this view a tram rail which is not level with the road surface but presents no appreciable danger creates no breach. It sits comfortably within the principle </span><span style="font-style:italic;font-size:10pt">de minimis non curat lex</span><span style="font-size:10pt">.  But a disparity of levels which creates danger falls outside it, as a series of judicial holdings has established. Looking simply to those cited by Pill LJ, one sees that in the case which brought the legislation about, </span><span style="font-style:italic;font-size:10pt"> R vTrain </span><span style="font-size:10pt">(1862) 3 F&amp;F 22, Erle CJ spoke of &#8220;every obstruction which, to a substantial degree, renders the exercise of that right [of free passage] unsafe or inconvenient&#8221; as constituting an actionable nuisance; and that in the </span><span style="font-style:italic;font-size:10pt">Dublin United Tramways </span><span style="font-size:10pt">case <ref href="#" uk:canonical="[1903] AC 99" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1903">[1903] AC 99</ref> Lord Halsbury LC said that the promoters, &#8220;while they are permitted to use the public highway, shall take care that the safety and convenience of the public shall be preserved&#8221;. Correspondingly, in </span><span style="font-style:italic;font-size:10pt">Hayden v Kent County Council </span><span style="font-size:10pt"><ref href="#" uk:canonical="[1978] QB 343" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1978">[1978] QB 343</ref> Lord Denning MR spoke of the highway authority&#8217;s duty as an obligation to keep the road &#8220;reasonably passable for the ordinary traffic of the neighbourhood at all seasons without danger caused by its physical condition&#8221;.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_95">
+	    <num style="font-size:10pt">95.</num>
+	    <content>
+	      <p class="BodyText" style="margin-left:0.5in"><span style="font-size:10pt">The concept of danger or hazard involves an element of predictability: it does not encompass something which has caused a freak accident. But it is markedly less generous to a defendant than the test of what is reasonably practicable. If it represents the law for highway authorities, there is every reason why it should also represent the law for tramway promoters. It affords a test which will alter in its practical application as tram and motor technology changes, and that is as it should be; but it will not transfer to the public the risks created by shortcomings in tram technology. Having had the advantage of reading the judgment of Hale LJ in draft, I remain unpersuaded that a danger test is any less workable or precise either than a negligence test or than an engineering tolerance test. All three require a judicial appraisal of evidence and a measured judgment.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_96">
+	    <num style="font-size:10pt">96.</num>
+	    <content>
+	      <p class="BodyText" style="margin-left:0.5in"><span style="font-size:10pt">Holland J found the Company liable.</span><span style="font-style:italic;font-size:10pt"/><span style="font-size:10pt">On what I consider to be the correct test, given his findings of fact, he was right to do so. The rails, not segregated from the carriageway, stood sufficiently proud of the road surface in places to lift a saloon car and rob its tyres of grip. They were dangerous, and the danger directly caused the claimant&#8217;s accident. That it was not realistically possible to have them set more flush with the road surface than they were is not a reason for rewriting <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47" uk:canonical="1978 c. 47" uk:origin="TNA" uk:type="legislation">the Act</ref>. It is a reason for examining the policy of <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47" uk:canonical="1978 c. 47" uk:origin="TNA" uk:type="legislation">the Act</ref>, and the policy is in my respectful view clear. It is that, while deviations from the level will not matter if they create no danger, where, albeit unavoidably, they do create danger, the burden of risk is placed on the promoter, not on the road user. The claimant&#8217;s primary case, which sought a literal reading of &#8216;level&#8217;, was thus pitched unnecessarily high; but the argument settled, to my mind convincingly, on this as the test which gives effect to Parliament&#8217;s intention.</span></p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_16">
+	  <heading class="BodyText"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">Who is liable?</span></heading>
+	  <paragraph eId="para_97">
+	    <num style="font-size:10pt">97.</num>
+	    <content>
+	      <p class="BodyText" style="margin-left:0.5in"><span style="font-size:10pt">The apparent meaning of <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25/section/15" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.15</ref> of the 1988 Act is that for a period of 12 months from completion, the promoters (in terms of the 1870 Act) are to assume what are otherwise the highway authority&#8217;s maintenance responsibilities in relation to streets which they have altered. Coming on to the statute book, as it did, after the <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">Highways Act 1980</ref>, it necessarily modified the general duty of the city council as highway authority to maintain the highway under <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41/1" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.41(1)</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">that Act</ref>. The question is whether it did so by substituting one liability for another or by creating concurrent liabilities.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_98">
+	    <num style="font-size:10pt">98.</num>
+	    <content>
+	      <p class="BodyText" style="margin-left:0.5in"><span style="font-size:10pt">Like Holland J and Pill LJ, I see no good reason to restrict the meaning of &#8216;altered&#8217; by reference to those alterations listed in Schedule 1 to <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">the Act</ref>.  Unlike Pill LJ, however, I do not think it is sufficient that s.32 is not inconsistent with concurrent responsibility. What matters more is that nothing in or about <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25/section/15" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.15</ref> suggests that it aims to do anything but shift the material burden of highway maintenance for a year on to the promoter. On this view, the unavailability of a <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/58" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.58</ref> defence to the promoter is less anomalous than if the promoter were exposed concurrently with the highway authority but without the same protection. It also sits much better with the promoter&#8217;s ongoing duty under <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.28</ref>, even if it does inevitably mean that in the course of crossing the road a traveller passes from the hands of one body to the next and back again. I accept that there remains a problem, which we do not have to resolve, of &#8216;fit&#8217; between <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25/section/15" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.15</ref> of the 1988 Act and <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.28</ref> of the 1870 Act. What is not engaged, as it seems to me with all respect to the view of Hale LJ, is any problem about the content of agreements between the highway authority and the promoter.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_99">
+	    <num style="font-size:10pt">99.</num>
+	    <content>
+	      <p class="BodyText" style="margin-left:0.5in"><span style="font-size:10pt">None of this answers the underlying conundrum commonly posed by protruding rails: is the rail too high or the road too low? Outside the twelve-month period there is going to be no escape from arguments about whether liability arises under <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.25</ref> or <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.28</ref> or both or neither, because (whatever the true relationship of <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25/section/15" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.15</ref> to <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.41</ref>) legal responsibility will fall differently according to the answer. In the present case, by contrast, where the accident occurred within the twelve-month period, we have precisely the situation for which Parliament was legislating in 1988: whether the rail was too high or the roadway beside it too low, or both, it is the promoter who is liable.</span></p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_17">
+	  <heading class="BodyText"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">Conclusion</span></heading>
+	  <paragraph eId="para_100">
+	    <num style="font-size:10pt">100.</num>
+	    <content>
+	      <p class="BodyText" style="margin-left:0.25in;text-indent:0.12in"><span style="font-size:10pt"> For my part, therefore, I would dismiss both the appeal and the cross-appeal.</span></p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_18">
+	  <heading class="BodyText"><span style="font-size:10pt">Lady Justice Hale:</span></heading>
+	  <paragraph eId="para_101">
+	    <num style="font-size:10pt">101.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">I have reached the same conclusions as Pill LJ on each of the issues before us and for essentially the same reasons. I add a few further remarks, first on the Secretary of State's intervention and secondly on the two matters upon which Pill LJ and Sedley LJ disagree.</span></p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_19">
+	  <heading class="Heading1"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">The Secretary of State</span></heading>
+	  <paragraph eId="para_102">
+	    <num style="font-size:10pt">102.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The issues in this case are complex, difficult and important not only to the parties but also to the users and providers of public transport systems and public highways. There is a public interest in the provision of good and efficient systems of public transport, particularly in our increasingly congested cities. There is also a public interest in the maintenance of our highways in such a condition that it is reasonably safe for the public to use them. </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_103">
+	    <num style="font-size:10pt">103.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">As the prologue to the South Yorkshire Light Rail Transit Act 1988 explains, it was the general duty of the South Yorkshire Passenger Transport Executive under the Transport Acts 1968 and 1975 to secure the provision of public passenger transport services for meeting public transport requirements in their area, in accordance with general policies formulated by the South Yorkshire Passenger Transport Authority. That Authority is now funded by the local authorities of Sheffield, Rotherham, Doncaster and Barnsley. The Executive is a non-profit-making body established by order under the legislation to fulfil the objectives of the Authority. The second defendant, South Yorkshire Light Rail Ltd, is a wholly owned subsidiary of the Executive and has acquired by delegation its statutory powers and duties. Studies conducted for the Executive established the feasibility of meeting public passenger transport requirements in their area by providing a light rail transit system to serve the City of Sheffield. That is why the Executive was empowered by the 1988 Act to construct this tramway, some of it running over highways also used by other road users. Similar powers have been given to construct such tramways elsewhere, for example in Greater Manchester and Leeds.   </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_104">
+	    <num style="font-size:10pt">104.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">There is always a risk that decisions on important points of law arising in individual cases will be affected by the way in which the individual parties, necessarily and quite properly for their own reasons, choose to present and conduct the case. That is in the nature of our system of case made law. Outsiders who are or may be faced with a similar dispute and simply wish to bolster the chances of one side or the other will not normally be permitted to intervene in someone else's quarrel. But there are situations where outside intervention may be appropriate even in a private law case. For example, where there is likely to be a strong policy element in the decision, the perspective of bodies representative of the differing interests involved may be extremely helpful in enabling the court to strike the right balance between the various policy considerations. An example is </span><span style="font-style:italic;font-size:10pt">Callery v Gray</span><span style="font-size:10pt"> <ref href="#" uk:canonical="[2001] 3 All ER 833" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="2001">[2001] 3 All ER 833</ref> and </span><span style="font-style:italic;font-size:10pt">Callery v Gray (No 2) </span><span style="font-size:10pt"><ref href="#" uk:canonical="[2001] 4 All ER 1" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="2001">[2001] 4 All ER 1</ref>, where several bodies having a direct interest in the subject of conditional fee arrangements were permitted to make representations to the Court of Appeal. This was one of the advantages leading the House of Lords to conclude that the issues were better left to this Court: see </span><span style="font-style:italic;font-size:10pt">Callery v Gray (Nos 1 and 2)</span><span style="font-size:10pt"> <ref href="#" uk:canonical="[2002] 3 All ER 417" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="2002">[2002] 3 All ER 417</ref> at para 55.  </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_105">
+	    <num style="font-size:10pt">105.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">This case provides a different example. Although private law litigation, it is in the context of the provision by or on behalf of public authorities of services for members of the public in which there is a strong public interest. The parties recognised that the Department of State having overall responsibility for transport of all kinds might well have an important contribution to make to the argument on the legal issues arising and so it has proved. Mr Sales has very properly confined his arguments to the issues arising under the Tramways Act 1870 but it is not to be assumed that those instructing him have taken a narrow view of the policy considerations leading them to favour a particular conclusion on those legal issues. I see no reason to draw a distinction between the actionability point and the construction of the words 'on a level with'. The former is one which a court might well feel obliged to take for itself in an appropriate case. The researches and arguments of Mr Sales and Miss Steyn, including their responses to points made by the court, have been helpful and economical. The time estimate has not, as it turns out, been affected by their intervention.</span></p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_20">
+	  <heading class="Heading1"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">Section 25 of the Tramways Act 1870</span></heading>
+	  <paragraph eId="para_106">
+	    <num style="font-size:10pt">106.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">We have been presented with three broad approaches to construing the words 'shall be laid and maintained in such manner that the uppermost part of the rail shall be on a level with the surface of the part of the road in which it is laid'.  </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_107">
+	    <num style="font-size:10pt">107.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The first, the claimant's primary case and adopted by the judge, was that 'on a level with' means absolutely flush or dead level with the road surface, so that any difference in level which caused or materially contributed to an accident would give rise to liability. The difficulty with that construction is that the experts are agreed that it is impossible to lay a tramway so that it is always absolutely flush at all places with the surrounding roadway. The different properties of rail and road would be bound to produce some variation however hard one tried to reduce or eliminate it. The whole object of the 1870 Act was to provide a new regime for authorising the construction of tramways. Mr Train had gone about it without benefit of any statutory authority and used a type of rail with a three quarter inch step which was found to constitute a public nuisance in London (but not in Birkenhead). Then Private Acts had authorised particular tramways, for example in Liverpool and London. The 1870 Act was designed to lay down a general regime for the future. It provided for local authorities to obtain provisional orders from the Board of Trade authorising them to construct (but not operate) tramways and laid down general requirements for their construction and operation. It is unlikely in that context that Parliament intended to lay down a general requirement which would be impossible to achieve. A statute which is designed to facilitate the provision of passenger transport for the public is not on all fours with a statute which is designed to regulate the profit-making activities of factory occupiers for the protection of their workers.    </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_108">
+	    <num style="font-size:10pt">108.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The second possibility, the claimant's secondary case and that adopted by Sedley LJ, is that 'on a level with' means 'so level as not to constitute a danger to other road users'. One difficulty with this construction is that it begs the question of what constitutes a 'danger' for this purpose. Does it have to be foreseeable? As Sedley LJ points out, 'the concept of danger or hazard involves an element of predictability'. And if so, to whom does danger have to be foreseeable? How can tramway constructors reconcile their duties to the different categories of people who may use the highway? Proud rails may be dangerous for some road users, depressed rails may be dangerous for others. Unless an element of reasonable choice between various foreseeable risks is also implied, this approach involves absolute liability whenever a rail which is not completely flush causes or contributes to an accident. In other words, it is no different in practice from the previous construction. If that element is implied, little if anything is added to the ordinary law of negligence. </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_109">
+	    <num style="font-size:10pt">109.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The third possibility is that 'on a level with' means in the same horizontal plane as the surrounding road. This would prohibit the step rails used by Mr Train, which was obviously a prime concern at the time. 'On a level with' is not the same as 'level with'. But again it begs a question, 'how level must your level be with mine?'  One answer might be &#8216;on the same general level&#8217; or &#8216;broadly level&#8217;.  But that would not always meet the mischief at which the action was aimed. The obvious answer is 'as level as it can be made within the limits of current technology and materials'. This answer does not expect the impossible of tramway constructors. Equally, it does not rely on value judgments as to what is 'reasonably practicable'. This may raise difficult questions of how far concepts familiar in the law of negligence, of balancing the degree and magnitude of risk against the cost and practicability of preventing it, should be incorporated into statutory duties. </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_110">
+	    <num style="font-size:10pt">110.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">'On a level with' is a phrase descriptive of a factual state of affairs. It is not readily associated with the necessity for evaluation inherent in concepts such as danger or reasonable practicability. If it is accepted that Parliament cannot have intended to require the impossible, the most likely alternative is that Parliament intended the factual next best - as level as could be achieved within the limits of current technology and materials. This construction fits equally well in a world where road surfaces were very irregular, often involving granite or wooden setts, and a world where road surfaces are much more regular but still variable to accommodate a combination of engineering considerations and new materials to fill the gap between road and rail are being developed all the time.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_111">
+	    <num style="font-size:10pt">111.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The experts differed in their views of acceptable tolerances and the judge did not resolve that difference. I observe only that the test here proposed is more stringent than that of 'acceptable engineering tolerance'. Some of the measurements taken in this case appear to have exceeded even those tolerances. On the basis of current information, therefore, I would be surprised if there were no breach of <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> in this case.</span></p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_21">
+	  <heading class="Heading1"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">Section 41 of the <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">Highways Act 1980</ref> </span></heading>
+	  <paragraph eId="para_112">
+	    <num style="font-size:10pt">112.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">The issue here is whether either <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> of the Tramways Act 1870 or <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25/section/15" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 15</ref> of the South Yorkshire Light Rail Transit Act 1988 displace the duty of the highway authority under <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> of the <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">Highways Act 1980</ref> to maintain a 'highway maintainable at public expense'. The definition of such a highway in <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/329/1" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 329(1)</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66" uk:canonical="1980 c. 66" uk:origin="TNA" uk:type="legislation">the 1980 Act</ref> refers back to <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/36/1" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 36(1)</ref> which provides that &#8216;all such highways as immediately before commencement were highways maintainable at public expense for the purpose of the <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25" uk:canonical="1959 (7 &amp; 8 Eliz. 2) c. 25" uk:origin="TNA" uk:type="legislation">Highways Act 1959</ref> shall continue to be so maintainable&#8217; (with two exceptions immaterial here). Norton Avenue undoubtedly was such a highway.  </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_113">
+	    <num style="font-size:10pt">113.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt"><ref href="http://www.legislation.gov.uk/id/ukpga/1978/47/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">Section 28</ref> of the 1870 Act places a permanent duty on the tramway promoter at its own expense to maintain and keep in good repair the road between the rails, and between two tramways laid by the same promoter not more than four feet from one another, and in every case 18 inches beyond the rails on each side of the tramway. <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25/section/15" uk:canonical="" uk:origin="TNA" uk:type="legislation">Section 15</ref> of the 1988 Act places a temporary duty on the Executive to maintain at its own expense 'any street or portion thereof made, diverted or altered under <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25" uk:canonical="1959 (7 &amp; 8 Eliz. 2) c. 25" uk:origin="TNA" uk:type="legislation">this Act</ref>' for twelve months from completion. I entirely agree that the insertion of a tramway into a road is an alteration for this purpose.</span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_114">
+	    <num style="font-size:10pt">114.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Neither of these provisions expressly removes such roads or portions of roads from the definition of a highway maintainable at public expense. In both cases express provision is made for variation by agreement between the highway authority and the tramway promoter. Section 29 of the 1870 Act allows them to enter into contracts or other arrangements 'with respect to the paving and keeping in repair of the whole or any portion of the roadway of any road on which the promoters shall lay any tramway and the proportion to be paid by either of them of the expense of any such paving and keeping in repair.' <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25/section/15" uk:canonical="" uk:origin="TNA" uk:type="legislation">Section 15</ref> of the 1988 Act provides for the duty of the Executive 'unless otherwise agreed'. </span></p>
+	    </content>
+	  </paragraph>
+	  <paragraph eId="para_115">
+	    <num style="font-size:10pt">115.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">Thus the financial consequences of the various duties to maintain may be agreed between the highway authority and the tramway promoter. But it would be odd if the statutory duty of the highway authority towards all road users depended upon the precise contents of such an agreement. It is much more likely that they owe concurrent duties to members of the public, while their private agreements may regulate the financial consequences between the two bodies. A member of the public should not have to find out whether such an agreement existed and if so what it said before deciding whom to sue. The practical inconveniences of divided responsibility for different parts of the same road were remarked upon by Henry Sutton in his treatise on </span><span style="font-style:italic;font-size:10pt">The Tramways Acts of the United Kingdom</span><span style="font-size:10pt"> (see second edition 1883, p xxi). When he was writing, however, a highway authority was responsible at common law only for misfeasance and not for non-feasance. It is not surprising that cases such as </span><span style="font-style:italic;font-size:10pt">Simon v Islington Borough Council</span><span style="font-size:10pt"> <ref href="#" uk:canonical="[1943] KB 188" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="1943">[1943] KB 188</ref> were concerned with whether statutory liability for non-feasance under the Tramways Act fell upon the highway authority. At that stage there was no other way in which the highway authority could have been held liable. That limitation was abolished in 1961, so that the highway authority is now responsible for neglect, albeit with the benefit of the defence in <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/58" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 58</ref> which the tramway promoters do not have. It was not then provided, but could so easily have been, that the new duty was subject to any duties owed by others to maintain the same portion of road. Concurrent liability to compensate an individual in respect of the same damage is not at all unusual in private law. The claimant gets his compensation and leaves it to the defendants to argue or agree between themselves about who pays what.</span></p>
+	    </content>
+	  </paragraph>
+	</level>
+	<level eId="lvl_22">
+	  <heading class="Heading1"><span style="text-decoration-line:underline;text-decoration-style:solid;font-size:10pt">Conclusion</span></heading>
+	  <paragraph eId="para_116">
+	    <num style="font-size:10pt">116.</num>
+	    <content>
+	      <p class="Heading1" style="margin-left:0.5in"><span style="font-size:10pt">I therefore agree that both the appeal and the cross appeal should be allowed. But in addition to what is said (at paragraph 111 above) about the merits of the claim under <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> as here construed, I would particularly wish to associate myself with the observations of Pill LJ (at paragraph 16 above) about the merits of the common law claim.    </span></p>
+	    </content>
+	  </paragraph>
+	  <level eId="lvl_22_1">
+	    <content>
+	      <p class="Heading1" style="text-align:center"><span style="font-size:10pt">ORDER:  Appeal allowed in part and cross-appeal allowed, both by a majority. On the actionability issue, the costs of the Claimant and of the 1st Defendant will be met by the 2nd Defendant.  On the <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47/section/25" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 25</ref> issue there will be no order as to costs. On the <ref href="http://www.legislation.gov.uk/id/ukpga/1978/47/section/28" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 28</ref> issue, the 2nd Defendant will pay the costs of the Claimant and the 1st Defendant.  On the <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25/section/15" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 15</ref> issue there will be no order as to costs in relation to the Claimant and on the <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> issue, the 1st Defendants will pay the Claimant's costs but the parties have agreed no order for costs on the combined <ref href="http://www.legislation.gov.uk/id/ukpga/Eliz2/7-8/25/section/15" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 15</ref> and <ref href="http://www.legislation.gov.uk/id/ukpga/1980/66/section/41" uk:canonical="" uk:origin="TNA" uk:type="legislation">section 41</ref> issues. No order for costs in relation to the Secretary of State.  Remission to Holland J will be deferred pending the resolution of the Claimant's intention to appeal against the decisions of the judge in relation to the 4th to 7th Defendants. The applications of the Claimant and the Secretary of State for permission to appeal to the House of Lords are refused. Expedition allowed.</span></p>
+	    </content>
+	  </level>
+	  <level eId="lvl_22_2">
+	    <content>
+	      <p class="Heading1" style="text-align:center"><span style="font-size:10pt">(Order not part of approved judgment)</span></p>
+	    </content>
+	  </level>
+	</level>
+      </decision>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>

@@ -1,0 +1,130 @@
+/**
+ * Model selection, in order of precedence:
+ *   OPENROUTER_API_KEY → OpenRouter (any model id, e.g. stealth/space-bunny-alpha)
+ *   ANTHROPIC_API_KEY  → Anthropic directly
+ *   otherwise          → Vercel AI Gateway (AI_GATEWAY_API_KEY locally, OIDC on Vercel)
+ * Fast tier: query expansion / web extraction. Strong tier: relevance pass.
+ */
+import { createAnthropic } from "@ai-sdk/anthropic";
+import { createOpenRouter } from "@openrouter/ai-sdk-provider";
+import { gateway, generateText, tool, type LanguageModel } from "ai";
+import type { z } from "zod";
+
+type Tier = "fast" | "strong";
+type Provider = "openrouter" | "anthropic" | "gateway";
+
+const DEFAULTS: Record<Provider, Record<Tier, string>> = {
+  openrouter: { fast: "anthropic/claude-haiku-4.5", strong: "anthropic/claude-sonnet-5.5" },
+  anthropic: { fast: "claude-haiku-4-5", strong: "claude-sonnet-5-5" },
+  gateway: { fast: "anthropic/claude-haiku-4.5", strong: "anthropic/claude-sonnet-5.5" },
+};
+
+export function provider(): Provider {
+  if (process.env.OPENROUTER_API_KEY) return "openrouter";
+  if (process.env.ANTHROPIC_API_KEY) return "anthropic";
+  return "gateway";
+}
+
+let anthropic: ReturnType<typeof createAnthropic> | null = null;
+let openrouter: ReturnType<typeof createOpenRouter> | null = null;
+
+export function modelById(id: string): LanguageModel {
+  switch (provider()) {
+    case "openrouter":
+      openrouter ??= createOpenRouter({
+        apiKey: process.env.OPENROUTER_API_KEY,
+        appName: "caselaw-agent",
+      });
+      return openrouter(id);
+    case "anthropic":
+      anthropic ??= createAnthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+      return anthropic(id);
+    default:
+      return gateway(id);
+  }
+}
+
+export function modelId(tier: Tier): string {
+  const override = tier === "fast" ? process.env.LLM_FAST_MODEL : process.env.LLM_STRONG_MODEL;
+  return override || DEFAULTS[provider()][tier];
+}
+
+export function model(tier: Tier): LanguageModel {
+  return modelById(modelId(tier));
+}
+
+type Effort = "xhigh" | "high" | "medium" | "low" | "minimal" | "none";
+const EFFORTS = new Set<string>(["xhigh", "high", "medium", "low", "minimal", "none"]);
+
+/** Reasoning effort per tier (OpenRouter only): LLM_FAST_REASONING / LLM_STRONG_REASONING. */
+export function reasoningEffort(tier: Tier | "judge"): Effort | undefined {
+  const v =
+    tier === "fast" ? process.env.LLM_FAST_REASONING : tier === "strong" ? process.env.LLM_STRONG_REASONING : process.env.EVAL_JUDGE_REASONING;
+  return v && EFFORTS.has(v) ? (v as Effort) : undefined;
+}
+
+function providerOptionsFor(effort: Effort | undefined) {
+  if (!effort || provider() !== "openrouter") return undefined;
+  return { openrouter: { reasoning: { effort } } };
+}
+
+export function llmConfigured(): boolean {
+  return Boolean(
+    process.env.OPENROUTER_API_KEY ||
+      process.env.ANTHROPIC_API_KEY ||
+      process.env.AI_GATEWAY_API_KEY ||
+      process.env.VERCEL_OIDC_TOKEN,
+  );
+}
+
+export interface TokenUsage {
+  inputTokens: number;
+  outputTokens: number;
+}
+
+export function addUsage(acc: TokenUsage, u: { inputTokens?: number; outputTokens?: number } | undefined) {
+  acc.inputTokens += u?.inputTokens ?? 0;
+  acc.outputTokens += u?.outputTokens ?? 0;
+}
+
+/**
+ * Structured output via a forced tool call. Some models (e.g. OpenRouter stealth models) ignore
+ * `response_format: json_schema` but reliably fill tool arguments, and tool calling works on every
+ * provider we use. The SDK validates the arguments against `schema`; one retry on failure.
+ */
+export async function generateStructured<S extends z.ZodType>(opts: {
+  model: LanguageModel;
+  system: string;
+  prompt: string;
+  schema: S;
+  usage?: TokenUsage;
+  abortSignal?: AbortSignal;
+  /** OpenRouter reasoning effort; see reasoningEffort() */
+  effort?: Effort;
+  /** SDK retries for 429/5xx with exponential backoff (default 2) */
+  maxRetries?: number;
+}): Promise<z.infer<S>> {
+  let lastErr: unknown;
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const result = await generateText({
+        model: opts.model,
+        system: `${opts.system}\n\nReturn your answer by calling the \`submit\` tool exactly once.`,
+        prompt: opts.prompt,
+        tools: { submit: tool({ description: "Submit the final answer", inputSchema: opts.schema }) },
+        toolChoice: { type: "tool", toolName: "submit" },
+        abortSignal: opts.abortSignal,
+        maxRetries: opts.maxRetries ?? (Number(process.env.LLM_MAX_RETRIES) || undefined),
+        providerOptions: providerOptionsFor(opts.effort),
+      });
+      if (opts.usage) addUsage(opts.usage, result.usage);
+      const call = result.toolCalls.find((c) => c.toolName === "submit");
+      if (!call) throw new Error(`model did not call submit (finish: ${result.finishReason})`);
+      return opts.schema.parse(call.input);
+    } catch (err) {
+      if (opts.abortSignal?.aborted) throw err;
+      lastErr = err;
+    }
+  }
+  throw lastErr;
+}

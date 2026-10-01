@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Caselaw Agent
 
-## Getting Started
+Natural-language search over UK judgments from The National Archives' **Find Case Law**, with
+verified paragraph/clause highlights. See [`plan.md`](plan.md) for the design.
 
-First, run the development server:
+## Dev setup
+
+Requires podman (with `podman compose`), Node 24, pnpm.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
+pnpm install
+cp .env.example .env.local        # then set ANTHROPIC_API_KEY or AI_GATEWAY_API_KEY
+pnpm services                     # Postgres (compose.yaml, :5433) + checks/starts local Firecrawl (:3002)
+pnpm db:migrate
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Postgres**: `compose.yaml` (pgvector image) → `postgres://caselaw:caselaw@localhost:5433/caselaw`.
+- **Firecrawl (dev)**: self-hosted in podman from `FIRECRAWL_LOCAL_DIR` (default `../firecrawl-local`),
+  `FIRECRAWL_API_URL=http://localhost:3002`, no key. Search goes through its SearXNG container.
+- `pnpm eval` — end-to-end quality evals (needs an LLM key); see [`evals/README.md`](evals/README.md).
+- `pnpm test` — parser, quote verification, fusion, NCN unit tests (fixtures in `test/fixtures`).
+- `pnpm tsx scripts/smoke.ts` — live TNA + DB + Firecrawl smoke test (no LLM).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Local index (bulk RAG)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+⚠️ Bulk ingest + embeddings need TNA's computational-analysis licence (plan.md §1).
 
-## Learn More
+```bash
+pnpm ingest [--from 2025-10-01 --to 2026-10-01] [--exclude-court immigration]  # TNA → cases/elements
+pnpm embed [--watch]                 # chunk + embed new cases locally (bge-small, no API cost)
+pnpm local-search "damp and mould"   # query the local index directly (no LLM, no TNA)
+```
 
-To learn more about Next.js, take a look at the following resources:
+Both scripts are resumable. Once any chunks exist, every search also queries the local index
+(pgvector semantic + Postgres full-text) and fuses those lists with the live TNA ones; paragraph
+retrieval inside each case blends semantic hits with keyword hits. `LOCAL_INDEX=off` disables it.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Production
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Setting | Value |
+|---|---|
+| `DATABASE_URL` | Neon connection string, then `pnpm db:migrate` |
+| `FIRECRAWL_API_URL` | unset (SDK defaults to `https://api.firecrawl.dev`) |
+| `FIRECRAWL_API_KEY` | Firecrawl cloud key (`fc-…`) |
+| `AI_GATEWAY_API_KEY` / OIDC | Vercel AI Gateway (or `ANTHROPIC_API_KEY`) |
 
-## Deploy on Vercel
+Web enrichment is optional: `WEB_ENRICH_ENABLED=false`, or no Firecrawl config, skips it.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Layout
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/lib/tna/        client (atom search, data.xml, 24h search cache), shared Postgres rate limiter,
+                    Akoma Ntoso parser, NCN helpers
+src/lib/web/        Firecrawl client (same code path for self-hosted and cloud)
+src/lib/search/     expand → TNA searches (+ web hints, + local index) → fusion → retrieve (FTS + vectors)
+                    → relevance (LLM) → verify quotes → cutoff; pipeline.ts streams events
+src/lib/cases/      cache-first case store
+src/lib/embed.ts    local embeddings (transformers.js) + paragraph chunking
+src/app/api/search  NDJSON event stream
+src/app/case/[...uri]  judgment viewer with highlights, jump list, citations
+src/app/cases       cached-case explorer + search history
+src/lib/areas.ts    area-of-law taxonomy + court-based guess
+evals/              dataset, metrics, LLM judge; runner in scripts/eval.ts
+```
+
+## Search notes
+
+- TNA keyword searches use `order=relevance` (undocumented; what TNA's own "Most relevant" sort
+  uses). Falls back to date order if TNA rejects it. Up to 25 hits per keyword variant are fused.
+- **Area of law**: each case gets up to 3 areas — a guess from the court, then a classification
+  from the relevance pass. Users can restrict a search to areas (cases outside are rejected with a
+  reason) or filter results by area afterwards.
+- **Date range**: inferred from the question ("since 2020", "in 2019", "recent" = last 5 years),
+  or set with the from/to inputs (YYYY, YYYY-MM, YYYY-MM-DD), which override it. Applied as TNA's
+  `from_date_*`/`to_date_*` filter and enforced on every candidate (web citations bypass TNA's
+  filter), before any LLM call. The UI shows the applied range and where it came from.
+
+Not legal advice. Source: The National Archives, Find Case Law (Open Justice Licence — note the
+computational-analysis restriction discussed in `plan.md` §1).

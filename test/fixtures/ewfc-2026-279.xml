@@ -1,0 +1,1699 @@
+<akomaNtoso xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0" xmlns:uk="https://caselaw.nationalarchives.gov.uk/akn">
+  <judgment name="judgment">
+    <meta>
+      <identification source="#tna">
+	<FRBRWork>
+	  <FRBRthis value="https://caselaw.nationalarchives.gov.uk/id/ewfc/2026/279"/>
+	  <FRBRuri value="https://caselaw.nationalarchives.gov.uk/id/ewfc/2026/279"/>
+	  <FRBRdate date="2026-09-29" name="judgment"/>
+	  <FRBRauthor href="#ewfc"/>
+	  <FRBRcountry value="GB-UKM"/>
+	  <FRBRnumber value="279"/>
+	  <FRBRname value="D &amp; Anor v K (Illegal Chinese Commercial Surrogacy)"/>
+	</FRBRWork>
+	<FRBRExpression>
+	  <FRBRthis value="https://caselaw.nationalarchives.gov.uk/ewfc/2026/279"/>
+	  <FRBRuri value="https://caselaw.nationalarchives.gov.uk/ewfc/2026/279"/>
+	  <FRBRdate date="2026-09-29" name="judgment"/>
+	  <FRBRauthor href="#ewfc"/>
+	  <FRBRlanguage language="eng"/>
+	</FRBRExpression>
+	<FRBRManifestation>
+	  <FRBRthis value="https://caselaw.nationalarchives.gov.uk/ewfc/2026/279/data.xml"/>
+	  <FRBRuri value="https://caselaw.nationalarchives.gov.uk/ewfc/2026/279/data.xml"/>
+	  <FRBRdate date="2026-09-29T15:07:41" name="transform"/>
+	  <FRBRdate date="2026-09-29T16:28:50" name="tna-enriched"/>
+	  <FRBRauthor href="#tna"/>
+	  <FRBRformat value="application/xml"/>
+	</FRBRManifestation>
+      </identification>
+      <lifecycle source="#">
+	<eventRef date="2026-09-29" refersTo="#judgment" source="#"/>
+      </lifecycle>
+      <references source="#tna">
+	<TLCOrganization eId="ewfc" href="https://www.judiciary.uk/you-and-the-judiciary/going-to-court/family-law-courts/" showAs="The Family Court"/>
+	<TLCOrganization eId="tna" href="https://www.nationalarchives.gov.uk/" showAs="The National Archives"/>
+	<TLCEvent eId="judgment" href="#" showAs="judgment"/>
+	<TLCPerson eId="d" href="" showAs="D"/>
+	<TLCPerson eId="c" href="" showAs="C"/>
+	<TLCPerson eId="k" href="" showAs="K"/>
+	<TLCRole eId="applicant" href="" showAs="Applicant"/>
+	<TLCRole eId="respondent" href="" showAs="Respondent"/>
+	<TLCPerson eId="judge-mr-justice-macdonald" href="/judge-mr-justice-macdonald" showAs="MR JUSTICE MACDONALD"/>
+      </references>
+      <proprietary source="#">
+	<uk:court>EWFC</uk:court>
+	<uk:year>2026</uk:year>
+	<uk:number>279</uk:number>
+	<uk:cite>[2026] EWFC 279</uk:cite>
+	<uk:caseNumber>ZC25P01376</uk:caseNumber>
+	<uk:parser>1.16.0</uk:parser>
+	<uk:hash>14232195adfe543b8372503ec892fc4c431d433c2977bbe63752c0eea16250ba</uk:hash>
+	<uk:tna-enrichment-engine>7.4.0</uk:tna-enrichment-engine>
+      </proprietary>
+      <presentation source="#">
+	<style xmlns="http://www.w3.org/1999/xhtml">
+#judgment { font-family: 'Times New Roman'; font-size: 12pt; }
+#judgment .Normal { font-size: 12pt; }
+#judgment .Heading1 { font-weight: bold; font-family: Arial; font-size: 16pt; }
+#judgment .Heading3 { font-weight: bold; font-family: Arial; font-size: 13pt; }
+#judgment .CoverDesc { text-align: center; font-weight: bold; font-size: 18pt; }
+#judgment .CoverMain { font-weight: bold; text-decoration-line: underline; text-decoration-style: solid; font-size: 12pt; }
+#judgment .CoverText { text-align: right; text-decoration-line: underline; text-decoration-style: solid; font-size: 12pt; }
+#judgment .ParaHeading { font-size: 12pt; }
+#judgment .ParaLevel1 { text-align: justify; margin-left: 0.5in; font-size: 12pt; }
+#judgment .ParaLevel2 { text-align: justify; margin-left: 0.98in; font-size: 12pt; }
+#judgment .ParaLevel3 { text-align: justify; margin-left: 1.48in; font-size: 12pt; }
+#judgment .ParaLevel4 { text-align: justify; margin-left: 1.97in; font-size: 12pt; }
+#judgment .ParaLevel5 { text-align: justify; margin-left: 2.46in; font-size: 12pt; }
+#judgment .ParaLevel6 { text-align: justify; margin-left: 2.95in; font-size: 12pt; }
+#judgment .ParaLevel7 { text-align: justify; margin-left: 3.45in; font-size: 12pt; }
+#judgment .ParaLevel8 { text-align: justify; margin-left: 3.94in; font-size: 12pt; }
+#judgment .ParaLevel9 { text-align: justify; margin-left: 4.43in; font-size: 12pt; }
+#judgment .ParaNoNumber { text-align: justify; font-size: 12pt; }
+#judgment .Quote { text-align: justify; margin-left: 1in; margin-right: 1in; font-size: 12pt; }
+#judgment .Header { font-family: Univers; font-size: 12pt; }
+#judgment .Footer { font-family: Univers; font-size: 12pt; }
+#judgment .Heading { font-size: 12pt; }
+#judgment .Title { text-align: center; font-weight: bold; font-size: 10pt; }
+#judgment .eMailBlock { text-align: center; font-weight: bold; font-size: 13pt; }
+#judgment .PlaceholderText { color: #808080; }
+</style>
+      </presentation>
+    </meta>
+    <header>
+      <p style="text-align:center"><img src="image1.png" style="width:76.3pt;height:75.6pt"/></p>
+      <p class="CoverText" style="text-align:left">Neutral Citation Number: <neutralCitation>[2026] EWFC 279</neutralCitation></p>
+      <p class="CoverText">Case No: <docketNumber>ZC25P01376</docketNumber></p>
+      <p class="CoverMain"><courtType refersTo="#ewfc">IN THE FAMILY COURT</courtType></p>
+      <p><span style="font-weight:bold;text-decoration-line:underline;text-decoration-style:solid">SITTING AT THE ROYAL COURTS OF JUSTICE</span></p>
+      <p class="CoverText">Royal Courts of Justice</p>
+      <p class="CoverText">Strand, London, WC2A 2LL</p>
+      <p class="CoverText">Date: <docDate date="2026-09-29" refersTo="#judgment">29/09/2026</docDate></p>
+      <p style="text-align:center"><span style="font-weight:bold">Before</span>:</p>
+      <p class="CoverMain" style="text-align:center"><judge refersTo="#judge-mr-justice-macdonald">MR JUSTICE MACDONALD</judge></p>
+      <p style="text-align:center">- - - - - - - - - - - - - - - - - - - - -</p>
+      <p style="text-align:center"><span style="font-weight:bold">Between:</span></p>
+      <table uk:widths="1.23in 3.87in 1.24in">
+	<tr>
+	  <td>
+	    <p/>
+	  </td>
+	  <td>
+	    <p style="text-align:center"><party as="#applicant" refersTo="#d" style="font-weight:bold">D</party></p>
+	  </td>
+	  <td>
+	    <p class="CoverMain" style="text-align:right"><role refersTo="#applicant">First Applicant</role></p>
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	    <p/>
+	  </td>
+	  <td>
+	    <p style="text-align:center"><span style="font-weight:bold">- and &#8211;</span></p>
+	    <p style="text-align:center"/>
+	  </td>
+	  <td>
+	    <p class="CoverMain" style="text-align:right"/>
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	    <p/>
+	  </td>
+	  <td>
+	    <p style="text-align:center"><party as="#applicant" refersTo="#c" style="font-weight:bold">C</party></p>
+	  </td>
+	  <td>
+	    <p class="CoverMain" style="text-align:right"><role refersTo="#applicant">Second Applicant</role></p>
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	    <p/>
+	  </td>
+	  <td>
+	    <p style="text-align:center"><span style="font-weight:bold">-and-</span></p>
+	    <p style="text-align:center"/>
+	  </td>
+	  <td>
+	    <p class="CoverMain" style="text-align:right"/>
+	  </td>
+	</tr>
+	<tr>
+	  <td>
+	    <p/>
+	  </td>
+	  <td>
+	    <p style="text-align:center"><party as="#respondent" refersTo="#k" style="font-weight:bold">K</party></p>
+	  </td>
+	  <td>
+	    <p class="CoverMain" style="text-align:right"><role refersTo="#respondent">Respondent</role></p>
+	  </td>
+	</tr>
+      </table>
+      <p style="text-align:center">- - - - - - - - - - - - - - - - - - - - -</p>
+      <p style="text-align:center">- - - - - - - - - - - - - - - - - - - - -</p>
+      <p style="text-align:center"><span style="font-weight:bold">Mr Andrew Powell KC  </span>(instructed by<span style="font-weight:bold"> International Family Law Group LLP</span>) for the <span style="font-weight:bold">Applicants</span></p>
+      <p style="text-align:center"><span style="font-weight:bold">The Respondent did not appear and was not represented</span></p>
+      <p style="text-align:center">Hearing dates: 17 June 2026</p>
+      <p style="text-align:center">- - - - - - - - - - - - - - - - - - - - -</p>
+      <p class="CoverDesc">Approved Judgment</p>
+      <p style="text-align:center">This judgment was handed down remotely at 10.30am on 29 September 2026 by circulation to the parties or their representatives by e-mail.</p>
+      <p style="text-align:center">.............................</p>
+      <p style="text-align:center">MR JUSTICE MACDONALD</p>
+      <p style="text-align:justify">This judgment was delivered in private. The judge has given leave for this version of the judgment to be published on condition that (irrespective of what is contained in the judgment) in any published version of the judgment the anonymity of the children and members of their family must be strictly preserved.  All persons, including representatives of the media and legal bloggers, must ensure that this condition is strictly complied with.   Failure to do so may be a contempt of court. </p>
+    </header>
+    <judgmentBody>
+      <decision>
+	<level eId="lvl_1">
+	  <content>
+	    <p><span style="font-weight:bold">Mr Justice MacDonald:</span></p>
+	    <p class="ParaLevel1" style="margin-left:0.5in;text-indent:-0.5in">INTRODUCTION</p>
+	  </content>
+	</level>
+	<paragraph eId="para_1">
+	  <num>1.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">The matter concerns an application dated 24 July 2025 by D and C for a parental order in respect of G, born in 2025 and now aged 20 months old.  G was conceived and born in China via surrogacy with the assistance of the respondent gestational surrogate, K, a Chinese national.  D is a Chinese national and a British citizen.  C is a national of Country A.  D and C are in an enduring same sex relationship, and they have provided to the court a copy of their marriage certificate. The applicants are represented by Mr Andrew Powell of King&#8217;s Counsel.  The Secretary of State for Health and Social Care declined an invitation from the court to intervene in these proceedings.</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_2">
+	  <num>2.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">In determining this application, I have had the benefit of reading the court bundle, which includes a report and an addendum report from the Cafcass Parental Order Reporter and an expert report on Chinese law, together with a comprehensive and erudite Skeleton Argument from Mr Powell.  At the conclusion of the hearing I made a parental order in favour of the applicants.  I now set out my reasons for doing so.</p>
+	  </content>
+	</paragraph>
+	<level eId="lvl_2">
+	  <content>
+	    <p class="ParaLevel1">BACKGROUND AND EVIDENCE</p>
+	  </content>
+	</level>
+	<paragraph eId="para_3">
+	  <num>3.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">D was born in China in 1983 and is now aged 43.  In the early 2000s, D moved to London to complete his A-Levels.  He thereafter attended university in London, where he obtained a degree before going on to complete an MBA.  D lived in England for the next 20 years, obtaining British citizenship in 2014.  Following his post-graduate studies, he took up a position with a management consultancy firm in London, before accepting a temporary posting to Country B in 2022.  D&#8217;s entry clearance for Country B offers no right of abode and no route to permanent status.  He retains a property in London, has an English bank account, is registered as a company director at Companies House and is registered to vote in the United Kingdom.  In his statement, D states that his only continuing link with China is that his parents continue to reside there.</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_4">
+	  <num>4.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">C was born in Country A in 1983 and is now 42 years old.  He currently has immigration clearance for Country B until 10 June 2027, on the basis of an employment pass.  It is his intention to apply for a spousal visa for the United Kingdom when the parties return to this jurisdiction at the conclusion of D&#8217;s posting in Country B.  C obtained a BSc and a Masters in Country A before relocating to Country C to work.  He moved to Country B in 2019.</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_5">
+	  <num>5.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">The applicants met in Country B in December 2022 and married in London on 10 September 2023, Country B not recognising same-sex marriage.  The applicants currently reside in Country B.  In his statement, D states that it remains their intention to return to the United Kingdom, which he considers to be his permanent home.</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_6">
+	  <num>6.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">In 2023, the applicants began to investigate surrogacy and determined to identify a surrogacy agency in Asia.  Ultimately, they say they selected an agency in China for geographical convenience and on the recommendation of a person described as &#8220;a close friend&#8221;.  I pause to note that, as noted by the Cafcass Parental Order Reporter, there is no mention of the name of the agency within the paperwork provided by the applicants.  The purported surrogacy contract does not appear to have a heading or details of an address for the agency.  D is recorded as eventually telling the Cafcass Parental Order Reporter that the agency had been called &#8220;X&#8221; but that the name was &#8220;removed several years ago&#8221;.  D stated that the applicants&#8217; surrogacy contract was facilitated through an &#8220;intermediary&#8221; called F and that there is no agency &#8220;as such&#8221;.  D explained to the Parental Order Reporter that F does not advertise his services but rather &#8220;it is through your connections that you become aware of his service.&#8221;</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_7">
+	  <num>7.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">K was identified by F as a gestational surrogate.  There was no formal process of matching K with the applicants and there is no information on how K was recruited as a surrogate. The agency undertook background checks, a suitability assessment and medical screening.  The applicants had <span style="font-style:italic">no</span> direct contact with K, save for a brief meeting when she was seven months pregnant and shortly after G was born.  The applicants informed the Parental Order Reporter that F had discouraged them from having any form of communication with K, telling them that in the past some surrogates have tried to exploit intended parents. D describes his understanding of the position of K as follows:</p>
+	    <block name="embeddedStructure"><embeddedStructure>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">&#8220;[18] K lives in a small rural Chinese village where surrogacy is unheard of. She decided not to tell her family that she chose to be our surrogate as she was concerned about their reaction. She has children of her own, but we understand that she moved to live at premises provided by the agency throughout the pregnancy. I understand that she told her family that she had to move to the city to find work. It is common in China for people to move from rural areas to the city to find work as migrant workers. There was a further complication in that K has only had daughters and her first husband divorced her when she did not give birth to a son. She has since had another daughter with another partner and we know that she was worried about her family knowing that she had been a surrogate, especially when she gave birth to a son for us.&#8221;</p>
+		  </content>
+		</level>
+	      </embeddedStructure></block>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_8">
+	  <num>8.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">The applicants entered into a surrogacy contract with F dated in May 2023, a translated copy of which is contained in the bundle.  D and C confirmed to the Parental Order Reporter that they have not been provided with any documentation signed by K.  There was no surrogacy agreement, signed in advance or settled orally, between the applicants and K.  K did not benefit from legal advice during the surrogacy process.  The Parental Order report records these matters following conversation that took place between the Parental Order Reporter and K via WeChat on 18 March 2026:</p>
+	    <block name="embeddedStructure"><embeddedStructure>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">&#8220;[32] I spoke to K, via WeChat on 18/03/2026 and we were joined by a Mandarin interpreter. K showed her Chinese ID card which confirmed her name and date of birth. K resembled the pictures included in D and C's bundle. Whilst exploring her role as a surrogate, she told me that she did not sign a contract nor any documentation regarding her role as a surrogate, everything was agreed verbally.  She confirmed that everything which was agreed verbally was acted upon and she had no concerns to raise. She said that she met D and C, I asked if she knew they were a gay couple.  She said no one discussed this with her, but she had guessed, she said that she didn't ask any questions.</p>
+		  </content>
+		</level>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">[33] K told me that she does not want parental rights for G, she has her own children.  K understood that by providing her consent, she was surrendering any parental rights for G. I queried if she had received any legal advice throughout and she said she had not.&#8221;</p>
+		  </content>
+		</level>
+	      </embeddedStructure></block>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_9">
+	  <num>9.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">D and C are unable to produce any evidence of K's marital status that the time she acted as a surrogate.  During her conversation with the Parental Order Reported on 18 March 2026, K reported that she was married previously, but she was not married at the time she acted as a surrogate. </p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_10">
+	  <num>10.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">The first clause of the contract entered into by the applicants with F provides an overview of its terms as follows, Party B being F and Party A being the applicants:</p>
+	    <block name="embeddedStructure"><embeddedStructure>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">&#8220;<span style="font-weight:bold">Clause I. Overview</span></p>
+		  </content>
+		</level>
+		<paragraph>
+		  <num>1.</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">Party B guarantees the healthy birth of a baby with the biological parents designated by Party A. Otherwise, it will be considered a breach of contract by Party B, and Party B shall unconditionally refund all payments (including fees paid by Party A to volunteers outside this agreement).   </p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>2.</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">The total amount of this agreement is RMB 750,000 (&#165;750,000).   </p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>3.</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">This agreement specifies the use of *third-generation IVF (PGS) technology, with *one baby* to be born, and the preferred gender for transplantation is *male*.   </p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>4.</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">Party B guarantees the birth of the baby within two years, calculated from the day of embryo transfer to the surrogate. If no live birth occurs after two consecutive cycles, it will be considered a breach by Party B. Party A has the right to terminate the agreement, and Party B shall refund all payments in full (including fees paid by Party A to volunteers outside this agreement).   </p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>5.</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">The surrogate volunteer shall be recruited, selected, and fully managed by Party B under Party A&#8217;s authorization.   </p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>6.</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">Party B shall bear all financial and medical risks that may arise during the process, including but not limited to failure to conceive, ectopic pregnancy, biochemical pregnancy, miscarriage, foetal arrest, or termination of pregnancy due to foetal malformation, etc. Any financial responsibility or adverse consequences arising therefrom shall not be the responsibility of Party A.   </p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>7.</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">Party B shall not demand any additional fees beyond those specified in the contract under any pretext (providing red envelopes, gifts, or other valuables to Party B&#8217;s staff or volunteers shall be considered a breach by Party A).   </p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>8.</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">Other agreements negotiated by both parties:   </p>
+		  </content>
+		</paragraph>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">- 8.1 Party A may prioritise the transplant of &#8220;male&#8221; embryos first. If unsuccessful, Party A shall unconditionally accept the transfer of the remaining embryos (provided being as recommended embryos for transplant based on Party B&#8217;s assessment).&#8221;</p>
+		  </content>
+		</level>
+	      </embeddedStructure></block>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_11">
+	  <num>11.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">An embryo was created using a donor egg from an anonymous Chinese donor, again identified by F, and D&#8217;s sperm.  The resulting embryo was implanted into K in June 2024.  The court has before it DNA evidence confirming that D is the biological father of G.  Payments totalling &#163;92,930.60 were made to F.  There is a lack of transparency with respect to the purpose and destination of these payments.</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_12">
+	  <num>12.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">D asserts that the payments were set out in a surrogacy contract and were linked to &#8220;various pregnancy milestones&#8221;.  This would appear to be the case on the face of the contract, although there are a number of other clauses dealing with financial matters and the destination of the payments that were made is not wholly clear.  Whilst the surrogacy contract indicates that the agency covers all expenses associated with the surrogacy, D further contends that &#8220;from verbal communication with the agency&#8221; he was informed that &#163;32,000 of the funds transferred were paid to K.  In his statement, D describes that payment as follows:</p>
+	    <block name="embeddedStructure"><embeddedStructure>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">&#8220;I understand from verbal communication with the agency, that 300,000 Chinese Yuan was paid to [K], which translates to c&#163;32,000. This entire amount relates to her commercial payment for her services. She did not have any additional expenses, as these were all covered by the agency, although presumably some of the funds that we paid to the agency would have covered those costs.&#8221;</p>
+		  </content>
+		</level>
+	      </embeddedStructure></block>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_13">
+	  <num>13.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">In his second statement, D states that discussions with K indicate that she received monies from a variety of people associated with F, but never from F himself.   From the information provided to D by K the amount she received in this manner was &#165; 237,007.00 or &#163;25,935.  This is a different figure to that initially indicated to the applicants by F.  In his second statement, D states that &#8220;we are unable to confirm, however, in what proportion of those monies amount to her reasonable expenses, and what proportion amounted to her commercial payment.&#8221;  When speaking to the Parental Order Reporter over WeChat on 18 March 2026, K stated that she had received slightly over &#165; 200,000.  She again confirmed that there was no written or signed surrogacy agreement and that she had received a one-off payment when G was born, she did not receive any payments during the pregnancy.  Neither applicant has been able to produce any evidence that payments were made to K save for screen shots of communications said to be between themselves and F and K and apparently confirming K received a &#165; 230,000 payment, the equivalent of &#163;25,024. The surrogacy contract itself makes no express provision for payments to be made K.  </p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_14">
+	  <num>14.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">As set out in Clause 1 of the contract, the surrogacy contract provided for the applicants to select the gender of the surrogate child.  Clause V(4) of the surrogacy contract further provided for a partial refund if a male child was not born:</p>
+	    <block name="embeddedStructure"><embeddedStructure>
+		<paragraph>
+		  <num>&#8220;4.</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in"><span style="font-weight:bold">*Gender Confirmation*</span></p>
+		  </content>
+		</paragraph>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">- 4.1 Party A may conduct gender tests (e.g., X Laboratory Y-Chromosome test service at RMB 3,000/ultrasound at RMB 2,000) at 7+ weeks, self-funded. If results contradict Party B&#8217;s pre-transfer disclosure, Party B shall deduct RMB 200,000 from service fees.&#8221;  </p>
+		  </content>
+		</level>
+	      </embeddedStructure></block>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_15">
+	  <num>15.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">Following the birth of G in 2025, the applicants took over his care the following day and he was discharged from hospital.  G's birth was registered in D and K's name. Clause V(10) of the surrogacy contract provided as follows in respect of handover:</p>
+	    <block name="embeddedStructure"><embeddedStructure>
+		<paragraph>
+		  <num>&#8220;10.</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in"><span style="font-weight:bold">*Baby Handover*</span></p>
+		  </content>
+		</paragraph>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">- 10.1 Final payment must be cleared before or during handover.   </p>
+		  </content>
+		</level>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">- 10.2 If Party A delays handover post-discharge, a daily fee of RMB 800 applies.</p>
+		  </content>
+		</level>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">- 10.3 Confinement Centre costs (if requested by Party A) are self-funded.&#8221; </p>
+		  </content>
+		</level>
+	      </embeddedStructure></block>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_16">
+	  <num>16.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">After spending two months at the home of D&#8217;s parents in China, C returned to Country B.  By April 2025, both applicants and G were resident in Country B.  The family occupies a three bedroom property with a full-time live in nanny.  The application for a parental order was filed on 24 July 2025, within the required six month timeframe following G&#8217;s birth, and issued on 14 August 2025.</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_17">
+	  <num>17.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">In the bundle is a photograph of Form A101A which is relied on by the applicants as evidence of K&#8217;s consent to the making of a parental order.  In D&#8217;s first statement he asserts as follows regarding the ability of K to complete forms C51 and C52:</p>
+	    <block name="embeddedStructure"><embeddedStructure>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">&#8220;As such, we were concerned not to cause any further complications to her life by requiring her to give her consent to the making of the Parental Order by travelling to see a Notary Public, as it&#8217;s possible that this information would then become known to her village. The same applies in relation to posting her the documentation. Our solicitor, therefore, made an application to the court for an order which would enable K to be served with the C51 and C52 by WeChat, which is the Chinese equivalent of WhatsApp, and is more secure than post or email. The court granted that order and made an order giving permission for K to record her consent over a WeChat video call with the Parental Order Reporter. A copy of that order will be in the court bundle.&#8221;</p>
+		  </content>
+		</level>
+	      </embeddedStructure></block>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_18">
+	  <num>18.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">In the foregoing circumstances, at the case management stage I directed the Cafcass Parental Order Reporter to witness K sign form A101A over a video link during their meeting via WeChat, with a Mandarin interpreter, on 18 March 2026.  </p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_19">
+	  <num>19.</num>
+	  <intro>
+	    <p class="ParaLevel1" style="margin-left:0.5in">In circumstances where the understanding of the court at the case management stage was that surrogacy is illegal in China, the court gave permission under FPR Part 25 for the instruction of an expert in Chinese law.  The court has before it an impressively clear and comprehensive expert report from Yilin Hu, a lawyer from Zhuoxin Law Firm in Guangzhou, together with the answers to further questions put to her in writing. That evidence is not disputed. The following set out in the report and answers to written questions are relevant:</p>
+	  </intro>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">i)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in">Pursuant to Art 3 of the Measures for the Administration of Human Assisted Reproductive Technologies, any form of surrogacy is illegal in China. The prohibition applies uniformly across all provinces and regions of China.</p>
+	    </content>
+	  </subparagraph>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">ii)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in">Pursuant to Arts 153 and 1009 of the Chinese Civil Code, surrogacy arrangements are generally held by Chinese Courts to be invalid because (a) they violate the mandatory prohibition contained in the Measures for the Administration of Human Assisted Reproductive Technologies and (b) they offend public order and good morals under Chinese civil law.</p>
+	    </content>
+	  </subparagraph>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">iii)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in;text-indent:0.01in">Surrogacy agreements in China are held void for violating public order and good morals under Art 153 of the Chinese Civil Code.</p>
+	    </content>
+	  </subparagraph>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">iv)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in">The prohibition on surrogacy is aimed at regulating commercial activities and medical practices.  It does not negate the personality and identity rights of children born via prohibited surrogacy arrangements.  A surrogate child will have the same rights in China as a child born out of wedlock.</p>
+	    </content>
+	  </subparagraph>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">v)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in">Chinese law does not provide for the determination of parentage of children born through prohibited surrogacy arrangements.  </p>
+	    </content>
+	  </subparagraph>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">vi)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in">The women who gives birth to the surrogate child is recognised as the legal mother under Chinese law (although there have been some limited cases in which the intended mother who provide the gamete has been recognised as the legal mother).</p>
+	    </content>
+	  </subparagraph>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">vii)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in;text-indent:0.01in">Under Chinese law there is no clear path for intended parents to &#8220;regularise&#8221; their legal relationship with children born via a prohibited surrogacy arrangement.</p>
+	    </content>
+	  </subparagraph>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">viii)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in;text-indent:0.13in">An intended father who is the biological father of the surrogate child may obtain legal parentage under Chinese law through a parentage confirmation law suit.  Generally, the biological father of the surrogate child will be recognised as the father under Chinese law.  Whilst there is a rebuttable presumption that the surrogate mother&#8217;s spouse is the legal father, it is rare in current Chinese judicial practice for the surrogate mother&#8217;s spouse to be recognised as the child&#8217;s legal father under Chinese law as the biological father typically asserts and evidences his parentage of the child from the outset after providing DNA test results.</p>
+	    </content>
+	  </subparagraph>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">ix)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in">As there is no marital relationship between a surrogate mother and the biological father, the surrogate child will be treated in Chinese law as having been born out of wedlock.</p>
+	    </content>
+	  </subparagraph>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">x)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in">An intended father who has no biological relationship with the surrogate child cannot establish legal fatherhood under Chinese law through a parentage confirmation law suit as Art 1073 of the Chinese Civil Code requires a biological link on the part of the applicant.</p>
+	    </content>
+	  </subparagraph>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">xi)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in">C is not able to rely on the so called &#8216;fictive blood relationship&#8217; (i.e. relationship between a step-parent and step-child) set out in the decision of the Shanghai First Intermediate People&#8217;s Court in (2015) <span style="font-style:italic">Hu Yi Zhong Shao Min Zhong Zi</span> No.56, as this route requires a lawful marriage and, under Chinese law, marriage is strictly defined as a union between a man and a women by Art 1046 of the Chinese Civil Code.  Same sex marriage is not legally recognised in China.</p>
+	    </content>
+	  </subparagraph>
+	</paragraph>
+	<paragraph eId="para_20">
+	  <num>20.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">In his second statement, D states as follows with respect to the import of the expert report:</p>
+	    <block name="embeddedStructure"><embeddedStructure>
+		<paragraph>
+		  <num>&#8220;9.</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">At the time we entered into the surrogacy arrangement, we were entirely unaware that commercial surrogacy was illegal. We certainly did not intend to engage in an unlawful process. Our sole focus at the time was the deeply personal journey towards building our family. </p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>10.</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">Had we possessed a full and accurate understanding of the legal restrictions at the time, we would not have proceeded under those terms. We respect the law and the protections it affords, and we would have sought alternative, fully compliant legal pathways to parenthood. We had actually consulted with agencies in the UK and US during our initial search. We ultimately decided to proceed in China due to positive references from close friends, logistical proximity and our own observation of the high quality of service and care offered there. Our choice was guided entirely by a desire for a reliable, supportive process to start our family, and not by any intention to ignore or circumvent legal regulations. </p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>11.</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">In light of the legal information and clarity we have now received through these proceedings, we would not undertake the same process again. We now fully appreciate the importance of strict compliance with the statutory framework from the outset.&#8221;</p>
+		  </content>
+		</paragraph>
+	      </embeddedStructure></block>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_21">
+	  <num>21.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">Once again, and as in other places in his written evidence, I note that in the foregoing passage from his second statement, D refers to the surrogacy process in which the applicants engaged in China as being one of &#8220;commercial surrogacy.&#8221;</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_22">
+	  <num>22.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">Finally, as referred to at points above, the court has the benefit of a report from the Cafcass Parental Order Reporter, Kathleen Cull-Fitzpatrick, dated 27 March 2026 and an addendum report from her dated 5 June 2026.  In her addendum report, the Parental Order Reporter rightly highlights certain of the consequences of the applicants deciding to proceed with an illegal surrogacy arrangement in China in the manner in which they did:</p>
+	    <block name="embeddedStructure"><embeddedStructure>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">&#8220;[9] Within D&#8217;s most recent statement, he acknowledges the information in the expert report and does not seek to minimise the seriousness of their undertaking of an illegal surrogacy arrangement in China.  The applicants have been open and transparent of their surrogacy journey throughout the court proceedings; they have not been dishonest nor attempted to deceive the court of their surrogacy arrangement.  However, they have not demonstrated the necessary diligence prior to undertaking a surrogacy arrangement in China and the legal implications both within this jurisdiction and China.  The circumstances of the surrogacy arrangement in China meant that the surrogate had no protection and was at serious risk of exploitation.  G was also vulnerable due to him being born via an illegal arrangement and there being no legal security as legal parentage cannot be obtained via a surrogacy agreement, and in the event that the surrogate had sought legal rights for G, she would be recognised as G&#8217;s legal mother under Chinese law.</p>
+		  </content>
+		</level>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">[10] D also addresses the financial element and provided a breakdown of the expenses paid and exhibits, which appear to evidence payments to K.  The applicants&#8217; solicitors provided a further letter on 09/06/2026, which has enclosed a table and comments stipulating the applicants&#8217; interpretation of the payments.  Having previously spoken to K, she informed me that she received a one-off payment when G was born and this amounted to slightly over 200,000 Chinese Yuan.  It appears that there is a small discrepancy in the amount received as she reported received the total of 237,000 Chinese Yaun, however, this was not significant.  The average alary in China is 9,500 Chinese yuan per month, therefore it appears as though K received a substantial amount of money acting in her role as a surrogate.  K told me she received a one-off payment, however, in the applicants&#8217; supporting evidence there are several payments made to K.  Due to the circumstances of there being no written agreement, we cannot determine if K received payments in line with the verbal discussions between her and the facilitators of the surrogacy arrangement.  It will be fore the court to determine if they are satisfied with the evidence available and authorise these payments retrospectively.</p>
+		  </content>
+		</level>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">[11] I have considered whether it would be appropriate to have a further conversation with K, however, I do not believe it would further inform this matter or provide further clarity.  Despite K not having voiced any concerns when I spoke to her previously, it has since been confirmed via the expert report that surrogacy is illegal in China.  We do not know the circumstances in which K was recruited as a surrogate.  Due to such circumstances, I do not believe that K would raise any concerns and it is highly likely that she is aware that surrogacy is illegal in China, especially as she kept this arrangement secret from her family. Whilst we were told that K was unable to physically attend a notary to witness the signing of documents, realistically the documents could not have been notarised due to arrangements of the surrogacy being illegal in China.  Due to there being no laws or regulations in China regarding surrogacy, K has no protection, and she continues to be at risk of exploitation.  Whilst we do not know the details of K&#8217;s personal circumstances, it is highly likely that there is an imbalance of power within her relationship with the surrogate facilitator, but also with the applicants.&#8221;</p>
+		  </content>
+		</level>
+	      </embeddedStructure></block>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_23">
+	  <num>23.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">With respect to the question of G&#8217;s best interests, the Parental Order Reporter addresses the welfare checklist in respect of G in her original report. I address the question of best interests in detail below.  In her addendum report, the Parental Order Reporter concludes as follows regarding the best interests of G and, as shall also come to below, in doing so highlights the <span style="font-style:italic">fait accompli</span> that is not uncommonly presented to the court in applications for parental orders under s.54 of the 2008 Act:</p>
+	    <block name="embeddedStructure"><embeddedStructure>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">&#8220;My primary consideration in respect to G was regarding the welfare checklist, with considerations given to G&#8217;s best interests both now and, in the future. Whilst I acknowledge the serious concerns of the nature and facilitation of the surrogacy arrangement, G has formed an attachment and close bond to the applicants, who are providing him with the security and stability of a family home.  The applicants will need to be transparent about the nature of the surrogacy arrangement with him when he is older, and it is hoped that they continue to express the level of remorse as reflected in D&#8217;s most recent statement.  G has resided with the applicants since he was discharged from hospital and currently, there is no dispute regarding G&#8217;s living arrangements.  Whilst G is not of an age to share his wishes and feelings regarding the decision made by the court, I expect that G would want his legal connection with the applicants secured.  The applicants are currently making decisions on [the well]being of G, so it is important that they secure their legal rights to ensure that they can fully exercise their parental responsibility throughout his childhood.  The granting of such an order will ensure that G has permanency, stability and security in [his] living and care arrangements within this jurisdiction, which D claims is his domicile of choice.  Such security for G cannot be obtained in China nor in C&#8217;s domicile of origin, Country A.&#8221;</p>
+		  </content>
+		</level>
+	      </embeddedStructure></block>
+	  </content>
+	</paragraph>
+	<level eId="lvl_3">
+	  <content>
+	    <p class="ParaLevel1">RELEVANT LAW</p>
+	  </content>
+	</level>
+	<paragraph eId="para_24">
+	  <num>24.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">Altruistic surrogacy is legal in the United Kingdom, although surrogacy arrangements are not enforceable in law. <ref href="http://www.legislation.gov.uk/id/ukpga/1985/49/section/1" uk:canonical="1985 c. 49 s. 1" uk:origin="TNA" uk:type="legislation">Section 1</ref> of the <ref href="http://www.legislation.gov.uk/id/ukpga/1985/49" uk:canonical="1985 c. 49" uk:origin="TNA" uk:type="legislation">Surrogacy Arrangements Act 1985</ref> (hereafter &#8220;<ref href="http://www.legislation.gov.uk/id/ukpga/1985/49" uk:canonical="1985 c. 49" uk:origin="TNA" uk:type="legislation">the 1985 Act</ref>&#8221;) provides as follows with respect to domestic surrogacy arrangements in England, Wales and Northern Ireland:</p>
+	    <block name="embeddedStructure"><embeddedStructure>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">&#8220;<span style="font-weight:bold">1 Meaning of &#8220;surrogate mother&#8221;, &#8220;surrogacy arrangement&#8221; and other terms.</span></p>
+		  </content>
+		</level>
+		<paragraph>
+		  <num>(1)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">The following provisions shall have effect for the interpretation of <ref href="http://www.legislation.gov.uk/id/ukpga/1985/49" uk:canonical="1985 c. 49" uk:origin="TNA" uk:type="legislation">this Act</ref>.</p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>(2)</num>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">&#8220;Surrogate mother&#8221; means a woman who carries a child in pursuance of an arrangement&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">made before she began to carry the child, and</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">made with a view to any child carried in pursuance of it being handed over to, and parental responsibility being met (so far as practicable) by, another person or other persons.</p>
+		    </content>
+		  </subparagraph>
+		</paragraph>
+		<paragraph>
+		  <num>(3)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">An arrangement is a surrogacy arrangement if, were a woman to whom the arrangement relates to carry a child in pursuance of it, she would be a surrogate mother.</p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>(4)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">In determining whether an arrangement is made with such a view as is mentioned in subsection (2) above regard may be had to the circumstances as a whole (and, in particular, where there is a promise or understanding that any payment will or may be made to the woman or for her benefit in respect of the carrying of any child in pursuance of the arrangement, to that promise or understanding).</p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>(5)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">An arrangement may be regarded as made with such a view though subject to conditions relating to the handing over of any child.</p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>(6)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">A woman who carries a child is to be treated for the purposes of subsection (2)(a) above as beginning to carry it at the time of the insemination or of the placing in her of an embryo, of an egg in the process of fertilisation or of sperm and eggs, as the case may be, that results in her carrying the child.</p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>(7)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">&#8220;Body of persons&#8221; means a body of persons corporate or unincorporate.</p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>(7A)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">&#8220;Non-profit making body&#8221; means a body of persons whose activities are not carried on for profit.</p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>(8)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">&#8220;Payment&#8221; means payment in money or money&#8217;s worth.</p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>(9)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in"><ref href="http://www.legislation.gov.uk/id/ukpga/1985/49" uk:canonical="1985 c. 49" uk:origin="TNA" uk:type="legislation">This Act</ref> applies to arrangements whether or not they are lawful...</p>
+		  </content>
+		</paragraph>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in"><span style="font-weight:bold">1A Surrogacy arrangements unenforceable.</span></p>
+		  </content>
+		</level>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">No surrogacy arrangement is enforceable by or against any of the persons making it.</p>
+		  </content>
+		</level>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in"><span style="font-weight:bold">2 Negotiating surrogacy arrangements on a commercial basis, etc.</span></p>
+		  </content>
+		</level>
+		<paragraph>
+		  <num>(1)</num>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">No person shall on a commercial basis do any of the following acts in the United Kingdom, that is&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">initiate ... any negotiations with a view to the making of a surrogacy arrangement,</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(aa)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">take part in any negotiations with a view to the making of a surrogacy arrangement,</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">offer or agree to negotiate the making of a surrogacy arrangement, or</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(c)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">compile any information with a view to its use in making, or negotiating the making of, surrogacy arrangements;</p>
+		    </content>
+		  </subparagraph>
+		  <wrapUp>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">and no person shall in the United Kingdom knowingly cause another to do any of those acts on a commercial basis.</p>
+		  </wrapUp>
+		</paragraph>
+		<paragraph>
+		  <num>(2)</num>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">A person who contravenes sub<ref href="http://www.legislation.gov.uk/id/ukpga/1985/49/section/1" uk:canonical="1985 c. 49 s. 1" uk:origin="TNA" uk:type="legislation">section (1</ref>) above is guilty of an offence; but it is not a contravention of that subsection&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">for a woman, with a view to becoming a surrogate mother herself, to do any act mentioned in that subsection or to cause such an act to be done, or</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">for any person, with a view to a surrogate mother carrying a child for him, to do such an act or to cause such an act to be done.</p>
+		    </content>
+		  </subparagraph>
+		</paragraph>
+		<paragraph>
+		  <num>(2A)</num>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">A non-profit making body does not contravene sub<ref href="http://www.legislation.gov.uk/id/ukpga/1985/49/section/1" uk:canonical="1985 c. 49 s. 1" uk:origin="TNA" uk:type="legislation">section (1</ref>) merely because&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">the body does an act falling within sub<ref href="http://www.legislation.gov.uk/id/ukpga/1985/49/section/1" uk:canonical="1985 c. 49 s. 1" uk:origin="TNA" uk:type="legislation">section (1</ref>)(a) or (c) in respect of which any reasonable payment is at any time received by it or another, or</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">it does an act falling within sub<ref href="http://www.legislation.gov.uk/id/ukpga/1985/49/section/1" uk:canonical="1985 c. 49 s. 1" uk:origin="TNA" uk:type="legislation">section (1</ref>)(a) or (c) with a view to any reasonable payment being received by it or another in respect of facilitating the making of any surrogacy arrangement.</p>
+		    </content>
+		  </subparagraph>
+		</paragraph>
+		<paragraph>
+		  <num>(2B)</num>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">A person who knowingly causes a non-profit making body to do an act falling within sub<ref href="http://www.legislation.gov.uk/id/ukpga/1985/49/section/1" uk:canonical="1985 c. 49 s. 1" uk:origin="TNA" uk:type="legislation">section (1</ref>)(a) or (c) does not contravene sub<ref href="http://www.legislation.gov.uk/id/ukpga/1985/49/section/1" uk:canonical="1985 c. 49 s. 1" uk:origin="TNA" uk:type="legislation">section (1</ref>) merely because&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">any reasonable payment is at any time received by the body or another in respect of the body doing the act, or</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">the body does the act with a view to any reasonable payment being received by it or another person in respect of the body facilitating the making of any surrogacy arrangement.</p>
+		    </content>
+		  </subparagraph>
+		</paragraph>
+		<paragraph>
+		  <num>(2C)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">Any reference in subsection (2A) or (2B) to a reasonable payment in respect of the doing of an act by a non-profit making body is a reference to a payment not exceeding the body's costs reasonably attributable to the doing of the act.</p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>(3)</num>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">For the purposes of this section, a person does an act on a commercial basis (subject to subsection (4) below) if&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">any payment is at any time received by himself or another in respect of it, or</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">he does it with a view to any payment being received by himself or another in respect of making, or negotiating or facilitating the making of, any surrogacy arrangement.</p>
+		    </content>
+		  </subparagraph>
+		  <wrapUp>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">In this subsection &#8220;payment&#8221; does not include payment to or for the benefit of a surrogate mother or prospective surrogate mother.</p>
+		  </wrapUp>
+		</paragraph>
+		<paragraph>
+		  <num>(4)</num>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">In proceedings against a person for an offence under sub<ref href="http://www.legislation.gov.uk/id/ukpga/1985/49/section/1" uk:canonical="1985 c. 49 s. 1" uk:origin="TNA" uk:type="legislation">section (1</ref>) above, he is not to be treated as doing an act on a commercial basis by reason of any payment received by another in respect of the act if it is proved that&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">in a case where the payment was received before he did the act, he did not do the act knowing or having reasonable cause to suspect that any payment had been received in respect of the act; and</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">in any other case, he did not do the act with a view to any payment being received in respect of it.</p>
+		    </content>
+		  </subparagraph>
+		</paragraph>
+		<paragraph>
+		  <num>(5)</num>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">Where&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">a person acting on behalf of a body of persons takes any part in negotiating or facilitating the making of a surrogacy arrangement in the United Kingdom, and</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">negotiating or facilitating the making of surrogacy arrangements is an activity of the body,</p>
+		    </content>
+		  </subparagraph>
+		</paragraph>
+		<paragraph>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">then, if the body at any time receives any payment made by or on behalf of&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(i)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">a woman who carries a child in pursuance of the arrangement,</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(ii)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">the person or persons for whom she carries it, or</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(iii)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">any person connected with the woman or with that person or those persons,</p>
+		    </content>
+		  </subparagraph>
+		  <wrapUp>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">the body is guilty of an offence.</p>
+		  </wrapUp>
+		</paragraph>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">For the purposes of this subsection, a payment received by a person connected with a body is to be treated as received by the body.</p>
+		  </content>
+		</level>
+		<paragraph>
+		  <num>(5A)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">A non-profit making body is not guilty of an offence under subsection (5), in respect of the receipt of any payment described in that subsection, merely because a person acting on behalf of the body takes part in facilitating the making of a surrogacy arrangement.</p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>(6)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">In proceedings against a body for an offence under subsection (5) above, it is a defence to prove that the payment concerned was not made in respect of the arrangement mentioned in paragraph (a) of that subsection.</p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>(7)</num>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">A person who in the United Kingdom takes part in the management or control&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">of any body of persons, or</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">of any of the activities of any body of persons,</p>
+		    </content>
+		  </subparagraph>
+		  <wrapUp>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">is guilty of an offence if the activity described in subsection (8) below is an activity of the body concerned.</p>
+		  </wrapUp>
+		</paragraph>
+		<paragraph>
+		  <num>(8)</num>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">The activity referred to in subsection (7) above is negotiating or facilitating the making of surrogacy arrangements in the United Kingdom, being&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">arrangements the making of which is negotiated or facilitated on a commercial basis, or</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">arrangements in the case of which payments are received (or treated for the purposes of subsection (5) above as received) by the body concerned in contravention of subsection (5) above.</p>
+		    </content>
+		  </subparagraph>
+		</paragraph>
+		<paragraph>
+		  <num>(8A)</num>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">A person is not guilty of an offence under subsection (7) if&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">the body of persons referred to in that subsection is a non-profit making body, and</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">the only activity of that body which falls within subsection (8) is facilitating the making of surrogacy arrangements in the United Kingdom.</p>
+		    </content>
+		  </subparagraph>
+		</paragraph>
+		<paragraph>
+		  <num>(8B)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">In subsection (8A)(b) &#8220; facilitating the making of surrogacy arrangements &#8221; is to be construed in accordance with subsection (8).</p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>(9)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">In proceedings against a person for an offence under subsection (7) above, it is a defence to prove that he neither knew nor had reasonable cause to suspect that the activity described in subsection (8) above was an activity of the body concerned; and for the purposes of such proceedings any arrangement falling within subsection (8)(b) above shall be disregarded if it is proved that the payment concerned was not made in respect of the arrangement.&#8221;</p>
+		  </content>
+		</paragraph>
+	      </embeddedStructure></block>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_25">
+	  <num>25.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">With respect to domestic surrogacy arrangements in England and Wales, the government has published guidance, including guidance designed to ensure the care of surrogates and intended parents, entitled <span style="font-style:italic">Care in Surrogacy: Guidance for the care of surrogates and intended parents in surrogate births in England and Wales </span>DOH 3 October 2025.  Amongst other matters, the Guidance makes clear the need to ensure the surrogate has mental capacity to consent to surrogacy and to make decisions about her care and that of the child post-partum, antenatal care, ante-natal screening and post-natal after care for the surrogate.</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_26">
+	  <num>26.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">Part 2 of the 2008 Act makes provision for parenthood in cases involving assisted reproduction.  Sections 54 and 55 of Part 2, as amended, provide as follows with respect to the court&#8217;s power to make a parental order in favour of a couple:</p>
+	    <block name="embeddedStructure"><embeddedStructure>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">&#8220;<span style="font-weight:bold">54 Parental orders: two applicants</span></p>
+		  </content>
+		</level>
+		<paragraph>
+		  <num>(1)</num>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">On an application made by two people (&#8220;the applicants&#8221;), the court may make an order providing for a child to be treated in law as the child of the applicants if&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">the child has been carried by a woman who is not one of the applicants, as a result of the placing in her of an embryo or sperm and eggs or her artificial insemination,</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">the gametes of at least one of the applicants were used to bring about the creation of the embryo, and</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(c)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">the conditions in subsections (2) to (8A) are satisfied.</p>
+		    </content>
+		  </subparagraph>
+		</paragraph>
+		<paragraph>
+		  <num>(2)</num>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">The applicants must be&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">husband and wife,</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">civil partners of each other, or</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(c)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">two persons who are living as partners in an enduring family relationship and are not within prohibited degrees of relationship in relation to each other.</p>
+		    </content>
+		  </subparagraph>
+		</paragraph>
+		<paragraph>
+		  <num>(3)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">Except in a case falling within subsection (11), the applicants must apply for the order during the period of 6 months beginning with the day on which the child is born.</p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>(4)</num>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">At the time of the application and the making of the order&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">the child's home must be with the applicants, and</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">either or both of the applicants must be domiciled in the United Kingdom or in the Channel Islands or the Isle of Man.</p>
+		    </content>
+		  </subparagraph>
+		</paragraph>
+		<paragraph>
+		  <num>(5)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">At the time of the making of the order both the applicants must have attained the age of 18.</p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>(6)</num>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">The court must be satisfied that both&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">the woman who carried the child, and</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">any other person who is a parent of the child but is not one of the applicants (including any man who is the father by virtue of section 35 or 36 or any woman who is a parent by virtue of section 42 or 43),</p>
+		    </content>
+		  </subparagraph>
+		  <wrapUp>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">have freely, and with full understanding of what is involved, agreed unconditionally to the making of the order.</p>
+		  </wrapUp>
+		</paragraph>
+		<paragraph>
+		  <num>(7)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">Subsection (6) does not require the agreement of a person who cannot be found or is incapable of giving agreement; and the agreement of the woman who carried the child is ineffective for the purpose of that subsection if given by her less than six weeks after the child's birth.</p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>(8)</num>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">The court must be satisfied that no money or other benefit (other than for expenses reasonably incurred) has been given or received by either of the applicants for or in consideration of&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">the making of the order,</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">any agreement required by subsection (6),</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(c)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">the handing over of the child to the applicants, or</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(d)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">the making of arrangements with a view to the making of the order,</p>
+		    </content>
+		  </subparagraph>
+		  <wrapUp>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">unless authorised by the court.</p>
+		  </wrapUp>
+		</paragraph>
+		<paragraph>
+		  <num>(8A)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">An order relating to the child must not previously have been made under this section or section 54A, unless the order has been quashed or an appeal against the order has been allowed.</p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>(9)</num>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">For the purposes of an application under this section&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <intro>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">in relation to England and Wales &#8212;</p>
+		    </intro>
+		    <subparagraph>
+		      <num>(i)</num>
+		      <content>
+			<p class="ParaLevel1" style="margin-left:1.18in;margin-right:0.39in;text-indent:0.32in">&#8220;the court&#8221; means the High Court or the family court, and</p>
+		      </content>
+		    </subparagraph>
+		    <subparagraph>
+		      <num>(ii)</num>
+		      <content>
+			<p class="ParaLevel1" style="margin-left:1.18in;margin-right:0.39in;text-indent:0.32in">proceedings on the application are to be &#8220;family proceedings&#8221; for the purposes of the <ref href="http://www.legislation.gov.uk/id/ukpga/1989/41" uk:canonical="1989 c. 41" uk:origin="TNA" uk:type="legislation">Children Act 1989</ref>,</p>
+		      </content>
+		    </subparagraph>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">in relation to Scotland, &#8220;the court&#8221; means the Court of Session or the sheriff court of the sheriffdom within which the child is, and</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(c)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">in relation to Northern Ireland, &#8220;the court&#8221; means the High Court or any county court....</p>
+		    </content>
+		  </subparagraph>
+		</paragraph>
+		<paragraph>
+		  <num>(10)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">Sub<ref href="http://www.legislation.gov.uk/id/ukpga/1985/49/section/1" uk:canonical="1985 c. 49 s. 1" uk:origin="TNA" uk:type="legislation">section (1</ref>)(a) applies whether the woman was in the United Kingdom or elsewhere at the time of the placing in her of the embryo or the sperm and eggs or her artificial insemination.</p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>(11)</num>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">An application which&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">relates to a child born before the coming into force of this section, and</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">is made by two persons who, throughout the period applicable under subsection (2) of section 30 of the 1990 Act, were not eligible to apply for an order under that section in relation to the child as husband and wife,</p>
+		    </content>
+		  </subparagraph>
+		  <wrapUp>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">may be made within the period of six months beginning with the day on which this section comes into force.&#8221;</p>
+		  </wrapUp>
+		</paragraph>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">.../</p>
+		  </content>
+		</level>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in"><span style="font-weight:bold">55 Parental orders: supplementary provision</span></p>
+		  </content>
+		</level>
+		<paragraph>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">(1)The Secretary of State may by regulations provide&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">for any provision of the enactments about adoption to have effect, with such modifications (if any) as may be specified in the regulations, in relation to orders under section 54 [F1or 54A], and applications for such orders, as it has effect in relation to adoption, and applications for adoption orders, and</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">for references in any enactment to adoption, an adopted child or an adoptive relationship to be read (respectively) as references to the effect of an order under section 54 [F2or 54A], a child to whom such an order applies and a relationship arising by virtue of the enactments about adoption, as applied by the regulations, and for similar expressions in connection with adoption to be read accordingly.</p>
+		    </content>
+		  </subparagraph>
+		</paragraph>
+		<paragraph>
+		  <num>(2)</num>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">The regulations may include such incidental or supplemental provision as appears to the Secretary of State to be necessary or desirable in consequence of any provision made by virtue of sub<ref href="http://www.legislation.gov.uk/id/ukpga/1985/49/section/1" uk:canonical="1985 c. 49 s. 1" uk:origin="TNA" uk:type="legislation">section (1</ref>)(a) or (b).</p>
+		  </content>
+		</paragraph>
+		<paragraph>
+		  <num>(3)</num>
+		  <intro>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in;text-indent:0.21in">In this section &#8220;the enactments about adoption&#8221; means&#8212;</p>
+		  </intro>
+		  <subparagraph>
+		    <num>(a)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">the Adoption (<ref href="http://www.legislation.gov.uk/id/ukpga/1978/51" uk:canonical="1978 c. 51" uk:origin="TNA" uk:type="legislation">Scotland) Act 1978</ref> (c. 28),</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(b)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">the <ref href="http://www.legislation.gov.uk/id/ukpga/2002/38" uk:canonical="2002 c. 38" uk:origin="TNA" uk:type="legislation">Adoption and Children Act 2002</ref> (c. 38),</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(c)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">the Adoption and Children (Scotland) Act 2007 (asp 4), and</p>
+		    </content>
+		  </subparagraph>
+		  <subparagraph>
+		    <num>(d)</num>
+		    <content>
+		      <p class="ParaLevel1" style="margin-left:0.98in;margin-right:0.39in;text-indent:0.02in">the Adoption (Northern Ireland) Order 1987 (S.I. 1987/2203 (N.I. 22)).&#8221;</p>
+		    </content>
+		  </subparagraph>
+		</paragraph>
+	      </embeddedStructure></block>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_27">
+	  <num>27.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">The procedural framework for an application for a parental order under s.54 of the 2008 is provided by Part 13 of the Family Procedure Rules 2010.  The relevant regulations are the Human Fertilisation and Embryology (Parental Order) Regulations 2018 (hereafter &#8220;the 2018 Regulations&#8221;).  Pursuant to r.2 of the 2018 Regulations, certain provisions of the <ref href="http://www.legislation.gov.uk/id/ukpga/2002/38" uk:canonical="2002 c. 38" uk:origin="TNA" uk:type="legislation">Adoption and Children Act 2002</ref> Act (hereafter &#8220;<ref href="http://www.legislation.gov.uk/id/ukpga/2002/38" uk:canonical="2002 c. 38" uk:origin="TNA" uk:type="legislation">the 2002 Act</ref>1&#8221;) have effect in relation to parental orders and applications for parental orders as they have effect in relation to adoption orders and applications for such orders, subject to the modifications set out in Schedule 1 of the 2018 Regulations.  </p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_28">
+	  <num>28.</num>
+	  <intro>
+	    <p class="ParaLevel1" style="margin-left:0.5in">The effect of r.2 and Schedule 1 of the 2018 Regulations is that certain provisions of <ref href="http://www.legislation.gov.uk/id/ukpga/2002/38/section/1" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.1</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/2002/38" uk:canonical="2002 c. 38" uk:origin="TNA" uk:type="legislation">the 2002 Act</ref> applies.  Accordingly, in determining whether to make a parental order under s.54 of the 2008 Act, the welfare of the subject child throughout the child&#8217;s life is the court&#8217;s paramount consideration, the court must at all times bear in mind that, in general, any delay in coming to the decision is likely to prejudice the child&#8217;s welfare and the welfare checklist set out in <ref href="http://www.legislation.gov.uk/id/ukpga/2002/38/section/1/4" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.1(4)</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/2002/38" uk:canonical="2002 c. 38" uk:origin="TNA" uk:type="legislation">the 2002 Act</ref> falls to be applied such that the court must have regard to the following matters (among others):</p>
+	  </intro>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">i)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in">The child&#8217;s ascertainable wishes and feelings regarding the decision (considered in the light of the child&#8217;s age and understanding).</p>
+	    </content>
+	  </subparagraph>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">ii)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in">The child&#8217;s particular needs.</p>
+	    </content>
+	  </subparagraph>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">iii)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in;text-indent:0.01in">The likely effect on the child (throughout his life) of having ceased to be a member of the original family and become the subject of a parental order.</p>
+	    </content>
+	  </subparagraph>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">iv)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in">The child&#8217;s age, sex, background and any of the child&#8217;s characteristics which the court considers relevant.</p>
+	    </content>
+	  </subparagraph>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">v)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in">Any harm (within the meaning of the <ref href="http://www.legislation.gov.uk/id/ukpga/1989/41" uk:canonical="1989 c. 41" uk:origin="TNA" uk:type="legislation">Children Act 1989</ref> (c. 41)) which the child has suffered or is at risk of suffering.</p>
+	    </content>
+	  </subparagraph>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">vi)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in">The relationship which the child has with relatives, with any person who is a prospective adopter with whom the child is placed, and with any other person in relation to whom the court or agency considers the relationship to be relevant.</p>
+	    </content>
+	  </subparagraph>
+	</paragraph>
+	<paragraph eId="para_29">
+	  <num>29.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">Pursuant to <ref href="http://www.legislation.gov.uk/id/ukpga/2002/38/section/1/6" uk:canonical="" uk:origin="TNA" uk:type="legislation">ss.1(6)</ref> and 1(7) as modified by the 2018 Regulations, in coming to a decision relating to the making of a parental order in relation to a child, a court must always consider the whole range of powers available to it in the child&#8217;s case and the court must not make any order unless it considers that making the order would be better for the child than not doing so.  </p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_30">
+	  <num>30.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">Finally, the 2018 Regulations modify <ref href="http://www.legislation.gov.uk/id/ukpga/2002/38/section/83" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.83</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/2002/38" uk:canonical="2002 c. 38" uk:origin="TNA" uk:type="legislation">the 2002 Act</ref> (Restriction on bringing children in) so as to provide that a person who brings, or causes another to bring, a child who is habitually resident outside the British Islands into the United Kingdom for the purpose of an application for a parental order being made is guilty of an offence if he or she has not complied with any requirement imposed by statute.</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_31">
+	  <num>31.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">I will deal below with the relevant case law on the issues that arise for determination in this case under s.54 of the 2008 Act when I come to discuss my decision and the reasons for it.</p>
+	  </content>
+	</paragraph>
+	<level eId="lvl_4">
+	  <content>
+	    <p class="ParaLevel1">DISCUSSION</p>
+	  </content>
+	</level>
+	<paragraph eId="para_32">
+	  <num>32.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">In this case, on balance, I am satisfied that it is appropriate for the court to make a parental order in favour of the applicants in respect of G as being in his best interests.  As noted at the outset, I therefore made a parental order at the conclusion of the final hearing.  My reasons for so deciding are as follows.</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_33">
+	  <num>33.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">Dealing first with the criteria that must be met under s.54 of the 2008 Act, I agree with Mr Powell that, before reaching the question of welfare best interests, the issues concerning the criteria under s.54 requiring determination by the court are the parties&#8217; domicile, the validity of K&#8217;s consent and whether the court should authorise the payments made by the applicants in this case.  In addition, I agree that there is an issue as to whether the making of an order under s.54 of the 2008 Act in relation to a surrogacy completed in a jurisdiction where such arrangements are illegal offends against domestic public policy.</p>
+	  </content>
+	</paragraph>
+	<level eId="lvl_5">
+	  <content>
+	    <p class="ParaLevel1"><span style="font-style:italic">Domicile</span></p>
+	  </content>
+	</level>
+	<paragraph eId="para_34">
+	  <num>34.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">I am satisfied that D is domiciled in the United Kingdom for the purposes of s.54(4)(b) of the 2008 Act based on his domicile of choice.  The question for the court is whether D has demonstrated on the balance of probabilities a subjective intention to abandon his domicile of origin, in China, and acquire a new domicile of choice, in the United Kingdom (see <span style="font-style:italic">Ramana v Kist-Ramana</span> <ref href="https://caselaw.nationalarchives.gov.uk/ewca/civ/2025/1022" uk:canonical="[2025] EWCA Civ 1022" uk:isNeutral="true" uk:origin="TNA" uk:type="case" uk:year="2025">[2025] EWCA Civ 1022</ref>, <ref href="#" uk:canonical="[2025] 4 WLR 120" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="2025">[2025] 4 WLR 120</ref>).   I am satisfied that the evidence provided to the court demonstrates that he has.  </p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_35">
+	  <num>35.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">D lived in the United Kingdom for over twenty years after his arrival in 2001 and, accordingly, has spent the majority of his adult life here.  His intention to remain and make his home in England can also be inferred from his acquisition of British Citizenship in 2014, his continued ownership of property here whilst working abroad and his work and business links in this jurisdiction.  In addition, I have regard to his desire to ensure that he and his husband reside permanently in a country with lawful same sex marriage and in which his family unit will be legally recognised and accepted as against the position in the jurisdictions with which D and C have links.  There is clear evidence establishing that D&#8217;s current presence in Country B is temporary, related to his work and does not provide a route to permanent status in that jurisdiction, the fact that his husband is in the same position further emphasises the temporary nature of D&#8217;s presence in Country B.  </p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_36">
+	  <num>36.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">In the foregoing context I am satisfied that, as he deposes in his statement, D has, in accordance with a well evidenced subjective intention, abandoned his domicile of origin in China, and acquired a domicile of choice in England.  In the circumstances, the conditions set out in s.54(4)(b) of the 2008 Act are met. </p>
+	  </content>
+	</paragraph>
+	<level eId="lvl_6">
+	  <content>
+	    <p class="ParaLevel1"><span style="font-style:italic">Consent</span></p>
+	  </content>
+	</level>
+	<paragraph eId="para_37">
+	  <num>37.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">I am likewise satisfied, on balance, that the requirements concerning consent in s.54(6) of the 2008 Act have been made out in this case.  </p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_38">
+	  <num>38.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">As Mr Powell rightly acknowledges, consent is the bedrock of the statutory framework under s.54 of the 2008 Act.  The reasons for that are self-evident.  By insisting on informed consent to the making of the parental order, Parliament has provided the court with its primary means of protecting the rights of the surrogate mother (who at birth will ordinarily be the legal parent of the child and, as recognised in <span style="font-style:italic">Re H (A Child)</span> <ref href="https://caselaw.nationalarchives.gov.uk/ewca/civ/2017/1798" uk:canonical="[2017] EWCA Civ 1798" uk:isNeutral="true" uk:origin="TNA" uk:type="case" uk:year="2017">[2017] EWCA Civ 1798</ref>, has a right to change her mind) and a, albeit more indirect, means of protecting against the financial exploitation of, coercion of or harm to the surrogate. </p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_39">
+	  <num>39.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">As Hedley J noted in <span style="font-style:italic">G v G</span> <ref href="https://caselaw.nationalarchives.gov.uk/ewhc/fam/2012/1979" uk:canonical="[2012] EWHC 1979 (Fam)" uk:isNeutral="true" uk:origin="TNA" uk:type="case" uk:year="2012">[2012] EWHC 1979 (Fam)</ref> at [27], withholding consent under s.54(6) of the 2008 Act is a true veto and the court has no dispensing power. By ensuring that the surrogate has given freely, and with full understanding of what is involved, unconditional consent to the making of the parental order the court is able to reassure itself that rights of the surrogate mother are given effect and, again more indirectly, that the surrogate has not been the victim of coercion or pressure arising out of an imbalance of power between the surrogate and the intended parent or parents.   In <span style="font-style:italic">Re C (Surrogacy: Consent)</span> <ref href="https://caselaw.nationalarchives.gov.uk/ewca/civ/2023/16" uk:canonical="[2023] EWCA Civ 16" uk:isNeutral="true" uk:origin="TNA" uk:type="case" uk:year="2023">[2023] EWCA Civ 16</ref>, Peter Jackson LJ again emphasised at [54] that:</p>
+	    <block name="embeddedStructure"><embeddedStructure>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">&#8220;The requirement that a person has "freely, and with full understanding of what is involved, agreed unconditionally to the making of the order" means exactly what it says. Although it may be forensically convenient to separate out the individual elements, what is required is a consent that is free, informed and unconditional. If that is achieved, it is immaterial whether the consent is given gladly or reluctantly.&#8221;</p>
+		  </content>
+		</level>
+	      </embeddedStructure></block>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_40">
+	  <num>40.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">The issue in this case is whether the court can be satisfied from the evidence available to it that K &#8220;freely, and with full understanding of what is involved, agreed unconditionally&#8221; to the parental order being made.  </p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_41">
+	  <num>41.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">Whilst D sets out in detail why the Form A101A has not been witnessed by a notary or other appropriate person in this case (as required by Form A101A), and casts that explanation as a positive step to protect K from the consequences of her participation in an unlawful surrogacy, such an exercise, and D&#8217;s explanation for it, would have been unnecessary if the D and C had not embarked on an illegal surrogacy in China.  The applicants&#8217; attempt to employ K&#8217;s Art 8 right to privacy as a retroactive explanation for not following the standard course with respect to the witnessing of written consent on Form A101A is equally unattractive. </p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_42">
+	  <num>42.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">Ultimately, it has been left to the court to resolve the difficulties created by the unwise course D and C chose in this case.  The court is entitled, by FPR r.13.11(1) to direct that the agreement of the surrogate to the making of a parental order may be given by an alternative method satisfactory to the court.   In this case, the court directed that the witnessing of consent on Form A101A could be achieved by the Parental Order Reporter watching K sign the form via a remote link.  I am grateful to the Parental Order Reporter for carrying into effect the direction of the court so carefully and comprehensively.  However, I make clear that had it not been for the ability of the Parental Order Reporter to meet K by video link, confirm her identity and witness her signing the requisite form, in addition to speaking to her and ascertaining she had no wider concerns notwithstanding the illegality of surrogacy in China and the discrepancies regarding the amounts paid to her, the court would have had no power to dispense with her consent.  In such circumstances, as noted by Hedley J <span style="font-style:italic">in G v G</span> at [27], failing to satisfy the court that the surrogate has freely, and with full understanding of what is involved, agreed unconditionally to the making of the order is &#8220;fatal to the application&#8221; for a parental order.</p>
+	  </content>
+	</paragraph>
+	<level eId="lvl_7">
+	  <content>
+	    <p class="ParaLevel1"><span style="font-style:italic">Payments</span></p>
+	  </content>
+	</level>
+	<paragraph eId="para_43">
+	  <num>43.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">Again on balance, I am further satisfied that it is appropriate in this case for the court to retrospectively authorise the monies paid by the applicants.  Unlike the requirement of consent, the prohibition in section 54(8) on payment over and above reasonable expenses is not an absolute one, in the sense that payments can be authorised by the court after the fact if appropriate.</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_44">
+	  <num>44.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">There are a number of difficulties with the payments made in this case when evaluated against the requirements of s.54(8).  First, the position in respect of the amount and destination of the payments made to K in this case is opaque, albeit the position is redeemed slightly by the Parental Order Reporter speaking to K.  As such, it is not easy to see whether they amount to reasonable expenses or payments for other items or services that could not be considered reasonable. Second, there is clear evidence in this case that the applicants were engaged in a commercial surrogacy arrangement.  K did not receive remuneration for consequential expenses incurred (the medical treatment, test and other expenses being part of the contract price), but rather received one off payment in respect of the birth of G.  More fundamentally, D repeatedly refers in his evidence to the applicants being engaged in a commercial surrogacy.  As such, if the court authorises the payments, it is authorising payments made under a commercial agreement that would be illegal in this jurisdiction by virtue of <ref href="http://www.legislation.gov.uk/id/ukpga/1985/49/section/2" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.2</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1985/49" uk:canonical="1985 c. 49" uk:origin="TNA" uk:type="legislation">the 1985 Act</ref>. Third, the terms of the contract entered into by the applicants with F expressly provide that G would not be handed over unless full payment of the contract price had been made.  On its the face, this contravenes s.54(8)(c) prohibiting the payment of consideration for the handover of the child.  Finally, if the court authorises the payments retrospectively in this case, it is authorising payments made on a surrogacy arrangement that was illegal <span style="font-style:italic">per se</span> in China, with the concomitant risk that the court is, wrongly, understood by others to be endorsing that practice.</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_45">
+	  <num>45.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">The words of a statute should be given their ordinary meaning.  Reading s.54(8) of the 2008 Act as a whole, it is plain that the words &#8220;unless authorised by the court&#8221; at the conclusion of s.54(8) refer back to the payments specified in s.54(8)(a) to (d).  Section 54(10) of the 2008 Act further provides that a parental order may be made where the &#8220;placing in her of the embryo or the sperm and eggs or her artificial insemination&#8221; took place &#8220;elsewhere&#8221; than the United Kingdom.  Whilst <ref href="http://www.legislation.gov.uk/id/ukpga/1985/49/section/2" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.2</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/1985/49" uk:canonical="1985 c. 49" uk:origin="TNA" uk:type="legislation">the 1985 Act</ref> prohibits commercial surrogacy in this jurisdiction, s.54 of the 2008 Act does not prescribe any criteria that must be met where the &#8220;placing in her of the embryo or the sperm and eggs or her artificial insemination&#8221; has occurred &#8220;elsewhere&#8221; than the United Kingdom, including as to legality.</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_46">
+	  <num>46.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">Thus, and perhaps surprisingly given the strict prohibition in this jurisdiction against commercial surrogacy, s.54 of the 2008 Act provides that the court <span style="font-style:italic">is </span>able, in a case where the &#8220;placing in her of the embryo or the sperm and eggs or her artificial insemination&#8221; has taken place &#8220;elsewhere&#8221; than the United Kingdom (i.e. in a case where the surrogacy arrangement is made and implemented abroad), to authorise payments made for or in consideration of the making of the parental order, the giving of consent to the making of the order, the handing over of the child or the making of arrangements antecedent to the order without itself requiring the court to consider how the surrogacy arrangement abroad was made and implemented, including as to its legality.  I will return to this issue below when examining the role of public policy.</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_47">
+	  <num>47.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">Section 54(8) of the 2008 Act does not set out the test to be adopted by the court when deciding whether to authorise payments made for or in consideration of the making of the parental order, the giving of consent to the making of the order, the handing over of the child or the making of arrangements antecedent to the order.  However, as set out above, the effect of r.2 of the 2018 Regulations is that certain provisions of <ref href="http://www.legislation.gov.uk/id/ukpga/2002/38/section/1" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.1</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/2002/38" uk:canonical="2002 c. 38" uk:origin="TNA" uk:type="legislation">the 2002 Act</ref> apply when determining whether to make a parental order.  Accordingly, in determining whether to make a parental order under s.54 of the 2008 Act, the welfare of the subject child throughout the child&#8217;s life is the court&#8217;s paramount consideration, the court must at all times bear in mind that, in general, any delay in coming to the decision is likely to prejudice the child&#8217;s welfare and the welfare checklist set out in <ref href="http://www.legislation.gov.uk/id/ukpga/2002/38/section/1/4" uk:canonical="" uk:origin="TNA" uk:type="legislation">s.1(4)</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/2002/38" uk:canonical="2002 c. 38" uk:origin="TNA" uk:type="legislation">the 2002 Act</ref> falls to be applied.  In the circumstances, in deciding whether to authorise payments under s.54(8) (thereby satisfying the criteria required by s.54(1)(c) for the making of a parental order) the test is whether the authorisation of the payment in question is in the child&#8217;s best interests, holding that child&#8217;s welfare as the court&#8217;s paramount consideration.</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_48">
+	  <num>48.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">As I have set out above, s.54 of the 2008 Act provides that the court is able, in a case where the surrogacy arrangement is made and implemented abroad, to authorise payments made for or in consideration of the making of the parental order, the giving of consent to the making of the order, the handing over of the child or the making of arrangements antecedent to the order without the court being required by s.54 to consider how the surrogacy arrangement abroad was made and implemented, including its legality. The court is thus not precluded by <ref href="http://www.legislation.gov.uk/id/ukpga/1989/41" uk:canonical="1989 c. 41" uk:origin="TNA" uk:type="legislation">the Act</ref> itself from authorising payments in connection with a surrogacy arrangement made and implemented abroad illegally. In such cases, the test remains whether the authorisation of the payment in question is in the child&#8217;s best interests (in that such authorisation permits the court to make a parental order), holding that child&#8217;s welfare as the court&#8217;s paramount consideration.</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_49">
+	  <num>49.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">That is not to say, however, that the question of legality is irrelevant.  In a case where the court is being invited to authorise payments notwithstanding that the surrogacy arrangement made and implemented abroad is illegal, the court must also consider the question of public policy.  Whilst the court&#8217;s paramount consideration remains the welfare of the child, it would not be appropriate to proceed without <span style="font-style:italic">any</span> consideration of the legality of the surrogacy arrangements abroad.  This is made clear by the authorities.</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_50">
+	  <num>50.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">In <span style="font-style:italic">Re L (a minor) </span><ref href="https://caselaw.nationalarchives.gov.uk/ewhc/fam/2010/3146" uk:canonical="[2010] EWHC 3146 (Fam)" uk:isNeutral="true" uk:origin="TNA" uk:type="case" uk:year="2010">[2010] EWHC 3146 (Fam)</ref>, <ref href="#" uk:canonical="[2011] Fam 106" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="2011">[2011] Fam 106</ref>, Hedley J held, applying <span style="font-style:italic">In re S (Parental Order)</span> <ref href="#" uk:canonical="[2010] 1 FLR 1156" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="2010">[2010] 1 FLR 1156</ref>, as follows with respect to the interplay between best interests and public policy where a couple domiciled in England entered into a commercial surrogacy agreement in the United States of America and applied for retrospective authorisation of payments made to the surrogate mother and for a parental order under section 54(8) of the 2008 Act:</p>
+	    <block name="embeddedStructure"><embeddedStructure>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">&#8220;[9] The significant change in the 2008 Act other than the enlargement of the scope of applicants relates to the welfare test. The effect of the Human Fertilisation and Embryology (Parental Orders) Regulations 2010 (SI 2010/985) is to import into section 54 applications the provisions of <ref href="http://www.legislation.gov.uk/id/ukpga/2002/38/section/1" uk:canonical="2002 c. 38 s. 1" uk:origin="TNA" uk:type="legislation">section 1</ref> of the <ref href="http://www.legislation.gov.uk/id/ukpga/2002/38" uk:canonical="2002 c. 38" uk:origin="TNA" uk:type="legislation">Adoption and Children Act 2002</ref>. In fact in <span style="font-style:italic">In re X(Children) (Parental Order: Foreign Surrogacy)</span> <ref href="#" uk:canonical="[2009] Fam 71" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="2009">[2009] Fam 71</ref> the court had adopted in its welfare consideration the perspective of <ref href="http://www.legislation.gov.uk/id/ukpga/2002/38" uk:canonical="2002 c. 38" uk:origin="TNA" uk:type="legislation">the 2002 Act</ref>. What has changed, however, is that welfare is no longer merely the courts first consideration but becomes its paramount consideration.</p>
+		  </content>
+		</level>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">[10] The effect of that must be to weight the balance between public policy considerations and welfare (as considered in <span style="font-style:italic">In re X (Children) (Parental Order: Foreign Surrogacy)</span>) decisively in favour of welfare.  It must follow that it will only be in the clearest case of the abuse of public policy that the court will be able to withhold an order if otherwise welfare considerations support its making. It underlines the courts earlier observation that, if it is desired to control commercial surrogacy arrangements, those controls need to operate before the court process is initiated i.e. at the border or even before.</p>
+		  </content>
+		</level>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">.../</p>
+		  </content>
+		</level>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">[12] I think it important to emphasise that, notwithstanding the paramountcy of welfare, the court should continue carefully to scrutinise applications for authorisation under section 54(8) with a view to policing the public policy matters identified in <span style="font-style:italic">In re S (Parental Order)</span> <ref href="#" uk:canonical="[2010] 1 FLR 1156" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="2010">[2010] 1 FLR 1156</ref> and that it should be known that that will be so. As I have said all such matters were satisfied in this case and the court accordingly made the orders sought.&#8221;</p>
+		  </content>
+		</level>
+	      </embeddedStructure></block>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_51">
+	  <num>51.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">The approach developed by Hedley J, that in considering whether to exercise the power of authorisation under s54(8) of 2008 Act the court should only refuse a parental order in the clearest case of the abuse of public policy was subsequently endorsed by Theis J in <span style="font-style:italic">A v P</span> <ref href="https://caselaw.nationalarchives.gov.uk/ewhc/fam/2011/1738" uk:canonical="[2011] EWHC 1738 (Fam)" uk:isNeutral="true" uk:origin="TNA" uk:type="case" uk:year="2011">[2011] EWHC 1738 (Fam)</ref> and by Sir Nicholas Wall P, in <span style="font-style:italic">Re X (children</span>) <ref href="https://caselaw.nationalarchives.gov.uk/ewhc/fam/2011/3147" uk:canonical="[2011] EWHC 3147 (Fam)" uk:isNeutral="true" uk:origin="TNA" uk:type="case" uk:year="2011">[2011] EWHC 3147 (Fam)</ref>.</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_52">
+	  <num>52.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">For the welfare reasons set out below, I am satisfied that it is in G&#8217;s best interests for the court to authorise the payments made by the applicant in this case, notwithstanding that they were made in the context of a surrogacy arrangement that was illegal in China and that was of a commercial nature prohibited in this jurisdiction.  </p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_53">
+	  <num>53.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">As observed by Lord Mansfield in <span style="font-style:italic">Holman v Johnson</span> (1775) 1 Cowp 341 at 343, &#8220;No court will lend its aid to a man who founds his cause of action upon an immoral or an illegal act&#8221;.  Having regard to the expert evidence, it is undoubtedly the case that the applicants engaged in an illegal commercial surrogacy arrangement in China and one that risked the exploitation of the surrogate mother.  </p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_54">
+	  <num>54.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">Against this, I have borne in mind that in this case there is no evidence to suggest the applicants sought deliberately or wilfully to evade the authorities in China.  Whilst I am satisfied the applicants failed to undertake sufficient enquiries with respect to the legal position in China in their effort to prioritise geographical convenience and the opinions of friends, I accept that the applicants were ignorant of the legal prohibition on surrogacy in China and relied, unwisely, on those in that jurisdiction who facilitated the surrogacy arrangement.  Although I am satisfied that there was plainly a <span style="font-style:italic">risk</span> in this case that K would be exploited, the conversation between K and the parental order reporter, whilst not definitive, acts to mitigate this concern.  I accept Mr Powell&#8217;s submission that there was in this case, no evidence that D and C sought to exploit K (although, again, the court retains concerns that this was an appreciable risk given the course they adopted) or engage in any form of child trafficking, either in China or in this jurisdiction.  There is no evidence of fraud, forgery or deception in this case.  Whilst not all elements of the applicants&#8217; account are entirely reliable (particularly in relation to how they identified and engaged F), they have been largely candid with the court. </p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_55">
+	  <num>55.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">Accordingly, whilst again deprecating the course taken by the applicants in this case, I am satisfied that this case cannot be said to be the clearest case of abuse of public policy such as to prevent the welfare considerations in respect of G permitting the authorisation of the payments made pursuant to s.54(8) of the 2008 Act.  I am further satisfied, for the same reasons, that public policy does not in this case prevent the welfare considerations in respect of G from permitting the court to make a parental order in this case if satisfied that to do so is in his best interests, to which I now turn.</p>
+	  </content>
+	</paragraph>
+	<level eId="lvl_8">
+	  <content>
+	    <p class="ParaLevel1"><span style="font-style:italic">Best Interests</span></p>
+	  </content>
+	</level>
+	<paragraph eId="para_56">
+	  <num>56.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">Sir James Munby P observed as follows in <span style="font-style:italic">Re X (A Child)(Surrogacy: Time Limit)</span> <ref href="https://caselaw.nationalarchives.gov.uk/ewhc/fam/2014/3135" uk:canonical="[2014] EWHC 3135 (Fam)" uk:isNeutral="true" uk:origin="TNA" uk:type="case" uk:year="2014">[2014] EWHC 3135 (Fam)</ref> regarding the task of the court in evaluating the child&#8217;s welfare in the context of an application for a parental order under s.54 of the 2008 Act:</p>
+	    <block name="embeddedStructure"><embeddedStructure>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">&#8220;[54] A parental order has, to adopt Theis J's powerful expression, a transformative effect, not just in its effect on the child's legal relationships with the surrogate and commissioning parents but also, to adopt the guardian's words in the present case, in relation to the practical and psychological realities of X's identity. A parental order, like an adoption order, has an effect extending far beyond the merely legal. It has the most profound personal, emotional, psychological, social and, it may be in some cases, cultural and religious, consequences. It creates what Thorpe LJ in <span style="font-style:italic">Re J (Adoption: Non-Patrial)</span> [1998] INLR 424, 429, referred to as "the psychological relationship of parent and child with all its far-reaching manifestations and consequences." Moreover, these consequences are lifelong and, for all practical purposes, irreversible&#8230; And the court considering an application for a parental order is required to treat the child's welfare throughout his life as paramount:... Parliament has therefore required the judge considering an application for a parental order to look into a distant future.&#8221;  </p>
+		  </content>
+		</level>
+	      </embeddedStructure></block>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_57">
+	  <num>57.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">G is at present just over a year old.  Whilst G is not old enough to articulate his wishes and feelings, I agree with the Parental Order Reporter that, in these circumstances, it is a reasonable assumption that G would wish for those who he sees as his parents are ratified as such under the law.  D is G&#8217;s biological parent.  The evidence suggests that he has already developed a strong attachment to both D and C as his parental figures. He refers to C as daddy and D by his first name.  </p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_58">
+	  <num>58.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">With respect to G&#8217;s physical, emotional and educational needs, his age also means that at present he is entirely dependent on those caring for him to meet his welfare needs and to exercise parental responsibility for him to that end.  The Parental Order report states that the applicants are providing G with a secure and stable family home, and one in which G&#8217;s birth was planned and prepared for. The Parental Order Reporter considers that the applicants are able to meet G&#8217;s need to develop his identity, noting that research suggests that children born by surrogacy who have the circumstances surrounding their conception and birth explained to them in early childhood are more likely to develop a sense of belonging and a positive sense of their identity and that the applicants have assembled material to assist G in understanding surrogacy in due course.  Despite F&#8217;s discouragement, D and C maintain a relationship with K, who has said she would be open to meeting G in the future.  The Parental Order Reporter concludes that, &#8220;It is my assessment that G's individual needs and characteristics are capable of being met by D and C.&#8221;  Accordingly, it is important that both of his intended parents have the legal status to act to meet his needs now and in the future.   </p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_59">
+	  <num>59.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">The granting of a parental order will not change G&#8217;s circumstances.  He will continue to live with the applicants and be cared for by them pending their return to the United Kingdom at the conclusion of D&#8217;s posting.  There is no suggestion that G has suffered, or is at risk of suffering, harm in the care of the applicants.</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_60">
+	  <num>60.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">In these circumstances, I am satisfied that is plainly in G&#8217;s best interests for his relationship with the applicants to continue to develop and to endure, and for the applicants to be empowered to take decisions for him, as they will now form the foundation of his physical, emotional and educational development for the remainder of his minority and well beyond.   This is best achieved by granting a parental order under s.54 of the 2008 Act.</p>
+	  </content>
+	</paragraph>
+	<level eId="lvl_9">
+	  <content>
+	    <p class="ParaLevel1">CONCLUSION</p>
+	  </content>
+	</level>
+	<paragraph eId="para_61">
+	  <num>61.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">In conclusion, whilst <span style="font-style:italic">strongly</span> deprecating the course taken by D and C in this case, holding G&#8217;s welfare as my paramount consideration, I am satisfied that it is in his best interests to make a parental order pursuant to s.54 of the 2008 in favour of the applicants.  In doing so, and reluctantly, I also authorise retrospectively the payments made by D and C with respect to the surrogacy arrangements.</p>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_62">
+	  <num>62.</num>
+	  <intro>
+	    <p class="ParaLevel1" style="margin-left:0.5in">This case is <span style="font-style:italic">another</span> example of intended parents failing to undertake sufficient due diligence with respect to the arrangements they entered into by way of an international surrogacy agreement.  Accordingly, it is appropriate to extract and repeat, once again, the guidance articulated only recently in the decisions of <span style="font-style:italic">Re Z (Foreign Surrogacy)</span> <ref href="https://caselaw.nationalarchives.gov.uk/ewfc/2024/304" uk:canonical="[2024] EWFC 304" uk:isNeutral="true" uk:origin="TNA" uk:type="case" uk:year="2024">[2024] EWFC 304</ref>, <span style="font-style:italic">Re Z (Unlawful Foreign Surrogacy: Adoption)</span> <ref href="https://caselaw.nationalarchives.gov.uk/ewhc/fam/2025/339" uk:canonical="[2025] EWHC 339 (Fam)" uk:isNeutral="true" uk:origin="TNA" uk:type="case" uk:year="2025">[2025] EWHC 339 (Fam)</ref>, <ref href="#" uk:canonical="[2015] 4 WLR 101" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="2015">[2015] 4 WLR 101</ref> and <span style="font-style:italic">Mr K &amp; Anor v Mr Z &amp; Anor </span><ref href="https://caselaw.nationalarchives.gov.uk/ewhc/fam/2025/927" uk:canonical="[2025] EWHC 927 (Fam)" uk:isNeutral="true" uk:origin="TNA" uk:type="case" uk:year="2025">[2025] EWHC 927 (Fam)</ref>, <ref href="#" uk:canonical="[2025] 4 WLR 53" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="2025">[2025] 4 WLR 53</ref>.  Had D and C followed this advice, and asked themselves these questions, at the outset, a lot of time, money and anxiety could have been saved:</p>
+	  </intro>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">i)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in">It is important for intended parents to seek legal advice from a specialist solicitor before embarking on surrogacy arrangements involving a foreign jurisdiction.</p>
+	    </content>
+	  </subparagraph>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">ii)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in">The parties should consider early and meaningful engagement with either or all of the Home Office, the Department for Education and / or the Department for Health and Social Care, depending on what the particular issues which have arisen are and bearing in mind the different responsibilities of each.</p>
+	    </content>
+	  </subparagraph>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">iii)</num>
+	    <intro>
+	      <p class="ParaLevel2" style="margin-left:0.98in;text-indent:0.01in">The parties should establish the answers to the following questions regarding the surrogacy arrangements:</p>
+	    </intro>
+	    <subparagraph>
+	      <num style="margin-left:1.48in;text-indent:-0.49in">a)</num>
+	      <content>
+		<p class="ParaLevel3" style="margin-left:1.48in">What is the relevant legal framework in the country where the surrogacy arrangement is due to take place and where the child is to be born? Put simply, is such an arrangement permitted in that country?</p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="margin-left:1.48in;text-indent:-0.49in">b)</num>
+	      <content>
+		<p class="ParaLevel3" style="margin-left:1.48in">When the child is born will the intended parents be recognised as parents in that country, if so how? By operation of law or are the intended parents required to take some positive step and, if so, what steps need to be taken and when (pre or post birth)?</p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="margin-left:1.48in;text-indent:-0.49in">c)</num>
+	      <content>
+		<p class="ParaLevel3" style="margin-left:1.48in">What is the surrogate&#8217;s legal status regarding the child at birth?</p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="margin-left:1.48in;text-indent:-0.49in">d)</num>
+	      <content>
+		<p class="ParaLevel3" style="margin-left:1.48in">If the surrogate is married at the time of the embryo transfer and/or the child&#8217;s birth what is the surrogate&#8217;s spouse&#8217;s legal status regarding the child at birth?</p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="margin-left:1.48in;text-indent:-0.49in">e)</num>
+	      <content>
+		<p class="ParaLevel3" style="margin-left:1.48in">If an agency is involved, what role do they play in matching the surrogate with the intended parents?</p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="margin-left:1.48in;text-indent:-0.49in">f)</num>
+	      <content>
+		<p class="ParaLevel3" style="margin-left:1.48in">What information, preparation or support has the surrogate had about any proposed surrogacy arrangement?</p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="margin-left:1.48in;text-indent:-0.49in">g)</num>
+	      <content>
+		<p class="ParaLevel3" style="margin-left:1.48in">Does the surrogate speak and/or read English? If not, what arrangements are in place to enable her to understand any agreement signed?</p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="margin-left:1.48in;text-indent:-0.49in">h)</num>
+	      <content>
+		<p class="ParaLevel3" style="margin-left:1.48in">Will the intended parents and the surrogate meet and/or have contact before deciding whether to proceed with a surrogacy arrangement?</p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="margin-left:1.48in;text-indent:-0.49in">i)</num>
+	      <content>
+		<p class="ParaLevel3" style="margin-left:1.48in">When will the agreement between the intended parents and surrogate be made, before or after the embryo transfer, and what are the reasons for it being at that time?</p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="margin-left:1.48in;text-indent:-0.49in">j)</num>
+	      <content>
+		<p class="ParaLevel3" style="margin-left:1.48in">What arrangements are proposed for contact between the intended parents and the surrogate during the pregnancy and/or after the birth? For example, is it only via the agency or can there be direct contact between the intended parents and the surrogate?</p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="margin-left:1.48in;text-indent:-0.49in">k)</num>
+	      <content>
+		<p class="ParaLevel3" style="margin-left:1.48in">Which jurisdiction will the embryo transfer take place and which jurisdiction will the surrogate live in during any pregnancy?</p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="margin-left:1.48in;text-indent:-0.49in">l)</num>
+	      <content>
+		<p class="ParaLevel3" style="margin-left:1.48in">Can the jurisdiction where the child is to be born be changed at any stage and, if so, by whom and in what circumstances?</p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="margin-left:1.48in;text-indent:-0.49in">m)</num>
+	      <content>
+		<p class="ParaLevel3" style="margin-left:1.48in">What nationality will the child have at birth?</p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="margin-left:1.48in;text-indent:-0.49in">n)</num>
+	      <content>
+		<p class="ParaLevel3" style="margin-left:1.48in">Following the birth of the child what steps need to be taken for the child to travel to the United Kingdom, what steps need to be taken to secure any necessary travel documentation for the child and how long does that take?</p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="margin-left:1.48in;text-indent:-0.49in">o)</num>
+	      <content>
+		<p class="ParaLevel3" style="margin-left:1.48in">Will the intended parents need to take any separate immigration advice to secure the child&#8217;s travel to the United Kingdom and what is the child&#8217;s status once the child has arrived in this jurisdiction?</p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="margin-left:1.48in;text-indent:-0.49in">p)</num>
+	      <content>
+		<p class="ParaLevel3" style="margin-left:1.48in">What steps need to be taken by the intended parents in relation to estate planning (before and after a parental order is made) in respect of the child&#8217;s future welfare?</p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="margin-left:1.48in;text-indent:-0.49in">q)</num>
+	      <content>
+		<p class="ParaLevel3" style="margin-left:1.48in">What steps need to be taken by the intended parents in respect of future care and financial arrangements for the child in the event of the incapacity of one (or both) of the intended parents?</p>
+	      </content>
+	    </subparagraph>
+	    <subparagraph>
+	      <num style="margin-left:1.48in;text-indent:-0.49in">r)</num>
+	      <content>
+		<p class="ParaLevel3" style="margin-left:1.48in">What steps need to be taken by the intended parents in respect of future care and financial arrangements for the child in the event of the death of one (or both) of the intended parents?</p>
+	      </content>
+	    </subparagraph>
+	  </subparagraph>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">iv)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in">The parties should keep a clear and chronological account of events and relevant documents as this is not only important for the purposes of a parental order application but also, importantly, retains key information regarding the child&#8217;s background and identity.</p>
+	    </content>
+	  </subparagraph>
+	  <subparagraph>
+	    <num style="margin-left:0.98in;text-indent:-0.49in">v)</num>
+	    <content>
+	      <p class="ParaLevel2" style="margin-left:0.98in">Where proceedings are issued in the Family Court for a parental order, early consideration should be given to the addition of the Home Office, the Department for Education and / or the Department for Health and Social Care as a party, depending on what the particular issues which have arisen are and bearing in mind the different responsibilities of each.</p>
+	    </content>
+	  </subparagraph>
+	</paragraph>
+	<paragraph eId="para_63">
+	  <num>63.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">Finally, I wish to make plain, as other Judges of the Division have before me, that this decision is <span style="font-style:italic">not</span> a licence to engage in unlawful commercial surrogacy arrangements abroad.  Whilst on the facts of this case the court has felt able to grant an order in this case notwithstanding the significant difficulties outlined in this judgment, that does not mean it will do so in every future case.  As Hedley J made clear in <span style="font-style:italic">Re L (a minor)</span> at [12]:</p>
+	    <block name="embeddedStructure"><embeddedStructure>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">&#8220;[12] I think it important to emphasise that, notwithstanding the paramountcy of welfare, the court should continue carefully to scrutinise applications for authorisation under section 54(8) with a view to policing the public policy matters identified in <span style="font-style:italic">In re S (Parental Order)</span> <ref href="#" uk:canonical="[2010] 1 FLR 1156" uk:isNeutral="false" uk:origin="TNA" uk:type="case" uk:year="2010">[2010] 1 FLR 1156</ref> and that it should be known that that will be so.&#8221;</p>
+		  </content>
+		</level>
+	      </embeddedStructure></block>
+	  </content>
+	</paragraph>
+	<paragraph eId="para_64">
+	  <num>64.</num>
+	  <content>
+	    <p class="ParaLevel1" style="margin-left:0.5in">Would-be parents who are contemplating entering into a commercial foreign surrogacy arrangement should be in no doubt that court will <span style="font-style:italic">not</span> make a parental order simply because the court is presented with an apparent <span style="font-style:italic">fait accompli</span> based on the fact that the subject child is already in the care of the intended parents. As I observed in <span style="font-style:italic">D v London Borough of Bromley and Ors (Special Restrictions &#8211; Refusal of Adoption Order)</span> [2026] EWHC 247 in the context of international adoption:</p>
+	    <block name="embeddedStructure"><embeddedStructure>
+		<level>
+		  <content>
+		    <p class="ParaLevel1" style="margin-left:0.79in;margin-right:0.39in">&#8220;[138] <ref href="http://www.legislation.gov.uk/id/ukpga/2002/38/section/1/2" uk:canonical="" uk:origin="TNA" uk:type="legislation">Section 1(2)</ref> of <ref href="http://www.legislation.gov.uk/id/ukpga/2002/38" uk:canonical="2002 c. 38" uk:origin="TNA" uk:type="legislation">the 2002 Act</ref> requires that the &#8220;paramount consideration of the court or adoption agency must be the child&#8217;s welfare, throughout his life&#8221; (emphasis added).  The court will risk not properly discharging its duty to have regard to this cardinal principle if it yields too readily to a <span style="font-style:italic">fait accompli</span> resting on foundations built from practices and processes antithetic to the child&#8217;s best interests, or from the mistreatment or manipulation of others.  By way of example, one only has to contemplate the consequences for a child coming to know that the foundations of his or her happy family life and identity have been built from circumstances that involved the sexual exploitation, for profit, of women or girls in another country, and that the court that ratified that position disapplied legislation designed to protect against such an outcome.  The same may be true for a child coming to learn that his or her family life and identity is based on deception, dishonesty and the manipulation of the court and professionals by those caring for him or her.&#8221;</p>
+		  </content>
+		</level>
+	      </embeddedStructure></block>
+	  </content>
+	</paragraph>
+      </decision>
+    </judgmentBody>
+  </judgment>
+</akomaNtoso>
