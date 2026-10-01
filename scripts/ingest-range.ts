@@ -57,7 +57,17 @@ async function main() {
   // one entry at a time per worker; the shared limiter paces the actual requests
   async function ingest(uri: string, cachedClassified: { areas: string[] } | undefined) {
     try {
-      const xml = await fetchJudgmentXml(uri);
+      // the shared limiter gives up after ~60s; a bulk run can afford to wait out other users
+      let xml: string | null = null;
+      for (let attempt = 0; ; attempt++) {
+        try {
+          xml = await fetchJudgmentXml(uri);
+          break;
+        } catch (e) {
+          if (attempt >= 5 || !String(e).includes("budget exhausted")) throw e;
+          await new Promise((r) => setTimeout(r, 30_000));
+        }
+      }
       if (!xml) return void stats.missing++;
       const parsed = parseJudgment(xml);
       parsed.uri ||= uri;
