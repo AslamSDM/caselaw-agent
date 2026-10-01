@@ -30,6 +30,22 @@ const { values: args } = parseArgs({
 
 const RUNS_DIR = "evals/runs";
 
+// captured at startup: the code that runs is the code loaded now, not whatever HEAD is when the
+// report is written (another session may commit in between)
+const STARTED = {
+  at: new Date().toISOString(),
+  git: safeSync(() => execSync("git rev-parse --short HEAD").toString().trim()),
+  dirty: safeSync(() => execSync("git status --porcelain").toString().trim().length > 0),
+};
+
+function safeSync<T>(f: () => T): T | null {
+  try {
+    return f();
+  } catch {
+    return null;
+  }
+}
+
 async function main() {
   const { DATASET } = await import("../evals/dataset");
   const { scoreQuery, summarize, checkGates } = await import("../evals/metrics");
@@ -82,11 +98,12 @@ async function main() {
   const gates = checkGates(summary);
   const previous = latestRun();
 
-  const stamp = new Date().toISOString().replace(/[:.]/g, "-").slice(0, 19);
+  const stamp = STARTED.at.replace(/[:.]/g, "-").slice(0, 19);
   const meta = {
-    startedAt: new Date().toISOString(),
-    git: safe(() => execSync("git rev-parse --short HEAD").toString().trim()) ?? null,
-    dirty: safe(() => execSync("git status --porcelain").toString().trim().length > 0) ?? null,
+    startedAt: STARTED.at,
+    finishedAt: new Date().toISOString(),
+    git: STARTED.git,
+    dirty: STARTED.dirty,
     models: {
       fast: process.env.LLM_FAST_MODEL ?? "default",
       strong: process.env.LLM_STRONG_MODEL ?? "default",
@@ -182,14 +199,6 @@ function latestRun(): { summary: import("../evals/metrics").Summary } | null {
   const files = readdirSync(RUNS_DIR).filter((f) => f.endsWith(".json")).sort();
   const last = files.at(-1);
   return last ? JSON.parse(readFileSync(`${RUNS_DIR}/${last}`, "utf8")) : null;
-}
-
-function safe<T>(f: () => T): T | undefined {
-  try {
-    return f();
-  } catch {
-    return undefined;
-  }
 }
 
 async function mapLimit<T>(items: T[], limit: number, fn: (t: T) => Promise<void>) {
