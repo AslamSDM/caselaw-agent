@@ -63,10 +63,27 @@ export function reasoningEffort(tier: Tier | "judge"): Effort | undefined {
   return v && EFFORTS.has(v) ? (v as Effort) : undefined;
 }
 
-function providerOptionsFor(effort: Effort | undefined) {
-  if (!effort || provider() !== "openrouter") return undefined;
-  return { openrouter: { reasoning: { effort } } };
+/**
+ * OpenRouter provider pinning per model: OPENROUTER_PROVIDERS="model=prov1,prov2;model2=prov3",
+ * e.g. "deepseek/deepseek-v4-flash-0731=streamlake/fp8". Pinned models don't fall back to other
+ * providers; a failure goes to LLM_FALLBACK_MODEL instead (see generateStructured).
+ */
+function providerRouting(id: string) {
+  for (const rule of (process.env.OPENROUTER_PROVIDERS ?? "").split(";")) {
+    const [m, provs] = rule.split("=").map((x) => x?.trim());
+    if (m && provs && m === id) return { order: provs.split(",").map((p) => p.trim()), allow_fallbacks: false };
+  }
+  return undefined;
 }
+
+function providerOptionsFor(effort: Effort | undefined, id: string) {
+  if (provider() !== "openrouter") return undefined;
+  const routing = providerRouting(id);
+  if (!effort && !routing) return undefined;
+  return { openrouter: { ...(effort && { reasoning: { effort } }), ...(routing && { provider: routing }) } };
+}
+
+const idOf = (m: LanguageModel) => (typeof m === "string" ? m : m.modelId);
 
 export function llmConfigured(): boolean {
   return Boolean(
@@ -105,17 +122,21 @@ export async function generateStructured<S extends z.ZodType>(opts: {
   maxRetries?: number;
 }): Promise<z.infer<S>> {
   let lastErr: unknown;
+  // second attempt: LLM_FALLBACK_MODEL if set (e.g. a free model when the pinned provider fails)
+  const fallback = process.env.LLM_FALLBACK_MODEL;
   for (let attempt = 0; attempt < 2; attempt++) {
+    const m = attempt === 1 && fallback ? modelById(fallback) : opts.model;
+    if (attempt === 1 && fallback) console.warn(`[llm] ${idOf(opts.model)} failed (${String(lastErr).slice(0, 120)}); retrying with ${fallback}`);
     try {
       const result = await generateText({
-        model: opts.model,
+        model: m,
         system: `${opts.system}\n\nReturn your answer by calling the \`submit\` tool exactly once.`,
         prompt: opts.prompt,
         tools: { submit: tool({ description: "Submit the final answer", inputSchema: opts.schema }) },
         toolChoice: { type: "tool", toolName: "submit" },
         abortSignal: opts.abortSignal,
         maxRetries: opts.maxRetries ?? (Number(process.env.LLM_MAX_RETRIES) || undefined),
-        providerOptions: providerOptionsFor(opts.effort),
+        providerOptions: providerOptionsFor(opts.effort, idOf(m)),
       });
       if (opts.usage) addUsage(opts.usage, result.usage);
       const call = result.toolCalls.find((c) => c.toolName === "submit");
