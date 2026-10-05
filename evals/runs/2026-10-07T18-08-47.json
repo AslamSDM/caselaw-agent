@@ -1,0 +1,1883 @@
+{
+ "meta": {
+  "startedAt": "2026-10-07T18:08:47.667Z",
+  "finishedAt": "2026-10-07T18:16:18.109Z",
+  "git": "3043355",
+  "dirty": true,
+  "models": {
+   "fast": "deepseek/deepseek-v4-flash",
+   "strong": "deepseek/deepseek-v4-flash",
+   "judge": "deepseek/deepseek-v4-flash (self)",
+   "reasoning": {
+    "fast": "default",
+    "strong": "none",
+    "judge": "default"
+   },
+   "provider": "openrouter"
+  },
+  "config": {
+   "cutoff": "0.65",
+   "gate": "typesafe/jev-1.13@0.75",
+   "gateScoreWeight": "0.25",
+   "judgeMode": "judge",
+   "maxCandidates": "10",
+   "perVariant": "25",
+   "web": "true"
+  },
+  "regradeOf": null,
+  "selection": {
+   "only": "pimlico-worker,police-pedestrian,black-cab-shape-ip-filter,payroll-data-leak,neg-jaguar-battery",
+   "tag": null
+  }
+ },
+ "summary": {
+  "queries": 5,
+  "positives": 4,
+  "negatives": 1,
+  "errors": 0,
+  "recallAt10": 1,
+  "recallAllAt10": 0.75,
+  "candidateRecall": 1,
+  "mrr": 1,
+  "ndcgAt10": 0.9576304066422403,
+  "precision": 1,
+  "highlightPrecision": 0.8852459016393442,
+  "negativePassRate": 1,
+  "areaAccuracy": 1,
+  "dateInferenceAccuracy": 1,
+  "dateCompliance": null,
+  "firstResultP50": 18310,
+  "totalP50": 74457,
+  "totalP95": 86486,
+  "avgTnaRequests": 0,
+  "avgInputTokens": 21581.2,
+  "avgOutputTokens": 3016.6,
+  "stageP50": {
+   "expand": 0,
+   "search": 258,
+   "web": 3,
+   "fetch": 1766,
+   "retrieve": 16941,
+   "gate": 15973,
+   "judge": 167268
+  },
+  "missStages": {
+   "not-retrieved": 0,
+   "rejected": 0,
+   "not-read": 0,
+   "error": 0
+  }
+ },
+ "gates": [
+  {
+   "label": "recall@10 ≥ 70%",
+   "value": 1,
+   "unit": "pct",
+   "pass": true
+  },
+  {
+   "label": "highlight precision ≥ 90%",
+   "value": 0.8852459016393442,
+   "unit": "pct",
+   "pass": false
+  },
+  {
+   "label": "negatives → no strong matches ≥ 80%",
+   "value": 1,
+   "unit": "pct",
+   "pass": true
+  },
+  {
+   "label": "all results inside the question's date range",
+   "value": null,
+   "unit": "pct",
+   "pass": false
+  },
+  {
+   "label": "date range inferred correctly ≥ 90%",
+   "value": 1,
+   "unit": "pct",
+   "pass": true
+  },
+  {
+   "label": "first result p50 < 8s",
+   "value": 18310,
+   "unit": "ms",
+   "pass": false
+  },
+  {
+   "label": "full results p50 < 20s",
+   "value": 74457,
+   "unit": "ms",
+   "pass": false
+  },
+  {
+   "label": "TNA requests/search ≤ 25",
+   "value": 0,
+   "unit": "num",
+   "pass": true
+  }
+ ],
+ "scores": [
+  {
+   "id": "pimlico-worker",
+   "kind": "positive",
+   "recall": 1,
+   "recallAll": 0.5,
+   "candidateRecall": 1,
+   "rr": 1,
+   "ndcg": 0.9342878741136923,
+   "precision": 1,
+   "highlightsJudged": 15,
+   "highlightsSupported": 14,
+   "areaHit": true,
+   "dateInferenceHit": true,
+   "dateCompliance": null,
+   "negativePass": null,
+   "misses": [],
+   "resultCount": 6,
+   "unjudged": 0
+  },
+  {
+   "id": "payroll-data-leak",
+   "kind": "positive",
+   "recall": 1,
+   "recallAll": 0.5,
+   "candidateRecall": 1,
+   "rr": 1,
+   "ndcg": 0.942041549542581,
+   "precision": 1,
+   "highlightsJudged": 13,
+   "highlightsSupported": 12,
+   "areaHit": true,
+   "dateInferenceHit": true,
+   "dateCompliance": null,
+   "negativePass": null,
+   "misses": [],
+   "resultCount": 5,
+   "unjudged": 0
+  },
+  {
+   "id": "police-pedestrian",
+   "kind": "positive",
+   "recall": 1,
+   "recallAll": 1,
+   "candidateRecall": 1,
+   "rr": 1,
+   "ndcg": 0.9541922029126879,
+   "precision": 1,
+   "highlightsJudged": 24,
+   "highlightsSupported": 20,
+   "areaHit": true,
+   "dateInferenceHit": true,
+   "dateCompliance": null,
+   "negativePass": null,
+   "misses": [],
+   "resultCount": 10,
+   "unjudged": 0
+  },
+  {
+   "id": "black-cab-shape-ip-filter",
+   "kind": "positive",
+   "recall": 1,
+   "recallAll": 1,
+   "candidateRecall": 1,
+   "rr": 1,
+   "ndcg": 1,
+   "precision": 1,
+   "highlightsJudged": 9,
+   "highlightsSupported": 8,
+   "areaHit": true,
+   "dateInferenceHit": true,
+   "dateCompliance": null,
+   "negativePass": null,
+   "misses": [],
+   "resultCount": 3,
+   "unjudged": 0
+  },
+  {
+   "id": "neg-jaguar-battery",
+   "kind": "negative",
+   "recall": null,
+   "recallAll": null,
+   "candidateRecall": null,
+   "rr": null,
+   "ndcg": null,
+   "precision": null,
+   "highlightsJudged": 0,
+   "highlightsSupported": 0,
+   "areaHit": null,
+   "dateInferenceHit": true,
+   "dateCompliance": null,
+   "negativePass": true,
+   "misses": [],
+   "resultCount": 0,
+   "unjudged": 0
+  }
+ ],
+ "runs": [
+  {
+   "id": "pimlico-worker",
+   "kind": "positive",
+   "query": "plumber labelled a self-employed contractor claims worker status to bring a discrimination claim",
+   "candidates": [
+    "ewca/civ/2017/51",
+    "eat/2022/6",
+    "eat/2024/4",
+    "uksc/2018/29",
+    "uksc/2012/59",
+    "eat/2025/32",
+    "uksc/2020/13",
+    "uksc/2011/40",
+    "ukftt/tc/2022/194",
+    "ukftt/tc/2024/37",
+    "uksc/2014/32",
+    "ewca/civ/2012/1005",
+    "ewca/civ/2002/1735"
+   ],
+   "results": [
+    {
+     "uri": "uksc/2018/29",
+     "name": "Pimlico Plumbers Ltd and another v Smith",
+     "date": "2018-06-13",
+     "score": 1,
+     "areas": [
+      "employment",
+      "public"
+     ],
+     "highlights": [
+      {
+       "elementId": "p_10",
+       "kind": "paragraph",
+       "quote": "(b) that he had been a “worker” for Pimlico within the meaning of regulation 2(1) of the Regulations; and (c) that he had been in Pimlico’s “employment” within the meaning of section 83(2)(a) of the Equality Act. Were the decisions on these three threshold issues to be upheld, the result would be that Mr Smith could proceed with the complaints referred to in para 2(b), (c) and (d) above."
+      },
+      {
+       "elementId": "p_21",
+       "kind": "paragraph",
+       "quote": "the obligation to do the work personally is common to both, the Equality Act does not expressly exclude from the concept a contract in which the other party has the status of a client or customer."
+      },
+      {
+       "elementId": "h_105",
+       "kind": "paragraph",
+       "quote": "the status of ‘worker’ within the meaning of EU law is not affected by the fact that a person has been hired as a self-employed person under national law, for tax, administrative or organisational reasons"
+      }
+     ],
+     "rerank": 0.13818253771449093,
+     "judgeScore": 1,
+     "gate": {
+      "choice": "on_point",
+      "onPoint": 1
+     }
+    },
+    {
+     "uri": "ewca/civ/2017/51",
+     "name": "Pimlico Plumbers Ltd & Anor v Smith",
+     "date": "2017-02-10",
+     "score": 0.9622606002309622,
+     "areas": [
+      "employment",
+      "contract",
+      "human_rights"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_1",
+       "kind": "paragraph",
+       "quote": "The question on this appeal is whether the Employment Tribunal (Employment Judge Corrigan) (“the ET”) was correct to hold in a decision dated 16 April 2012 that the respondent, Gary Smith, was a worker within the meaning of section 230(3)(b) of the Employment Rights Act 1996 (“the ERA”) and regulation 2(1) of the Working Time Regulations 1998 (“the WTR”) and his working situation fell within the definition of “employment” in section 83(2)(a) of the Equality Act 2010 (“the EA”) during the period that he worked for the first appellant, Pimlico Plumbers Limited (“PP”)."
+      },
+      {
+       "elementId": "para_4",
+       "kind": "paragraph",
+       "quote": "Mr Smith is a plumber. He carried out plumbing work for PP between 25 August 2005 and 28 April 2011. He claims that, following a heart attack in January 2011, he was unfairly or wrongfully dismissed on 3 May 2011."
+      },
+      {
+       "elementId": "para_49",
+       "kind": "paragraph",
+       "quote": "He also claimed against both PP and Mr Mullins direct disability discrimination, discrimination arising from disability and failure to make reasonable adjustments."
+      },
+      {
+       "elementId": "para_66",
+       "kind": "paragraph",
+       "quote": "The persons in (3) fall within section 230(3)(b) of the ERA and regulation 2 of the WTR and their employment falls within the definition of “employment” in section 83(2)(a) of the EA. I shall for convenience refer to them as a “limb (b) worker”. The question on this appeal is whether the ET was wrong to decide that Mr Smith was a limb (b) worker rather than falling within category (2)."
+      },
+      {
+       "elementId": "para_80__quote_1",
+       "kind": "paragraph",
+       "quote": "In conclusion, we consider that where a party has an unfettered right for any reason not to personally perform the contractual obligations under a contract but can delegate them to someone else, he cannot be a “worker” within the meaning of the WTR even though the person actually performing the contractual obligations has to meet certain conditions."
+      },
+      {
+       "elementId": "para_70__quote_1",
+       "kind": "paragraph",
+       "quote": "Usually the engineer who quotes for work is the engineer who performs the work. According to Mr Mullins, engineers decide whether they want to sub-contract some of, all of or none of their own trade and/or whether they need to bring in additional trades though the engineer who provided the estimate has responsibility for completion of the job."
+      }
+     ],
+     "rerank": 0.33955092653178587,
+     "judgeScore": 0.95,
+     "gate": {
+      "choice": "on_point",
+      "onPoint": 1
+     }
+    },
+    {
+     "uri": "eat/2022/6",
+     "name": "Christopher Johnson v Transopco UK Ltd",
+     "date": "2022-01-18",
+     "score": 0.8182667597870948,
+     "areas": [
+      "employment"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_2",
+       "kind": "paragraph",
+       "quote": "To be entitled to pursue all of these complaints he had to be, in law, a worker of the respondent. Section 230(3) Employment Rights Act 1996 (“the 1996 Act”) defines a worker as follows."
+      },
+      {
+       "elementId": "para_34__quote_1",
+       "kind": "paragraph",
+       "quote": "The paradigm case falling within the proviso to 2(b) is that of a person working within one of the established professions: solicitor and client, barrister and client, accountant, architect etc."
+      }
+     ],
+     "rerank": 0.24555477668886422,
+     "judgeScore": 0.85,
+     "gate": {
+      "choice": "on_point",
+      "onPoint": 0.73
+     }
+    },
+    {
+     "uri": "uksc/2014/32",
+     "name": "Clyde & Co LLP and another v Bates van Winkelhof",
+     "date": "2014-05-21",
+     "score": 0.7758489865921572,
+     "areas": [
+      "employment"
+     ],
+     "highlights": [
+      {
+       "elementId": "p_44",
+       "kind": "paragraph",
+       "quote": "employment law distinguishes between three types of people: those employed under a contract of employment; those self-employed people who are in business on their own account and undertake work for their clients or customers; and an intermediate class of workers who are self- employed but do not fall within the second class. Discrimination law, on the other hand, while it includes a contract “personally to do work” within its definition of employment (see, now, Equality Act 2010, s 83(2)) does not include an express exception for those in business on their account who work for their clients or customers."
+      },
+      {
+       "elementId": "p_24",
+       "kind": "paragraph",
+       "quote": "It is common ground that she is employed under a contract personally to perform work or services for the LLP; she was an integral part of their business and the LLP was not her client or customer."
+      }
+     ],
+     "rerank": 0.13864066746829556,
+     "via": "cited by 4 of the results",
+     "judgeScore": 0.85,
+     "gate": {
+      "choice": "on_point",
+      "onPoint": 0.59
+     }
+    },
+    {
+     "uri": "ewca/civ/2012/1005",
+     "name": "The Hospital Medical Group Ltd v Westwood",
+     "date": "2012-07-24",
+     "score": 0.7692463967593421,
+     "areas": [
+      "employment",
+      "procedure"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_2",
+       "kind": "paragraph",
+       "quote": "The employment rights remaining in issue in the present case relate to unlawful deductions and holiday pay. Their catchment is “workers”. The qualifying provision is section 230 (3) of the Employment Rights Act 1996."
+      },
+      {
+       "elementId": "para_4__quote_1",
+       "kind": "paragraph",
+       "quote": "I find that it is equally clear that the claimant was engaged personally to carry out the work himself."
+      },
+      {
+       "elementId": "para_17",
+       "kind": "paragraph",
+       "quote": "He went on to derive “some assistance” from cases which have analysed the definition of “employment” in discrimination legislation. This involved the use of the “dominant purpose” test in an attempt to identify the essential nature of the contract."
+      }
+     ],
+     "rerank": 0.39233348365536846,
+     "via": "cited by 2 of the results",
+     "judgeScore": 0.75,
+     "gate": {
+      "choice": "on_point",
+      "onPoint": 0.83
+     }
+    },
+    {
+     "uri": "eat/2024/4",
+     "name": "Lancashire and South Cumbria NHS Foundation Trust v R Moon",
+     "date": "2024-01-22",
+     "score": 0.6551556760651535,
+     "areas": [
+      "employment",
+      "public"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_6__sub_6",
+       "kind": "paragraph",
+       "quote": "Instead, she seeks to establish that she is “employed” under a contract personally to do work (as the Equality Act puts it) or any other contract (whether express or implied and, if it is express, whether oral or in writing) whereby the individual undertakes to do or perform personally any"
+      },
+      {
+       "elementId": "para_16",
+       "kind": "paragraph",
+       "quote": "It was wrong in principle to treat the written contract as the starting point: Uber BV v Aslam & Others [2021] ICR 657, SC, and the subjective intention of the parties, including the respondent’s motivation, could not override objective findings as to the reality of the relationship."
+      }
+     ],
+     "rerank": 0.3478491980335157,
+     "judgeScore": 0.85,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.3
+     }
+    }
+   ],
+   "rejected": [
+    {
+     "uri": "uksc/2012/59",
+     "name": "X v Mid Sussex Citizens Advice Bureau and another",
+     "score": 0.04,
+     "reason": "Pre-screen: tangential (on point 4%, tangential 93%, unrelated 3%).",
+     "rerank": 0.36745354941523434,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.04
+     }
+    },
+    {
+     "uri": "uksc/2020/13",
+     "name": "Barclays Bank plc v Various Claimants",
+     "score": 0.01,
+     "reason": "Pre-screen: tangential (on point 1%, tangential 96%, unrelated 3%).",
+     "rerank": 0.0965754962007641,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.01
+     }
+    },
+    {
+     "uri": "ukftt/tc/2022/194",
+     "name": "Alan Parry Productions Limited v The Commissioners for HMRC",
+     "score": 0.08,
+     "reason": "Pre-screen: tangential (on point 8%, tangential 90%, unrelated 2%).",
+     "rerank": 0.5603675844520135,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.08
+     }
+    },
+    {
+     "uri": "ukftt/tc/2024/37",
+     "name": "Atholl House Productions Limited v The Commissioners for HMRC",
+     "score": 0.18,
+     "reason": "Pre-screen: tangential (on point 18%, tangential 81%, unrelated 1%).",
+     "rerank": 0.6714556822847075,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.18
+     }
+    },
+    {
+     "uri": "uksc/2011/40",
+     "name": "Jivraj v Hashwani",
+     "score": 0.12698234324738658,
+     "reason": "This case concerns whether an arbitration agreement's clause requiring appointment of a person of a particular religion/ethnic origin is discriminatory under employment regulations, and whether arbitrators are \"workers.\" It does not concern a plumber claiming worker status to bring a discrimination claim.",
+     "rerank": 0.5971323672526777,
+     "judgeScore": 0.1,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.26
+     }
+    },
+    {
+     "uri": "eat/2025/32",
+     "name": "Dr Kevin Connaughton v Greater Glasgow Health Board",
+     "score": 0.6487961590608166,
+     "reason": "Pre-screen on point 42% lowers judge score 0.75 to 0.65, below 0.65. EAT appeal concerning whether a GP claiming unpaid holiday leave is a 'worker' under s.230 ERA and the WTR; the judgment discusses at length the distinction between self-employment and worker status, citing Uber v Aslam, Smith v Pimlico Plumbers, and O'Brien, and the requirement of a direct contractual link. It bears on the same legal question (who qualifies as a worker for statutory protections) that the plumber/self-employed contractor scenario raises, though it involves a GP rather than a plumber and holiday pay rather than discrimination.",
+     "rerank": 0.1838351055261459,
+     "judgeScore": 0.75,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.42
+     }
+    },
+    {
+     "uri": "ewca/civ/2002/1735",
+     "name": "[2002] EWCA Civ 1735",
+     "score": 0,
+     "reason": "Not found on TNA."
+    }
+   ],
+   "dates": null,
+   "dateSource": "none",
+   "targetAreas": {
+    "uksc/2018/29": [
+     "employment",
+     "public"
+    ],
+    "uksc/2021/5": [
+     "employment",
+     "contract"
+    ]
+   },
+   "stats": {
+    "ms": 86486,
+    "firstResultMs": 30286,
+    "tnaRequests": 0,
+    "casesFetched": 0,
+    "casesFromCache": 12,
+    "inputTokens": 26161,
+    "outputTokens": 4323,
+    "webEnrichment": "used",
+    "contextChars": 129474,
+    "paragraphsEmbedded": 0,
+    "timings": {
+     "expand": 0,
+     "search": 767,
+     "web": 3,
+     "fetch": 1766,
+     "retrieve": 28638,
+     "gate": 23553,
+     "judge": 200228
+    },
+    "gate": {
+     "model": "typesafe/jev-1.13",
+     "requests": 6,
+     "cases": 12,
+     "rejected": 4,
+     "errors": 0,
+     "costUsd": 0.001307964
+    },
+    "rerankRejected": 0,
+    "citationCandidates": 3,
+    "decisionsCached": 0
+   },
+   "judge": {
+    "ewca/civ/2017/51": {
+     "grade": 3,
+     "rationale": "This is the leading Court of Appeal authority directly on point: it concerns a plumber (Mr Smith) who, although labelled and treated as a self-employed contractor under his agreement with Pimlico Plumbers, claimed 'worker' status under s.230(3)(b) ERA and reg 2(1) WTR, and 'employment' under s.83(2)(a) Equality Act 2010, in order to bring disability discrimination claims. The case is the leading authority on limb (b) worker status for ostensibly self-employed contractors and is squarely on the question asked.",
+     "highlightSupports": [
+      true,
+      true,
+      true
+     ]
+    },
+    "uksc/2018/29": {
+     "grade": 3,
+     "rationale": "This is the Supreme Court's leading judgment in Pimlico Plumbers v Smith, which is directly on point: it decides whether a plumber who was labelled a self-employed contractor could claim limb (b) \"worker\" status under s.230(3) ERA 1996 and \"employment\" status under s.83(2)(a) Equality Act 2010 so as to pursue discrimination claims. The case is the governing authority for exactly this question.",
+     "highlightSupports": [
+      true,
+      true,
+      true
+     ]
+    },
+    "eat/2022/6": {
+     "grade": 2,
+     "rationale": "The question asks about a plumber labelled self-employed claiming worker status to bring a discrimination claim — essentially the Pimlico Plumbers scenario. Johnson v Transopco is not the plumber case: it concerns a black-cab driver using an app, and the live claims were whistleblowing detriment, holiday pay, unlawful deductions and NMW, not discrimination. However, the EAT substantively deals with the same core legal question of limb (b) worker status for a person labelled self-employed, applying the leading authorities (Bates van Winkelhof, Byrne Bros, Windle) and specifically discussing Pimlico Plumbers v Smith at [42]. A lawyer researching worker status in this context would find it useful, so it merits grade 2 (substantively deals with the question) rather than 3 (not directly on point on the plumber/discrimination facts) or 1 (the worker-status analysis is central, not merely passing).",
+     "highlightSupports": [
+      true,
+      false
+     ]
+    },
+    "uksc/2014/32": {
+     "grade": 3,
+     "rationale": "This Supreme Court decision is the leading authority on the limb (b) \"worker\" definition under s.230(3)(b) ERA 1996 and on whether a person labelled self-employed (there, an LLP member treated as self-employed) can nonetheless claim worker status to bring statutory claims, including a sex discrimination claim under the Equality Act 2010. Although the specific claimant was a lawyer rather than a plumber, the legal question—whether a self-employed-labelled contractor can claim worker status to pursue a discrimination claim—is directly on point and is expressly addressed (see para 44 discussing discrimination law and the absence of a \"client or customer\" exception). Both highlights support the answer: [0] directly discusses the discrimination-law framework and worker status; [1] articulates the core worker-status criteria (personal service, integral to business, not a client/customer).",
+     "highlightSupports": [
+      true,
+      true
+     ]
+    },
+    "eat/2024/4": {
+     "grade": 2,
+     "rationale": "The case is not about a plumber — it concerns an Approved Mental Health Professional (AHM) engaged by an NHS trust. However, the core legal issue is squarely the one posed by the question: whether an individual labelled/engaged as an independent self-employed contractor can establish \"worker\" status under the Equality Act 2010 (s.83(2)(a), \"contract personally to do work\") in order to bring a discrimination claim. The EAT's reasoning on s.230(3)(b) ERA / s.83 EqA, the irrelevance of labels and written contracts (Uber v Aslam), and the rejection of the argument that the statutory framework precludes worker status all substantively answer the legal question. Because the factual occupation differs from the question's hypothetical (plumber), it is not a directly on-point authority for that specific scenario, but it is clearly useful to a lawyer researching the worker-status-for-discrimination-claim issue.",
+     "highlightSupports": [
+      true,
+      true
+     ]
+    },
+    "ewca/civ/2012/1005": {
+     "grade": 2,
+     "rationale": "This Court of Appeal decision is a substantive authority on the question of whether a person labelled a self-employed independent contractor can nevertheless qualify as a \"worker\" under s.230(3)(b) ERA 1996 (applying the three requirements derived from Autoclenz). That is the core legal issue in the query, and the case would be useful to a lawyer researching worker status for self-employed contractors. However, it is not a direct match to the specific question as framed: the claimant was a GP rather than a plumber, and the age discrimination claim was not pursued (the live issues were unlawful deductions and holiday pay). The case therefore substantively deals with the worker-status question but is not a directly on-point authority for the specific \"plumber/discrimination claim\" scenario.",
+     "highlightSupports": [
+      true,
+      true,
+      true
+     ]
+    }
+   }
+  },
+  {
+   "id": "payroll-data-leak",
+   "kind": "positive",
+   "query": "employer vicariously liable for an employee who posted staff payroll data online out of a grudge",
+   "candidates": [
+    "ewhc/qb/2017/3113",
+    "ewca/civ/2018/2339",
+    "uksc/2020/12",
+    "uksc/2023/15",
+    "ewhc/qb/2021/1419",
+    "ewhc/qb/2020/2613",
+    "ewca/civ/2022/7",
+    "ewhc/kb/2022/2421",
+    "ewhc/comm/2024/3116",
+    "ewhc/ch/2026/164",
+    "uksc/2016/11",
+    "jcpc/2004/47",
+    "jcpc/2004/56"
+   ],
+   "results": [
+    {
+     "uri": "uksc/2020/12",
+     "name": "WM Morrison Supermarkets plc v Various Claimants",
+     "date": "2020-04-01",
+     "score": 1,
+     "areas": [
+      "tort",
+      "data_privacy",
+      "employment"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_31",
+       "kind": "paragraph",
+       "quote": "the disclosure of the data on the Internet did not form part of Skelton’s functions or field of activities, in the sense in which those words were used by Lord Toulson: it was not an act which he was authorised to do, as Lord Nicholls put it."
+      },
+      {
+       "elementId": "para_35",
+       "kind": "paragraph",
+       "quote": "the mere fact that Skelton’s employment gave him the opportunity to commit the wrongful act would not be sufficient to warrant the imposition of vicarious liability"
+      }
+     ],
+     "rerank": 0.29617256522325625,
+     "judgeScore": 1,
+     "gate": {
+      "choice": "on_point",
+      "onPoint": 1
+     }
+    },
+    {
+     "uri": "ewca/civ/2018/2339",
+     "name": "WM Morrison Supermarkets Plc v Various Claimants",
+     "date": "2018-10-22",
+     "score": 1,
+     "areas": [
+      "data_privacy",
+      "employment",
+      "tort"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_1",
+       "kind": "paragraph",
+       "quote": "The central issue on this appeal is whether, on the facts, an employer is liable in damages to those of its current or former employees whose personal and confidential information has been misused by being disclosed on the web by the criminal act of another employee, who had a grudge against the employer, in breach of the Data Protection Act 1998"
+      },
+      {
+       "elementId": "para_47",
+       "kind": "paragraph",
+       "quote": "Ms Proops submitted that it is clear that there are highly significant inconsistencies between the liabilities under the DPA of employers, whether they or their employees are data controllers, and the strict liability imposed at common law on principals by way of vicarious liability for the defaults of employees"
+      },
+      {
+       "elementId": "para_48",
+       "kind": "paragraph",
+       "quote": "We consider it is clear, however, that whatever the position on the first ground of appeal, the vicarious liability of an employer for misuse of private information by an employee and for breach of confidence by an employee has not been excluded by the DPA."
+      },
+      {
+       "elementId": "para_65__quote_1",
+       "kind": "quoted_clause",
+       "quote": "Before these can be vicarious liability, all the features of the wrong which are necessary to make the employee liable have to have occurred in the course of the employment."
+      },
+      {
+       "elementId": "para_47",
+       "kind": "paragraph",
+       "quote": "Ms Proops submitted that it is clear that there are highly significant inconsistencies between the liabilities under the DPA of employers, whether they or their employees are data controllers, and the strict liability imposed at common law on principals by way of vicarious liability"
+      },
+      {
+       "elementId": "para_76",
+       "kind": "paragraph",
+       "quote": "it has been clearly established that an employer may be vicariously liable for deliberate wrongdoing by an employee"
+      }
+     ],
+     "rerank": 0.970018590707175,
+     "judgeScore": 1
+    },
+    {
+     "uri": "ewhc/qb/2017/3113",
+     "name": "Various Claimants v WM Morrisons Supermarket Plc (Rev 1)",
+     "date": "2017-12-01",
+     "score": 0.9924141172814958,
+     "areas": [
+      "employment",
+      "data_privacy",
+      "tort"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_1",
+       "kind": "paragraph",
+       "quote": "This group action raises the question whether an employer is liable, directly or vicariously, for the criminal actions of a rogue employee in disclosing personal information of co-employees on the web, whether under the Data Protection Act 1998, an action for breach of confidence, or in an action for misuse of private information."
+      },
+      {
+       "elementId": "para_2",
+       "kind": "paragraph",
+       "quote": "On 12th January 2014 a file containing personal details of 99,998 employees of the Defendant (“Morrisons”) was posted on a file sharing website."
+      },
+      {
+       "elementId": "para_167",
+       "kind": "paragraph",
+       "quote": "The question was raised whether a tort committed against a third party (either a fellow employee or member of the public) whilst the allegedly tortious employee was at work fell on the personal, independent side of the line and not on the side of the “course of employment”. It was not difficult to see that if a personal grudge, arising outside the work place, manifested itself in a violent action inside it, where being at work was merely the occasion for an action which might as well have happened elsewhere, it might be expected that the court would hold the employee liable on his own, and that no secondary liability would attach to the employer."
+      }
+     ],
+     "rerank": 0.6879833968312845,
+     "judgeScore": 1,
+     "gate": {
+      "choice": "on_point",
+      "onPoint": 0.97
+     }
+    },
+    {
+     "uri": "ewhc/qb/2020/2613",
+     "name": "Chell v Tarmac Cement And Lime Ltd",
+     "date": "2020-10-05",
+     "score": 0.8949577848179944,
+     "areas": [
+      "tort",
+      "employment"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_27__sub_3",
+       "kind": "paragraph",
+       "quote": "Mr Heath was acting due to an employment issue which could and should have been managed by the Defendant, there being no personal vendetta against the Claimant himself;"
+      },
+      {
+       "elementId": "para_35",
+       "kind": "paragraph",
+       "quote": "In that case, “S” had worked for the employer as an internal IT auditor, and developed a grudge against the employer. He copied the personal data, including payroll data, of a large number of employees onto a USB stick. He took the stick home and uploaded a file containing the data to a publicly-accessible file-sharing website."
+      },
+      {
+       "elementId": "para_35__quote_1",
+       "kind": "quoted_clause",
+       "quote": "he was pursuing a personal vendetta, seeking vengeance for the disciplinary proceedings some months earlier. In those circumstances, applying"
+      }
+     ],
+     "rerank": 0.882104061784483,
+     "judgeScore": 0.9,
+     "gate": {
+      "choice": "on_point",
+      "onPoint": 0.88
+     }
+    },
+    {
+     "uri": "uksc/2023/15",
+     "name": "Trustees of the Barry Congregation of Jehovah's Witnesses v BXB",
+     "date": "2023-04-26",
+     "score": 0.7609766658165248,
+     "areas": [
+      "tort",
+      "employment",
+      "data_privacy"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_53",
+       "kind": "paragraph",
+       "quote": "In Morrison, the defendant company was requested by its external auditors to provide them with a copy of its payroll data. Accordingly, a copy of the data was transmitted to one of the defendant's employees, Mr Skelton, an internal auditor, for the sole purpose of passing it on to the external auditors. The internal auditor carried out that task but also unlawfully copied the data and uploaded it onto a publicly accessible website, in pursuance of a vendetta against the defendant and intending thereby to cause harm to the defendant."
+      },
+      {
+       "elementId": "para_54",
+       "kind": "paragraph",
+       "quote": "He clarified that, at stage 2, where one was dealing with an employee, and in line with what was articulated in Lister, the appropriate test was that set out by Lord Nicholls in Dubai Aluminium"
+      }
+     ],
+     "rerank": 0.4790626002378193,
+     "judgeScore": 0.9,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.46
+     }
+    }
+   ],
+   "rejected": [
+    {
+     "uri": "ewhc/qb/2021/1419",
+     "name": "AB v Chethams School of Music",
+     "score": 0.06,
+     "reason": "Pre-screen: tangential (on point 6%, tangential 93%, unrelated 1%).",
+     "rerank": 0.185989694175168,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.06
+     }
+    },
+    {
+     "uri": "ewca/civ/2022/7",
+     "name": "Andrew Chell v Tarmac Cement and Lime Limited",
+     "score": 0.16,
+     "reason": "Pre-screen: tangential (on point 16%, tangential 84%, unrelated 0%).",
+     "rerank": 0.12124686469890736,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.16
+     }
+    },
+    {
+     "uri": "ewhc/comm/2024/3116",
+     "name": "Dynamo Recoveries Limited v Alexander Nix",
+     "score": 0.01,
+     "reason": "Pre-screen: irrelevant (on point 1%, tangential 45%, unrelated 54%).",
+     "rerank": 0.1557009730572983,
+     "gate": {
+      "choice": "irrelevant",
+      "onPoint": 0.01
+     }
+    },
+    {
+     "uri": "ewhc/ch/2026/164",
+     "name": "Trayport Limited v E-Star Trading GmbH & Ors",
+     "score": 0.03,
+     "reason": "Pre-screen: tangential (on point 3%, tangential 97%, unrelated 0%).",
+     "rerank": 0.3321894580969307,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.03
+     }
+    },
+    {
+     "uri": "ewhc/kb/2022/2421",
+     "name": "Theodore Piepenbrock v London School of Economics and Political Science & Ors.",
+     "score": 0.5663746980991549,
+     "reason": "Pre-screen on point 30% lowers judge score 0.70 to 0.57, below 0.65. This case deals with vicarious liability of an employer (LSE) for an employee who leaked confidential information (defamatory articles and data) out of personal motives of revenge, applying the \"close connection\" test from Various Claimants v Wm Morrison Supermarkets. It is directly on the issue of employer vicarious liability for an employee's wrongful disclosure of information motivated by a grudge.",
+     "rerank": 0.4021311172151988,
+     "judgeScore": 0.7,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.3
+     }
+    },
+    {
+     "uri": "jcpc/2004/47",
+     "name": "[2004] UKPC 47",
+     "score": 0,
+     "reason": "Not found on TNA."
+    },
+    {
+     "uri": "jcpc/2004/56",
+     "name": "[2004] UKPC 56",
+     "score": 0,
+     "reason": "Not found on TNA."
+    },
+    {
+     "uri": "uksc/2016/11",
+     "name": "A M Mohamud (in substitution for Mr A Mohamud (deceased)) v WM Morrison Supermarkets plc",
+     "score": 0.18924061181189403,
+     "reason": "The case concerns vicarious liability for an assault by an employee, involving the \"close connection\" test. It does not involve disclosure of payroll data online or out of a grudge; the issue decided is about an intentional tort (assault) and whether the \"representative capacity\" test should replace the close connection test.",
+     "rerank": 0.20882973583982894,
+     "judgeScore": 0.15,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.38
+     }
+    }
+   ],
+   "dates": null,
+   "dateSource": "none",
+   "targetAreas": {
+    "uksc/2020/12": [
+     "tort",
+     "data_privacy",
+     "employment"
+    ],
+    "uksc/2016/11": [
+     "tort"
+    ]
+   },
+   "stats": {
+    "ms": 74457,
+    "firstResultMs": 27171,
+    "tnaRequests": 0,
+    "casesFetched": 0,
+    "casesFromCache": 11,
+    "inputTokens": 22905,
+    "outputTokens": 3555,
+    "webEnrichment": "used",
+    "contextChars": 115415,
+    "paragraphsEmbedded": 0,
+    "timings": {
+     "expand": 0,
+     "search": 711,
+     "web": 16,
+     "fetch": 5176,
+     "retrieve": 23471,
+     "gate": 26269,
+     "judge": 167268
+    },
+    "gate": {
+     "model": "typesafe/jev-1.13",
+     "requests": 7,
+     "cases": 10,
+     "rejected": 4,
+     "errors": 0,
+     "costUsd": 0.001088766
+    },
+    "rerankRejected": 0,
+    "citationCandidates": 3,
+    "decisionsCached": 0
+   },
+   "judge": {
+    "uksc/2020/12": {
+     "grade": 3,
+     "rationale": "This is the leading Supreme Court authority directly on point: it decides whether an employer is vicariously liable for an employee who posted staff payroll data online out of a grudge against the employer. The case answers the question in the negative, holding that the disclosure was not within the employee's field of activities and that mere opportunity to commit the wrong was insufficient. Both highlighted passages are central to the court's reasoning and directly support the answer.",
+     "highlightSupports": [
+      true,
+      true
+     ]
+    },
+    "ewca/civ/2018/2339": {
+     "grade": 3,
+     "rationale": "This is the leading Court of Appeal authority directly on the question. The central issue (para 1) is precisely whether an employer is vicariously liable where an employee, acting out of a grudge, disclosed staff payroll data online. The court held (para 79) that Morrisons was vicariously liable for Mr Skelton's torts of misuse of private information and breach of confidence, dismissing the appeal. The highlighted passages all bear directly on that issue: para 1 frames the exact question; para 47 summarises the vicarious liability argument raised by Morrisons; para 48 states the court's conclusion that the DPA does not exclude vicarious liability for the employee's torts.",
+     "highlightSupports": [
+      true,
+      true,
+      true
+     ]
+    },
+    "ewhc/qb/2017/3113": {
+     "grade": 3,
+     "rationale": "This is the High Court decision in the Morrisons data breach group action — the leading authority directly on point for whether an employer is vicariously liable for an employee (Skelton) who, out of a grudge, posted staff payroll data of ~100,000 employees online. The case is squarely about this exact factual and legal question, addressing vicarious liability for the rogue employee's disclosures under the DPA, breach of confidence and misuse of private information.",
+     "highlightSupports": [
+      true,
+      true,
+      true
+     ]
+    },
+    "ewhc/qb/2020/2613": {
+     "grade": 2,
+     "rationale": "The question concerns vicarious liability where an employee posts staff payroll data online out of a grudge — the Morrisons v Various Claimants scenario. Chell v Tarmac is itself a vicarious liability case, but its own facts concern a hammer incident, not data disclosure. However, paragraph 35 substantively engages with the exact scenario in the question: it recounts the Morrisons facts (IT auditor with a grudge copying payroll data and posting it online) and quotes the key passage holding that the employee was pursuing a personal vendetta and so the employer was not liable. This makes the judgment useful to a lawyer researching the question, though it is not the leading or directly on-point authority (Morrisons itself is).",
+     "highlightSupports": [
+      false,
+      true,
+      true
+     ]
+    },
+    "uksc/2023/15": {
+     "grade": 2,
+     "rationale": "The question concerns the exact scenario from WM Morrison Supermarkets plc v Various Claimants (employee posting staff payroll data online out of a grudge/vendetta). This case (Barry Congregation) is itself about sexual abuse vicarious liability, not payroll data disclosure, so it is not the leading or directly on-point authority for that question (Morrison is). However, it substantively engages with the question: para 53 recites the Morrison facts and its stage-2 outcome (no vicarious liability), and para 58 synthesises the modern two-stage test, including the close connection test applied in that situation. This makes it genuinely useful to a lawyer researching employer liability for a grudge-driven payroll-data leak, though as a secondary citation rather than the primary authority.",
+     "highlightSupports": [
+      true,
+      true
+     ]
+    }
+   }
+  },
+  {
+   "id": "police-pedestrian",
+   "kind": "positive",
+   "query": "police officers knocked over an elderly pedestrian while arresting a drug dealer: do they owe a duty of care",
+   "candidates": [
+    "uksc/2018/4",
+    "ewca/civ/2014/15",
+    "uksc/2019/25",
+    "ewca/civ/2025/13",
+    "uksc/2024/33",
+    "ewhc/kb/2025/804",
+    "ewca/civ/2015/836",
+    "ewhc/kb/2023/1062",
+    "ewhc/qb/2016/38",
+    "ewhc/qb/2020/212",
+    "uksc/2015/2",
+    "ewca/civ/2022/25",
+    "ewca/civ/2011/3"
+   ],
+   "results": [
+    {
+     "uri": "uksc/2018/4",
+     "name": "Robinson v Chief Constable of West Yorkshire Police",
+     "date": "2018-02-08",
+     "score": 1,
+     "areas": [
+      "tort",
+      "public"
+     ],
+     "highlights": [
+      {
+       "elementId": "p_107",
+       "kind": "paragraph",
+       "quote": "Returning, then, to the second of the issues identified in para 20 above, it follows that there is no general rule that the police are not under any duty of care when discharging their function of preventing and investigating crime. They generally owe a duty of care when such a duty arises under ordinary principles of the law of negligence, unless statute or the common law provides otherwise."
+      },
+      {
+       "elementId": "p_107",
+       "kind": "paragraph",
+       "quote": "Applying those principles, they may be under a duty of care to protect an individual from a danger of injury which they have themselves created, including a danger of injury resulting from human agency"
+      },
+      {
+       "elementId": "p_107",
+       "kind": "paragraph",
+       "quote": "the police are not normally under a duty of care to protect individuals from a danger of injury which they have not themselves created, including injury caused by the conduct of third parties, in the absence of special circumstances such as an assumption of responsibility"
+      },
+      {
+       "elementId": "p_3",
+       "kind": "paragraph",
+       "quote": "The principal question which has to be decided in this appeal is whether the officers owed a duty of care to Mrs Robinson."
+      }
+     ],
+     "rerank": 0.962185749229914,
+     "judgeScore": 1
+    },
+    {
+     "uri": "ewca/civ/2014/15",
+     "name": "Robinson v West Yorkshire Police",
+     "date": "2014-02-05",
+     "score": 0.9820209142881304,
+     "areas": [
+      "tort",
+      "public"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_1",
+       "kind": "paragraph",
+       "quote": "On 29 July 2008 she was walking down a relatively busy street in Huddersfield when she became caught up in the arrest of a drug dealer. She was knocked to the ground and injured. By a claim form dated 11 July 2011 she sued the local Chief Constable for damages for personal injury. The only question for this court is the extent to which the Chief Constable is liable, if at all, in negligence for what happened to her."
+      },
+      {
+       "elementId": "para_65",
+       "kind": "paragraph",
+       "quote": "First, the Recorder was correct to conclude that the police did not owe Mrs Robinson a duty of care, since the circumstances fell within the core principle that the police do not owe a duty of care to victims, witnesses or defendants (let alone bystanders) when investigating and suppressing crime, in particular when arresting suspects"
+      },
+      {
+       "elementId": "para_13__sub_2",
+       "kind": "quoted_clause",
+       "quote": "In any event, as a matter of public policy, the police were generally immune from actions for negligence in respect of their activities in the investigation and suppression of crime. This became known as the Hill principle."
+      }
+     ],
+     "rerank": 0.7521140457265315,
+     "judgeScore": 1,
+     "gate": {
+      "choice": "on_point",
+      "onPoint": 0.93
+     }
+    },
+    {
+     "uri": "ewhc/kb/2023/1062",
+     "name": "Esengul Woodcock v The Chief Constable of Northamptonshire Police",
+     "date": "2023-05-09",
+     "score": 0.9,
+     "areas": [
+      "tort",
+      "public"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_22",
+       "kind": "paragraph",
+       "quote": "The facts of that case were that two police officers knocked over an elderly lady when arresting a drugs dealer in the street. The trial judge dismissed the claim despite ruling that the police officers were negligent on the basis that the police were immune from suit for negligence. The Court of Appeal dismissed the appeal but the Supreme Court upheld the appeal and judgment was entered for the Claimant."
+      },
+      {
+       "elementId": "para_26__quote_1",
+       "kind": "quoted_clause",
+       "quote": "there is no general rule that the police are not under any duty of care when discharging their function of preventing and investigating crime. They generally owe a duty of care when such a duty arises under or"
+      }
+     ],
+     "rerank": 0.9759278024800332,
+     "judgeScore": 0.9
+    },
+    {
+     "uri": "ewhc/kb/2025/804",
+     "name": "Dr Visalakshmi Suresh & Ors v General Medical Council",
+     "date": "2025-04-03",
+     "score": 0.85,
+     "areas": [
+      "tort",
+      "public",
+      "procedure"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_141",
+       "kind": "paragraph",
+       "quote": "in Robinson two police officers attempted, in the course of their duties, to arrest a suspected drug dealer in a town centre resulting in a struggle which knocked over a relatively frail lady aged 76 causing her injury. This was considered by the Court to be a positive act, not an omission"
+      },
+      {
+       "elementId": "para_141",
+       "kind": "paragraph",
+       "quote": "Given that it was reasonably foreseeable that if the arrest was attempted when pedestrians were close they might be knocked into and injured, a duty of care towards the pedestrians in the immediate vicinity of the arrest was imposed. The police owed a duty to take care just as a private person would."
+      },
+      {
+       "elementId": "para_169",
+       "kind": "paragraph",
+       "quote": "It is important to identify precisely what duty was recognised in Robinson: it was a duty towards pedestrians in the vicinity of the arrest to take reasonable care to avoid injuring them when the arrest was attempted"
+      }
+     ],
+     "rerank": 0.9956821541142384,
+     "judgeScore": 0.85
+    },
+    {
+     "uri": "uksc/2024/33",
+     "name": "Tindall and another v Chief Constable of Thames Valley Police",
+     "date": "2024-10-23",
+     "score": 0.85,
+     "areas": [
+      "tort",
+      "public"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_39",
+       "kind": "paragraph",
+       "quote": "In Robinson v Chief Constable of West Yorkshire Police [2018] UKSC 4; [2018] AC 736the Supreme Court reaffirmed the principles stated in Michael but distinguished that decision on the facts. Two police officers had attempted to arrest a suspected drug dealer in a shopping street in the centre of Huddersfield. In the ensuing struggle, they knocked into the claimant, who was a relatively frail lady aged 76, and all fell to the ground with the claimant underneath."
+      },
+      {
+       "elementId": "para_41",
+       "kind": "paragraph",
+       "quote": "The facts of Robinson, however, did not concern a failure to confer a benefit. The complaint was not that the police officers had negligently failed to protect the claimant against the risk of being injured. The case fell on the other side of the line where the actions of the police had resulted in her being injured. It was reasonably foreseeable that in attempting to arrest the suspect at a time when he was close to pedestrians - especially physically vulnerable pedestrians such as the claimant - they might be knocked into and injured in the course of his attempting to avoid arrest."
+      }
+     ],
+     "rerank": 0.9122616117447621,
+     "judgeScore": 0.85
+    },
+    {
+     "uri": "uksc/2019/25",
+     "name": "Poole Borough Council v GN (through his litigation friend “The Official Solicitor”) and another",
+     "date": "2019-06-06",
+     "score": 0.75,
+     "areas": [
+      "tort",
+      "public"
+     ],
+     "highlights": [
+      {
+       "elementId": "p_99",
+       "kind": "paragraph",
+       "quote": "The case concerned the question whether police officers owed a duty to take reasonable care for the safety of an elderly pedestrian when they attempted to arrest a suspect who was standing beside her and was likely to attempt to escape. The court held that, since it was reasonably foreseeable that the claimant would suffer personal injury as a result of the officers’ conduct unless reasonable care was taken, a duty of care arose in accordance with the principle in Donoghue v Stevenson"
+      },
+      {
+       "elementId": "p_99",
+       "kind": "paragraph",
+       "quote": "The court distinguished between a duty to take reasonable care not to cause injury and a duty to take reasonable care to protect against injury caused by a third party. A duty of care of the latter kind would not normally arise at common law in the absence of special circumstances"
+      }
+     ],
+     "rerank": 0.9529776465380534,
+     "judgeScore": 0.75
+    },
+    {
+     "uri": "ewhc/qb/2020/212",
+     "name": "Essex Police v Transport Arendonk BVBA",
+     "date": "2020-01-23",
+     "score": 0.7291462527870649,
+     "areas": [
+      "tort",
+      "public"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_18",
+       "kind": "paragraph",
+       "quote": "whether police officers in the execution of their function owe a duty of care in tort to secure a vehicle and its contents from dangers reasonably foreseeable on account of the arrest and separation of the driver from the vehicle."
+      },
+      {
+       "elementId": "para_56",
+       "kind": "paragraph",
+       "quote": "In Robinson v The Chief Constable of West Yorkshire Police [2018] UKSC 736; [2018] AC 736, two police officers tried to arrest a suspect in daylight in a shopping street. There was a struggle. The three men knocked into the claimant. She was a relatively frail woman of 76. They all fell over. She was underneath them. She was injured and sued the defendant."
+      },
+      {
+       "elementId": "para_58",
+       "kind": "paragraph",
+       "quote": "This case, however, concerned a positive act, not an omission. A risk of injury was foreseeable, and the police owed a duty of care. The chain of causation was not broken by the decision of the suspect to resist arrest. His act was the very act which the police were under a duty to guard against."
+      }
+     ],
+     "rerank": 0.8761099120465484,
+     "judgeScore": 0.75,
+     "gate": {
+      "choice": "on_point",
+      "onPoint": 0.67
+     }
+    },
+    {
+     "uri": "ewca/civ/2015/836",
+     "name": "CLG & Ors v Chief Constable of Merseyside Police",
+     "date": "2015-07-28",
+     "score": 0.7,
+     "areas": [
+      "tort",
+      "public"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_20",
+       "kind": "paragraph",
+       "quote": "In Robinson v Chief Constable of West Yorkshire Police [2014] EWCA Civ 15, [2014] P.I.Q.R. P238 the claimant was walking along the street when she was knocked to the ground and injured by police officers involved in the arrest of a drug dealer. She brought proceedings against the police for negligence."
+      }
+     ],
+     "rerank": 0.9688480535912621,
+     "judgeScore": 0.7
+    },
+    {
+     "uri": "ewhc/qb/2016/38",
+     "name": "Curtis (A.K.A Jason) Davis v Commissioner of Police of the Metropolis",
+     "date": "2016-01-15",
+     "score": 0.685708952341981,
+     "areas": [
+      "tort",
+      "public"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_111",
+       "kind": "paragraph",
+       "quote": "In the present case it is not, and could not, be said that there was a lack of care in selecting which officers should be allowed to carry firearms. The duties of care which are advanced concern the planning and briefing of firearms officers and the relaying of intelligence in the course of a police operation."
+      },
+      {
+       "elementId": "para_114__sub_4",
+       "kind": "quoted_clause",
+       "quote": "This “immunity” (I use the term as shorthand) would be of little or no practical benefit if it was restricted in the way Miss Widdett suggested. Arresting criminals very commonly carries some form of risk. Yet there is an obvious public interest in not imposing a duty which might deter the police from removing a drugs dealer from the streets."
+      },
+      {
+       "elementId": "para_111",
+       "kind": "paragraph",
+       "quote": "Putting it at its lowest, it is far from obvious that they would not be particularly burdensome duties of care."
+      },
+      {
+       "elementId": "para_116",
+       "kind": "paragraph",
+       "quote": "There is a category of case (not, I acknowledge, the only one) where the police do owe a duty of care. That is where they have assumed responsibility for the claimant or assumed a duty of care towards him."
+      },
+      {
+       "elementId": "para_139",
+       "kind": "paragraph",
+       "quote": "I conclude that the claim in negligence fails. None of the officers involved owed Mr Davis a duty of care."
+      }
+     ],
+     "rerank": 0.7230458116162208,
+     "judgeScore": 0.85,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.36
+     }
+    },
+    {
+     "uri": "ewca/civ/2025/13",
+     "name": "Chief Constable of Northamptonshire Police v Esengul Woodcock",
+     "date": "2025-01-15",
+     "score": 0.672158027794358,
+     "areas": [
+      "tort",
+      "public"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_11",
+       "kind": "paragraph",
+       "quote": "In Robinson v West Yorkshire Police [2018] UKSC 4, [2018] AC 736 (“Robinson”) a pedestrian had been knocked to the ground and injured as police officers attempted to arrest a man in the street. The Supreme Court, reversing the decisions of the trial judge and of this court, held that it was reasonably foreseeable that pedestrians who were close by would be injured in the course of the arrest, that the police were under a duty of care towards those pedestrians, and that the officers who were attempting to make the arrest were in breach of that duty."
+      },
+      {
+       "elementId": "para_14__quote_1",
+       "kind": "paragraph",
+       "quote": "… circumstances where the public authority has created a danger of harm which would not otherwise have existed, or has assumed a responsibility for an individual’s safety on which the individual has relied."
+      }
+     ],
+     "rerank": 0.7697224281743282,
+     "judgeScore": 0.9,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.28
+     }
+    }
+   ],
+   "rejected": [
+    {
+     "uri": "ewca/civ/2022/25",
+     "name": "[2022] EWCA Civ 25",
+     "score": 0,
+     "reason": "Not found on TNA."
+    },
+    {
+     "uri": "ewca/civ/2011/3",
+     "name": "Desmond v Nottinghamshire Police",
+     "score": 0.02,
+     "reason": "Pre-screen: tangential (on point 2%, tangential 97%, unrelated 1%).",
+     "rerank": 0.4971893707174672,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.02
+     }
+    },
+    {
+     "uri": "uksc/2015/2",
+     "name": "Michael and others v The Chief Constable of South Wales Police and another",
+     "score": 0.12,
+     "reason": "Pre-screen: tangential (on point 12%, tangential 87%, unrelated 1%).",
+     "rerank": 0.8687898181642365,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.12
+     }
+    }
+   ],
+   "dates": null,
+   "dateSource": "none",
+   "targetAreas": {
+    "uksc/2018/4": [
+     "tort",
+     "public"
+    ]
+   },
+   "stats": {
+    "ms": 75704,
+    "firstResultMs": 18310,
+    "tnaRequests": 0,
+    "casesFetched": 0,
+    "casesFromCache": 12,
+    "inputTokens": 32927,
+    "outputTokens": 4869,
+    "webEnrichment": "used",
+    "contextChars": 125660,
+    "paragraphsEmbedded": 1,
+    "timings": {
+     "expand": 0,
+     "search": 258,
+     "web": 3,
+     "fetch": 1917,
+     "retrieve": 16941,
+     "gate": 15973,
+     "judge": 220665
+    },
+    "gate": {
+     "model": "typesafe/jev-1.13",
+     "requests": 3,
+     "cases": 6,
+     "rejected": 2,
+     "errors": 0,
+     "costUsd": 0.000649572
+    },
+    "rerankRejected": 0,
+    "citationCandidates": 3,
+    "decisionsCached": 0
+   },
+   "judge": {
+    "uksc/2018/4": {
+     "grade": 3,
+     "rationale": "This is the very case that answers the question: Robinson concerned police officers who, while arresting a drug dealer on a busy shopping street, knocked over and injured an elderly pedestrian (Mrs Robinson). The Supreme Court held that the police owe a duty of care in such circumstances under ordinary negligence principles — there is no general immunity for the police when discharging their crime-prevention function, and a duty arises where officers themselves create a foreseeable danger of injury (including through the conduct of a resisting arrestee). The quoted highlights are from the operative holding and directly support the conclusion that a duty of care is owed here.",
+     "highlightSupports": [
+      true,
+      true,
+      true
+     ]
+    },
+    "ewca/civ/2014/15": {
+     "grade": 3,
+     "rationale": "This is the Court of Appeal decision in Robinson v West Yorkshire Police, which is directly on point for the question. The case concerns precisely the scenario described: an elderly pedestrian knocked over and injured when police officers arrested a drug dealer in a public street, and whether the police owed her a duty of care. Paragraph 65 squarely answers the question by holding that the police did not owe a duty of care because the circumstances fell within the Hill principle (police immunity from negligence in investigating and suppressing crime, including arrests). This is the leading authority on this exact issue (later taken to the Supreme Court), and the only caveat—that the Court of Appeal's answer was subsequently reversed—does not diminish its direct relevance to the research question.",
+     "highlightSupports": [
+      true,
+      true,
+      true
+     ]
+    },
+    "ewhc/kb/2025/804": {
+     "grade": 2,
+     "rationale": "This is a GMC fitness-to-practise case, not a police negligence case, so its holding is not on point. However, it substantively discusses Robinson v Chief Constable of West Yorkshire Police and the exact scenario in the question (police attempting to arrest a drug dealer in a town centre knock over a 76-year-old pedestrian), expressly concluding that the police owed a duty of care to pedestrians in the immediate vicinity of the arrest to take reasonable care to avoid injuring them. A lawyer researching whether such a duty exists would find this case useful because it sets out the applicable principles, even though it is not itself a leading authority on the point.",
+     "highlightSupports": [
+      true,
+      true,
+      true
+     ]
+    },
+    "ewhc/kb/2023/1062": {
+     "grade": 2,
+     "rationale": "This case (Woodcock) is a High Court decision on the police duty of care. It is not the leading authority on the specific scenario in the question—that is Robinson v Chief Constable of West Yorkshire Police, which this case cites and discusses. However, Woodcock substantively deals with the question of police liability in tort: it recounts the Robinson facts (officers knocking over an elderly pedestrian while arresting a drug dealer) and quotes the Robinson principle that there is no general police immunity and that officers generally owe a duty of care where one arises under ordinary common law principles (e.g. positive acts causing foreseeable harm to proximate persons). A lawyer researching whether police owe a duty of care in that scenario would find this case useful, though it is primarily an omission/failure-to-warn case and therefore not itself directly on point. Grade 2 is appropriate.",
+     "highlightSupports": [
+      true,
+      true
+     ]
+    },
+    "uksc/2024/33": {
+     "grade": 2,
+     "rationale": "Tindall is not itself the directly on-point authority for this question — the question describes the facts of Robinson v Chief Constable of West Yorkshire Police, where officers attempting to arrest a suspected drug dealer knocked over a 76-year-old pedestrian. Tindall concerns a different scenario (a motorcyclist killed at a road accident scene). However, Tindall substantively deals with the question: it sets out Robinson's facts in detail (para 39) and explains the principle that a duty of care arises where police conduct makes matters worse (causing the injury) rather than merely failing to confer a benefit (paras 41, 44). This discussion is directly useful to a lawyer researching whether police owe a duty when they knock over an elderly pedestrian during an arrest. Both highlighted passages support the answer: para 39 states the matching facts, and para 41 confirms that Robinson fell on the \"making matters worse\" side of the line, where a duty of care was owed. Grade 2 is appropriate because the case usefully addresses the question through its treatment of Robinson, but Robinson itself, not Tindall, is the leading authority on the specific scenario.",
+     "highlightSupports": [
+      true,
+      true
+     ]
+    },
+    "uksc/2019/25": {
+     "grade": 3,
+     "rationale": "This passage in Poole Borough Council v GN directly addresses the exact question posed: whether police officers owe a duty of care to an elderly pedestrian knocked over while they attempt to arrest a suspect. Paragraph 63 (p_99) describes precisely that scenario and states that the Supreme Court in Robinson held that a duty of care arose because it was reasonably foreseeable that the claimant would suffer personal injury unless reasonable care was taken. It then explains the key distinction between a duty not to cause injury (which arises) and a duty to protect against third-party harm (which normally does not). Because Poole is a UKSC authority that authoritatively states the answer to the specific question asked, it is directly on-point for a lawyer researching this issue.",
+     "highlightSupports": [
+      true,
+      true
+     ]
+    },
+    "ewhc/qb/2020/212": {
+     "grade": 2,
+     "rationale": "The case is not itself the leading or directly on-point authority for the question (that is Robinson v Chief Constable of West Yorkshire Police, on identical facts: police knocking over an elderly pedestrian while effecting an arrest). However, Essex Police v Transport Arendonk BVBA substantively deals with the same legal question — the duty of care owed by police when discharging their arrest function — and does so by reviewing and applying Robinson, including the positive act / omission distinction and the principle that where police create a foreseeable risk of injury during an arrest they owe a duty of care. A lawyer researching the question would find this case useful as a survey of the governing principles.",
+     "highlightSupports": [
+      false,
+      true,
+      true
+     ]
+    },
+    "ewca/civ/2015/836": {
+     "grade": 2,
+     "rationale": "The highlighted paragraph (para_20) directly recounts Robinson v Chief Constable of West Yorkshire Police, which involves precisely the question's scenario: a pedestrian knocked down and injured by police officers arresting a drug dealer. It states that the claim was dismissed on the grounds that no sufficient relationship of proximity existed and it was not fair, just and reasonable to impose a duty of care on police in those circumstances. This passage substantively answers the question (no duty of care at Court of Appeal level). However, the case as a whole (CLG v Merseyside) concerns a different issue — police duties regarding disclosure/obtaining and preserving evidence — and it is not itself the leading authority on the pedestrian-arrest point (that is Robinson). It is therefore useful to a lawyer researching the question but not a leading or directly on-point authority for the question itself.",
+     "highlightSupports": [
+      true
+     ]
+    },
+    "ewca/civ/2025/13": {
+     "grade": 2,
+     "rationale": "The case (Woodcock) is primarily about police liability for failure to warn/protect, but it substantively engages with the exact question through its discussion of Robinson v West Yorkshire Police, which concerned a pedestrian knocked down and injured while police attempted an arrest in the street. Paragraph 11 confirms that the police owe a duty of care to nearby pedestrians and that officers were in breach. This is highly useful to a lawyer researching the question, but the case itself is not the leading or directly on-point authority on the pedestrian-during-arrest scenario (Robinson is); it is a later Court of Appeal decision citing and applying that authority in a different factual context. Therefore grade 2 is appropriate. Highlight [0] (para 11) directly answers the question and supports the analysis. Highlight [1] (para 14 quote) concerns exceptions to the omissions principle (created danger / assumed responsibility) and, while in the same broad area, does not itself answer the specific question about pedestrians knocked over during an arrest.",
+     "highlightSupports": [
+      true,
+      false
+     ]
+    },
+    "ewhc/qb/2016/38": {
+     "grade": 3,
+     "rationale": "This case squarely addresses whether police owe a duty of care when they cause injury during an operation to arrest a drug dealer. It applies the Caparo three-fold test and the Hill principle, and it specifically discusses Robinson v Chief Constable of West Yorkshire Police — the near-identical scenario of a bystander knocked over and injured during police pursuit/arrest — holding that the Hill principle bars liability even for direct physical harm and that no duty of care arises. The court's discussion of the public interest in not deterring police from removing drug dealers from the streets directly answers the question (no duty of care). Although the underlying facts concern a shooting rather than a pedestrian being knocked over, the legal question and the reasoning on duty of care are directly on point for the research question.",
+     "highlightSupports": [
+      false,
+      true,
+      false
+     ]
+    }
+   }
+  },
+  {
+   "id": "black-cab-shape-ip-filter",
+   "kind": "positive",
+   "query": "shape of a taxi as a trade mark",
+   "candidates": [
+    "ewhc/ch/2016/52",
+    "ewca/civ/2017/1729",
+    "ewhc/ch/2025/206",
+    "ewhc/ch/2020/2130",
+    "ewhc/ch/2024/2323",
+    "ewhc/ch/2018/155",
+    "ewhc/ch/2015/1840",
+    "ewhc/ch/2023/873",
+    "ewhc/ch/2024/2990",
+    "ewhc/ipec/2017/1408",
+    "ewhc/ch/2011/1712",
+    "ewca/civ/2004/1690",
+    "ewhc/ch/2016/50"
+   ],
+   "results": [
+    {
+     "uri": "ewhc/ch/2016/52",
+     "name": "The London Taxi Corporation Ltd (t/a The London Taxi Company) v Frazer-Nash Research Ltd & Anor",
+     "date": "2016-01-20",
+     "score": 0.9598458745491085,
+     "areas": [
+      "ip"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_1",
+       "kind": "paragraph",
+       "quote": "LTC owns trade mark registrations for the shapes of the Fairway and of the TX1/TXII respectively (“the Trade Marks”) and claims goodwill in the shapes of all four models."
+      },
+      {
+       "elementId": "para_175",
+       "kind": "paragraph",
+       "quote": "the UKTM would also have been perceived by the average consumer of taxis as a merely a variation of the typical shape of a taxis"
+      },
+      {
+       "elementId": "para_190",
+       "kind": "paragraph",
+       "quote": "There is no direct evidence that any taxi drivers perceive taxis embodying the CTM or UKTM as emanating from LTI/LTC because of their shapes"
+      },
+      {
+       "elementId": "para_262",
+       "kind": "paragraph",
+       "quote": "I conclude that there is no likelihood of confusion with respect to either of the Trade Marks even on the part of consumers of taxi services."
+      }
+     ],
+     "rerank": 0.7727663700266777,
+     "judgeScore": 0.95,
+     "gate": {
+      "choice": "on_point",
+      "onPoint": 0.99
+     }
+    },
+    {
+     "uri": "ewca/civ/2017/1729",
+     "name": "The London Taxi Corporation Ltd (t/a the London Taxi Company) v Frazer-Nash Research Ltd & Anor",
+     "date": "2017-11-01",
+     "score": 0.95,
+     "areas": [
+      "ip",
+      "commercial"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_1",
+       "kind": "paragraph",
+       "quote": "Is the shape of a London taxi a valid registered trade mark? The claimant and appellant The London Taxi Corporation Limited (“LTC”) contends that it can be."
+      },
+      {
+       "elementId": "para_19__sub_2",
+       "kind": "paragraph",
+       "quote": "Are the trade marks invalid because they are each devoid of distinctive character? This gives rise to two sub-issues: (a) inherent distinctive character and (b) acquired distinctive character."
+      },
+      {
+       "elementId": "para_62",
+       "kind": "paragraph",
+       "quote": "he accepted that LTC had educated the public that they were the manufacturers of their taxis, they did not take any steps to educate the public that the shape of their taxis denoted their trade origin."
+      },
+      {
+       "elementId": "para_19__sub_3",
+       "kind": "paragraph",
+       "quote": "Are the trade marks invalid because they each consist of a shape which gives substantial value to the goods?"
+      }
+     ],
+     "rerank": 0.9825554067234605,
+     "judgeScore": 0.95
+    },
+    {
+     "uri": "ewhc/ch/2015/1840",
+     "name": "The London Taxi Corporation Ltd (t/a the London Taxi Company) v Frazer-Nash Research Ltd & Anor",
+     "date": "2015-07-03",
+     "score": 0.7956587604652072,
+     "areas": [
+      "ip"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_70__sub_1",
+       "kind": "paragraph",
+       "quote": "the trade mark issues – which he described as “the circumstances under which manufacturers may obtain a perpetual monopoly in the shape of their goods”"
+      },
+      {
+       "elementId": "para_6",
+       "kind": "paragraph",
+       "quote": "The trade mark registrations look like this:"
+      },
+      {
+       "elementId": "para_7",
+       "kind": "quoted_clause",
+       "quote": "members of the public have come to recognise that appearance as “denoting the taxis of a single trade source and none other"
+      }
+     ],
+     "rerank": 0.5819003036163475,
+     "judgeScore": 0.75,
+     "gate": {
+      "choice": "on_point",
+      "onPoint": 0.95
+     }
+    }
+   ],
+   "rejected": [
+    {
+     "uri": "ewhc/ch/2025/206",
+     "name": "Abbott Diabetes Care Inc v Sinocare Inc & Ors",
+     "score": 0.034427789374825435,
+     "reason": "No passage is about the question (best reranker score 0.034 < 0.05).",
+     "rerank": 0.034427789374825435
+    },
+    {
+     "uri": "ewhc/ch/2018/155",
+     "name": "Sky Plc & Ors v Skykick UK Ltd & Anor",
+     "score": 0.03797699399921561,
+     "reason": "No passage is about the question (best reranker score 0.038 < 0.05).",
+     "rerank": 0.03797699399921561
+    },
+    {
+     "uri": "ewhc/ch/2024/2323",
+     "name": "EasyGroup Limited v Easyfundraising Limited & Ors",
+     "score": 0,
+     "reason": "Pre-screen: tangential (on point 0%, tangential 83%, unrelated 17%).",
+     "rerank": 0.07822750071357448,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0
+     }
+    },
+    {
+     "uri": "ewhc/ch/2024/2990",
+     "name": "Thom Browne Inc & Anor v adidas International Marketing BV & Ors",
+     "score": 0.01,
+     "reason": "Pre-screen: tangential (on point 1%, tangential 97%, unrelated 2%).",
+     "rerank": 0.2052893196021289,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.01
+     }
+    },
+    {
+     "uri": "ewhc/ch/2023/873",
+     "name": "Lidl Great Britain Limited & Anor v Tesco Stores Limited & Anor",
+     "score": 0.01,
+     "reason": "Pre-screen: tangential (on point 1%, tangential 85%, unrelated 14%).",
+     "rerank": 0.08349264426756482,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.01
+     }
+    },
+    {
+     "uri": "ewhc/ch/2020/2130",
+     "name": "Jaguar Land Rover Ltd v Ineos Industries Holdings Ltd",
+     "score": 0.1,
+     "reason": "The case concerns acquired distinctiveness of the Land Rover Defender vehicle shape as a trade mark, not the shape of a taxi. Though it deals with a vehicle shape trade mark, the specific subject (Defender off-roader) differs from the question about a taxi shape, and its reasoning is not governing authority for taxis.",
+     "rerank": 0.9803228639608494,
+     "judgeScore": 0.1
+    },
+    {
+     "uri": "ewhc/ipec/2017/1408",
+     "name": "Mermeren Kombinat AD v Fox Marble Holdings Plc",
+     "score": 0.5755870636607276,
+     "reason": "Pre-screen on point 32% lowers judge score 0.70 to 0.58, below 0.65. This judgment reviews the law on acquired distinctiveness of shape trade marks, including the Kit Kat shape case, which is directly on point for the legal issue of registering a shape (such as a taxi's shape) as a trade mark.",
+     "rerank": 0.07991086737352629,
+     "judgeScore": 0.7,
+     "gate": {
+      "choice": "tangential",
+      "onPoint": 0.32
+     }
+    },
+    {
+     "uri": "ewhc/ch/2011/1712",
+     "name": "Untitled judgment",
+     "score": 0.030498252726269257,
+     "reason": "No passage is about the question (best reranker score 0.030 < 0.05).",
+     "rerank": 0.030498252726269257
+    },
+    {
+     "uri": "ewhc/ch/2016/50",
+     "name": "Société Des Produits Nestlé SA v Cadbury UK Ltd",
+     "score": 0.22651245910426474,
+     "reason": "This case concerns the three-dimensional shape of the KIT KAT chocolate bar as a trade mark, not the shape of a taxi. It shares the general topic of 3D shape trade marks but does not involve anything resembling a taxi.",
+     "rerank": 0.20560366853656775,
+     "judgeScore": 0.15,
+     "gate": {
+      "choice": "on_point",
+      "onPoint": 0.78
+     }
+    },
+    {
+     "uri": "ewca/civ/2004/1690",
+     "name": "Bongrain SA, Re Trade Mark Application",
+     "score": 0.22279177795269484,
+     "reason": "The case concerns whether the shape of a cheese can be registered as a trade mark (inherent distinctiveness of shape marks). The question asks about the shape of a taxi as a trade mark. Both involve shape-mark registrability but the facts and reasoning concern dairy goods, not taxis or vehicles; no reasoning is a governing authority for a taxi shape.",
+     "rerank": 0.2827580236381636,
+     "judgeScore": 0.15,
+     "gate": {
+      "choice": "on_point",
+      "onPoint": 0.73
+     }
+    }
+   ],
+   "dates": null,
+   "dateSource": "none",
+   "targetAreas": {
+    "ewhc/ch/2016/52": [
+     "ip"
+    ],
+    "ewca/civ/2017/1729": [
+     "ip",
+     "commercial"
+    ]
+   },
+   "stats": {
+    "ms": 24425,
+    "firstResultMs": 12132,
+    "tnaRequests": 0,
+    "casesFetched": 0,
+    "casesFromCache": 13,
+    "inputTokens": 22963,
+    "outputTokens": 2159,
+    "webEnrichment": "used",
+    "contextChars": 145085,
+    "paragraphsEmbedded": 0,
+    "timings": {
+     "expand": 0,
+     "search": 116,
+     "web": 2,
+     "fetch": 8,
+     "retrieve": 16845,
+     "gate": 13587,
+     "judge": 53854
+    },
+    "gate": {
+     "model": "typesafe/jev-1.13",
+     "requests": 6,
+     "cases": 8,
+     "rejected": 3,
+     "errors": 0,
+     "costUsd": 0.000890232
+    },
+    "rerankRejected": 3,
+    "citationCandidates": 3,
+    "decisionsCached": 0
+   },
+   "judge": {
+    "ewhc/ch/2016/52": {
+     "grade": 3,
+     "rationale": "This case is the leading UK authority on whether the shape of a taxi (the London taxi/Fairway and TX models) can function as a trade mark. The core of the judgment concerns acquired distinctiveness of the shape marks and whether consumers of taxi services identify trade origin by the shape of the taxis (paras 192–194), and the case expressly discusses the shape of a taxi as a trade mark throughout. The question is directly on point.",
+     "highlightSupports": [
+      true,
+      true,
+      true
+     ]
+    },
+    "ewca/civ/2017/1729": {
+     "grade": 3,
+     "rationale": "This case is the leading Court of Appeal authority on whether the shape of a London taxi can be a valid registered trade mark. The very issue on appeal is the validity of LTC's shape marks for the London taxi, covering inherent and acquired distinctive character, the relevant average consumer (including taxi hirers), and the education of the public as to the trade mark significance of the shape. It is directly on point for the question.",
+     "highlightSupports": [
+      true,
+      true,
+      true
+     ]
+    },
+    "ewhc/ch/2015/1840": {
+     "grade": 3,
+     "rationale": "The case is The London Taxi Corporation v Frazer-Nash Research Ltd, a leading authority concerning trade mark protection for the shape of the London black cab (taxi). It directly addresses the central question of whether a manufacturer may obtain a perpetual monopoly in the shape of its goods through trade mark registration and passing off. This is a directly on-point, leading authority for the question of the shape of a taxi as a trade mark.",
+     "highlightSupports": [
+      true,
+      false,
+      true
+     ]
+    }
+   }
+  },
+  {
+   "id": "neg-jaguar-battery",
+   "kind": "negative",
+   "query": "jaguar battery leak",
+   "candidates": [
+    "ewca/crim/2022/1300",
+    "ewhc/comm/2008/2171",
+    "ewhc/qb/2017/1651",
+    "ewhc/comm/2020/2843",
+    "ewhc/tcc/2014/1973",
+    "ewhc/qb/2018/755",
+    "ewhc/ch/2016/52",
+    "ewhc/comm/2012/2156",
+    "ewhc/qb/2013/515",
+    "ewhc/qb/2018/1671"
+   ],
+   "results": [],
+   "rejected": [
+    {
+     "uri": "ewhc/comm/2008/2171",
+     "name": "Automotive Latch Systems Ltd v Honeywell International Inc",
+     "score": 0.026772524360125727,
+     "reason": "No passage is about the question (best reranker score 0.027 < 0.05).",
+     "rerank": 0.026772524360125727
+    },
+    {
+     "uri": "ewhc/comm/2020/2843",
+     "name": "Tuke v Hood & Anor",
+     "score": 0.022131495661968623,
+     "reason": "No passage is about the question (best reranker score 0.022 < 0.05).",
+     "rerank": 0.022131495661968623
+    },
+    {
+     "uri": "ewca/crim/2022/1300",
+     "name": "REX v ROSS LAMBERT",
+     "score": 0,
+     "reason": "Pre-screen: irrelevant (on point 0%, tangential 8%, unrelated 92%).",
+     "rerank": 0.08545040431478372,
+     "gate": {
+      "choice": "irrelevant",
+      "onPoint": 0
+     }
+    },
+    {
+     "uri": "ewhc/ch/2016/52",
+     "name": "The London Taxi Corporation Ltd (t/a The London Taxi Company) v Frazer-Nash Research Ltd & Anor",
+     "score": 0.004410865010299623,
+     "reason": "No passage is about the question (best reranker score 0.004 < 0.05).",
+     "rerank": 0.004410865010299623
+    },
+    {
+     "uri": "ewhc/tcc/2014/1973",
+     "name": "The Bodo Community & Ors v The Shell Petroleum Development Company of Nigeria Ltd",
+     "score": 0.023742216802477092,
+     "reason": "No passage is about the question (best reranker score 0.024 < 0.05).",
+     "rerank": 0.023742216802477092
+    },
+    {
+     "uri": "ewhc/qb/2018/755",
+     "name": "Tuke v JD Classics Ltd",
+     "score": 0.03149558376935798,
+     "reason": "No passage is about the question (best reranker score 0.031 < 0.05).",
+     "rerank": 0.03149558376935798
+    },
+    {
+     "uri": "ewhc/qb/2013/515",
+     "name": "Thompson v James & Anor",
+     "score": 0.0011253056010690496,
+     "reason": "No passage is about the question (best reranker score 0.001 < 0.05).",
+     "rerank": 0.0011253056010690496
+    },
+    {
+     "uri": "ewhc/comm/2012/2156",
+     "name": "Parker & Anorr v The National Farmers Union Mutual Insurance Society Ltd",
+     "score": 0.011313529860291877,
+     "reason": "No passage is about the question (best reranker score 0.011 < 0.05).",
+     "rerank": 0.011313529860291877
+    },
+    {
+     "uri": "ewhc/qb/2018/1671",
+     "name": "Pinkus v Direct Line",
+     "score": 0.03,
+     "reason": "Pre-screen: irrelevant (on point 3%, tangential 37%, unrelated 60%).",
+     "rerank": 0.08506224258623284,
+     "gate": {
+      "choice": "irrelevant",
+      "onPoint": 0.03
+     }
+    },
+    {
+     "uri": "ewhc/qb/2017/1651",
+     "name": "PT Civil Engineering v Davies",
+     "score": 0.1951801098923783,
+     "reason": "This is a negligence/res ipsa loquitur appeal about a vehicle fire (a digger/cab vehicle with a battery under the driver's seat), not about a Jaguar car battery leak. It shares only the general theme of vehicle battery/fire, but does not deal with a Jaguar battery leak.",
+     "rerank": 0.06201243192433472,
+     "judgeScore": 0.15,
+     "gate": {
+      "choice": "on_point",
+      "onPoint": 0.43
+     }
+    }
+   ],
+   "dates": null,
+   "dateSource": "none",
+   "targetAreas": {},
+   "stats": {
+    "ms": 5527,
+    "firstResultMs": null,
+    "tnaRequests": 0,
+    "casesFetched": 0,
+    "casesFromCache": 10,
+    "inputTokens": 2950,
+    "outputTokens": 177,
+    "webEnrichment": "used",
+    "contextChars": 103745,
+    "paragraphsEmbedded": 1,
+    "timings": {
+     "expand": 0,
+     "search": 121,
+     "web": 3,
+     "fetch": 6,
+     "retrieve": 10066,
+     "gate": 4324,
+     "judge": 3628
+    },
+    "gate": {
+     "model": "typesafe/jev-1.13",
+     "requests": 2,
+     "cases": 3,
+     "rejected": 2,
+     "errors": 0,
+     "costUsd": 0.00027950999999999996
+    },
+    "rerankRejected": 7,
+    "citationCandidates": 0,
+    "decisionsCached": 0
+   },
+   "judge": {}
+  }
+ ]
+}

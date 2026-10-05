@@ -6,6 +6,7 @@
  * Labelled targets take precedence; other returned cases use the LLM judge's grade.
  */
 import type { EvalCase } from "./dataset";
+import type { GateSummary } from "../src/lib/search/types";
 
 export interface RecordedHighlight {
   elementId: string;
@@ -24,6 +25,10 @@ export interface RecordedResult {
   rerank?: number;
   /** e.g. "cited by 3 of the results" for citation-expansion finds */
   via?: string;
+  /** strong judge's score before the pre-screen blend (score is blended) */
+  judgeScore?: number;
+  /** pre-screen verdict, when the gate ran: compare with the judge and the eval judge's grade */
+  gate?: GateSummary;
 }
 
 export interface JudgeVerdict {
@@ -40,7 +45,7 @@ export interface QueryRun {
   error?: string;
   candidates: string[];
   results: RecordedResult[];
-  rejected: { uri: string; name: string; score: number; reason: string; rerank?: number }[];
+  rejected: { uri: string; name: string; score: number; reason: string; rerank?: number; judgeScore?: number; gate?: GateSummary }[];
   /** date range the pipeline applied, and where it came from */
   dates: { from?: string; to?: string } | null;
   dateSource: string;

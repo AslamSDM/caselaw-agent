@@ -120,6 +120,9 @@ async function main() {
     config: {
       cutoff: process.env.RELEVANCE_CUTOFF ?? "0.5",
       gate: process.env.JUDGE_GATE_MODEL ? `${process.env.JUDGE_GATE_MODEL}@${process.env.JUDGE_GATE_REJECT ?? "0.75"}` : "off",
+      gateScoreWeight: process.env.GATE_SCORE_WEIGHT ?? "0.25",
+      judgeMode: process.env.JUDGE_MODE ?? "judge",
+      ...(process.env.JUDGE_MODE === "extract" ? { gatePassAt: process.env.GATE_PASS_AT ?? "0.5", extractTier: process.env.EXTRACT_TIER ?? "fast" } : {}),
       maxCandidates: process.env.MAX_CANDIDATES ?? "10",
       perVariant: process.env.TNA_PER_VARIANT ?? "25",
       web: process.env.WEB_ENRICH_ENABLED ?? "true",
@@ -162,8 +165,11 @@ async function main() {
               highlights: e.result.highlights.map((h) => ({ elementId: h.elementId, kind: h.kind, quote: h.quote })),
               rerank: e.result.rerank,
               via: e.result.via,
+              judgeScore: e.result.judgeScore,
+              gate: e.result.gate,
             });
-          else if (e.type === "rejected") run.rejected.push({ uri: e.uri, name: e.name, score: e.score, reason: e.reason, rerank: e.rerank });
+          else if (e.type === "rejected")
+            run.rejected.push({ uri: e.uri, name: e.name, score: e.score, reason: e.reason, rerank: e.rerank, judgeScore: e.judgeScore, gate: e.gate });
           else if (e.type === "done") run.stats = e.stats;
           else if (e.type === "error") run.error = e.message;
         }

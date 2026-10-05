@@ -12,7 +12,7 @@ import { createOpenRouter } from "@openrouter/ai-sdk-provider";
 import { gateway, generateText, tool, type LanguageModel } from "ai";
 import type { z } from "zod";
 
-type Tier = "fast" | "strong";
+export type Tier = "fast" | "strong";
 type Provider = "openrouter" | "anthropic" | "gateway";
 
 const DEFAULTS: Record<Provider, Record<Tier, string>> = {

@@ -6,8 +6,26 @@
  * Latency shape: web enrichment starts at t0 (it searches the raw question), alongside expansion.
  * Reading starts as soon as wave 1 (TNA keyword + local index) is fused, on the top FIRST_WAVE
  * candidates. Web hints, when they arrive, are fused in and fill the remaining slots.
- * Every queued case's judgment XML is fetched immediately (prefetch), while at most CONCURRENCY
- * cases are in the LLM stages at once.
+ * Every queued case's judgment XML is fetched immediately (prefetch).
+ *
+ * Per-case work runs in two pools:
+ *   cases  (CASE_CONCURRENCY, FIFO):     fetch → retrieve → rerank → pre-screen (gate.ts), ending in
+ *                                        a cached decision, a reject, or a hand-off to the judge pool
+ *   judges (JUDGE_CONCURRENCY, priority): strong judge → verify → cutoff, highest priority first
+ * Priority is the pre-screen's P(on_point) when it ran, else the best reranker score (cases skipped
+ * via RERANK_TRUST score ≥ 0.9, so they go early), else 0.5: when a judge frees up it reads the
+ * most promising case waiting, which brings good results to the UI sooner. Both pools must drain
+ * before citation expansion and before the search ends.
+ *
+ * Scores: a judged case's ranking score is judge^(1-w) · P(on_point)^w (w = GATE_SCORE_WEIGHT,
+ * 0 disables), applied after the decision cache like the relevance cutoff; the raw judge score is
+ * kept as judgeScore.
+ *
+ * JUDGE_MODE=extract: the pre-screen is the relevance authority. It runs on every case (no
+ * RERANK_TRUST skip); P(on_point) below GATE_PASS_AT rejects, otherwise the case's score is
+ * P(on_point) and the model in the judge pool only extracts quotes, summary and areas
+ * (relevance.ts extractHighlights, EXTRACT_TIER, fast by default). A pre-screen error falls back
+ * to the full strong judge for that case.
  */
 import { db, schema } from "@/db";
 import { and, eq, inArray } from "drizzle-orm";
@@ -24,10 +42,12 @@ import { fuseCandidates } from "./fusion";
 import { retrieveParagraphs } from "./retrieve";
 import { localIndexReady, searchLocal, type LocalSearchResult } from "./local";
 import { embedQueries, embeddingsEnabled } from "../embed";
-import { judgeRelevance } from "./relevance";
-import { RelevanceGate } from "./gate";
-import { decisionKey, readDecision, writeDecision, type CaseDecision } from "./decision-cache";
-import type { Candidate, CandidateList, CaseResult, DateSource, SearchEvent, SearchOptions, SearchStats, WebMention } from "./types";
+import { EXTRACT_TIER, extractHighlights, judgeRelevance } from "./relevance";
+import { modelId } from "../llm";
+import { RelevanceGate, blendScore } from "./gate";
+import { decisionKey, readDecision, writeDecision, type CaseDecision, type GateRecord } from "./decision-cache";
+import type { RetrievedContext } from "./retrieve";
+import type { Candidate, CandidateList, CaseResult, DateSource, GateSummary, SearchEvent, SearchOptions, SearchStats, WebMention } from "./types";
 
 const MAX_TNA_REQUESTS = 25;
 const MAX_CANDIDATES = Number(process.env.MAX_CANDIDATES ?? 10);
@@ -35,6 +55,8 @@ const MAX_CANDIDATES = Number(process.env.MAX_CANDIDATES ?? 10);
 const FIRST_WAVE = Math.min(MAX_CANDIDATES, Number(process.env.FIRST_WAVE ?? 6));
 const RELEVANCE_CUTOFF = Number(process.env.RELEVANCE_CUTOFF ?? 0.5);
 const CONCURRENCY = Number(process.env.CASE_CONCURRENCY ?? 4);
+/** strong-judge calls at once (its own priority queue); defaults to CASE_CONCURRENCY */
+const JUDGE_CONCURRENCY = Number(process.env.JUDGE_CONCURRENCY ?? CONCURRENCY);
 /** hits taken per TNA search; one request either way, so take more than we read */
 const PER_VARIANT = Number(process.env.TNA_PER_VARIANT ?? 25);
 /** expansion variants embedded alongside the question for local semantic search */
@@ -50,6 +72,10 @@ const NOT_ON_TNA = /^(ukpc|ukhl)\//;
 const RERANK_TRUST = Number(process.env.RERANK_TRUST ?? 0.9);
 /** pre-screen rejection threshold (gate.ts); part of the decision-cache key */
 const GATE_REJECT = Number(process.env.JUDGE_GATE_REJECT ?? 0.75);
+/** "judge": strong judge decides relevance; "extract": the pre-screen decides, the model only quotes */
+const JUDGE_MODE: "judge" | "extract" = process.env.JUDGE_MODE === "extract" ? "extract" : "judge";
+/** extract mode: a case passes the pre-screen when P(on_point) reaches this */
+const GATE_PASS_AT = Number(process.env.GATE_PASS_AT ?? 0.5);
 /** longest wait for web hints once wave 1 is reading (web enrichment itself starts at t0) */
 const WEB_WAIT_MS = Number(process.env.WEB_ENRICH_TIMEOUT_MS ?? 8000) + 4000;
 
@@ -93,7 +119,10 @@ class EventQueue {
   }
 }
 
-/** Fixed number of workers over a queue that can grow until close(). */
+/**
+ * Fixed number of workers over a queue that can grow until close(). With `priority`, a free
+ * worker takes the highest-priority queued item (ties in arrival order); otherwise FIFO.
+ */
 class WorkPool<T> {
   private queue: T[] = [];
   private waiters: (() => void)[] = [];
@@ -101,14 +130,20 @@ class WorkPool<T> {
   private active = 0;
   private idleWaiters: (() => void)[] = [];
   readonly done: Promise<void>;
-  constructor(limit: number, fn: (t: T) => Promise<void>) {
+  constructor(limit: number, fn: (t: T) => Promise<void>, priority?: (t: T) => number) {
+    const next = (): T => {
+      if (!priority || this.queue.length < 2) return this.queue.shift()!;
+      let best = 0;
+      for (let i = 1; i < this.queue.length; i++) if (priority(this.queue[i]) > priority(this.queue[best])) best = i;
+      return this.queue.splice(best, 1)[0];
+    };
     this.done = Promise.all(
       Array.from({ length: Math.max(1, limit) }, async () => {
         while (true) {
           if (this.queue.length) {
             this.active++;
             try {
-              await fn(this.queue.shift()!);
+              await fn(next());
             } finally {
               this.active--;
               if (!this.active && !this.queue.length) this.idleWaiters.splice(0).forEach((w) => w());
@@ -281,48 +316,152 @@ export async function* runSearch(query: string, opts: SearchOptions = {}, signal
     return !year || (inRange(`${year}-12-31`, { from: dates?.from }) && inRange(`${year}-01-01`, { to: dates?.to }));
   };
 
-  /** The expensive per-case stages. Every outcome is cacheable; errors propagate (never cached). */
-  const decide = async (kase: CaseRow): Promise<CaseDecision> => {
-    const tRetrieve = Date.now();
-    const elements = await getElements(kase.uri);
-    const terms = expanded.ftsTerms.length ? expanded.ftsTerms : [expanded.original];
-    const ctx = await retrieveParagraphs(kase.uri, elements, terms, { queryVec, rerankQuery: query, signal });
-    const rerank = ctx.stats.rerankTop ?? undefined;
-    stats.timings.retrieve += Date.now() - tRetrieve;
-    stats.contextChars += ctx.stats.chars;
-    stats.paragraphsEmbedded += ctx.stats.embedded;
-    // cross-encoder says no retrieved paragraph is about the question → no LLM calls
-    if (rerank !== undefined && rerank < RERANK_MIN) {
-      const reason = `No passage is about the question (best reranker score ${rerank.toFixed(3)} < ${RERANK_MIN}).`;
-      return { kind: "reject", by: "rerank", score: rerank, reason, rerank };
-    }
-    if (!ctx.hitCount) {
-      return { kind: "reject", by: "no-hits", score: 0, reason: "No paragraph matches the query by keyword or meaning.", rerank };
-    }
-    // cheap pre-screen: confident "tangential / unrelated" skips the strong model
-    if (gate && !(rerank !== undefined && rerank >= RERANK_TRUST)) {
-      const tGate = Date.now();
-      try {
-        const g = await gate.screen(kase, ctx);
-        if (g.reject) {
-          const pct = (n: number | undefined) => `${Math.round((n ?? 0) * 100)}%`;
-          const reason = `Pre-screen: ${g.choice} (on point ${pct(g.probabilities.on_point)}, tangential ${pct(g.probabilities.tangential)}, unrelated ${pct(g.probabilities.irrelevant)}).`;
-          return { kind: "reject", by: "gate", score: g.onPoint, reason, rerank };
-        }
-      } catch (err) {
-        if (signal?.aborted) throw err;
-        // fail open: the strong judge still runs (errors are counted in gate.stats)
-        console.warn(`[gate] ${kase.uri}:`, err instanceof Error ? err.message : err);
-      } finally {
-        stats.timings.gate += Date.now() - tGate;
+  /**
+   * Retrieval → rerank → pre-screen for one case. Returns a final (cacheable) reject, or what the
+   * strong judge needs. Errors propagate (never cached). Holds a gate ticket for its duration so
+   * the gate knows whether more cases may still join the batch being formed.
+   */
+  const screenCase = async (kase: CaseRow): Promise<Extract<CaseDecision, { kind: "reject" }> | ToJudge> => {
+    const ticket = gate?.enter();
+    try {
+      const tRetrieve = Date.now();
+      const elements = await getElements(kase.uri);
+      const terms = expanded.ftsTerms.length ? expanded.ftsTerms : [expanded.original];
+      const ctx = await retrieveParagraphs(kase.uri, elements, terms, { queryVec, rerankQuery: query, signal });
+      const rerank = ctx.stats.rerankTop ?? undefined;
+      stats.timings.retrieve += Date.now() - tRetrieve;
+      stats.contextChars += ctx.stats.chars;
+      stats.paragraphsEmbedded += ctx.stats.embedded;
+      // cross-encoder says no retrieved paragraph is about the question → no LLM calls
+      if (rerank !== undefined && rerank < RERANK_MIN) {
+        const reason = `No passage is about the question (best reranker score ${rerank.toFixed(3)} < ${RERANK_MIN}).`;
+        return { kind: "reject", by: "rerank", score: rerank, reason, rerank };
       }
+      if (!ctx.hitCount) {
+        return { kind: "reject", by: "no-hits", score: 0, reason: "No paragraph matches the query by keyword or meaning.", rerank };
+      }
+      // cheap pre-screen: confident "tangential / unrelated" skips the strong model
+      // (in extract mode it is the relevance decision, so it runs on every case)
+      let record: GateRecord | undefined;
+      if (gate && (JUDGE_MODE === "extract" || !(rerank !== undefined && rerank >= RERANK_TRUST))) {
+        const tGate = Date.now();
+        try {
+          const g = await gate.screen(kase, ctx, ticket);
+          record = { choice: g.choice, probabilities: g.probabilities, onPoint: g.onPoint };
+          const pct = (n: number | undefined) => `${Math.round((n ?? 0) * 100)}%`;
+          const verdict = `${g.choice} (on point ${pct(g.probabilities.on_point)}, tangential ${pct(g.probabilities.tangential)}, unrelated ${pct(g.probabilities.irrelevant)})`;
+          if (g.reject) {
+            return { kind: "reject", by: "gate", score: g.onPoint, reason: `Pre-screen: ${verdict}.`, rerank, gate: record };
+          }
+          if (JUDGE_MODE === "extract" && g.onPoint < GATE_PASS_AT) {
+            return { kind: "reject", by: "gate", score: g.onPoint, reason: `Pre-screen: ${verdict}; on point below ${pct(GATE_PASS_AT)}.`, rerank, gate: record };
+          }
+        } catch (err) {
+          if (signal?.aborted) throw err;
+          // fail open: the strong judge still runs (errors are counted in gate.stats)
+          console.warn(`[gate] ${kase.uri}:`, err instanceof Error ? err.message : err);
+        } finally {
+          stats.timings.gate += Date.now() - tGate;
+        }
+      }
+      return { kind: "judge", ctx, rerank, gate: record };
+    } finally {
+      // rejected before the gate, skipped it, or failed: no longer a case the batch should wait for
+      ticket?.leave();
     }
-    const tJudge = Date.now();
-    const verdict = await judgeRelevance(query, kase, ctx, usage, signal);
-    stats.timings.judge += Date.now() - tJudge;
-    return { kind: "judged", verdict, rerank };
   };
 
+  const caseFailed = (c: Candidate, err: unknown) => {
+    if (signal?.aborted) return;
+    console.error(`[search] case ${c.uri} failed:`, err);
+    events.push({ type: "rejected", uri: c.uri, name: c.name || c.uri, score: 0, reason: `Error: ${err instanceof Error ? err.message : String(err)}` });
+  };
+
+  /** Turn a (fresh or cached) decision into stored results, highlights and events. */
+  const finish = async (c: Candidate & { via?: string }, kase: CaseRow, decision: CaseDecision) => {
+    const rerank = decision.rerank;
+    const gateSummary: GateSummary | undefined = decision.gate && { choice: decision.gate.choice, onPoint: decision.gate.onPoint };
+    if (decision.kind === "reject") {
+      if (decision.by === "rerank") stats.rerankRejected++;
+      events.push({ type: "rejected", uri: kase.uri, name: kase.name, score: decision.score, reason: decision.reason, areas: kase.areas, rerank, gate: gateSummary });
+      await saveResult(search.id, kase.uri, decision.score, false, decision.reason);
+      return;
+    }
+    const verdict = decision.verdict;
+    const judgeScore = verdict.score;
+    const score = blendScore(judgeScore, decision.gate);
+    const areas = await setClassifiedAreas(kase.uri, kase.court, verdict.areas);
+    const relevant = verdict.relevant && score >= RELEVANCE_CUTOFF;
+    const pass = relevant && verdict.highlights.length > 0 && inAreas(areas);
+    await saveResult(search.id, kase.uri, score, pass, verdict.summary);
+    if (!pass) {
+      // say so when only the pre-screen blend took the case below the cutoff
+      const blendedOut = verdict.relevant && judgeScore >= RELEVANCE_CUTOFF && score < RELEVANCE_CUTOFF;
+      const reason = !relevant
+        ? blendedOut
+          ? `Pre-screen on point ${Math.round((decision.gate?.onPoint ?? 0) * 100)}% lowers judge score ${judgeScore.toFixed(2)} to ${score.toFixed(2)}, below ${RELEVANCE_CUTOFF}. ${verdict.summary}`
+          : verdict.summary
+        : !inAreas(areas)
+          ? outsideReason(areas)
+          : `No highlight could be verified against the judgment text (${verdict.proposed} proposed). ${verdict.summary}`;
+      events.push({ type: "rejected", uri: kase.uri, name: kase.name, score, reason, areas, rerank, judgeScore, gate: gateSummary });
+      return;
+    }
+    if (verdict.highlights.length) {
+      await db.insert(schema.highlights).values(
+        verdict.highlights.map((h) => ({
+          searchId: search.id,
+          caseUri: kase.uri,
+          elementId: h.elementId,
+          kind: h.kind,
+          quote: h.quote,
+          reason: h.reason,
+          verified: true,
+        })),
+      );
+    }
+    const result: CaseResult = {
+      uri: kase.uri,
+      name: kase.name,
+      ncn: kase.ncn,
+      court: kase.court,
+      date: kase.date,
+      anonymised: kase.anonymised,
+      areas,
+      score,
+      judgeScore,
+      gate: gateSummary,
+      summary: verdict.summary,
+      highlights: verdict.highlights,
+      rerank,
+      via: c.via,
+    };
+    passed++;
+    passedUris.push(kase.uri);
+    stats.firstResultMs ??= Date.now() - t0;
+    events.push({ type: "result", result });
+  };
+
+  /** Judge pool worker: strong judge (or, in extract mode with a pre-screen verdict, the extractor) → cache → finish. */
+  const judgeCase = async (job: JudgeJob) => {
+    try {
+      signal?.throwIfAborted();
+      const tJudge = Date.now();
+      const verdict =
+        JUDGE_MODE === "extract" && job.gate
+          ? await extractHighlights(query, job.kase, job.ctx, job.gate.onPoint, usage, signal)
+          : await judgeRelevance(query, job.kase, job.ctx, usage, signal);
+      stats.timings.judge += Date.now() - tJudge;
+      const decision: CaseDecision = { kind: "judged", verdict, rerank: job.rerank, gate: job.gate };
+      await writeDecision(job.key, decision);
+      await finish(job.c, job.kase, decision);
+    } catch (err) {
+      caseFailed(job.c, err);
+    }
+  };
+  const judges = new WorkPool<JudgeJob>(JUDGE_CONCURRENCY, judgeCase, (j) => j.gate?.onPoint ?? j.rerank ?? 0.5);
+
+  /** Case pool worker: everything up to the judge; judged cases continue in the judge pool. */
   const processCase = async (c: Candidate & { via?: string }) => {
     try {
       signal?.throwIfAborted();
@@ -360,69 +499,26 @@ export async function* runSearch(query: string, opts: SearchOptions = {}, signal
         return;
       }
       // retrieval → rerank → pre-screen → judge, or the cached outcome of a previous search
-      const key = decisionKey(query, kase.uri, kase.contentHash, { RERANK_MIN, RERANK_TRUST, JUDGE_GATE_REJECT: GATE_REJECT });
+      const key = decisionKey(query, kase.uri, kase.contentHash, {
+        RERANK_MIN,
+        RERANK_TRUST,
+        JUDGE_GATE_REJECT: GATE_REJECT,
+        ...(JUDGE_MODE === "extract" ? { JUDGE_MODE, GATE_PASS_AT, EXTRACT_MODEL: modelId(EXTRACT_TIER) } : {}),
+      });
       let decision = await readDecision(key);
       if (decision) stats.decisionsCached++;
       else {
-        decision = await decide(kase);
+        const screened = await screenCase(kase);
+        if (screened.kind === "judge") {
+          judges.push([{ ...screened, c, kase, key }]);
+          return;
+        }
+        decision = screened;
         await writeDecision(key, decision);
       }
-      const rerank = decision.rerank;
-      if (decision.kind === "reject") {
-        if (decision.by === "rerank") stats.rerankRejected++;
-        events.push({ type: "rejected", uri: kase.uri, name: kase.name, score: decision.score, reason: decision.reason, areas: kase.areas, rerank });
-        await saveResult(search.id, kase.uri, decision.score, false, decision.reason);
-        return;
-      }
-      const verdict = decision.verdict;
-      const areas = await setClassifiedAreas(kase.uri, kase.court, verdict.areas);
-      const relevant = verdict.relevant && verdict.score >= RELEVANCE_CUTOFF;
-      const pass = relevant && verdict.highlights.length > 0 && inAreas(areas);
-      await saveResult(search.id, kase.uri, verdict.score, pass, verdict.summary);
-      if (!pass) {
-        const reason = !relevant
-          ? verdict.summary
-          : !inAreas(areas)
-            ? outsideReason(areas)
-            : `No highlight could be verified against the judgment text (${verdict.proposed} proposed). ${verdict.summary}`;
-        events.push({ type: "rejected", uri: kase.uri, name: kase.name, score: verdict.score, reason, areas, rerank });
-        return;
-      }
-      if (verdict.highlights.length) {
-        await db.insert(schema.highlights).values(
-          verdict.highlights.map((h) => ({
-            searchId: search.id,
-            caseUri: kase.uri,
-            elementId: h.elementId,
-            kind: h.kind,
-            quote: h.quote,
-            reason: h.reason,
-            verified: true,
-          })),
-        );
-      }
-      const result: CaseResult = {
-        uri: kase.uri,
-        name: kase.name,
-        ncn: kase.ncn,
-        court: kase.court,
-        date: kase.date,
-        anonymised: kase.anonymised,
-        areas,
-        score: verdict.score,
-        summary: verdict.summary,
-        highlights: verdict.highlights,
-        rerank,
-        via: c.via,
-      };
-      passed++;
-      passedUris.push(kase.uri);
-      stats.firstResultMs ??= Date.now() - t0;
-      events.push({ type: "result", result });
+      await finish(c, kase, decision);
     } catch (err) {
-      if (signal?.aborted) return;
-      console.error(`[search] case ${c.uri} failed:`, err);
-      events.push({ type: "rejected", uri: c.uri, name: c.name || c.uri, score: 0, reason: `Error: ${err instanceof Error ? err.message : String(err)}` });
+      caseFailed(c, err);
     }
   };
 
@@ -506,6 +602,9 @@ export async function* runSearch(query: string, opts: SearchOptions = {}, signal
     // Leading cases are often worded differently from the question (so keyword and semantic search
     // miss them) but every later judgment on the point cites them.
     await pool.idle();
+    // the case pool is idle, so no case can still join a batch: send anything left now
+    gate?.flush();
+    await judges.idle();
     const cited = await citedByResults(passedUris, new Set(queued.map((c) => c.uri)));
     if (cited.length) {
       stats.citationCandidates = cited.length;
@@ -530,6 +629,8 @@ export async function* runSearch(query: string, opts: SearchOptions = {}, signal
       .where(eq(schema.searches.id, search.id));
     pool.close();
     await pool.done;
+    judges.close();
+    await judges.done;
   })();
 
   yield* events.drain(orchestrate);
@@ -546,6 +647,21 @@ export async function* runSearch(query: string, opts: SearchOptions = {}, signal
   stats.outputTokens = usage.outputTokens;
   await db.update(schema.searches).set({ stats }).where(eq(schema.searches.id, search.id));
   yield { type: "done", searchId: search.id, stats };
+}
+
+/** A case that passed the pre-screen (or skipped it), waiting for the strong judge. */
+interface ToJudge {
+  kind: "judge";
+  ctx: RetrievedContext;
+  rerank?: number;
+  gate?: GateRecord;
+}
+
+interface JudgeJob extends ToJudge {
+  c: Candidate & { via?: string };
+  kase: CaseRow;
+  /** decision-cache key, written once the judge has decided */
+  key: string;
 }
 
 /** Cases cited by at least CITE_MIN of the passing results, most-cited first (not already read). */

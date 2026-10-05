@@ -4,7 +4,7 @@
  * Quotes are then verified against the source (verify.ts); unverifiable ones are dropped.
  */
 import { z } from "zod";
-import { generateStructured, model, reasoningEffort, type TokenUsage } from "../llm";
+import { generateStructured, model, reasoningEffort, type Tier, type TokenUsage } from "../llm";
 import type { CaseRow, ElementRow } from "../cases/store";
 import { RENDER_CAPS, renderedDescendants, type RetrievedContext } from "./retrieve";
 import { verifyQuote } from "./verify";
@@ -119,11 +119,30 @@ ${buildCaseContext(ctx)}`;
     abortSignal: signal,
   });
 
+  return {
+    relevant: output.relevant,
+    score: Math.min(1, Math.max(0, output.score)),
+    summary: output.summary,
+    areas: cleanAreas(output.areas),
+    highlights: verifyHighlights(output.highlights, ctx),
+    proposed: output.highlights.length,
+  };
+}
+
+/** unknown ids (e.g. "employment law") are dropped rather than failing the case */
+function cleanAreas(areas: string[]): string[] {
+  return [...new Set(areas.map((a) => a.trim().toLowerCase()).filter(isAreaId))].slice(0, 3);
+}
+
+type ProposedHighlight = z.infer<typeof schema>["highlights"][number];
+
+/** Keep only quotes found in the judgment text (verify.ts), de-duplicated, at most 8. */
+function verifyHighlights(proposed: ProposedHighlight[], ctx: RetrievedContext): VerifiedHighlight[] {
   const verified: VerifiedHighlight[] = [];
   const seen = new Set<string>();
   // weaker models overshoot bounds; clamp instead of failing the case
   const KINDS = new Set<string>(["paragraph", "quoted_clause", "legislation_ref"]);
-  for (const h of output.highlights.slice(0, 8)) {
+  for (const h of proposed.slice(0, 8)) {
     if (!h.quote || !h.element_id) continue;
     const m = verifyQuote(h.quote, h.element_id, ctx.all);
     if (!m) continue;
@@ -138,14 +157,60 @@ ${buildCaseContext(ctx)}`;
       similarity: m.similarity,
     });
   }
+  return verified;
+}
+
+/** Model tier for extractHighlights(): quoting from given paragraphs is easier than judging, so the fast tier by default. */
+export const EXTRACT_TIER: Tier = process.env.EXTRACT_TIER === "strong" ? "strong" : "fast";
+
+const extractSchema = schema.pick({ summary: true, areas: true, highlights: true });
+
+/**
+ * Extraction pass (JUDGE_MODE=extract): the pre-screen has already decided the case is on point,
+ * so the model only has to quote the passages that answer the question, summarise, and classify.
+ * `score` is the pre-screen's P(on_point); `relevant` is always true (no highlight → rejected by
+ * the pipeline, as for a judged case).
+ */
+export async function extractHighlights(
+  query: string,
+  kase: CaseRow,
+  ctx: RetrievedContext,
+  onPoint: number,
+  usage: TokenUsage,
+  signal?: AbortSignal,
+): Promise<RelevanceOutcome> {
+  const system = `You are a careful UK legal research assistant. A judgment has already been assessed as relevant to the user's research question. Point to the exact passages that answer the question, summarise the case, and classify its areas of law.
+
+Rules:
+- Choose the passages that deal with the question's facts, issue or reasoning. Prefer the court's own analysis and holding over recitals of the facts or of counsel's submissions.
+- Quotes must be copied character-for-character from the element text. Do not paraphrase, join separate passages, or add ellipses.
+- Use the id of the smallest element containing the quote. Use kind "quoted_clause" when the quote is from a contract/statute/document quoted in the judgment (quote_block elements), "legislation_ref" when the passage turns on a statutory provision.
+- Return 2-6 highlights. If no retrieved passage bears on the question, return none.
+- Classify the case's areas of law from: ${AREAS.map((a) => `${a.id} (${a.label})`).join(", ")}.`;
+
+  const prompt = `Research question: ${query}
+
+Case: ${kase.name}${kase.ncn ? ` ${kase.ncn}` : ""} — ${kase.court ?? "unknown court"}, ${kase.date ?? "undated"}
+
+Paragraphs retrieved from the judgment (by keyword and meaning similarity; other paragraphs omitted):
+${buildCaseContext(ctx)}`;
+
+  const output = await generateStructured({
+    model: model(EXTRACT_TIER),
+    effort: reasoningEffort(EXTRACT_TIER),
+    system,
+    prompt,
+    schema: extractSchema,
+    usage,
+    abortSignal: signal,
+  });
 
   return {
-    relevant: output.relevant,
-    score: Math.min(1, Math.max(0, output.score)),
+    relevant: true,
+    score: Math.min(1, Math.max(0, onPoint)),
     summary: output.summary,
-    // unknown ids (e.g. "employment law") are dropped rather than failing the case
-    areas: [...new Set(output.areas.map((a) => a.trim().toLowerCase()).filter(isAreaId))].slice(0, 3),
-    highlights: verified,
+    areas: cleanAreas(output.areas),
+    highlights: verifyHighlights(output.highlights, ctx),
     proposed: output.highlights.length,
   };
 }

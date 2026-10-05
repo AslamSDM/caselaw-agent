@@ -8,8 +8,16 @@
  *
  * Batching: one decisions request carries several cases (state = question + case_1..n, one
  * question per case), so the instructions and request overhead are paid once per batch. Cases
- * arrive one at a time from the pipeline's workers; a batch flushes when it is full, when the
- * next case would overflow the model's context, or GATE_BATCH_WAIT_MS after its first case.
+ * arrive one at a time from the pipeline's workers, seconds apart (each fetches, retrieves and
+ * reranks first), so waiting blindly mostly sends one-case batches late. The gate therefore
+ * tracks the cases that could still join: the pipeline calls enter() when a case starts its
+ * per-case stages and leave() (or passes the ticket to screen()) once it has submitted, been
+ * rejected before the gate, or skipped it. A batch flushes as soon as no entered case is still
+ * on its way, when it is full, when the next case would overflow the model's context, or at the
+ * latest GATE_BATCH_WAIT_MS after its first case.
+ *
+ * Verdicts are kept with each case's decision: P(on_point) orders the judge queue (pipeline.ts)
+ * and is blended into the judged score (blendScore, GATE_SCORE_WEIGHT).
  *
  * Enabled when JUDGE_GATE_MODEL is set (e.g. typesafe/jev-1.13) and OPENROUTER_API_KEY exists.
  */
@@ -25,6 +33,8 @@ const MAX_BATCH_CHARS = Number(process.env.GATE_BATCH_CHARS ?? 80_000);
 const MAX_BATCH = Number(process.env.GATE_BATCH_SIZE ?? 6);
 const WAIT_MS = Number(process.env.GATE_BATCH_WAIT_MS ?? 400);
 const TIMEOUT_MS = Number(process.env.JUDGE_GATE_TIMEOUT_MS ?? 20_000);
+/** weight of P(on_point) in a judged case's score (blendScore); 0 = judge score only */
+const SCORE_WEIGHT = Number(process.env.GATE_SCORE_WEIGHT ?? 0.25);
 
 export function gateModel(): string | null {
   const m = process.env.JUDGE_GATE_MODEL;
@@ -38,6 +48,17 @@ export interface GateVerdict {
   /** P(on_point); stored as the case score when the gate rejects */
   onPoint: number;
   reject: boolean;
+}
+
+/**
+ * Ranking score for a judged case: judge^(1-w) · P(on_point)^w, so a case the pre-screen found
+ * mostly tangential is pulled down even when the judge is generous. The judge score alone when
+ * there is no pre-screen verdict or w = 0. Applied after the decision cache.
+ */
+export function blendScore(judgeScore: number, gate: Pick<GateVerdict, "onPoint"> | undefined, w = SCORE_WEIGHT): number {
+  if (!gate || !(w > 0)) return judgeScore;
+  const wc = Math.min(1, w);
+  return judgeScore ** (1 - wc) * Math.max(0, gate.onPoint) ** wc;
 }
 
 export interface GateStats {
@@ -81,6 +102,11 @@ export function buildBatchRequest(model: string, query: string, cases: string[])
   return { model, state, questions };
 }
 
+/** One case's place in the gate's in-flight count. leave() is idempotent. */
+export interface GateTicket {
+  leave(): void;
+}
+
 interface Pending {
   text: string;
   resolve: (v: GateVerdict) => void;
@@ -99,6 +125,9 @@ export class RelevanceGate {
   private pending: Pending[] = [];
   private chars = 0;
   private timer: ReturnType<typeof setTimeout> | null = null;
+  /** cases entered but not yet submitted or gone; only consulted once enter() has been used */
+  private tickets = new Set<GateTicket>();
+  private tracking = false;
 
   constructor(
     private model: string,
@@ -113,13 +142,34 @@ export class RelevanceGate {
     return m ? new RelevanceGate(m, query, signal) : null;
   }
 
-  screen(kase: CaseRow, ctx: Pick<RetrievedContext, "topLevel" | "all">): Promise<GateVerdict> {
+  /** A case started the stages that may end in screen(); leave the ticket when it no longer can. */
+  enter(): GateTicket {
+    this.tracking = true;
+    const ticket: GateTicket = {
+      leave: () => {
+        if (!this.tickets.delete(ticket)) return;
+        // the last case still on its way went elsewhere: nobody else is coming for this batch
+        if (this.pending.length && !this.tickets.size) this.flush();
+      },
+    };
+    this.tickets.add(ticket);
+    return ticket;
+  }
+
+  /** Cases entered and not yet submitted (or gone). */
+  get inFlight(): number {
+    return this.tickets.size;
+  }
+
+  screen(kase: CaseRow, ctx: Pick<RetrievedContext, "topLevel" | "all">, ticket?: GateTicket): Promise<GateVerdict> {
     const text = caseState(kase, ctx, Math.floor(MAX_BATCH_CHARS / 2));
     if (this.pending.length && this.chars + text.length > MAX_BATCH_CHARS) this.flush();
     return new Promise<GateVerdict>((resolve, reject) => {
       this.pending.push({ text, resolve, reject });
       this.chars += text.length;
-      if (this.pending.length >= MAX_BATCH) this.flush();
+      // this case has joined (no flush from leave(): the checks below decide)
+      if (ticket) this.tickets.delete(ticket);
+      if (this.pending.length >= MAX_BATCH || (this.tracking && !this.tickets.size)) this.flush();
       else this.timer ??= setTimeout(() => this.flush(), WAIT_MS);
     });
   }

@@ -492,6 +492,11 @@ function ResultCard({ r, searchId }: { r: CaseResult; searchId: number | null })
             {r.date && <span>{r.date}</span>}
             {r.anonymised && <span className="rounded bg-background px-1.5">anonymised</span>}
             {r.via && <span className="rounded border border-accent px-1.5 text-accent">{r.via}</span>}
+            {r.gate && (
+              <span title={r.judgeScore != null ? `strong judge scored ${Math.round(r.judgeScore * 100)}` : undefined}>
+                pre-screen {Math.round(r.gate.onPoint * 100)}% on point
+              </span>
+            )}
           </div>
           {r.areas.length > 0 && (
             <div className="mt-1.5 flex flex-wrap gap-1">

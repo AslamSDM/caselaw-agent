@@ -51,6 +51,13 @@ export interface VerifiedHighlight {
   similarity: number;
 }
 
+/** Pre-screen (decisions model) verdict shown with a case; see gate.ts. */
+export interface GateSummary {
+  choice: "on_point" | "tangential" | "irrelevant";
+  /** P(on_point) */
+  onPoint: number;
+}
+
 export interface CaseResult {
   uri: string;
   name: string;
@@ -59,7 +66,12 @@ export interface CaseResult {
   date: string | null;
   anonymised: boolean;
   areas: string[];
+  /** ranking score: the judge's score blended with the pre-screen's P(on_point) (GATE_SCORE_WEIGHT) */
   score: number;
+  /** the strong judge's own score, before blending */
+  judgeScore?: number;
+  /** pre-screen verdict, when the gate ran on this case */
+  gate?: GateSummary;
   summary: string;
   highlights: VerifiedHighlight[];
   /** best cross-encoder paragraph score (0–1), when the reranker ran */
@@ -93,7 +105,7 @@ export type SearchEvent =
   | { type: "web"; terms: string[]; variants: string[]; ncns: string[]; sources: number }
   | { type: "candidates"; candidates: Candidate[] }
   | { type: "result"; result: CaseResult }
-  | { type: "rejected"; uri: string; name: string; score: number; reason: string; areas?: string[]; rerank?: number }
+  | { type: "rejected"; uri: string; name: string; score: number; reason: string; areas?: string[]; rerank?: number; judgeScore?: number; gate?: GateSummary }
   | { type: "web_mentions"; mentions: WebMention[] }
   | { type: "done"; searchId: number; stats: SearchStats }
   | { type: "error"; message: string };

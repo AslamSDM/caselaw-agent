@@ -12,9 +12,9 @@ pnpm dev               # http://localhost:3000
 - Run every demo query once beforehand. Query expansion is cached for 24 h and judgments are
   stored in Postgres, so the second run is noticeably faster.
 - Open these tabs: `/`, `/cases`, `/chats`.
-- Models: `.env.local` uses `deepseek/deepseek-v4-flash` for both tiers (reasoning off), plus
-  `LLM_FALLBACK_MODEL=ollama/gemma4:12b-mlx` (local) and `typesafe/jev-1.13` as the pre-screen.
-  Each search costs about $0.01.
+- Models: `.env.local` uses `openai/gpt-6-luna` for both tiers (reasoning off), plus
+  `LLM_FALLBACK_MODEL=ollama/gemma4-16k:12b-mlx` (local) and `typesafe/jev-1.13` as the pre-screen.
+  Each search costs about $0.005.
 
 ## 1. Opening pitch (1 min)
 

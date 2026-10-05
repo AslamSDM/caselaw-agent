@@ -5,8 +5,9 @@
  *
  * The key covers everything the decision depends on: the strong and pre-screen models, the
  * thresholds that reject before the judge, the normalised question, the case and its content
- * hash (a re-published judgment is decided again). The relevance cutoff and area filter are
- * applied after the cache, so changing them needs no re-run.
+ * hash (a re-published judgment is decided again). The relevance cutoff, area filter and the
+ * pre-screen score blend (GATE_SCORE_WEIGHT) are applied after the cache, so changing them needs
+ * no re-run; that is why the pre-screen verdict is stored with the decision.
  *
  * Stored in tna_search_cache under a "decision:" key for DECISION_CACHE_DAYS (default 30).
  * DECISION_CACHE=off disables it (evals turn it off so every run measures the pipeline).
@@ -15,22 +16,25 @@ import { createHash } from "node:crypto";
 import { and, eq, gt, sql } from "drizzle-orm";
 import { db, schema } from "@/db";
 import { modelId } from "../llm";
-import { gateModel } from "./gate";
+import { gateModel, type GateVerdict } from "./gate";
 import type { RelevanceOutcome } from "./relevance";
 
 /** bump when prompts or retrieval change enough that old decisions should not be reused */
-const VERSION = 1;
+const VERSION = 2;
 const DAYS = Number(process.env.DECISION_CACHE_DAYS ?? 30);
 
+/** The pre-screen's verdict, kept with the decision; absent when the gate was off, skipped or failed. */
+export type GateRecord = Pick<GateVerdict, "choice" | "probabilities" | "onPoint">;
+
 export type CaseDecision =
-  | { kind: "reject"; score: number; reason: string; rerank?: number; by: "rerank" | "no-hits" | "gate" }
-  | { kind: "judged"; verdict: RelevanceOutcome; rerank?: number };
+  | { kind: "reject"; score: number; reason: string; rerank?: number; by: "rerank" | "no-hits" | "gate"; gate?: GateRecord }
+  | { kind: "judged"; verdict: RelevanceOutcome; rerank?: number; gate?: GateRecord };
 
 export function decisionCacheEnabled(): boolean {
   return process.env.DECISION_CACHE !== "off";
 }
 
-export function decisionKey(query: string, caseUri: string, contentHash: string | null, thresholds: Record<string, number>): string {
+export function decisionKey(query: string, caseUri: string, contentHash: string | null, thresholds: Record<string, number | string>): string {
   const norm = query.trim().toLowerCase().replace(/\s+/g, " ");
   const parts = [VERSION, modelId("strong"), gateModel(), thresholds, norm, caseUri, contentHash];
   return "decision:" + createHash("sha256").update(JSON.stringify(parts)).digest("hex");
