@@ -87,8 +87,13 @@ function providerRouting(id: string) {
   return undefined;
 }
 
-function providerOptionsFor(effort: Effort | undefined, id: string) {
+const isOllama = (m: LanguageModel) => typeof m !== "string" && m.provider.startsWith("ollama");
+
+function providerOptionsFor(effort: Effort | undefined, m: LanguageModel): Parameters<typeof generateText>[0]["providerOptions"] {
+  // local models think slowly (~30 tok/s), so thinking is off unless an effort is set
+  if (isOllama(m)) return { ollama: { reasoningEffort: effort ?? "none" } };
   if (provider() !== "openrouter") return undefined;
+  const id = idOf(m);
   const routing = providerRouting(id);
   if (!effort && !routing) return undefined;
   return { openrouter: { ...(effort && { reasoning: { effort } }), ...(routing && { provider: routing }) } };
@@ -147,7 +152,7 @@ export async function generateStructured<S extends z.ZodType>(opts: {
         toolChoice: { type: "tool", toolName: "submit" },
         abortSignal: opts.abortSignal,
         maxRetries: opts.maxRetries ?? (Number(process.env.LLM_MAX_RETRIES) || undefined),
-        providerOptions: providerOptionsFor(opts.effort, idOf(m)),
+        providerOptions: providerOptionsFor(opts.effort, m),
       });
       if (opts.usage) addUsage(opts.usage, result.usage);
       const call = result.toolCalls.find((c) => c.toolName === "submit");
