@@ -82,11 +82,11 @@ Open `/graph?search=<id>` (link on results) or `/graph?case=uksc/2020/12`.
 ```
 question
   │
-  ├─ embed question (Ollama nomic-embed-text, local)   ┐ in parallel
-  ├─ expand (fast LLM, cached 24h) → variants, terms,  ┘
-  │   filters, dates
+  ├─ embed question (Ollama nomic-embed-text, local)                    ┐
+  ├─ expand (fast LLM, cached 24h) → variants, terms, filters, dates    ├ all start at t0
+  ├─ web enrichment: Firecrawl "<question> case law UK judgment"        ┘  (background; waited on
+  │    → fast LLM → terms / new variants / UK citations                     ≤12 s once wave 1 reads)
   ▼ after expansion:
-  ├─ web enrichment (Firecrawl on the RAW question → fast LLM → terms / new variants / UK citations)  … background, ≤12 s
   ├─ local index: pgvector (question + 2 variants) + Postgres FTS
   ├─ TNA atom search × each variant (4 at a time, ≤25 requests/search)
   ▼

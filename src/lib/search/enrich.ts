@@ -61,9 +61,12 @@ export interface WebHints {
   results: WebResult[];
 }
 
+/** appended to the question so the web search leans towards UK judgments and commentary on them */
+const QUERY_SUFFIX = process.env.WEB_QUERY_SUFFIX ?? "case law UK judgment";
+
 export async function webEnrich(query: string, usage: TokenUsage, signal?: AbortSignal): Promise<WebHints> {
   const timeoutMs = Number(process.env.WEB_ENRICH_TIMEOUT_MS ?? 8000);
-  const results = await webSearch(`${query} UK court judgment`, { limit: 8, timeoutMs });
+  const results = await webSearch(`${query} ${QUERY_SUFFIX}`.trim(), { limit: 8, timeoutMs });
   if (!results.length) return { terms: [], variants: [], cases: [], ncns: [], results };
 
   const listing = results

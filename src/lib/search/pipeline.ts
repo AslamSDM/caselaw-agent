@@ -1,10 +1,11 @@
 /**
- * Search pipeline (plan §3): expand → TNA searches (+ local index, Firecrawl web hints in parallel) → fuse →
+ * Search pipeline (plan §3): expand (∥ Firecrawl web hints) → TNA searches (+ local index) → fuse →
  * fetch/parse → paragraph retrieval → relevance pass → quote verification → cutoff.
  * Yields SearchEvents so the UI can stream progress and case cards as they pass.
  *
- * Latency shape: reading starts as soon as wave 1 (TNA keyword + local index) is fused, on the top
- * FIRST_WAVE candidates. Web hints, when they arrive, are fused in and fill the remaining slots.
+ * Latency shape: web enrichment starts at t0 (it searches the raw question), alongside expansion.
+ * Reading starts as soon as wave 1 (TNA keyword + local index) is fused, on the top FIRST_WAVE
+ * candidates. Web hints, when they arrive, are fused in and fill the remaining slots.
  * Every queued case's judgment XML is fetched immediately (prefetch), while at most CONCURRENCY
  * cases are in the LLM stages at once.
  */
@@ -46,6 +47,8 @@ const CITE_MAX = Number(process.env.CITE_MAX ?? 3);
 const NOT_ON_TNA = /^(ukpc|ukhl)\//;
 /** the cheap pre-screen is skipped when the cross-encoder is this sure: the strong judge decides */
 const RERANK_TRUST = Number(process.env.RERANK_TRUST ?? 0.9);
+/** longest wait for web hints once wave 1 is reading (web enrichment itself starts at t0) */
+const WEB_WAIT_MS = Number(process.env.WEB_ENRICH_TIMEOUT_MS ?? 8000) + 4000;
 
 class Budget {
   used = 0;
@@ -173,6 +176,16 @@ export async function* runSearch(query: string, opts: SearchOptions = {}, signal
   const [search] = await db.insert(schema.searches).values({ query, filters: opts }).returning({ id: schema.searches.id });
   yield { type: "search", searchId: search.id };
 
+  // ---- A. web enrichment (Firecrawl), from t0: it needs only the raw question, not the expansion -
+  // the wait is capped in C2, counted from when wave 1 starts reading, so starting early only helps
+  const webPromise: Promise<WebHints | null> = firecrawlConfigured()
+    ? webEnrich(query, usage, signal).catch((err) => {
+        console.warn("[search] web enrichment failed:", err instanceof Error ? err.message : err);
+        stats.webEnrichment = "error";
+        return null;
+      })
+    : Promise.resolve(null);
+
   // ---- B. expansion ------------------------------------------------------------------------------
   yield { type: "status", stage: "expand", message: "Expanding query…" };
   // question embedding (local Ollama) runs alongside expansion; null → keyword-only ranking
@@ -206,27 +219,6 @@ export async function* runSearch(query: string, opts: SearchOptions = {}, signal
     dateSource,
     datesReason: dateSource === "query" ? expanded.datesReason : null,
   };
-
-  // ---- A. web enrichment (Firecrawl), in parallel with wave 1 ---------------------------------
-  const webTimeout = Number(process.env.WEB_ENRICH_TIMEOUT_MS ?? 8000) + 4000;
-  const webPromise: Promise<WebHints | null> = firecrawlConfigured()
-    ? Promise.race([
-        webEnrich(query, usage, signal).then((h) => {
-          stats.webEnrichment = "used";
-          return h;
-        }),
-        new Promise<null>((r) =>
-          setTimeout(() => {
-            if (stats.webEnrichment === "skipped") stats.webEnrichment = "timeout";
-            r(null);
-          }, webTimeout),
-        ),
-      ]).catch((err) => {
-        console.warn("[search] web enrichment failed:", err instanceof Error ? err.message : err);
-        stats.webEnrichment = "error";
-        return null;
-      })
-    : Promise.resolve(null);
 
   // ---- L. local index: question + top variants embedded, semantic + full-text -----------------
   const queryVec = await questionVec;
@@ -446,7 +438,13 @@ export async function* runSearch(query: string, opts: SearchOptions = {}, signal
 
     // ---- C2. web hints → NCN lists, party and new keyword searches ------------------------------
     const tWeb = Date.now();
-    const web = await webPromise;
+    let webTimer: ReturnType<typeof setTimeout> | undefined;
+    const web = await Promise.race([
+      webPromise,
+      new Promise<null>((r) => (webTimer = setTimeout(() => r(null), WEB_WAIT_MS))),
+    ]).finally(() => clearTimeout(webTimer));
+    if (web) stats.webEnrichment = "used";
+    else if (stats.webEnrichment === "skipped") stats.webEnrichment = "timeout";
     if (web) {
       events.push({ type: "web", terms: web.terms, variants: web.variants, ncns: web.ncns, sources: web.results.length });
       // later cases also rank paragraphs with the web vocabulary
