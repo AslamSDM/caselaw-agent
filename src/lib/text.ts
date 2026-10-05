@@ -62,3 +62,12 @@ export function tokenize(s: string): string[] {
     .split(/[^a-z0-9']+/)
     .filter(Boolean);
 }
+
+/** OR of terms for websearch_to_tsquery; multi-word terms become quoted phrases. */
+export function ftsQueryString(terms: string[]): string {
+  return terms
+    .map((t) => t.replace(/["()]/g, " ").trim())
+    .filter((t) => t.length > 1)
+    .map((t) => (t.includes(" ") ? `"${t}"` : t))
+    .join(" OR ");
+}

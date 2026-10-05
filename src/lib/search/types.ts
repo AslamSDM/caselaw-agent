@@ -26,6 +26,8 @@ export interface CandidateList {
   source: CandidateSourceKind;
   label: string;
   estimatedTotal: number;
+  /** extra multiplier on the source weight (e.g. local semantic list scaled by index coverage) */
+  weight?: number;
   entries: { uri: string; name: string; ncn: string | null; court: string | null; date: string | null }[];
 }
 
@@ -60,6 +62,10 @@ export interface CaseResult {
   score: number;
   summary: string;
   highlights: VerifiedHighlight[];
+  /** best cross-encoder paragraph score (0–1), when the reranker ran */
+  rerank?: number;
+  /** why this case was read, when not from search lists (e.g. "cited by 3 results") */
+  via?: string;
 }
 
 export interface SearchOptions {
@@ -87,7 +93,7 @@ export type SearchEvent =
   | { type: "web"; terms: string[]; variants: string[]; ncns: string[]; sources: number }
   | { type: "candidates"; candidates: Candidate[] }
   | { type: "result"; result: CaseResult }
-  | { type: "rejected"; uri: string; name: string; score: number; reason: string; areas?: string[] }
+  | { type: "rejected"; uri: string; name: string; score: number; reason: string; areas?: string[]; rerank?: number }
   | { type: "web_mentions"; mentions: WebMention[] }
   | { type: "done"; searchId: number; stats: SearchStats }
   | { type: "error"; message: string };
@@ -105,4 +111,27 @@ export interface SearchStats {
   contextChars: number;
   /** paragraphs embedded on demand during this search */
   paragraphsEmbedded: number;
+  /** wall-clock ms per stage; per-case stages are summed across parallel workers */
+  timings: StageTimings;
+  /** decisions-model pre-screen (JUDGE_GATE_MODEL); null when off */
+  gate: { model: string; requests: number; cases: number; rejected: number; errors: number; costUsd: number } | null;
+  /** cases rejected because no paragraph cleared RERANK_MIN */
+  rerankRejected: number;
+  /** cases added because several passing results cite them */
+  citationCandidates: number;
+}
+
+export interface StageTimings {
+  /** query expansion (0 on a cache hit) */
+  expand: number;
+  /** expansion done → wave-1 candidates ready (TNA keyword + local index) */
+  search: number;
+  /** wave-1 ready → web hints merged (0 when web is off or already done) */
+  web: number;
+  /** summed across cases */
+  fetch: number;
+  retrieve: number;
+  /** decisions-model pre-screen, summed */
+  gate: number;
+  judge: number;
 }

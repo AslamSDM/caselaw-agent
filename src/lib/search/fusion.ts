@@ -27,7 +27,7 @@ export function specificity(estimatedTotal: number): number {
 export function fuseCandidates(lists: CandidateList[], limit = 10): Candidate[] {
   const byUri = new Map<string, Candidate>();
   for (const list of lists) {
-    const w = SOURCE_WEIGHT[list.source] * (NO_SPECIFICITY.has(list.source) ? 1 : specificity(list.estimatedTotal));
+    const w = SOURCE_WEIGHT[list.source] * (list.weight ?? 1) * (NO_SPECIFICITY.has(list.source) ? 1 : specificity(list.estimatedTotal));
     list.entries.forEach((e, rank) => {
       const c = byUri.get(e.uri) ?? { ...e, score: 0, matchedBy: [] };
       c.score += (w * K) / (K + rank);

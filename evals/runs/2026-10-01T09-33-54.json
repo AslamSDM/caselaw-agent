@@ -1,0 +1,1199 @@
+{
+ "meta": {
+  "startedAt": "2026-10-01T09:33:54.811Z",
+  "git": "4c1b4e0",
+  "dirty": false,
+  "models": {
+   "fast": "stealth/space-bunny-alpha",
+   "strong": "stealth/space-bunny-alpha",
+   "judge": "stealth/space-bunny-alpha (self)",
+   "reasoning": {
+    "fast": "default",
+    "strong": "low",
+    "judge": "default"
+   },
+   "provider": "openrouter"
+  },
+  "config": {
+   "cutoff": "0.65",
+   "maxCandidates": "10",
+   "perVariant": "25",
+   "web": "true"
+  },
+  "regradeOf": null,
+  "selection": {
+   "only": "ashers-cake,hostile-judge-libel,dates-since-2020-workers,neg-escaped-penguin",
+   "tag": null
+  }
+ },
+ "summary": {
+  "queries": 4,
+  "positives": 3,
+  "negatives": 1,
+  "errors": 0,
+  "recallAt10": 1,
+  "recallAllAt10": 1,
+  "candidateRecall": 1,
+  "mrr": 1,
+  "ndcgAt10": 1,
+  "precision": 1,
+  "highlightPrecision": null,
+  "negativePassRate": 0,
+  "areaAccuracy": 1,
+  "dateInferenceAccuracy": 1,
+  "dateCompliance": 1,
+  "firstResultP50": 26357,
+  "totalP50": 47983,
+  "totalP95": 60254,
+  "avgTnaRequests": 11.75,
+  "avgInputTokens": 35873.5,
+  "avgOutputTokens": 6888,
+  "missStages": {
+   "not-retrieved": 0,
+   "rejected": 0,
+   "not-read": 0,
+   "error": 0
+  }
+ },
+ "gates": [
+  {
+   "label": "recall@10 ≥ 70%",
+   "value": 1,
+   "unit": "pct",
+   "pass": true
+  },
+  {
+   "label": "highlight precision ≥ 90%",
+   "value": null,
+   "unit": "pct",
+   "pass": false
+  },
+  {
+   "label": "negatives → no strong matches ≥ 80%",
+   "value": 0,
+   "unit": "pct",
+   "pass": false
+  },
+  {
+   "label": "all results inside the question's date range",
+   "value": 1,
+   "unit": "pct",
+   "pass": true
+  },
+  {
+   "label": "date range inferred correctly ≥ 90%",
+   "value": 1,
+   "unit": "pct",
+   "pass": true
+  },
+  {
+   "label": "first result p50 < 8s",
+   "value": 26357,
+   "unit": "ms",
+   "pass": false
+  },
+  {
+   "label": "full results p50 < 20s",
+   "value": 47983,
+   "unit": "ms",
+   "pass": false
+  },
+  {
+   "label": "TNA requests/search ≤ 25",
+   "value": 11.75,
+   "unit": "num",
+   "pass": true
+  }
+ ],
+ "scores": [
+  {
+   "id": "ashers-cake",
+   "kind": "positive",
+   "recall": 1,
+   "recallAll": 1,
+   "candidateRecall": 1,
+   "rr": 1,
+   "ndcg": 1,
+   "precision": 1,
+   "highlightsJudged": 0,
+   "highlightsSupported": 0,
+   "areaHit": true,
+   "dateInferenceHit": true,
+   "dateCompliance": null,
+   "negativePass": null,
+   "misses": [],
+   "resultCount": 3,
+   "unjudged": 2
+  },
+  {
+   "id": "hostile-judge-libel",
+   "kind": "positive",
+   "recall": 1,
+   "recallAll": 1,
+   "candidateRecall": 1,
+   "rr": 1,
+   "ndcg": 1,
+   "precision": 1,
+   "highlightsJudged": 0,
+   "highlightsSupported": 0,
+   "areaHit": true,
+   "dateInferenceHit": true,
+   "dateCompliance": null,
+   "negativePass": null,
+   "misses": [],
+   "resultCount": 4,
+   "unjudged": 3
+  },
+  {
+   "id": "dates-since-2020-workers",
+   "kind": "positive",
+   "recall": 1,
+   "recallAll": 1,
+   "candidateRecall": 1,
+   "rr": 1,
+   "ndcg": 1,
+   "precision": 1,
+   "highlightsJudged": 0,
+   "highlightsSupported": 0,
+   "areaHit": true,
+   "dateInferenceHit": true,
+   "dateCompliance": 1,
+   "negativePass": null,
+   "misses": [],
+   "resultCount": 5,
+   "unjudged": 4
+  },
+  {
+   "id": "neg-escaped-penguin",
+   "kind": "negative",
+   "recall": null,
+   "recallAll": null,
+   "candidateRecall": null,
+   "rr": null,
+   "ndcg": null,
+   "precision": null,
+   "highlightsJudged": 0,
+   "highlightsSupported": 0,
+   "areaHit": null,
+   "dateInferenceHit": true,
+   "dateCompliance": null,
+   "negativePass": false,
+   "misses": [],
+   "resultCount": 5,
+   "unjudged": 5
+  }
+ ],
+ "runs": [
+  {
+   "id": "ashers-cake",
+   "kind": "positive",
+   "query": "bakery refused to make a cake iced with a slogan supporting same-sex marriage",
+   "candidates": [
+    "uksc/2018/49",
+    "ewhc/admin/2022/49",
+    "ewhc/kb/2025/151",
+    "eat/2022/99",
+    "ewhc/admin/2017/2669",
+    "ukpc/2022/5",
+    "eat/2024/30",
+    "eat/2023/89",
+    "ewhc/ch/2026/2028",
+    "uksc/2017/47"
+   ],
+   "results": [
+    {
+     "uri": "uksc/2018/49",
+     "name": "Lee v Ashers Baking Company Ltd and others",
+     "date": "2018-10-10",
+     "score": 0.98,
+     "areas": [
+      "human_rights",
+      "public",
+      "consumer"
+     ],
+     "highlights": [
+      {
+       "elementId": "p_2",
+       "kind": "paragraph",
+       "quote": "The substantive question in this case is whether it is unlawful discrimination, either on grounds of sexual orientation, or on grounds of religious belief or political opinion, for a bakery to refuse to supply a cake iced with the message"
+      },
+      {
+       "elementId": "p_17",
+       "kind": "paragraph",
+       "quote": "Over the following weekend, the McArthurs decided that they could not in conscience produce a cake with that slogan and so should not fulfil the order."
+      },
+      {
+       "elementId": "p_31",
+       "kind": "paragraph",
+       "quote": "The objection was to the message, not the messenger."
+      },
+      {
+       "elementId": "p_83",
+       "kind": "paragraph",
+       "quote": "The important message from the Masterpiece Bakery case is that there is a clear distinction between refusing to produce a cake conveying a particular message, for any customer who wants such a cake"
+      },
+      {
+       "elementId": "p_78",
+       "kind": "paragraph",
+       "quote": "A Christian baker refused to create a wedding cake for a gay couple because of his opposition to same sex marriage."
+      }
+     ]
+    },
+    {
+     "uri": "eat/2022/99",
+     "name": "Dr David Mackereth v The Department for Work and Pensions & Anor",
+     "date": "2022-06-29",
+     "score": 0.82,
+     "areas": [
+      "employment",
+      "human_rights"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_46__quote_1",
+       "kind": "quoted_clause",
+       "quote": "The reason for treating Mr Lee less favourably than other would-be customers was not his sexual orientation but the message he wanted to be iced on the cake. Anyone who wanted that message would have been treated in the same way"
+      },
+      {
+       "elementId": "para_46",
+       "kind": "paragraph",
+       "quote": "The ET considered the claimant’s case was akin to that of Ms Ladele"
+      },
+      {
+       "elementId": "para_47",
+       "kind": "paragraph",
+       "quote": "The ET therefore rejected the claimant’s complaint of direct discrimination."
+      },
+      {
+       "elementId": "para_22__quote_1",
+       "kind": "quoted_clause",
+       "quote": "an employee must not refuse to work with a colleague or client, or refuse to provide a service to a customer, because of their religion or belief, or because of the colleague/client/customer’s sexual orientation, sex, gender reassignment, race, disability, marriage or civil partnership, or religion or belief. Refusal would be discriminatory"
+      },
+      {
+       "elementId": "para_69__quote_1",
+       "kind": "legislation_ref",
+       "quote": "Everyone, therefore, is entitled to hold whatever beliefs he wishes. But when questions of ‘manifestation’ arise, as they usually do in this type of case, a belief must satisfy some modest, objective minimum requirements."
+      }
+     ]
+    },
+    {
+     "uri": "eat/2024/30",
+     "name": "Seyi Omooba v Michael Garrett Associates Ltd & Anor",
+     "date": "2024-03-06",
+     "score": 0.72,
+     "areas": [
+      "employment",
+      "human_rights"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_92",
+       "kind": "paragraph",
+       "quote": "Mr Lee’s political opinion was part of the context (it was why he commissioned the cake), but it was not the reason why the respondent refused to serve him."
+      },
+      {
+       "elementId": "para_92",
+       "kind": "paragraph",
+       "quote": "the respondent’s refusal to supply a cake with a political message iced onto it was less favourable treatment “afforded to the message not to the man” (paragraph 47)"
+      },
+      {
+       "elementId": "para_93",
+       "kind": "legislation_ref",
+       "quote": "the definition of direct discrimination under section 13 EqA still connotes a need to show a comparative detriment"
+      },
+      {
+       "elementId": "para_102",
+       "kind": "paragraph",
+       "quote": "the question whether it is reasonable for the impugned conduct to have the proscribed effect “is effectively determinative”"
+      }
+     ]
+    }
+   ],
+   "rejected": [
+    {
+     "uri": "ewhc/admin/2022/49",
+     "name": "“L” (R on the application of) v HAMPSHIRE COUNTY COUNCIL",
+     "score": 0.2,
+     "reason": "The case concerns judicial review of county council transgender guidance to schools; it cites and distinguishes Lee v Ashers Baking Co Ltd, the very cake case, but does not itself decide any issue about a bakery refusing to ice a same-sex marriage slogan cake."
+    },
+    {
+     "uri": "ewhc/kb/2025/151",
+     "name": "Ian Sleeper v Commissioner of Police of the Metropolis",
+     "score": 0.12,
+     "reason": "The judgment concerns an appeal against conviction under section 5 of the Public Order Act 1986 for displaying a 'Hate Islam' placard; it merely cites Lee v Ashers Baking in passing to distinguish it, so it does not address the bakery's refusal to ice a same-sex marriage slogan cake."
+    },
+    {
+     "uri": "ukpc/2022/5",
+     "name": "Attorney General for Bermuda v Roderick Ferguson and others (Bermuda)",
+     "score": 0.2,
+     "reason": "The case concerns whether Bermuda's constitution requires legal recognition of same-sex marriage; Masterpiece Cakeshop appears only as a cited US authority on religious neutrality, not as facts or reasoning of this case."
+    },
+    {
+     "uri": "ewhc/ch/2026/2028",
+     "name": "Peter Waddell Holdco Limited v Bluebell Cars Holding Limited & Ors",
+     "score": 0.05,
+     "reason": "This is a shareholders' unfair dismissal/board dispute (Waddell v Bluebell Cars) concerning misconduct, MDEs and Equality Act harassment at a car group; it has nothing to do with a bakery refusing to bake a same-sex-marriage slogan cake."
+    },
+    {
+     "uri": "eat/2023/89",
+     "name": "Kristie Higgs v Farmor’s School",
+     "score": 0.1,
+     "reason": "Employment discrimination case (religious belief posts on Facebook, suspension and dismissal) with no connection to a bakery's refusal to make a same-sex-marriage slogan cake."
+    },
+    {
+     "uri": "ewhc/admin/2017/2669",
+     "name": "Ngole, R (On the Application Of) v University of Sheffield",
+     "score": 0.5,
+     "reason": "This is the challenge by a Christian student to University of Sheffield disciplinary action over anti-LGBTI social media posts; although it concerns no bakery or cake, it is a leading English authority on Art.9/Art.10 religious speech about same-sex sexuality and is regularly cited in later cases (including Bauer v Minton) about a baker refusing to ice a cake with a same-sex marriage slogan."
+    },
+    {
+     "uri": "uksc/2017/47",
+     "name": "Walker v Innospec Limited and others",
+     "score": 0.08,
+     "reason": "An occupational pension survivor's benefit discrimination case concerning para 18 of Sch 9 to the Equality Act 2010 and the Framework Directive; it has nothing to do with a bakery refusing to make a cake bearing a same-sex marriage slogan."
+    }
+   ],
+   "dates": null,
+   "dateSource": "none",
+   "targetAreas": {
+    "uksc/2018/49": [
+     "human_rights",
+     "public",
+     "consumer"
+    ]
+   },
+   "stats": {
+    "ms": 60254,
+    "firstResultMs": 46236,
+    "tnaRequests": 11,
+    "casesFetched": 1,
+    "casesFromCache": 9,
+    "inputTokens": 34893,
+    "outputTokens": 5496,
+    "webEnrichment": "used",
+    "contextChars": 104197,
+    "paragraphsEmbedded": 225
+   },
+   "judge": {}
+  },
+  {
+   "id": "hostile-judge-libel",
+   "kind": "positive",
+   "query": "trial judge's hostile interventions against a litigant in person made a libel trial unfair",
+   "candidates": [
+    "uksc/2020/23",
+    "ukpc/2009/43",
+    "ewhc/ch/2021/893",
+    "ewhc/ch/2026/1437",
+    "ewca/civ/2019/852",
+    "ewca/civ/2025/1321",
+    "eat/2025/143",
+    "ewhc/kb/2022/3030",
+    "ewhc/qb/2013/476",
+    "ewca/civ/2026/962"
+   ],
+   "results": [
+    {
+     "uri": "uksc/2020/23",
+     "name": "Serafin v Malkiewicz and others",
+     "date": "2020-06-03",
+     "score": 0.98,
+     "areas": [
+      "defamation",
+      "procedure"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_39",
+       "kind": "paragraph",
+       "quote": "A painstaking reading of the full transcripts of the evidence given over four and a half days strongly suggests that, insofar as the judge evinced prejudice against the claimant, it was the product of his almost immediate conclusion that the claim was hopeless"
+      },
+      {
+       "elementId": "para_41",
+       "kind": "paragraph",
+       "quote": "their interventions during oral evidence (as opposed to during final submissions) continued to generate a risk of their descent into the arena, which should be assessed not by whether it gave rise to an appearance of bias"
+      },
+      {
+       "elementId": "para_46",
+       "kind": "paragraph",
+       "quote": "Every judge will have experienced difficulty at trial in divining the line between helping the litigant in person to the extent necessary for the adequate articulation of his case, on the one hand, and becoming his advocate, on the other."
+      },
+      {
+       "elementId": "para_46__quote_1",
+       "kind": "quoted_clause",
+       "quote": "Litigants in person may be stressed and worried: they are operating in an alien environment in what is for them effectively a foreign language."
+      },
+      {
+       "elementId": "para_46__quote_1",
+       "kind": "quoted_clause",
+       "quote": "Not interrupting, engaging in dialogue, indicating a preliminary view or"
+      },
+      {
+       "elementId": "para_37__quote_1",
+       "kind": "quoted_clause",
+       "quote": "One is left with the regrettable impression of a judge who, if not partisan, developed an animus toward the claimant."
+      },
+      {
+       "elementId": "para_49",
+       "kind": "paragraph",
+       "quote": "Conscious of how the justice system has failed both sides, this court, with deep regret, must order a full retrial."
+      },
+      {
+       "elementId": "para_49__quote_1",
+       "kind": "quoted_clause",
+       "quote": "“No cause is lost until the judge has found it so; and he cannot find it without a fair trial, nor can we affirm it.”"
+      }
+     ]
+    },
+    {
+     "uri": "ewca/civ/2019/852",
+     "name": "Serafin v Malkiewicz & Ors",
+     "date": "2019-05-17",
+     "score": 0.97,
+     "areas": [
+      "defamation",
+      "procedure",
+      "criminal"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_119",
+       "kind": "paragraph",
+       "quote": "In our view, the Judge not only seriously transgressed the core principle that a judge remains neutral during the evidence, but he also acted in a manner which was, at times, manifestly unfair and hostile to the Claimant."
+      },
+      {
+       "elementId": "para_119",
+       "kind": "paragraph",
+       "quote": "the nature, tenor and frequency of the Judge’s interventions were such as to render this libel trial unfair. We, therefore, uphold the Claimant’s fifth Ground of Appeal."
+      },
+      {
+       "elementId": "para_114",
+       "kind": "paragraph",
+       "quote": "the Judge appears not only to have descended to the arena, cast off the mantle of impartiality and taken up the cudgels of cross-examination, but also to have used language which was threatening, overbearing and, frankly, bullying"
+      },
+      {
+       "elementId": "para_29__sub_5",
+       "kind": "paragraph",
+       "quote": "During the trial, the Judge showed hostility and rudeness to the Claimant, an unrepresented party."
+      },
+      {
+       "elementId": "para_29__sub_5",
+       "kind": "paragraph",
+       "quote": "He also prejudged matters against the Claimant (for example making it clear early in the trial that he regarded him as a “liar” who had behaved “deplorably” and threatened that he would say so in his judgment)."
+      },
+      {
+       "elementId": "para_29__sub_5",
+       "kind": "paragraph",
+       "quote": "He made repeated demands that the Claimant prove matters to him by reference to documents which were not before the Court."
+      }
+     ]
+    },
+    {
+     "uri": "ewhc/ch/2026/1437",
+     "name": "Edith Louis v Topaz Finance Ltd & Ors",
+     "date": "2026-06-19",
+     "score": 0.95,
+     "areas": [
+      "defamation",
+      "procedure"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_34__quote_1",
+       "kind": "quoted_clause",
+       "quote": "that, further, a judge should not forget that a litigant in person was not equipped, as a professional advocate was, to withstand judicial pressure and, undaunted, continue within reason to put his case"
+      },
+      {
+       "elementId": "para_69",
+       "kind": "paragraph",
+       "quote": "It is true that in many of the exchanges during the trial between Judge Raeside and Ms Louis, the Judge was abrupt in cutting her off. Overall I do not think that she had the treatment that she was entitled to expect in accordance with the ETBB."
+      },
+      {
+       "elementId": "para_69",
+       "kind": "paragraph",
+       "quote": "The transcript shows many interventions that come over as being abrupt and as providing assertions of authority, rather than a kindly explanation of the rules. I am sure that this would have been discouraging for Ms Louis, but I do not consider that there is any evidence that this prevented her from making her best case in closing."
+      },
+      {
+       "elementId": "para_87",
+       "kind": "paragraph",
+       "quote": "I should add however that I do not consider that Judge Raeside met the expectations of a trial judge in dealing with a litigant in person, as explained in the ETBB."
+      },
+      {
+       "elementId": "para_68",
+       "kind": "paragraph",
+       "quote": "There is no evidence for this."
+      },
+      {
+       "elementId": "para_67",
+       "kind": "paragraph",
+       "quote": "that was inherent in the inequality of arms involved where there is a litigant in person on one side and an experienced barrister on the other"
+      },
+      {
+       "elementId": "para_36__sub_3",
+       "kind": "paragraph",
+       "quote": "the categories of what constitutes serious irregularity of what constitutes injustice are not closed, but to date the matters accepted as grounds for granting an appeal have either involved a complete and unjustified denial of the ability of a litigant to make his or her case"
+      },
+      {
+       "elementId": "para_33",
+       "kind": "paragraph",
+       "quote": "the judge’s conduct of the hearing, in particular his interventions during oral evidence, had rendered the trial unfair."
+      }
+     ]
+    },
+    {
+     "uri": "ewhc/ch/2021/893",
+     "name": "Rea v Rea & Ors",
+     "date": "2021-04-14",
+     "score": 0.93,
+     "areas": [
+      "defamation",
+      "procedure"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_52__quote_1",
+       "kind": "quoted_clause",
+       "quote": "the judge not only seriously transgressed the core principle that a judge remains neutral during the evidence, but he also acted in a manner which was, at times, manifestly unfair and hostile to the claimant"
+      },
+      {
+       "elementId": "para_53__quote_1",
+       "kind": "quoted_clause",
+       "quote": "The core principle, that under the adversarial system the judge remains aloof from the fray and neutral during the elicitation of the evidence, applies no less to civil litigation than to criminal trials."
+      },
+      {
+       "elementId": "para_49",
+       "kind": "paragraph",
+       "quote": "a trial which has been conducted unfairly cannot be salvaged by an apparently careful reserved judgment, not matter how balanced and impressive it may appear"
+      },
+      {
+       "elementId": "para_48__sub_1",
+       "kind": "paragraph",
+       "quote": "Thus, it was not bias for the Judge in Serafin v. Malkiewicz to have “evinced prejudice” against Mr Serafin"
+      },
+      {
+       "elementId": "para_62",
+       "kind": "paragraph",
+       "quote": "not every error, be it the use of intemperate language or expression of hostility or something else, will result in an overall finding of unfairness"
+      },
+      {
+       "elementId": "para_55",
+       "kind": "paragraph",
+       "quote": "“Not interrupting, engaging in dialogue, indicating a preliminary view or cutting short on argument in the same way that might be done with a qualified lawyer.”"
+      },
+      {
+       "elementId": "para_60",
+       "kind": "paragraph",
+       "quote": "the challenge is that overall the conduct of the trial was unfair, and so what is required – in addition to the individual points – is an overall qualitative assessment of the trial process"
+      },
+      {
+       "elementId": "para_91",
+       "kind": "paragraph",
+       "quote": "The Deputy Master’s first intervention was at Transcript p. 95, to say, as regards Dr Qaiyum’s admitted error, “I do not know really where this is going … What you need to be asking the doctor, is whether he was satisfied that Anna Rea has [sic] capacity.”"
+      }
+     ]
+    }
+   ],
+   "rejected": [
+    {
+     "uri": "ukpc/2009/43",
+     "name": "Hearing on the Report of the Chief Justice of Gibraltar (Gibraltar)",
+     "score": 0.25,
+     "reason": "A judicial misconduct appeal concerning the Gibraltar Chief Justice's association with his wife's libel claim and perceived bias, not the fairness of a libel trial affected by a judge's interventions."
+    },
+    {
+     "uri": "ewca/civ/2025/1321",
+     "name": "Simon Blake & Ors v Laurence Fox",
+     "score": 0.2,
+     "reason": "An appeal against a £90,000 libel damages award where the Court of Appeal criticised the trial judge's reasoning on serious harm and quantum, but none of the passages concern alleged hostile or unfair judicial interventions directed at a litigant in person, so it does not answer the question."
+    },
+    {
+     "uri": "eat/2025/143",
+     "name": "Evans v Prospect & Ors",
+     "score": 0.12,
+     "reason": "An appeal against a Certification Officer's strike-out and refusal to accept union complaints, concerned with apparent/actual/automatic bias and Article 6, not with a trial judge's alleged hostile interventions in a libel trial."
+    },
+    {
+     "uri": "ewca/civ/2026/962",
+     "name": "Meerna Ali Ghuloom Faraj v Sohail Sultan Ahmad & Anor",
+     "score": 0.2,
+     "reason": "This is an appeal in contested financial remedy and third-party proceedings (with a related commercial claim against a bank) where alleged judicial over-involvement required a complete retrial; the libel unfairness discussion is only a citation to Serafin v Malkiewicz, not the subject of this judgment."
+    },
+    {
+     "uri": "ewhc/qb/2013/476",
+     "name": "Norbrook Laboratories Ltd & Anor v Carr",
+     "score": 0.2,
+     "reason": "A libel/misconduct action concerning defamatory notes circulated about Lord Ballyedmond; the passages concern the underlying defamatory publications, earlier libel settlements and CPR 44.3 misconduct, not any challenge to the trial judge's fairness or alleged hostile interventions during the trial."
+    },
+    {
+     "uri": "ewhc/kb/2022/3030",
+     "name": "JOHN WARE v PADDY FRENCH",
+     "score": 0.15,
+     "reason": "Ware v French is a libel damages decision dealing with the defendant's conduct of the litigation and his withdrawal of the truth defence as a basis for aggravated damages, not with any complaint that the trial judge unfairly interfered with or was hostile towards a litigant in person."
+    }
+   ],
+   "dates": null,
+   "dateSource": "none",
+   "targetAreas": {
+    "uksc/2020/23": [
+     "defamation",
+     "procedure"
+    ]
+   },
+   "stats": {
+    "ms": 40310,
+    "firstResultMs": 26357,
+    "tnaRequests": 14,
+    "casesFetched": 3,
+    "casesFromCache": 7,
+    "inputTokens": 38199,
+    "outputTokens": 6154,
+    "webEnrichment": "used",
+    "contextChars": 112064,
+    "paragraphsEmbedded": 127
+   },
+   "judge": {}
+  },
+  {
+   "id": "dates-since-2020-workers",
+   "kind": "positive",
+   "query": "decisions since 2020 on whether app-based drivers count as workers",
+   "candidates": [
+    "ewhc/kb/2023/1975",
+    "uksc/2021/5",
+    "eat/2022/6",
+    "eat/2023/2",
+    "ewhc/admin/2020/3050",
+    "eat/2025/97",
+    "ewca/civ/2022/229",
+    "uksc/2023/43",
+    "eat/2025/94",
+    "eat/2024/202"
+   ],
+   "results": [
+    {
+     "uri": "uksc/2021/5",
+     "name": "Uber BV and others v Aslam and others",
+     "date": "2021-02-19",
+     "score": 1,
+     "areas": [
+      "employment"
+     ],
+     "highlights": [
+      {
+       "elementId": "p_3",
+       "kind": "paragraph",
+       "quote": "The central question on this appeal is whether an employment tribunal was entitled to find that drivers whose work is arranged through Uber’s smartphone application"
+      },
+      {
+       "elementId": "p_4",
+       "kind": "paragraph",
+       "quote": "I would affirm the conclusion of the Employment Appeal Tribunal and the majority of the Court of Appeal that the employment tribunal was entitled to decide both questions in the claimants’ favour."
+      },
+      {
+       "elementId": "p_154",
+       "kind": "paragraph",
+       "quote": "The question, however, is not whether the system of control operated by Uber is in its commercial interests, but whether it places drivers in a position of subordination to Uber."
+      },
+      {
+       "elementId": "h_133",
+       "kind": "paragraph",
+       "quote": "it is for the courts and not the parties (still less someone who is not a party) to determine the legal effect of a contract"
+      },
+      {
+       "elementId": "p_207",
+       "kind": "paragraph",
+       "quote": "periods during which its three conditions were met constituted “working time” for the purpose of the Working Time Regulations 1998"
+      }
+     ]
+    },
+    {
+     "uri": "eat/2022/6",
+     "name": "Christopher Johnson v Transopco UK Ltd",
+     "date": "2022-01-18",
+     "score": 0.92,
+     "areas": [
+      "employment",
+      "contract"
+     ],
+     "highlights": [
+      {
+       "elementId": "lvl_1",
+       "kind": "paragraph",
+       "quote": "The claimant brought complaints which depended on his having been a worker of the respondent, as defined in section 230(3) Employment Rights Act 1996 and other relevant legislation."
+      },
+      {
+       "elementId": "lvl_1",
+       "kind": "paragraph",
+       "quote": "However, the claimant was not a worker of the respondent because the respondent was a client or customer of his taxi-driving business."
+      },
+      {
+       "elementId": "para_27__quote_1",
+       "kind": "quoted_clause",
+       "quote": "The first kind carries out a profession or a business undertaking on their own account and enters into contracts with clients or customers to provide work or services for them. The second kind provides their services as part of a profession or business undertaking carried on by someone else. Only the second is a limb (b) worker."
+      },
+      {
+       "elementId": "para_26",
+       "kind": "paragraph",
+       "quote": "The respondent allowed passengers to rate drivers and dealt with complaints. This did not fit with the model of it being merely the claimant’s agent."
+      },
+      {
+       "elementId": "para_43",
+       "kind": "paragraph",
+       "quote": "The cycle courier in Addison Lee Limited v Gascoigne [2018] ICR 1826 and the private hire drivers in Addison Lee Limited v Lange [2019] ICR 637, both cases involving the use of an App, were in both cases workers."
+      },
+      {
+       "elementId": "para_89__quote_1",
+       "kind": "quoted_clause",
+       "quote": "The company operating the Uber app in the UK (“Uber”) has had its own issues over the status of drivers using its app, culminating in litigation at ET, EAT and the Court of Appeal - Uber BV v Aslam [2019] ICR 845"
+      },
+      {
+       "elementId": "para_54",
+       "kind": "paragraph",
+       "quote": "depending on what proportion of their overall work such jobs accounted for, by reference to numbers of jobs or remuneration"
+      }
+     ]
+    },
+    {
+     "uri": "uksc/2023/43",
+     "name": "Independent Workers Union of Great Britain v Central Arbitration Committee and another",
+     "date": "2023-11-21",
+     "score": 0.85,
+     "areas": [
+      "employment",
+      "human_rights"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_4",
+       "kind": "paragraph",
+       "quote": "One of those conditions is that the people in respect of whom the union wishes to be recognised are “workers” within the meaning of section 296 TULRCA, set out below."
+      },
+      {
+       "elementId": "para_54",
+       "kind": "paragraph",
+       "quote": "In Uber BV v Aslam [2021] UKSC 5, [2021] ICR 657 (“Uber”) the Supreme Court provided further explanation of Autoclenz."
+      },
+      {
+       "elementId": "para_59__quote_1",
+       "kind": "quoted_clause",
+       "quote": "the determination of the existence of such a relationship should be guided primarily by the facts relating to the performance of work and the remuneration of the worker, notwithstanding how the relationship is characterized in any contrary arrangement, contractual or otherwise"
+      },
+      {
+       "elementId": "para_74",
+       "kind": "paragraph",
+       "quote": "Our conclusion that the Riders are not in an employment relationship for the purpose of the trade union rights conferred by article 11 is sufficient to dispose of the appeal in Deliveroo’s favour."
+      }
+     ]
+    },
+    {
+     "uri": "eat/2024/202",
+     "name": "P Patel v DPD Group UK Limited",
+     "date": "2024-03-05",
+     "score": 0.85,
+     "areas": [
+      "employment"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_37",
+       "kind": "paragraph",
+       "quote": "The question of whether or not the actual individual is obliged to do the work and to perform the work personally remains pivotal, in my judgment, notwithstanding the Uber decision."
+      },
+      {
+       "elementId": "para_38",
+       "kind": "paragraph",
+       "quote": "It does not follow, however, that a court must ignore the written documents completely. The question the court must ask always is whether those documents reflect reality"
+      },
+      {
+       "elementId": "para_30",
+       "kind": "paragraph",
+       "quote": "at all three stages of the decision, (before the CAC, then before the CA and then before the Supreme Court) it was held that a genuine right of substitution was fatal"
+      },
+      {
+       "elementId": "para_27",
+       "kind": "paragraph",
+       "quote": "Importantly, it was common ground that there was no contract in place between the Uber company itself and the drivers driving their vehicles on the road."
+      },
+      {
+       "elementId": "para_28",
+       "kind": "paragraph",
+       "quote": "the initial focus should be upnon the contract. She stated that that should be the starting point rather than an initial analysis of questions of, for example, vulnerability, subordination and dependency"
+      },
+      {
+       "elementId": "para_36__sub_1",
+       "kind": "paragraph",
+       "quote": "where, as here, a person who works for another is not required to perform his services personally, then as a matter of law the relationship between the worker and the person for whom he works is not that of employee and employer"
+      },
+      {
+       "elementId": "para_16__quote_1",
+       "kind": "quoted_clause",
+       "quote": "the task for the tribunals and the courts was not, unless the legislation required it, to identify whether, under the terms of their contracts, Autoclenz had agreed that the claimants should be paid"
+      },
+      {
+       "elementId": "para_10",
+       "kind": "paragraph",
+       "quote": "the two drivers, Mr Sojsavljevic and Mr Turner, were neither workers nor employees. The drivers’ appeal against that decision was heard in the Employment Appeal Tribunal (EAT)"
+      }
+     ]
+    },
+    {
+     "uri": "eat/2025/94",
+     "name": "BCA Logistics Ltd v Brian Parker & Ors",
+     "date": "2025-07-04",
+     "score": 0.72,
+     "areas": [
+      "employment"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_6",
+       "kind": "paragraph",
+       "quote": "It follows that, if they have an unfettered contractual right to provide a substitute to perform their services, then, whatever other indications of “worker” status there may be, they cannot be a “worker”."
+      },
+      {
+       "elementId": "lvl_1",
+       "kind": "paragraph",
+       "quote": "it was similarly not in dispute that a right to substitution contained in a written contract would carry no weight if it disguised the reality of the situation"
+      },
+      {
+       "elementId": "lvl_1",
+       "kind": "paragraph",
+       "quote": "the ET can take into account evidence of whether and how far any drivers had, in practice, enquired about substitution, how the Appellant had responded to any such enquiries"
+      },
+      {
+       "elementId": "para_52__quote_1",
+       "kind": "quoted_clause",
+       "quote": "as a self-employed driver only you are authorised to use BCA vehicles and under no circumstances should your trade plates and equipment be used by any other person"
+      },
+      {
+       "elementId": "para_22",
+       "kind": "paragraph",
+       "quote": "the terms of the contracts between the drivers and BCAL, and the way in which their functions were performed in practice, pointed towards them being “workers”"
+      }
+     ]
+    }
+   ],
+   "rejected": [
+    {
+     "uri": "eat/2023/2",
+     "name": "Dr Mark Ter-Berg v Simply Smile Manor House Ltd & Ors",
+     "score": 0.4,
+     "reason": "A dentist's appeal on worker/employee status under s.230 ERA 1996 which, although not an app-based driver case, usefully sets out Lord Leggatt's post-Uber reasoning that statutory worker status is not determined by the terms of the written contract."
+    },
+    {
+     "uri": "ewhc/admin/2020/3050",
+     "name": "The Independent Workers' Union of Great Britain, R (on the application of) v The Secretary of State for Work and Pensions & Ors",
+     "score": 0.5,
+     "reason": "A 2020 challenge by the IWUB to the UK's transposition of the Framework and PPE Directives, which required extending health and safety protection beyond employees to the autonomous EU law concept of “worker”, with gig-economy taxi and private hire drivers among those affected."
+    },
+    {
+     "uri": "eat/2025/97",
+     "name": "Syed Asim Raza Gillani & Ors v Veezu Limited & Ors",
+     "score": 0.62,
+     "reason": "A claimants’ appeal from case management directions in the 509-driver Veezu litigation, which frames the worker/agency-worker status questions for app-booked private hire drivers ahead of a 2026 preliminary issues hearing, without itself deciding status."
+    },
+    {
+     "uri": "ewhc/kb/2023/1975",
+     "name": "Uber Britannia Limited v Sefton Metropolitan Borough Council & Ors",
+     "score": 0.3,
+     "reason": "A licensing appeal under the 1998 Act on whether private hire bookings accepted through an app were attributable to Uber Britannia as PHV operator; it only recounts Aslam and its worker ruling as background context, without analysing or deciding drivers' worker status."
+    },
+    {
+     "uri": "ewca/civ/2022/229",
+     "name": "Nursing and Midwifery Council v Somerville",
+     "score": 0.55,
+     "reason": "A Court of Appeal appeal on nurses' worker status which, while not itself about app-based drivers, authoritatively restates and applies the Supreme Court's Uber reasoning on whether app-based drivers are workers."
+    }
+   ],
+   "dates": {
+    "from": "2020-01-01",
+    "to": "2026-10-01"
+   },
+   "dateSource": "query",
+   "targetAreas": {
+    "uksc/2021/5": [
+     "employment"
+    ]
+   },
+   "stats": {
+    "ms": 47983,
+    "firstResultMs": 20066,
+    "tnaRequests": 8,
+    "casesFetched": 0,
+    "casesFromCache": 10,
+    "inputTokens": 35334,
+    "outputTokens": 9036,
+    "webEnrichment": "used",
+    "contextChars": 106966,
+    "paragraphsEmbedded": 78
+   },
+   "judge": {}
+  },
+  {
+   "id": "neg-escaped-penguin",
+   "kind": "negative",
+   "query": "zoo liable after an escaped penguin damaged a neighbour's car",
+   "candidates": [
+    "ewhc/ch/2022/3379",
+    "ewca/civ/2017/1846",
+    "ewca/civ/2008/173",
+    "ewca/civ/2008/1185",
+    "ewca/civ/2021/1848",
+    "ewhc/kb/2022/2452",
+    "ewca/civ/2012/239",
+    "ewhc/kb/2025/435",
+    "ukftt/tc/2026/903",
+    "ewhc/kb/2022/2648"
+   ],
+   "results": [
+    {
+     "uri": "ewca/civ/2008/1185",
+     "name": "Freeman v Higher Park Farm",
+     "date": "2008-10-30",
+     "score": 0.75,
+     "areas": [
+      "tort",
+      "property"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_20__quote_1",
+       "kind": "quoted_clause",
+       "quote": "Where damage is caused by an animal which does not belong to a dangerous species, a keeper of the animal is liable for the damage, except as otherwise provided by this Act, if"
+      },
+      {
+       "elementId": "para_22",
+       "kind": "legislation_ref",
+       "quote": "the statutory process requires (1) identification of the kind of damage actually caused by the actual animal involved; (2) consideration of whether that kind of damage was likely to be caused by that particular animal, unless restrained"
+      },
+      {
+       "elementId": "para_19",
+       "kind": "legislation_ref",
+       "quote": "A dangerous species of animal is one which meets the two requirements in s.6(2)."
+      },
+      {
+       "elementId": "para_23",
+       "kind": "paragraph",
+       "quote": "Strict liability for an animal belonging to a domesticated species will only arise if (1) the damage is caused by a dangerous characteristic"
+      }
+     ]
+    },
+    {
+     "uri": "ewca/civ/2021/1848",
+     "name": "Lisa Jane Ford v Jonathan Tippet Seymour-Williams",
+     "date": "2021-12-08",
+     "score": 0.72,
+     "areas": [
+      "tort",
+      "property"
+     ],
+     "highlights": [
+      {
+       "elementId": "p_3",
+       "kind": "paragraph",
+       "quote": "This appeal raises questions as to the scope of the strict liability obligation that arises under s. 2 of the Animals Act 1971"
+      },
+      {
+       "elementId": "p_64",
+       "kind": "legislation_ref",
+       "quote": "Where damage is caused by an animal which does not belong to a dangerous species, a keeper of the animal is liable for the damage, except as otherwise provided by this Act, if-"
+      },
+      {
+       "elementId": "p_65",
+       "kind": "legislation_ref",
+       "quote": "The damage is of a kind which the animal, unless restrained, was likely to cause or which, if caused by the animal, was likely to be severe; and"
+      },
+      {
+       "elementId": "p_9",
+       "kind": "legislation_ref",
+       "quote": "Those characteristics were known to the keeper or were at any time known to a person who at that time had charge of the animal as that keeper’s servant"
+      },
+      {
+       "elementId": "p_70",
+       "kind": "paragraph",
+       "quote": "The rationale under s. 2(2) was to impose strict liability on the keeper of an animal not of a dangerous species if damage resulted from dangerous characteristics known to the keeper"
+      }
+     ]
+    },
+    {
+     "uri": "ewhc/kb/2025/435",
+     "name": "Hazel Boyd v Debbie Hughes",
+     "date": "2025-02-28",
+     "score": 0.72,
+     "areas": [
+      "tort",
+      "property"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_94__quote_1",
+       "kind": "legislation_ref",
+       "quote": "Where damage is caused by an animal which does not belong to a dangerous species, a keeper of the animal is liable for the damage, except as otherwise provided by this Act, if—"
+      },
+      {
+       "elementId": "para_173__quote_1",
+       "kind": "quoted_clause",
+       "quote": "Section 2(2) is not intended to render the keepers of domesticated animals routinely liable for damage which results from characteristics common to the species."
+      },
+      {
+       "elementId": "lvl_12",
+       "kind": "paragraph",
+       "quote": "It is also the Claimant’s case that the Defendant is strictly liable to the Claimant for the accident and her consequential injuries, by virtue of section 2(2) of the Animals Act 1971"
+      },
+      {
+       "elementId": "para_177__quote_1",
+       "kind": "quoted_clause",
+       "quote": "A horse is liable to cause damage of the kind caused by Chance if given a severe fright."
+      },
+      {
+       "elementId": "para_95",
+       "kind": "paragraph",
+       "quote": "Over the last fifty years section 2 has been repeatedly criticised, on occasions in a trenchant manner, by Judges and academics."
+      }
+     ]
+    },
+    {
+     "uri": "ewhc/kb/2022/2452",
+     "name": "Sofia Schoultz v Vicki Ball & Ors.",
+     "date": "2022-10-03",
+     "score": 0.72,
+     "areas": [
+      "tort"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_11__sub_6",
+       "kind": "quoted_clause",
+       "quote": "Where any damage is caused by an animal which belongs to a dangerous species, any person who is a keeper of the animal is liable for the damage, except as otherwise provided by this Act."
+      },
+      {
+       "elementId": "para_11__sub_7",
+       "kind": "quoted_clause",
+       "quote": "Where damage is caused by an animal which does not belong to a dangerous species, a keeper of the animal is liable for the damage, except as otherwise provided by this Act, if—"
+      },
+      {
+       "elementId": "para_10",
+       "kind": "paragraph",
+       "quote": "The leading authority on section 2 of the Animals At 1971 remains Mirvahedy v Henley [2003] 2 A.C. 491"
+      },
+      {
+       "elementId": "para_23",
+       "kind": "paragraph",
+       "quote": "The Court of Appeal in Curtis v Betts [1990] 1 WLR 459 held that each part of sub-section 2(2) should be examined in turn."
+      },
+      {
+       "elementId": "para_23__quote_1",
+       "kind": "quoted_clause",
+       "quote": "The keeper of a domestic animal can only be liable under the first limb of s. 2(a) if it has caused damage in circumstances where, unless tethered, it was likely to cause that damage."
+      },
+      {
+       "elementId": "para_24",
+       "kind": "legislation_ref",
+       "quote": "knowledge that the species, as opposed to the particular animal, possess the relevant characteristic is sufficient"
+      },
+      {
+       "elementId": "para_137",
+       "kind": "paragraph",
+       "quote": "Ms Vicki Ball as owner of Lowri is not liable under s2(2) Animals Act 1971 for the Claimant’s injuries sustained in that collision, and the claim against her will be dismissed."
+      }
+     ]
+    },
+    {
+     "uri": "ewca/civ/2017/1846",
+     "name": "Williams v Hawkes",
+     "date": "2017-11-21",
+     "score": 0.7,
+     "areas": [
+      "tort",
+      "property"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_26__quote_1",
+       "kind": "legislation_ref",
+       "quote": "Where any damage is caused by an animal which belongs to a dangerous species, any person who is a keeper of the animal is liable for the damage, except as otherwise provided by this Act."
+      },
+      {
+       "elementId": "para_30__quote_2",
+       "kind": "paragraph",
+       "quote": "Take a large and heavy domestic animal such as a mature cow. There is a real risk that if a cow happens to stumble and fall onto someone, any damage suffered will be severe."
+      },
+      {
+       "elementId": "para_38",
+       "kind": "paragraph",
+       "quote": "could of itself in this particular case necessarily avoid strict liability under the 1971 Act"
+      },
+      {
+       "elementId": "para_38",
+       "kind": "paragraph",
+       "quote": "if the steer, acting under the influence of the averse stimuli, had careered down the road, with cars avoiding it, but then been struck by a car"
+      },
+      {
+       "elementId": "para_37",
+       "kind": "paragraph",
+       "quote": "the likelihood of damage was due to characteristics not normally so found except at particular times or in particular circumstances"
+      },
+      {
+       "elementId": "para_27",
+       "kind": "legislation_ref",
+       "quote": "Section 8 provides for a duty to take reasonable care to see that damage is not caused by animals straying onto a highway."
+      },
+      {
+       "elementId": "para_30__quote_3",
+       "kind": "paragraph",
+       "quote": "they could decide whether to run the unavoidable risks involved in keeping horses; they could decide whether or not to insure against those risks"
+      }
+     ]
+    }
+   ],
+   "rejected": [
+    {
+     "uri": "ewhc/ch/2022/3379",
+     "name": "Cumbria Zoo Company Limited v The Zoo Investment Company Limited",
+     "score": 0.15,
+     "reason": "A contract construction dispute over who owned zoo assets and animals after a zoo business takeover; it does not concern liability for an escaped animal damaging property."
+    },
+    {
+     "uri": "ewca/civ/2008/173",
+     "name": "McKenny & Anor v Foster (t/a Foster Partnership)",
+     "score": 0.6,
+     "reason": "An escaped cow road accident case applying strict liability under sections 2 and 8 of the Animals Act 1971, noting that “damage” under section 11 covers only death of or injury to a person, so property damage falls outside that regime."
+    },
+    {
+     "uri": "ewca/civ/2012/239",
+     "name": "Woodland v Essex County Council",
+     "score": 0.28,
+     "reason": "Woodland v Essex CC concerns whether a school authority owes a non-delegable duty of care to pupils for escapes from its premises; its zoo references are only analogies about school trips and do not address liability of a zoo for an animal escaping and damaging a third party's car."
+    },
+    {
+     "uri": "ukftt/tc/2026/903",
+     "name": "Lucky Voice Group Limited v The Commissioners for HMRC",
+     "score": 0.15,
+     "reason": "A VAT First-tier Tribunal decision on whether a karaoke venue's admission and private-room bookings fall within the cultural services exemption, which only mentions zoos in citing Twycross Zoo on separately charged animal encounters, with nothing about escaped animals causing property damage."
+    },
+    {
+     "uri": "ewhc/kb/2022/2648",
+     "name": "Brian Muyepa v Ministry of Defence",
+     "score": 0.05,
+     "reason": "This is a Ministry of Defence personal injury case concerning alleged fundamental dishonesty in an NFCI claim, with no connection to zoos, escaped animals or accidental property damage."
+    }
+   ],
+   "dates": null,
+   "dateSource": "none",
+   "targetAreas": {},
+   "stats": {
+    "ms": 54173,
+    "firstResultMs": 38956,
+    "tnaRequests": 14,
+    "casesFetched": 4,
+    "casesFromCache": 6,
+    "inputTokens": 35068,
+    "outputTokens": 6866,
+    "webEnrichment": "used",
+    "contextChars": 104909,
+    "paragraphsEmbedded": 200
+   },
+   "judge": {}
+  }
+ ]
+}

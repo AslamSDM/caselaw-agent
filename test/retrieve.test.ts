@@ -53,3 +53,11 @@ describe("selectParagraphs", () => {
     expect(text).not.toContain("q".repeat(RENDER_CAPS.childChars + 1));
   });
 });
+
+describe("interleave", () => {
+  it("alternates two rankings, dedupes and caps", async () => {
+    const { interleave } = await import("@/lib/search/retrieve");
+    expect(interleave(["a", "b", "c"], ["b", "d"], 10)).toEqual(["a", "b", "d", "c"]);
+    expect(interleave(["a", "b", "c"], ["x", "y"], 3)).toEqual(["a", "x", "b"]);
+  });
+});

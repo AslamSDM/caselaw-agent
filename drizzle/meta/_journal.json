@@ -43,6 +43,13 @@
       "when": 1790839219219,
       "tag": "0005_paragraph_embeddings",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1790891572544,
+      "tag": "0006_powerful_brood",
+      "breakpoints": true
     }
   ]
 }

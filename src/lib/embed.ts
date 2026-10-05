@@ -50,6 +50,12 @@ export async function embedQuery(text: string, signal?: AbortSignal): Promise<nu
   return v;
 }
 
+/** Several query phrasings in one Ollama call (multi-query vector search). */
+export async function embedQueries(texts: string[], signal?: AbortSignal): Promise<number[][]> {
+  if (!texts.length) return [];
+  return ollamaEmbed(texts.map((t) => prefix("query", t)), signal);
+}
+
 export const toVectorLiteral = (v: number[]) => `[${v.join(",")}]`;
 
 /** Clear vectors made by a different model, so they are re-embedded rather than compared. */
@@ -69,6 +75,8 @@ async function resetIfModelChanged(caseUri: string) {
  * the model). Omit `elementIds` to embed the whole case. Returns how many were embedded.
  */
 export async function ensureEmbeddings(caseUri: string, elementIds?: string[], signal?: AbortSignal): Promise<number> {
+  // nothing requested (caller knows the case is complete for this model): no DB round-trips
+  if (elementIds && !elementIds.length) return 0;
   await resetIfModelChanged(caseUri);
   const missing = await db
     .select({ elementId: schema.elements.elementId, text: schema.elements.text })
@@ -82,6 +90,8 @@ export async function ensureEmbeddings(caseUri: string, elementIds?: string[], s
         elementIds ? inArray(schema.elements.elementId, elementIds.length ? elementIds : [""]) : undefined,
       ),
     );
+  // a partial request that found nothing missing changes nothing; skip the bookkeeping
+  if (!missing.length && elementIds) return 0;
   if (missing.length) {
     const vectors = await ollamaEmbed(missing.map((m) => prefix("document", m.text.slice(0, MAX_CHARS))), signal);
     // one UPDATE per batch via a VALUES list (drizzle expands JS arrays into separate params)

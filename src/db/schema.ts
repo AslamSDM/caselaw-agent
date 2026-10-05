@@ -173,6 +173,21 @@ export const highlights = pgTable(
   (t) => [index("highlights_search_case_idx").on(t.searchId, t.caseUri)],
 );
 
+/** Follow-up chat conversations (UI messages incl. tool calls), scoped to a search and/or a judgment. */
+export const chats = pgTable(
+  "chats",
+  {
+    id: text("id").primaryKey(),
+    searchId: integer("search_id").references(() => searches.id, { onDelete: "set null" }),
+    caseUri: text("case_uri"),
+    title: text("title").notNull(),
+    messages: jsonb("messages").notNull(),
+    createdAt: timestamp("created_at", { withTimezone: true }).notNull().defaultNow(),
+    updatedAt: timestamp("updated_at", { withTimezone: true }).notNull().defaultNow(),
+  },
+  (t) => [index("chats_search_idx").on(t.searchId), index("chats_case_idx").on(t.caseUri), index("chats_updated_idx").on(t.updatedAt)],
+);
+
 /** Shared TNA request counter, 10-second buckets. */
 export const rateLimit = pgTable("rate_limit", {
   bucketStart: timestamp("bucket_start", { withTimezone: true }).primaryKey(),

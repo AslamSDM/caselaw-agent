@@ -46,3 +46,16 @@ describe("ncn", () => {
     expect(extractNcns("see Smith v Jones [2019] EWHC 1234 (QB) and [2020] UKSC 5.")).toEqual(["[2019] EWHC 1234 (QB)", "[2020] UKSC 5"]);
   });
 });
+
+describe("fuseCandidates list weight", () => {
+  it("scales a list's contribution by its weight (partial local index)", () => {
+    const e = (uri: string) => ({ uri, name: uri, ncn: null, court: null, date: null });
+    const lists: CandidateList[] = [
+      { source: "keyword", label: "kw", estimatedTotal: 10, entries: [e("a")] },
+      { source: "local-vector", label: "local: semantic", estimatedTotal: 25, weight: 1, entries: [e("b")] },
+    ];
+    expect(fuseCandidates(lists)[0].uri).toBe("b");
+    lists[1].weight = 0.35;
+    expect(fuseCandidates(lists)[0].uri).toBe("a");
+  });
+});

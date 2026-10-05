@@ -69,7 +69,7 @@ export async function saveParsedCase(p: ParsedCase, requestedUri: string, classi
       .returning();
     await tx.delete(schema.elements).where(eq(schema.elements.caseUri, uri));
     await tx.delete(schema.citations).where(eq(schema.citations.fromUri, uri));
-    await tx.delete(schema.chunks).where(eq(schema.chunks.caseUri, uri)); // re-embedded by scripts/embed.ts
+    await tx.delete(schema.chunks).where(eq(schema.chunks.caseUri, uri)); // legacy bge-small index (local-index branch); kept so that table stays consistent
     for (let i = 0; i < p.elements.length; i += 500) {
       await tx.insert(schema.elements).values(
         p.elements.slice(i, i + 500).map((e) => ({

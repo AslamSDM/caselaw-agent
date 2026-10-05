@@ -26,15 +26,47 @@ pnpm dev
 
 ⚠️ Bulk ingest + embeddings need TNA's computational-analysis licence (plan.md §1).
 
+Embeddings come from a local [Ollama](https://ollama.com) server (`ollama pull nomic-embed-text`,
+768-d, no API cost). One vector per top-level paragraph, stored on `elements.embedding`.
+
 ```bash
 pnpm ingest [--from 2025-10-01 --to 2026-10-01] [--exclude-court immigration]  # TNA → cases/elements
-pnpm embed [--watch]                 # chunk + embed new cases locally (bge-small, no API cost)
+pnpm embed:backfill [--limit 500] [--court UKSC] [--since 2020-01-01]           # embed whole cases
 pnpm local-search "damp and mould"   # query the local index directly (no LLM, no TNA)
 ```
 
-Both scripts are resumable. Once any chunks exist, every search also queries the local index
-(pgvector semantic + Postgres full-text) and fuses those lists with the live TNA ones; paragraph
-retrieval inside each case blends semantic hits with keyword hits. `LOCAL_INDEX=off` disables it.
+Both scripts are resumable. Searches also embed on demand: each candidate case gets its best
+keyword paragraphs embedded (or the whole case when keywords barely match), cached for next time.
+Once any embeddings exist, every search also queries the local index (pgvector semantic over the
+question + top expansion variants, and Postgres full-text) and fuses those lists with the live TNA
+ones. The semantic list's fusion weight scales with index coverage, so a partly embedded cache
+does not crowd out TNA. `LOCAL_INDEX=off` disables local retrieval, `EMBED_ENABLED=false` disables
+embeddings entirely (keyword-only ranking).
+
+## Reranker, pre-screen, citations, chat
+
+- **Reranker**: each candidate's keyword + semantic paragraphs are re-scored by a local
+  cross-encoder (bge-reranker-base via transformers.js, ~280 MB downloaded on first use). Cases
+  with no paragraph above `RERANK_MIN` are rejected without LLM calls.
+- **Pre-screen** (`JUDGE_GATE_MODEL=typesafe/jev-1.13`): a decisions model on OpenRouter labels each
+  case on point / tangential / unrelated, several cases per request. Confident "not on point" skips
+  the strong judge. Skipped when the reranker is already sure (`RERANK_TRUST`).
+- **Citation expansion**: after the first round, judgments cited by at least `CITE_MIN` passing
+  results are read too (labelled "cited by N of the results"). Privy Council and House of Lords
+  judgments are not on Find Case Law and are skipped.
+- **Follow-up chat** (`/api/chat`, panel under results and on each judgment): an AI SDK tool loop with
+  `read_case`, `get_citations` and `search_cases`; answers quote paragraphs with links into the viewer.
+  In the browser every citation is matched to a paragraph the agent read (wrong anchors corrected by
+  ¶ number), every quote is checked word-for-word, hover previews the paragraph (`/api/paragraph`)
+  and click jumps to it and flashes it. Conversations are saved to the `chats` table after each
+  answer; History in the panel and `/chats` list them.
+- **Citation graph** (`/graph?case=<uri>` or `/graph?search=<id>`): Cytoscape view of what a judgment
+  cites, which stored judgments cite it and its statutes, or of a search's results and the
+  authorities they share. Counts only cover locally stored judgments.
+- **Find in judgment**: the bar above each judgment (press `/`) highlights every match with the CSS
+  Custom Highlight API, steps through them, and lists matching paragraphs.
+
+A fuller explanation with diagrams: https://claude.ai/artifact/4tfYtJub1kEdSofrCLkS11
 
 ## Production
 
@@ -56,7 +88,7 @@ src/lib/web/        Firecrawl client (same code path for self-hosted and cloud)
 src/lib/search/     expand → TNA searches (+ web hints, + local index) → fusion → retrieve (FTS + vectors)
                     → relevance (LLM) → verify quotes → cutoff; pipeline.ts streams events
 src/lib/cases/      cache-first case store
-src/lib/embed.ts    local embeddings (transformers.js) + paragraph chunking
+src/lib/embed.ts    Ollama paragraph embeddings (on demand + backfill)
 src/app/api/search  NDJSON event stream
 src/app/case/[...uri]  judgment viewer with highlights, jump list, citations
 src/app/cases       cached-case explorer + search history

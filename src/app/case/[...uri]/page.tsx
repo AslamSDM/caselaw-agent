@@ -7,6 +7,9 @@ import { tnaCaseUrl } from "@/lib/tna/client";
 import { courtInfo } from "@/lib/courts";
 import { areaLabel } from "@/lib/areas";
 import { Judgment } from "@/components/judgment";
+import { FollowUpChat } from "@/components/chat";
+import { HashFlash } from "@/components/hash-flash";
+import { JudgmentFind } from "@/components/judgment-find";
 import type { ExpandedQuery } from "@/lib/search/types";
 
 export default async function CasePage({ params, searchParams }: PageProps<"/case/[...uri]">) {
@@ -40,7 +43,8 @@ export default async function CasePage({ params, searchParams }: PageProps<"/cas
   const legislation = dedupe(cites.filter((c) => c.type === "legislation"), (c) => c.toLegislation ?? c.raw);
 
   return (
-    <div className="mx-auto grid max-w-6xl gap-8 px-4 py-8 lg:grid-cols-[minmax(0,1fr)_320px]">
+    <div className="mx-auto grid max-w-7xl gap-8 px-4 py-8 lg:grid-cols-[minmax(0,1fr)_400px] xl:grid-cols-[minmax(0,1fr)_460px]">
+      <HashFlash />
       <article className="min-w-0">
         <header className="mb-6 border-b border-border pb-4">
           {search[0] && (
@@ -68,16 +72,33 @@ export default async function CasePage({ params, searchParams }: PageProps<"/cas
           )}
         </header>
         {elements.length ? (
-          <Judgment elements={elements} highlights={hls} terms={terms} />
+          <>
+            <JudgmentFind containerId="judgment-text" />
+            <div id="judgment-text">
+              <Judgment elements={elements} highlights={hls} terms={terms} />
+            </div>
+          </>
         ) : (
           <p className="text-muted">No full text available for this document.</p>
         )}
       </article>
 
       <aside className="space-y-6 text-sm lg:sticky lg:top-16 lg:max-h-[calc(100vh-5rem)] lg:overflow-y-auto">
-        <a href={tnaCaseUrl(uri)} target="_blank" rel="noreferrer" className="block rounded border border-border px-3 py-2 text-center hover:border-accent">
-          Open on Find Case Law ↗
-        </a>
+        <div className="grid grid-cols-2 gap-2">
+          <a href={tnaCaseUrl(uri)} target="_blank" rel="noreferrer" className="rounded border border-border px-3 py-2 text-center hover:border-accent">
+            Find Case Law ↗
+          </a>
+          <Link href={`/graph?case=${encodeURIComponent(uri)}`} className="rounded border border-border px-3 py-2 text-center hover:border-accent">
+            Citation graph
+          </Link>
+        </div>
+
+        <FollowUpChat
+          variant="sidebar"
+          caseUri={uri}
+          searchId={Number.isFinite(searchId) ? searchId : null}
+          suggestions={["What did the court decide, and why?", "Which authorities does it rely on?", "Who cites this case?"]}
+        />
 
         {sortedHls.length > 0 && (
           <section>

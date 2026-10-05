@@ -20,6 +20,10 @@ export interface RecordedResult {
   score: number;
   areas: string[];
   highlights: RecordedHighlight[];
+  /** best cross-encoder paragraph score, when the reranker ran */
+  rerank?: number;
+  /** e.g. "cited by 3 of the results" for citation-expansion finds */
+  via?: string;
 }
 
 export interface JudgeVerdict {
@@ -36,13 +40,13 @@ export interface QueryRun {
   error?: string;
   candidates: string[];
   results: RecordedResult[];
-  rejected: { uri: string; name: string; score: number; reason: string }[];
+  rejected: { uri: string; name: string; score: number; reason: string; rerank?: number }[];
   /** date range the pipeline applied, and where it came from */
   dates: { from?: string; to?: string } | null;
   dateSource: string;
   /** areas stored for each target case after the run (targets may have been rejected) */
   targetAreas: Record<string, string[]>;
-  stats: { ms: number; firstResultMs: number | null; tnaRequests: number; inputTokens: number; outputTokens: number; webEnrichment: string } | null;
+  stats: { ms: number; firstResultMs: number | null; tnaRequests: number; inputTokens: number; outputTokens: number; webEnrichment: string; timings?: object } | null;
   judge: Record<string, JudgeVerdict>;
 }
 
@@ -204,6 +208,8 @@ export interface Summary {
   totalP50: number | null;
   totalP95: number | null;
   avgTnaRequests: number;
+  /** p50 ms per pipeline stage (per-case stages summed across workers) */
+  stageP50: Record<string, number | null>;
   avgInputTokens: number;
   avgOutputTokens: number;
   missStages: Record<MissStage, number>;
@@ -254,6 +260,11 @@ export function summarize(scores: QueryScore[], runs: QueryRun[]): Summary {
     avgTnaRequests: mean(stats.map((s) => s.tnaRequests)),
     avgInputTokens: mean(stats.map((s) => s.inputTokens)),
     avgOutputTokens: mean(stats.map((s) => s.outputTokens)),
+    stageP50: (() => {
+      const t = (s: (typeof stats)[number]) => (s.timings ?? {}) as Record<string, number>;
+      const keys = [...new Set(stats.flatMap((s) => Object.keys(t(s))))];
+      return Object.fromEntries(keys.map((k) => [k, percentile(stats.map((s) => t(s)[k] ?? 0), 50)]));
+    })(),
     missStages,
   };
 }

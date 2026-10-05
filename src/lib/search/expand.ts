@@ -1,5 +1,8 @@
+import { createHash } from "node:crypto";
 import { z } from "zod";
-import { generateStructured, model, reasoningEffort, type TokenUsage } from "../llm";
+import { and, eq, gt, sql } from "drizzle-orm";
+import { db, schema as tables } from "@/db";
+import { generateStructured, model, modelId, reasoningEffort, type TokenUsage } from "../llm";
 import type { ExpandedQuery } from "./types";
 import { areaLabel } from "../areas";
 import { normalizeRange } from "../dates";
@@ -38,11 +41,45 @@ How TNA search works: literal full-text AND matching over the judgment text. Eve
 - Only set filters the user explicitly asked for.
 - Dates: set a judgment date range only when the question asks for one ("since 2020", "in 2019", "last five years", "before March 2021", "recent" = last 5 years, "latest" = last 2 years). Resolve relative phrases against today's date. Do not infer dates from the subject matter (e.g. a statute's year or when events happened) — the user may want older or newer judgments about it. Keep date words out of the keyword variants.`;
 
+/**
+ * Cached for 24h in tna_search_cache under an "expand:" key. The key includes today's date
+ * (relative dates like "recent" resolve against it), the model and the area filter.
+ * EXPAND_CACHE=off disables it (e.g. to measure expansion variance in evals).
+ */
 export async function expandQuery(
   query: string,
   usage: TokenUsage,
   signal?: AbortSignal,
   areas: string[] = [],
+): Promise<ExpandedQuery & { cached?: boolean }> {
+  if (process.env.EXPAND_CACHE === "off") return expandUncached(query, usage, signal, areas);
+  const today = new Date().toISOString().slice(0, 10);
+  const norm = query.trim().toLowerCase().replace(/\s+/g, " ");
+  const key = "expand:" + createHash("sha256").update(JSON.stringify([modelId("fast"), today, norm, [...areas].sort()])).digest("hex");
+  try {
+    const [hit] = await db
+      .select()
+      .from(tables.tnaSearchCache)
+      .where(and(eq(tables.tnaSearchCache.key, key), gt(tables.tnaSearchCache.createdAt, sql`now() - interval '24 hours'`)))
+      .limit(1);
+    if (hit) return { ...(hit.response as ExpandedQuery), original: query, cached: true };
+  } catch (err) {
+    console.warn("[expand] cache read failed:", err instanceof Error ? err.message : err);
+  }
+  const out = await expandUncached(query, usage, signal, areas);
+  await db
+    .insert(tables.tnaSearchCache)
+    .values({ key, response: out })
+    .onConflictDoUpdate({ target: tables.tnaSearchCache.key, set: { response: out, createdAt: sql`now()` } })
+    .catch((err) => console.warn("[expand] cache write failed:", err instanceof Error ? err.message : err));
+  return out;
+}
+
+async function expandUncached(
+  query: string,
+  usage: TokenUsage,
+  signal: AbortSignal | undefined,
+  areas: string[],
 ): Promise<ExpandedQuery> {
   const areaHint = areas.length
     ? `\nThe user only wants cases in these areas of law: ${areas.map(areaLabel).join(", ")}. Use that field's vocabulary.`

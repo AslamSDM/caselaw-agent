@@ -3,9 +3,11 @@
  *   OPENROUTER_API_KEY → OpenRouter (any model id, e.g. stealth/space-bunny-alpha)
  *   ANTHROPIC_API_KEY  → Anthropic directly
  *   otherwise          → Vercel AI Gateway (AI_GATEWAY_API_KEY locally, OIDC on Vercel)
+ * A model id "ollama/<name>" always runs on local Ollama (e.g. LLM_FALLBACK_MODEL=ollama/gemma4:12b-mlx).
  * Fast tier: query expansion / web extraction. Strong tier: relevance pass.
  */
 import { createAnthropic } from "@ai-sdk/anthropic";
+import { createOpenAICompatible } from "@ai-sdk/openai-compatible";
 import { createOpenRouter } from "@openrouter/ai-sdk-provider";
 import { gateway, generateText, tool, type LanguageModel } from "ai";
 import type { z } from "zod";
@@ -27,8 +29,17 @@ export function provider(): Provider {
 
 let anthropic: ReturnType<typeof createAnthropic> | null = null;
 let openrouter: ReturnType<typeof createOpenRouter> | null = null;
+let ollama: ReturnType<typeof createOpenAICompatible> | null = null;
 
+/** "ollama/<model>" runs on the local Ollama server (OpenAI-compatible API), whatever the provider. */
 export function modelById(id: string): LanguageModel {
+  if (id.startsWith("ollama/")) {
+    ollama ??= createOpenAICompatible({
+      name: "ollama",
+      baseURL: `${process.env.OLLAMA_URL ?? "http://localhost:11434"}/v1`,
+    });
+    return ollama(id.slice("ollama/".length));
+  }
   switch (provider()) {
     case "openrouter":
       openrouter ??= createOpenRouter({

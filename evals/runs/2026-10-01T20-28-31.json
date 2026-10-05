@@ -1,0 +1,541 @@
+{
+ "meta": {
+  "startedAt": "2026-10-01T20:28:31.081Z",
+  "finishedAt": "2026-10-01T20:29:36.890Z",
+  "git": "bc796a1",
+  "dirty": true,
+  "models": {
+   "fast": "stealth/space-bunny-alpha",
+   "strong": "stealth/space-bunny-alpha",
+   "judge": "stealth/space-bunny-alpha (self)",
+   "reasoning": {
+    "fast": "default",
+    "strong": "low",
+    "judge": "default"
+   },
+   "provider": "openrouter"
+  },
+  "config": {
+   "cutoff": "0.65",
+   "gate": "typesafe/jev-1.13@0.75",
+   "maxCandidates": "10",
+   "perVariant": "25",
+   "web": "true"
+  },
+  "regradeOf": null,
+  "selection": {
+   "only": "secondary-victims,neg-escaped-penguin",
+   "tag": null
+  }
+ },
+ "summary": {
+  "queries": 2,
+  "positives": 1,
+  "negatives": 1,
+  "errors": 0,
+  "recallAt10": 1,
+  "recallAllAt10": 1,
+  "candidateRecall": 1,
+  "mrr": 1,
+  "ndcgAt10": 1,
+  "precision": 1,
+  "highlightPrecision": 0.7777777777777778,
+  "negativePassRate": 0,
+  "areaAccuracy": 1,
+  "dateInferenceAccuracy": 1,
+  "dateCompliance": null,
+  "firstResultP50": 13459,
+  "totalP50": 15723,
+  "totalP95": 20929,
+  "avgTnaRequests": 3,
+  "avgInputTokens": 6725.5,
+  "avgOutputTokens": 1799.5,
+  "stageP50": {
+   "expand": 0,
+   "search": 2686,
+   "web": 6827,
+   "fetch": 13,
+   "retrieve": 2459,
+   "gate": 18180,
+   "judge": 9676
+  },
+  "missStages": {
+   "not-retrieved": 0,
+   "rejected": 0,
+   "not-read": 0,
+   "error": 0
+  }
+ },
+ "gates": [
+  {
+   "label": "recall@10 ≥ 70%",
+   "value": 1,
+   "unit": "pct",
+   "pass": true
+  },
+  {
+   "label": "highlight precision ≥ 90%",
+   "value": 0.7777777777777778,
+   "unit": "pct",
+   "pass": false
+  },
+  {
+   "label": "negatives → no strong matches ≥ 80%",
+   "value": 0,
+   "unit": "pct",
+   "pass": false
+  },
+  {
+   "label": "all results inside the question's date range",
+   "value": null,
+   "unit": "pct",
+   "pass": false
+  },
+  {
+   "label": "date range inferred correctly ≥ 90%",
+   "value": 1,
+   "unit": "pct",
+   "pass": true
+  },
+  {
+   "label": "first result p50 < 8s",
+   "value": 13459,
+   "unit": "ms",
+   "pass": false
+  },
+  {
+   "label": "full results p50 < 20s",
+   "value": 15723,
+   "unit": "ms",
+   "pass": true
+  },
+  {
+   "label": "TNA requests/search ≤ 25",
+   "value": 3,
+   "unit": "num",
+   "pass": true
+  }
+ ],
+ "scores": [
+  {
+   "id": "secondary-victims",
+   "kind": "positive",
+   "recall": 1,
+   "recallAll": 1,
+   "candidateRecall": 1,
+   "rr": 1,
+   "ndcg": 1,
+   "precision": 1,
+   "highlightsJudged": 6,
+   "highlightsSupported": 5,
+   "areaHit": true,
+   "dateInferenceHit": true,
+   "dateCompliance": null,
+   "negativePass": null,
+   "misses": [],
+   "resultCount": 2,
+   "unjudged": 0
+  },
+  {
+   "id": "neg-escaped-penguin",
+   "kind": "negative",
+   "recall": null,
+   "recallAll": null,
+   "candidateRecall": null,
+   "rr": null,
+   "ndcg": null,
+   "precision": 1,
+   "highlightsJudged": 3,
+   "highlightsSupported": 2,
+   "areaHit": null,
+   "dateInferenceHit": true,
+   "dateCompliance": null,
+   "negativePass": false,
+   "misses": [],
+   "resultCount": 1,
+   "unjudged": 0
+  }
+ ],
+ "runs": [
+  {
+   "id": "secondary-victims",
+   "kind": "positive",
+   "query": "children who witnessed their father collapse and die from a heart condition the hospital failed to diagnose claim for psychiatric injury",
+   "candidates": [
+    "ewca/civ/2013/194",
+    "uksc/2024/1",
+    "ewhc/qb/2004/644",
+    "ewca/civ/2004/240",
+    "ukut/iac/2020/227",
+    "ewhc/qb/2019/106",
+    "ewhc/qb/2019/980",
+    "ewca/civ/2005/266",
+    "ewca/civ/2003/1151",
+    "ewhc/qb/2008/1838"
+   ],
+   "results": [
+    {
+     "uri": "uksc/2024/1",
+     "name": "Paul and another v Royal Wolverhampton NHS Trust",
+     "date": "2024-01-11",
+     "score": 0.95,
+     "areas": [
+      "clinical",
+      "tort"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_152",
+       "kind": "paragraph",
+       "quote": "The relevant claimants (who are the appellants) are daughters of the deceased. Aged 12 and 9 at the time, they were with their father when he collapsed and died on 26 January 2014."
+      },
+      {
+       "elementId": "para_153",
+       "kind": "paragraph",
+       "quote": "The alleged negligence was that, during that period in hospital, there was a failure to recognise that the deceased's presentation was typical for coronary artery disease"
+      },
+      {
+       "elementId": "para_154",
+       "kind": "paragraph",
+       "quote": "One of his daughters was walking slightly behind her father and the other slightly in front."
+      },
+      {
+       "elementId": "para_184",
+       "kind": "paragraph",
+       "quote": "He alleged medical negligence and that, as a result of that negligence, his son had died and he had suffered a psychiatric illness."
+      },
+      {
+       "elementId": "para_193",
+       "kind": "paragraph",
+       "quote": "Her daughter, the secondary victim and the relevant claimant, did not witness the accident but she did witness her mother's death."
+      },
+      {
+       "elementId": "para_242",
+       "kind": "paragraph",
+       "quote": "it seems faintly absurd to say that the three cases with which we are concerned are stronger cases for allowing recovery because the claim is in respect of only one shocking event"
+      },
+      {
+       "elementId": "para_247",
+       "kind": "paragraph",
+       "quote": "But the courts already have to differentiate between treating some events as shocking and horrific and others as not being so."
+      },
+      {
+       "elementId": "para_248",
+       "kind": "paragraph",
+       "quote": "The Law Commission considered the arguments for and against retaining this requirement and came down firmly in favour of recommending its legislative removal"
+      }
+     ]
+    },
+    {
+     "uri": "ewca/civ/2013/194",
+     "name": "Taylor v A Novo (UK) Ltd",
+     "date": "2013-03-18",
+     "score": 0.75,
+     "areas": [
+      "tort",
+      "clinical"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_2",
+       "kind": "paragraph",
+       "quote": "in order to succeed as a secondary victim, Ms Taylor had to satisfy the following seven requirements: (i) her injury was reasonably foreseeable; (ii) she was a close relative of and had a close emotional relationship with the primary victim"
+      },
+      {
+       "elementId": "para_3",
+       "kind": "paragraph",
+       "quote": "the “event” which should be considered for the purposes of deciding whether she is a secondary victim is not the original accident, but the collapse and death that resulted from it"
+      },
+      {
+       "elementId": "para_11",
+       "kind": "paragraph",
+       "quote": "The plaintiff’s husband suffered a heart attack whilst at work and died shortly after being taken to the defendant’s hospital. The plaintiff went to the hospital within an hour and was told of his death by a doctor"
+      },
+      {
+       "elementId": "para_11__quote_1",
+       "kind": "quoted_clause",
+       "quote": "There was no such event here other than the final consequence of Mr. Taylor's progressively deteriorating heart condition which the health authority, by its negligence many months bef"
+      },
+      {
+       "elementId": "para_15",
+       "kind": "paragraph",
+       "quote": "The claimant suffered a pathological grief reaction (a recognised psychiatric illness) as a result of witnessing the consequences of the negligent treatment of her son (E) including his death."
+      }
+     ]
+    }
+   ],
+   "rejected": [
+    {
+     "uri": "ewca/civ/2004/240",
+     "name": "Haward & Ors v Fawcetts (A Firm) & Anor",
+     "score": 0,
+     "reason": "Pre-screen: tangential (on point 0%, tangential 60%, unrelated 40%)."
+    },
+    {
+     "uri": "ewhc/qb/2004/644",
+     "name": "AB & Ors v Leeds Teaching Hospital NHS Trust",
+     "score": 0.01,
+     "reason": "Pre-screen: tangential (on point 1%, tangential 98%, unrelated 1%)."
+    },
+    {
+     "uri": "ukut/iac/2020/227",
+     "name": "BAA, R (on the application of) v The Secretary of State for the Home Department",
+     "score": 0,
+     "reason": "Pre-screen: irrelevant (on point 0%, tangential 6%, unrelated 94%)."
+    },
+    {
+     "uri": "ewhc/qb/2019/106",
+     "name": "Kennedy v Frankel",
+     "score": 0,
+     "reason": "Pre-screen: tangential (on point 0%, tangential 97%, unrelated 3%)."
+    },
+    {
+     "uri": "ewhc/qb/2019/980",
+     "name": "Zeromska-Smith v United Lincolnshire Hospitals NHS Trust",
+     "score": 0.01,
+     "reason": "Pre-screen: tangential (on point 1%, tangential 92%, unrelated 7%)."
+    },
+    {
+     "uri": "ewca/civ/2005/266",
+     "name": "Devon County Council v Clarke",
+     "score": 0,
+     "reason": "Pre-screen: tangential (on point 0%, tangential 96%, unrelated 4%)."
+    },
+    {
+     "uri": "ewca/civ/2003/1151",
+     "name": "JD & Ors v East Berkshire Community Health & Ors",
+     "score": 0.02,
+     "reason": "Pre-screen: tangential (on point 2%, tangential 97%, unrelated 1%)."
+    },
+    {
+     "uri": "ewhc/qb/2008/1838",
+     "name": "Manning (Executor of the Estate of Jane Louise Manning Deceased) v King's College Hospital NHS Trust",
+     "score": 0,
+     "reason": "Pre-screen: tangential (on point 0%, tangential 83%, unrelated 17%)."
+    }
+   ],
+   "dates": null,
+   "dateSource": "none",
+   "targetAreas": {
+    "uksc/2024/1": [
+     "clinical",
+     "tort"
+    ]
+   },
+   "stats": {
+    "ms": 20929,
+    "firstResultMs": 13459,
+    "tnaRequests": 3,
+    "casesFetched": 3,
+    "casesFromCache": 7,
+    "inputTokens": 8715,
+    "outputTokens": 2356,
+    "webEnrichment": "used",
+    "contextChars": 98916,
+    "paragraphsEmbedded": 93,
+    "timings": {
+     "expand": 0,
+     "search": 2686,
+     "web": 9318,
+     "fetch": 417,
+     "retrieve": 2459,
+     "gate": 18379,
+     "judge": 22261
+    },
+    "gate": {
+     "model": "typesafe/jev-1.13",
+     "requests": 6,
+     "cases": 10,
+     "rejected": 8,
+     "errors": 0,
+     "costUsd": 0.001026774
+    }
+   },
+   "judge": {
+    "ewca/civ/2013/194": {
+     "grade": 3,
+     "rationale": "The question concerns secondary victim claims for psychiatric injury where close relatives (children) witness a parent's collapse and death from a heart condition negligently undiagnosed. This CA decision is directly on point: it decides whether a daughter who witnessed her mother's collapse and death is entitled to recover as a 'secondary victim', discusses the 'immediate aftermath' exception to the Alcock rules, and analyses the leading authorities on exactly this fact pattern — Taylor v Somerset Health Authority (widow of a man who died of a heart attack after negligent failure to diagnose heart disease, treated by the CA as the paradigm case for the exception) and Sion v Hampstead HA (father of a negligently misdiagnosed patient). The judgment is the leading modern Court of Appeal statement of the control mechanisms, relevant event test and proximity analysis applicable to such claims. Highlight [0] sets out the seven cumulative requirements for secondary victim status; [1] is the key holding that the 'event' is the collapse and death rather than the original accident; [2] sets out the Taylor v Somerset facts, the core authority for the question (though the passage itself is descriptive rather than analytical).",
+     "highlightSupports": [
+      true,
+      true,
+      true
+     ]
+    },
+    "uksc/2024/1": {
+     "grade": 3,
+     "rationale": "This is the very case that gave rise to the question: Paul v Royal Wolverhampton NHS Trust [2024] UKSC 1, the leading authority on secondary victim claims where there is no external \"accident\" but a slow deterioration from internal disease (here undiagnosed coronary artery disease) culminating in the primary victim's death witnessed by his children. It settles directly the questions raised: whether a negligent omission and an internal, non-traumatic event can found such a claim, whether the death can be the relevant \"event\", the operation of the Alcock control mechanisms, and how Paul relates to Novo, Sion, Walters and Taylor v Somerset. Grade 3.\n\nHighlights: [0] directly identifies the claimants as the daughters of the deceased, aged 12 and 9, present when he collapsed and died — core facts of the question. [1] states the pleaded breach of duty (failure to recognise coronary artery disease presentation) — precisely the misdiagnosis at issue, so it helps frame the claim. [2] is mere detail on the daughters' positioning relative to their father; it bears on presence at the scene but adds little to the psychiatric injury claim, so although marginally consistent with witnessing the collapse it does not help answer the question.",
+     "highlightSupports": [
+      true,
+      true,
+      false
+     ]
+    }
+   }
+  },
+  {
+   "id": "neg-escaped-penguin",
+   "kind": "negative",
+   "query": "zoo liable after an escaped penguin damaged a neighbour's car",
+   "candidates": [
+    "ewca/civ/2008/173",
+    "ewca/civ/2012/1248",
+    "ewhc/ch/2025/752",
+    "ewca/civ/2017/1846",
+    "ewhc/kb/2022/2452",
+    "ewhc/qb/2009/685",
+    "ewhc/ch/2019/2272",
+    "ewhc/tcc/2016/1699",
+    "ewca/civ/2020/578",
+    "ewhc/comm/2009/540"
+   ],
+   "results": [
+    {
+     "uri": "ewca/civ/2008/173",
+     "name": "McKenny & Anor v Foster (t/a Foster Partnership)",
+     "date": "2008-03-06",
+     "score": 0.72,
+     "areas": [
+      "tort",
+      "property"
+     ],
+     "highlights": [
+      {
+       "elementId": "para_21__quote_1",
+       "kind": "quoted_clause",
+       "quote": "Where damage is caused by an animal which does not belong to a dangerous species, a keeper of the animal is liable for the damage, except as otherwise provided by this Act, if-\nthe damage is of a kind which the animal, unless restrained, was likely to cause"
+      },
+      {
+       "elementId": "para_21__quote_2",
+       "kind": "legislation_ref",
+       "quote": "“Damage” is defined in section 11 to include death of, or injury to any person."
+      },
+      {
+       "elementId": "para_22__quote_1",
+       "kind": "quoted_clause",
+       "quote": "“A dangerous species is a species –\nwhich is not commonly domesticated in the British Isles; and\nwhose fully grown animals normally have such characteristics that they are likely, unless restrained, to cause severe damage"
+      },
+      {
+       "elementId": "para_19",
+       "kind": "paragraph",
+       "quote": "For animals straying onto the highway, section 8 abolished common law rules excluding or restricting liability in negligence."
+      },
+      {
+       "elementId": "para_25",
+       "kind": "paragraph",
+       "quote": "The judge held that the relevant characteristic was this cow’s exceptional ability to escape. This was not a characteristic known to the defendants. So the strict liability claim failed."
+      },
+      {
+       "elementId": "para_31__quote_1",
+       "kind": "quoted_clause",
+       "quote": "“Section 2(2)(b) contains an ambiguity. Its first meaning treats the provision as describing two different categories of damage"
+      },
+      {
+       "elementId": "para_30",
+       "kind": "paragraph",
+       "quote": "The field was adequately fenced and the defendants had not been negligent."
+      }
+     ]
+    }
+   ],
+   "rejected": [
+    {
+     "uri": "ewca/civ/2017/1846",
+     "name": "Williams v Hawkes",
+     "score": 0.24,
+     "reason": "Pre-screen: tangential (on point 24%, tangential 76%, unrelated 0%)."
+    },
+    {
+     "uri": "ewhc/ch/2025/752",
+     "name": "Martin Craig Nicholas & Ors v Barnes Davison Thomas & Anor",
+     "score": 0,
+     "reason": "Pre-screen: tangential (on point 0%, tangential 67%, unrelated 33%)."
+    },
+    {
+     "uri": "ewca/civ/2012/1248",
+     "name": "Stannard (t/a Wyvern Tyres) v Gore",
+     "score": 0,
+     "reason": "Pre-screen: tangential (on point 0%, tangential 75%, unrelated 25%)."
+    },
+    {
+     "uri": "ewhc/qb/2009/685",
+     "name": "D. Pride & Partners (a firm) & Ors v Institute for Animal Health & Ors",
+     "score": 0,
+     "reason": "Pre-screen: tangential (on point 0%, tangential 91%, unrelated 9%)."
+    },
+    {
+     "uri": "ewhc/kb/2022/2452",
+     "name": "Sofia Schoultz v Vicki Ball & Ors.",
+     "score": 0.12,
+     "reason": "Pre-screen: tangential (on point 12%, tangential 87%, unrelated 1%)."
+    },
+    {
+     "uri": "ewhc/ch/2019/2272",
+     "name": "Borwick Development Solutions Ltd v Clear Water Fisheries Ltd",
+     "score": 0.01,
+     "reason": "Pre-screen: tangential (on point 1%, tangential 94%, unrelated 5%)."
+    },
+    {
+     "uri": "ewca/civ/2020/578",
+     "name": "Borwick Development Solutions Ltd v Clear Water Fisheries Ltd",
+     "score": 0.03,
+     "reason": "Pre-screen: tangential (on point 3%, tangential 96%, unrelated 1%)."
+    },
+    {
+     "uri": "ewhc/comm/2009/540",
+     "name": "Colour Quest Ltd & Ors v Total Downstream UK Plc & Ors (Rev 1)",
+     "score": 0.01,
+     "reason": "Pre-screen: tangential (on point 1%, tangential 96%, unrelated 3%)."
+    },
+    {
+     "uri": "ewhc/tcc/2016/1699",
+     "name": "Ocensa Pipeline Group Litigation, Re",
+     "score": 0,
+     "reason": "Pre-screen: irrelevant (on point 0%, tangential 41%, unrelated 59%)."
+    }
+   ],
+   "dates": null,
+   "dateSource": "none",
+   "targetAreas": {},
+   "stats": {
+    "ms": 15723,
+    "firstResultMs": 15723,
+    "tnaRequests": 3,
+    "casesFetched": 0,
+    "casesFromCache": 10,
+    "inputTokens": 4736,
+    "outputTokens": 1243,
+    "webEnrichment": "used",
+    "contextChars": 110465,
+    "paragraphsEmbedded": 68,
+    "timings": {
+     "expand": 0,
+     "search": 3103,
+     "web": 6827,
+     "fetch": 13,
+     "retrieve": 4017,
+     "gate": 18180,
+     "judge": 9676
+    },
+    "gate": {
+     "model": "typesafe/jev-1.13",
+     "requests": 5,
+     "cases": 10,
+     "rejected": 9,
+     "errors": 0,
+     "costUsd": 0.001086876
+    }
+   },
+   "judge": {
+    "ewca/civ/2008/173": {
+     "grade": 2,
+     "rationale": "The question concerns whether a zoo (as keeper) is strictly liable for property damage caused by an escaped animal, i.e. the Animals Act 1971 framework: whether the species is a \"dangerous species\" (s.2(1)/s.6(2)) or whether s.2(2) applies, and the causation/knowledge requirements. McKenny v Foster Partnership is a leading Court of Appeal authority on that framework — it quotes s.2 and s.6(2), confirms a domesticated cow is not a dangerous species, and holds (following Mirvahedy and Curtis v Best) that the \"characteristic\" relied on under s.2(2)(b) must be causally linked to the damage, and also that common, normal behaviour cannot found liability. It also involved an escaped farm animal on a road causing a car accident, so it is structurally analogous. However it is not directly on point: there is no zoo, no exotic/wild species, no penguin, and the outcome there was that no strict liability was established, whereas the penguin scenario most likely turns on the dangerous-species limb (s.2(1)) rather than s.2(2). So the case is substantively useful legal framework and authority, but not the leading case answering the specific question — grade 2.\n\nHighlights: [0] the s.2(2) statutory test for keeper liability for damage by a non-dangerous animal is substantive, relevant law on keeper liability and helps frame whether the zoo's keeper is liable — true. [1] the passage is about the s.11 definition of \"damage\" and a tautology in asking whether injury was likely to be severe; that is an exercise about personal injury severity and does not assist with damage to a car — false. [2] the s.6(2) definition of \"dangerous species\" is directly relevant, because whether penguins fall outside common domestication and normally cause severe damage determines whether s.2(1) strict liability bites — true.",
+     "highlightSupports": [
+      true,
+      false,
+      true
+     ]
+    }
+   }
+  }
+ ]
+}

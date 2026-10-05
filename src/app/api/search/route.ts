@@ -1,10 +1,15 @@
 import { z } from "zod";
 import { runSearch } from "@/lib/search/pipeline";
 import { llmConfigured } from "@/lib/llm";
+import { warmReranker } from "@/lib/rerank";
+
+// load the cross-encoder when this route first loads, not on the first search
+warmReranker();
 import { isAreaId } from "@/lib/areas";
 import { normalizeRange, parseDateInput, type DateRange } from "@/lib/dates";
 
-export const maxDuration = 60;
+// measured p95 is 60–90 s; Vercel functions allow up to 300 s by default
+export const maxDuration = 300;
 
 const body = z.object({
   query: z.string().trim().min(2).max(300),

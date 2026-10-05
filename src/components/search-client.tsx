@@ -7,6 +7,7 @@ import type { Candidate, CaseResult, DateSource, SearchEvent, SearchStats, WebMe
 /** undefined = infer from query, null = ignore dates, object = explicit range (YYYY / YYYY-MM-DD) */
 export type DateInput = { from?: string; to?: string } | null | undefined;
 import { courtInfo } from "@/lib/courts";
+import { FollowUpChat } from "./chat";
 import { AREAS, areaLabel } from "@/lib/areas";
 import { formatRange, type DateRange } from "@/lib/dates";
 
@@ -165,28 +166,65 @@ export function SearchClient({
   const noMatches = !s.running && s.stats && s.results.length === 0;
 
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8">
+    <div className={`mx-auto max-w-4xl px-4 ${started ? "py-8" : "pb-12 pt-14 sm:pt-20"}`}>
+      {!started && (
+        <header className="mb-8 max-w-2xl">
+          <p className="flex items-center gap-2 text-xs font-medium uppercase tracking-[0.14em] text-accent">
+            <span aria-hidden className="font-serif text-base normal-case tracking-normal">¶</span>
+            UK judgments · The National Archives, Find Case Law
+          </p>
+          <h1 className="mt-3 text-balance font-serif text-4xl leading-[1.1] tracking-tight sm:text-5xl">
+            Ask a legal question. Get the paragraphs that answer it.
+          </h1>
+          <p className="mt-4 max-w-xl text-pretty text-base leading-relaxed text-muted">
+            Describe a situation in plain English. The agent searches every judgment on Find Case Law, reads the
+            strongest candidates and shows the passages that matter, each quote checked against the judgment.
+          </p>
+        </header>
+      )}
       <form
         onSubmit={(e) => {
           e.preventDefault();
           if (query.trim().length >= 2) run(query.trim(), areas, dateInput());
         }}
-        className="flex gap-2"
+        className={
+          started
+            ? "flex gap-2"
+            : "flex flex-col gap-2 rounded-2xl border border-border bg-surface p-2 shadow-[0_1px_2px_rgba(0,0,0,0.04),0_8px_24px_-12px_rgba(0,0,0,0.12)] focus-within:border-accent sm:flex-row sm:items-center"
+        }
       >
-        <input
-          value={query}
-          onChange={(e) => {
-            setQuery(e.target.value);
-            setDatesOff(false); // "ignore dates" applied to the previous question only
-          }}
-          placeholder="Describe what you're looking for, e.g. “jaguar battery leak”"
-          className="flex-1 rounded-lg border border-border bg-surface px-4 py-3 text-base outline-none focus:border-accent"
-          autoFocus
-        />
+        <label htmlFor="search-query" className="sr-only">
+          Your legal question
+        </label>
+        <div className="relative min-w-0 flex-1">
+          {!started && (
+            <svg aria-hidden viewBox="0 0 20 20" className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-muted" fill="none" stroke="currentColor" strokeWidth="1.8">
+              <circle cx="8.5" cy="8.5" r="5.5" />
+              <path d="m13 13 4 4" strokeLinecap="round" />
+            </svg>
+          )}
+          <input
+            id="search-query"
+            value={query}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              setDatesOff(false); // "ignore dates" applied to the previous question only
+            }}
+            placeholder={started ? "Describe what you're looking for" : "e.g. employer liable when a petrol station attendant assaulted a customer"}
+            className={
+              started
+                ? "w-full rounded-lg border border-border bg-surface px-4 py-3 text-base outline-none focus:border-accent"
+                : "w-full rounded-xl bg-transparent py-3.5 pl-10 pr-3 text-base outline-none placeholder:text-muted/80 sm:text-[17px]"
+            }
+            autoFocus
+          />
+        </div>
         <button
           type="submit"
           disabled={s.running}
-          className="rounded-lg bg-accent px-5 py-3 font-medium text-white disabled:opacity-50 dark:text-black"
+          className={`rounded-lg bg-accent font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50 dark:text-black ${
+            started ? "px-5 py-3" : "rounded-xl px-6 py-3.5"
+          }`}
         >
           {s.running ? "Searching…" : "Search"}
         </button>
@@ -250,16 +288,44 @@ export function SearchClient({
       </div>
 
       {!started && (
-        <div className="mt-6 text-sm text-muted">
-          <p>Searches UK judgments on The National Archives&apos; Find Case Law, reads the candidates and highlights the passages that matter.</p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {EXAMPLES.map((ex) => (
-              <button key={ex} onClick={() => { setQuery(ex); run(ex, areas, dateInput()); }} className="rounded-full border border-border px-3 py-1 hover:border-accent">
-                {ex}
-              </button>
-            ))}
+        <>
+          <div className="mt-8">
+            <p className="text-xs font-medium uppercase tracking-[0.12em] text-muted">Try a question</p>
+            <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+              {EXAMPLES.map((ex) => (
+                <li key={ex}>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setQuery(ex);
+                      run(ex, areas, dateInput());
+                    }}
+                    className="group flex w-full items-start gap-2 rounded-lg border border-border px-3.5 py-2.5 text-left text-sm transition-colors hover:border-accent hover:bg-surface"
+                  >
+                    <span aria-hidden className="mt-px font-serif text-accent opacity-60 group-hover:opacity-100">
+                      ¶
+                    </span>
+                    <span>{ex}</span>
+                  </button>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
+
+          <ol className="mt-12 grid gap-6 border-t border-border pt-8 text-sm sm:grid-cols-3">
+            {[
+              ["Finds the vocabulary", "Your question becomes the short keyword searches a judge’s own words would match, plus a search by meaning over stored judgments."],
+              ["Reads the judgments", "The strongest candidates are read in full, ranked passage by passage, and judged for whether they actually decide your point."],
+              ["Quotes you can check", "Every highlighted quote is matched word-for-word against the judgment and linked to its paragraph. If nothing fits, it says so."],
+            ].map(([title, body], i) => (
+              <li key={title}>
+                <p className="font-mono text-xs text-accent">0{i + 1}</p>
+                <p className="mt-1 font-medium">{title}</p>
+                <p className="mt-1 leading-relaxed text-muted">{body}</p>
+              </li>
+            ))}
+          </ol>
+        </>
       )}
 
       {started && (
@@ -302,7 +368,19 @@ export function SearchClient({
               {(s.stats.ms / 1000).toFixed(1)}s total
               {s.stats.firstResultMs != null && ` · first result ${(s.stats.firstResultMs / 1000).toFixed(1)}s`} · {s.stats.tnaRequests} TNA requests ·{" "}
               {s.stats.casesFromCache} cached / {s.stats.casesFetched} fetched · {(s.stats.inputTokens / 1000).toFixed(1)}k in /{" "}
-              {(s.stats.outputTokens / 1000).toFixed(1)}k out tokens · web: {s.stats.webEnrichment}
+              {(s.stats.outputTokens / 1000).toFixed(1)}k out tokens · {(s.stats.contextChars / 1000).toFixed(0)}k chars read ·{" "}
+              {s.stats.paragraphsEmbedded} paragraphs embedded · web: {s.stats.webEnrichment}
+              {s.stats.timings && (
+                <>
+                  <br />
+                  stages: expand {(s.stats.timings.expand / 1000).toFixed(1)}s · search {(s.stats.timings.search / 1000).toFixed(1)}s · web wait{" "}
+                  {(s.stats.timings.web / 1000).toFixed(1)}s · per-case totals: fetch {(s.stats.timings.fetch / 1000).toFixed(1)}s, retrieve{" "}
+                  {(s.stats.timings.retrieve / 1000).toFixed(1)}s,{s.stats.gate ? ` pre-screen ${(s.stats.timings.gate / 1000).toFixed(1)}s,` : ""} judge{" "}
+                  {(s.stats.timings.judge / 1000).toFixed(1)}s
+                  {s.stats.gate &&
+                    ` · pre-screen rejected ${s.stats.gate.rejected}/${s.stats.gate.cases} in ${s.stats.gate.requests} requests ($${s.stats.gate.costUsd.toFixed(4)})`}
+                </>
+              )}
             </p>
           )}
           {s.error && <p className="mt-2 text-red-600">{s.error}</p>}
@@ -361,6 +439,27 @@ export function SearchClient({
         </details>
       )}
 
+      {!s.running && s.searchId != null && (s.results.length > 0 || s.rejected.length > 0) && (
+        <div className="mt-6 space-y-3">
+          {s.results.length > 1 && (
+            <Link href={`/graph?search=${s.searchId}`} className="inline-block rounded border border-border px-3 py-1.5 text-sm hover:border-accent">
+              Citation graph of these results →
+            </Link>
+          )}
+          <FollowUpChat
+            key={s.searchId}
+            searchId={s.searchId}
+            suggestions={
+              s.results.length > 1
+                ? ["Compare the reasoning of the top two cases", "Which of these is the leading authority, and what does it rely on?"]
+                : s.results.length === 1
+                  ? ["Summarise the key holding with quotes", "Which cases does it rely on?"]
+                  : ["Why didn't any case match?", "Search again with broader wording"]
+            }
+          />
+        </div>
+      )}
+
       {s.mentions.length > 0 && (
         <section className="mt-6 text-sm">
           <h3 className="font-medium">Mentioned on the web, not found in TNA</h3>
@@ -392,6 +491,7 @@ function ResultCard({ r, searchId }: { r: CaseResult; searchId: number | null })
             <span className="rounded border border-border px-1.5">{court.tier}</span>
             {r.date && <span>{r.date}</span>}
             {r.anonymised && <span className="rounded bg-background px-1.5">anonymised</span>}
+            {r.via && <span className="rounded border border-accent px-1.5 text-accent">{r.via}</span>}
           </div>
           {r.areas.length > 0 && (
             <div className="mt-1.5 flex flex-wrap gap-1">

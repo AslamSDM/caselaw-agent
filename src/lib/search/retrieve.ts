@@ -13,16 +13,12 @@
 import { and, eq, sql } from "drizzle-orm";
 import { db, schema } from "@/db";
 import type { ElementRow } from "../cases/store";
-import { ensureEmbeddings } from "../embed";
+import { EMBED_MODEL, ensureEmbeddings } from "../embed";
+import { ftsQueryString } from "../text";
+import { rerankEnabled, rerankScores } from "../rerank";
 import { VECTOR_MIN_SIM, vectorParagraphHits } from "./local";
 
-export function ftsQueryString(terms: string[]): string {
-  return terms
-    .map((t) => t.replace(/["()]/g, " ").trim())
-    .filter((t) => t.length > 1)
-    .map((t) => (t.includes(" ") ? `"${t}"` : t))
-    .join(" OR ");
-}
+export { ftsQueryString };
 
 /** Rendering caps shared with buildCaseContext() so the budget estimate is exact. */
 export const RENDER_CAPS = { ownChars: 1400, childChars: 700, maxChildren: 8 };
@@ -32,6 +28,14 @@ const NEIGHBOURS_FOR = Number(process.env.RETRIEVE_NEIGHBOURS_FOR ?? 3);
 const BUDGET_CHARS = Number(process.env.RETRIEVE_BUDGET_CHARS ?? 12_000); // ≈ 3k tokens
 /** paragraphs embedded on demand per case when the case is not fully embedded */
 const EMBED_PREFILTER = Number(process.env.EMBED_PREFILTER ?? 40);
+/**
+ * With fewer keyword hits than this, the keyword prefilter can't find the passage, so embed the
+ * whole case (if it has at most EMBED_FULL_MAX paragraphs). Lets meaning-only matches through.
+ */
+const EMBED_FULL_BELOW = Number(process.env.EMBED_FULL_BELOW ?? 5);
+const EMBED_FULL_MAX = Number(process.env.EMBED_FULL_MAX ?? 400);
+/** keyword + semantic paragraphs scored by the cross-encoder per case */
+const RERANK_POOL = Number(process.env.RERANK_POOL ?? 16);
 
 export interface RetrievedContext {
   /** top-level elements chosen for the prompt, in document order */
@@ -40,7 +44,14 @@ export interface RetrievedContext {
   all: ElementRow[];
   hitCount: number;
   /** diagnostics */
-  stats: { ftsHits: number; vectorHits: number; embedded: number; chars: number };
+  stats: {
+    ftsHits: number;
+    vectorHits: number;
+    embedded: number;
+    chars: number;
+    /** best cross-encoder score (0–1) of any paragraph; null when the reranker did not run */
+    rerankTop: number | null;
+  };
 }
 
 export interface RetrieveOptions {
@@ -49,6 +60,8 @@ export interface RetrieveOptions {
   budgetChars?: number;
   /** query embedding; enables semantic ranking (and on-demand embedding of this case) */
   queryVec?: number[] | null;
+  /** the user's question; enables cross-encoder reranking of the candidate paragraphs */
+  rerankQuery?: string;
   signal?: AbortSignal;
 }
 
@@ -94,10 +107,17 @@ export async function retrieveParagraphs(
   if (opts.queryVec) {
     try {
       const [c] = await db
-        .select({ complete: schema.cases.embedComplete })
+        .select({ complete: schema.cases.embedComplete, model: schema.cases.embedModel })
         .from(schema.cases)
         .where(eq(schema.cases.uri, caseUri));
-      embedded = await ensureEmbeddings(caseUri, c?.complete ? [] : ftsRoots.slice(0, EMBED_PREFILTER), opts.signal);
+      const complete = Boolean(c?.complete && c.model === EMBED_MODEL);
+      const paragraphs = elements.filter((e) => !e.parentId && e.kind !== "heading").length;
+      const toEmbed = complete
+        ? []
+        : ftsRoots.length < EMBED_FULL_BELOW && paragraphs <= EMBED_FULL_MAX
+          ? undefined // whole case
+          : ftsRoots.slice(0, EMBED_PREFILTER);
+      embedded = await ensureEmbeddings(caseUri, toEmbed, opts.signal);
       const vh = await vectorParagraphHits(caseUri, opts.queryVec);
       vecRoots = byScore(new Map([...vh].filter(([, sim]) => sim >= VECTOR_MIN_SIM)));
     } catch (err) {
@@ -107,7 +127,28 @@ export async function retrieveParagraphs(
     }
   }
 
-  const sel = selectParagraphs(elements, ftsRoots, vecRoots, {
+  // cross-encoder: score the union of keyword and semantic paragraphs against the question and
+  // select by that score alone (it reads question and passage together, so it can tell
+  // "same doctrine, different facts" apart from an on-point passage)
+  let rankA = ftsRoots;
+  let rankB = vecRoots;
+  let rerankTop: number | null = null;
+  const pool = interleave(ftsRoots, vecRoots, RERANK_POOL);
+  if (opts.rerankQuery && rerankEnabled() && pool.length) {
+    try {
+      const byId = new Map(elements.map((e) => [e.elementId, e]));
+      const scores = await rerankScores(opts.rerankQuery, pool.map((id) => byId.get(id)?.text ?? ""));
+      const scored = pool.map((id, i) => [id, scores[i]] as const).sort((a, b) => b[1] - a[1]);
+      rankA = scored.map(([id]) => id);
+      rankB = [];
+      rerankTop = scored[0]?.[1] ?? null;
+    } catch (err) {
+      if (opts.signal?.aborted) throw err;
+      console.warn(`[retrieve] rerank skipped for ${caseUri}:`, err instanceof Error ? err.message : err);
+    }
+  }
+
+  const sel = selectParagraphs(elements, rankA, rankB, {
     top: opts.top ?? TOP,
     neighboursFor: opts.neighboursFor ?? NEIGHBOURS_FOR,
     budgetChars: opts.budgetChars ?? BUDGET_CHARS,
@@ -115,8 +156,17 @@ export async function retrieveParagraphs(
   return {
     ...sel,
     hitCount: new Set([...ftsRoots, ...vecRoots]).size,
-    stats: { ftsHits: ftsRoots.length, vectorHits: vecRoots.length, embedded, chars: sel.chars },
+    stats: { ftsHits: ftsRoots.length, vectorHits: vecRoots.length, embedded, chars: sel.chars, rerankTop },
   };
+}
+
+/** Alternate two rankings without duplicates, up to `limit`. */
+export function interleave(a: string[], b: string[], limit: number): string[] {
+  const out: string[] = [];
+  for (let i = 0; out.length < limit && (i < a.length || i < b.length); i++) {
+    for (const id of [a[i], b[i]]) if (id && !out.includes(id) && out.length < limit) out.push(id);
+  }
+  return out;
 }
 
 function byScore(m: Map<string, number>): string[] {

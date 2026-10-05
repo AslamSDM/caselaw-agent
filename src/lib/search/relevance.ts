@@ -20,11 +20,13 @@ const schema = z.object({
     .describe(`1-3 area ids the CASE itself is about (independent of the question), most important first. One of: ${AREA_IDS.join(", ")}`),
   highlights: z
     .array(
+      // fields are optional so one truncated highlight (seen with long outputs) is dropped
+      // below instead of failing validation for the whole case
       z.object({
-        element_id: z.string().describe("id of the SMALLEST element containing the quote (a quote/sub id if applicable)"),
-        kind: z.enum(["paragraph", "quoted_clause", "legislation_ref"]),
-        quote: z.string().describe("verbatim text copied exactly from that element, 8-60 words"),
-        reason: z.string().describe("why this passage matters for the question, max 20 words"),
+        element_id: z.string().nullish().describe("id of the SMALLEST element containing the quote (a quote/sub id if applicable)"),
+        kind: z.string().nullish().describe('one of "paragraph", "quoted_clause", "legislation_ref"'),
+        quote: z.string().nullish().describe("verbatim text copied exactly from that element, 8-60 words"),
+        reason: z.string().nullish().describe("why this passage matters for the question, max 20 words"),
       }),
     )
     .describe("at most 8"),
@@ -93,6 +95,8 @@ export async function judgeRelevance(
 
 Rules:
 - A case is relevant only if its facts, issues or reasoning deal with the question. Keyword coincidences (a word appearing in passing, a party name, a cited case title) are NOT relevance.
+- Sharing only the general area of law, a statute or a doctrine with the question is NOT enough. If the case's facts and the issue it decides differ from what the question asks about, it is tangential: relevant=false, score at most 0.4, and say what is missing. Exception: a case that decides the very legal issue the question turns on is relevant even on different facts.
+- When the question describes an unusual situation (a specific product, animal, place or activity) and the judgment does not involve anything like it, treat it as tangential unless the reasoning is clearly the governing authority for that situation.
 - Quotes must be copied character-for-character from the element text. Do not paraphrase, join separate passages, or add ellipses.
 - Use the id of the smallest element containing the quote. Use kind "quoted_clause" when the quote is from a contract/statute/document quoted in the judgment (quote_block elements), "legislation_ref" when the passage turns on a statutory provision.
 - If not relevant, return relevant=false, a low score, a summary saying why it falls short, and no highlights.
@@ -102,7 +106,7 @@ Rules:
 
 Case: ${kase.name}${kase.ncn ? ` ${kase.ncn}` : ""} — ${kase.court ?? "unknown court"}, ${kase.date ?? "undated"}
 
-Paragraphs retrieved from the judgment (by keyword ranking; other paragraphs omitted):
+Paragraphs retrieved from the judgment (by keyword and meaning similarity; other paragraphs omitted). Retrieval casts a wide net, so most cases you see will NOT be relevant:
 ${buildCaseContext(ctx)}`;
 
   const output = await generateStructured({
@@ -118,7 +122,9 @@ ${buildCaseContext(ctx)}`;
   const verified: VerifiedHighlight[] = [];
   const seen = new Set<string>();
   // weaker models overshoot bounds; clamp instead of failing the case
+  const KINDS = new Set<string>(["paragraph", "quoted_clause", "legislation_ref"]);
   for (const h of output.highlights.slice(0, 8)) {
+    if (!h.quote || !h.element_id) continue;
     const m = verifyQuote(h.quote, h.element_id, ctx.all);
     if (!m) continue;
     const key = `${m.elementId}|${m.matchedText}`;
@@ -126,9 +132,9 @@ ${buildCaseContext(ctx)}`;
     seen.add(key);
     verified.push({
       elementId: m.elementId,
-      kind: h.kind as HighlightKind,
+      kind: (h.kind && KINDS.has(h.kind) ? h.kind : "paragraph") as HighlightKind,
       quote: m.matchedText,
-      reason: h.reason,
+      reason: h.reason ?? "",
       similarity: m.similarity,
     });
   }

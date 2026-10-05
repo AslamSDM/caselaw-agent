@@ -117,6 +117,7 @@ async function main() {
     },
     config: {
       cutoff: process.env.RELEVANCE_CUTOFF ?? "0.5",
+      gate: process.env.JUDGE_GATE_MODEL ? `${process.env.JUDGE_GATE_MODEL}@${process.env.JUDGE_GATE_REJECT ?? "0.75"}` : "off",
       maxCandidates: process.env.MAX_CANDIDATES ?? "10",
       perVariant: process.env.TNA_PER_VARIANT ?? "25",
       web: process.env.WEB_ENRICH_ENABLED ?? "true",
@@ -157,8 +158,10 @@ async function main() {
               score: e.result.score,
               areas: e.result.areas,
               highlights: e.result.highlights.map((h) => ({ elementId: h.elementId, kind: h.kind, quote: h.quote })),
+              rerank: e.result.rerank,
+              via: e.result.via,
             });
-          else if (e.type === "rejected") run.rejected.push({ uri: e.uri, name: e.name, score: e.score, reason: e.reason });
+          else if (e.type === "rejected") run.rejected.push({ uri: e.uri, name: e.name, score: e.score, reason: e.reason, rerank: e.rerank });
           else if (e.type === "done") run.stats = e.stats;
           else if (e.type === "error") run.error = e.message;
         }
@@ -261,6 +264,8 @@ function renderReport(
     row("TNA requests / search", "avgTnaRequests", "num", false),
     row("Input tokens / search", "avgInputTokens", "num", false),
     row("Output tokens / search", "avgOutputTokens", "num", false),
+    "",
+    `Stage p50 (per-case stages summed across parallel workers): ${Object.entries(s.stageP50 ?? {}).map(([k, v]) => `${k} ${v == null ? "–" : (v / 1000).toFixed(1) + "s"}`).join(" · ") || "n/a"}`,
     "",
     `Missed must-find targets by stage: ${Object.entries(s.missStages).map(([k, v]) => `${k} ${v}`).join(" · ")}`,
     "",

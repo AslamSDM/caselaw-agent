@@ -11,6 +11,12 @@
   --quote-hl: #ffe08a;
   --clause-hl: #cfe6ff;
   --clause-border: #3b82c4;
+  /* citation graph: court levels (1 = top) and legislation */
+  --g-l1: #7a3e12;
+  --g-l2: #c0702a;
+  --g-l3: #3b82c4;
+  --g-l4: #8aa8bf;
+  --g-leg: #6b8e5a;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -25,6 +31,11 @@
     --quote-hl: #6b5510;
     --clause-hl: #173450;
     --clause-border: #5ea3e0;
+    --g-l1: #f0a868;
+    --g-l2: #d98a4a;
+    --g-l3: #5ea3e0;
+    --g-l4: #7c94a8;
+    --g-leg: #8fb87a;
   }
 }
 
@@ -69,4 +80,30 @@ mark.hl-clause {
 }
 :target {
   scroll-margin-top: 5rem;
+}
+
+/* find-in-judgment matches (CSS Custom Highlight API; the DOM is not modified) */
+::highlight(find) {
+  background-color: color-mix(in srgb, var(--quote-hl) 70%, transparent);
+  color: var(--foreground);
+}
+::highlight(find-current) {
+  background-color: var(--accent);
+  color: var(--background);
+}
+
+/* paragraph opened from a citation link: keep it below the header and flash it */
+[id]:target,
+.cite-flash {
+  scroll-margin-top: 5rem;
+  animation: cite-flash 2.4s ease-out;
+  border-radius: 4px;
+}
+@keyframes cite-flash {
+  0%, 35% { background-color: var(--quote-hl); box-shadow: 0 0 0 4px var(--quote-hl); }
+  100% { background-color: transparent; box-shadow: 0 0 0 4px transparent; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [id]:target,
+  .cite-flash { animation: none; outline: 2px solid var(--accent); }
 }
