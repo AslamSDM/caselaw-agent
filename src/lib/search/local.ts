@@ -10,7 +10,6 @@ import { db } from "@/db";
 import { toVectorLiteral } from "../embed";
 import type { DateRange } from "../dates";
 import type { CandidateList, ExpandedQuery } from "./types";
-import { ftsQueryString } from "../text";
 
 const VECTOR_CHUNKS = Number(process.env.LOCAL_VECTOR_CHUNKS ?? 300);
 const LIST_SIZE = Number(process.env.LOCAL_LIST_SIZE ?? 25);
@@ -157,11 +156,11 @@ async function vectorSearchOne(queryVec: number[], where: SQL) {
 async function ftsSearch(expanded: ExpandedQuery, where: SQL): Promise<CandidateList> {
   // Keyword variants (1-4 words) are AND-ed like separate TNA searches, then OR-ed together.
   // The raw question is left out: AND-ing every word of a sentence matches almost nothing.
-  // The ranking terms are added as an OR so a paragraph using one term of art still counts.
+  // The ranking terms (ftsTerms) are left out too: OR-ing ~20 broad words ("landlord", "notice")
+  // matched tens of thousands of paragraphs, took 1-2 s to rank over 1M elements, and pushed the
+  // on-point cases out of the top 25. They still rank paragraphs inside each case (retrieve.ts).
   const phrases = [...new Set(expanded.variants.map((s) => s.trim()).filter(Boolean))];
   const parts = phrases.map((p) => sql`plainto_tsquery('english', ${p})`);
-  const orTerms = ftsQueryString(expanded.ftsTerms);
-  if (orTerms) parts.push(sql`websearch_to_tsquery('english', ${orTerms})`);
   if (!parts.length) parts.push(sql`plainto_tsquery('english', ${expanded.original})`);
   const tsq = sql.join(parts, sql` || `);
   const rows = await db.execute<Row & { score: number; total: number }>(sql`
