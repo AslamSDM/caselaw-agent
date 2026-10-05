@@ -3,8 +3,11 @@
  * Terms are accepted from any source; case names / NCNs only from UK legal sources.
  * Everything found here is verified against TNA before it is shown.
  */
+import { createHash } from "node:crypto";
 import { z } from "zod";
-import { generateStructured, model, reasoningEffort, type TokenUsage } from "../llm";
+import { and, eq, gt, sql } from "drizzle-orm";
+import { db, schema as tables } from "@/db";
+import { generateStructured, model, modelId, reasoningEffort, type TokenUsage } from "../llm";
 import { webSearch, type WebResult } from "../web/firecrawl";
 import { extractNcns } from "../tna/ncn";
 
@@ -64,7 +67,36 @@ export interface WebHints {
 /** appended to the question so the web search leans towards UK judgments and commentary on them */
 const QUERY_SUFFIX = process.env.WEB_QUERY_SUFFIX ?? "case law UK judgment";
 
+/**
+ * Cached for 24h in tna_search_cache under a "web:" key (fast model + suffix + normalised question),
+ * so a repeated search does not pay for the web search and the extraction call again.
+ * Empty results are not cached (a Firecrawl hiccup should not stick for a day).
+ */
 export async function webEnrich(query: string, usage: TokenUsage, signal?: AbortSignal): Promise<WebHints> {
+  const norm = query.trim().toLowerCase().replace(/\s+/g, " ");
+  const key = "web:" + createHash("sha256").update(JSON.stringify([modelId("fast"), QUERY_SUFFIX, norm])).digest("hex");
+  try {
+    const [hit] = await db
+      .select({ response: tables.tnaSearchCache.response })
+      .from(tables.tnaSearchCache)
+      .where(and(eq(tables.tnaSearchCache.key, key), gt(tables.tnaSearchCache.createdAt, sql`now() - interval '24 hours'`)))
+      .limit(1);
+    if (hit) return hit.response as WebHints;
+  } catch (err) {
+    console.warn("[web] cache read failed:", err instanceof Error ? err.message : err);
+  }
+  const hints = await webEnrichUncached(query, usage, signal);
+  if (hints.results.length) {
+    await db
+      .insert(tables.tnaSearchCache)
+      .values({ key, response: hints })
+      .onConflictDoUpdate({ target: tables.tnaSearchCache.key, set: { response: hints, createdAt: sql`now()` } })
+      .catch((err) => console.warn("[web] cache write failed:", err instanceof Error ? err.message : err));
+  }
+  return hints;
+}
+
+async function webEnrichUncached(query: string, usage: TokenUsage, signal?: AbortSignal): Promise<WebHints> {
   const timeoutMs = Number(process.env.WEB_ENRICH_TIMEOUT_MS ?? 8000);
   const results = await webSearch(`${query} ${QUERY_SUFFIX}`.trim(), { limit: 8, timeoutMs });
   if (!results.length) return { terms: [], variants: [], cases: [], ncns: [], results };

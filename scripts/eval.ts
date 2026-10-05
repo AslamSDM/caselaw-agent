@@ -12,6 +12,8 @@
  */
 import { config } from "dotenv";
 config({ path: ".env.local", quiet: true });
+// every run measures the pipeline, not cached per-case decisions from earlier searches
+process.env.DECISION_CACHE ??= "off";
 
 import { execSync } from "node:child_process";
 import { existsSync, mkdirSync, readdirSync, readFileSync, writeFileSync } from "node:fs";

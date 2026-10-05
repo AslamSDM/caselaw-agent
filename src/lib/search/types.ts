@@ -119,6 +119,8 @@ export interface SearchStats {
   rerankRejected: number;
   /** cases added because several passing results cite them */
   citationCandidates: number;
+  /** cases whose decision came from the decision cache (no retrieval or LLM calls) */
+  decisionsCached: number;
 }
 
 export interface StageTimings {

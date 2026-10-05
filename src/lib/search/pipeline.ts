@@ -13,7 +13,7 @@ import { db, schema } from "@/db";
 import { and, eq, inArray } from "drizzle-orm";
 import { searchTna, type TnaSearchParams } from "../tna/client";
 import { ncnToUri } from "../tna/ncn";
-import { ensureCase, getElements, setClassifiedAreas } from "../cases/store";
+import { ensureCase, getElements, setClassifiedAreas, type CaseRow } from "../cases/store";
 import { areaLabel } from "../areas";
 import { formatRange, inRange, normalizeRange } from "../dates";
 import { firecrawlConfigured } from "../web/firecrawl";
@@ -26,6 +26,7 @@ import { localIndexReady, searchLocal, type LocalSearchResult } from "./local";
 import { embedQueries, embeddingsEnabled } from "../embed";
 import { judgeRelevance } from "./relevance";
 import { RelevanceGate } from "./gate";
+import { decisionKey, readDecision, writeDecision, type CaseDecision } from "./decision-cache";
 import type { Candidate, CandidateList, CaseResult, DateSource, SearchEvent, SearchOptions, SearchStats, WebMention } from "./types";
 
 const MAX_TNA_REQUESTS = 25;
@@ -47,6 +48,8 @@ const CITE_MAX = Number(process.env.CITE_MAX ?? 3);
 const NOT_ON_TNA = /^(ukpc|ukhl)\//;
 /** the cheap pre-screen is skipped when the cross-encoder is this sure: the strong judge decides */
 const RERANK_TRUST = Number(process.env.RERANK_TRUST ?? 0.9);
+/** pre-screen rejection threshold (gate.ts); part of the decision-cache key */
+const GATE_REJECT = Number(process.env.JUDGE_GATE_REJECT ?? 0.75);
 /** longest wait for web hints once wave 1 is reading (web enrichment itself starts at t0) */
 const WEB_WAIT_MS = Number(process.env.WEB_ENRICH_TIMEOUT_MS ?? 8000) + 4000;
 
@@ -168,6 +171,7 @@ export async function* runSearch(query: string, opts: SearchOptions = {}, signal
     gate: null,
     rerankRejected: 0,
     citationCandidates: 0,
+    decisionsCached: 0,
   };
   // decisions-model pre-screen, batched across this search's cases
   const gate = RelevanceGate.forSearch(query, signal);
@@ -277,6 +281,48 @@ export async function* runSearch(query: string, opts: SearchOptions = {}, signal
     return !year || (inRange(`${year}-12-31`, { from: dates?.from }) && inRange(`${year}-01-01`, { to: dates?.to }));
   };
 
+  /** The expensive per-case stages. Every outcome is cacheable; errors propagate (never cached). */
+  const decide = async (kase: CaseRow): Promise<CaseDecision> => {
+    const tRetrieve = Date.now();
+    const elements = await getElements(kase.uri);
+    const terms = expanded.ftsTerms.length ? expanded.ftsTerms : [expanded.original];
+    const ctx = await retrieveParagraphs(kase.uri, elements, terms, { queryVec, rerankQuery: query, signal });
+    const rerank = ctx.stats.rerankTop ?? undefined;
+    stats.timings.retrieve += Date.now() - tRetrieve;
+    stats.contextChars += ctx.stats.chars;
+    stats.paragraphsEmbedded += ctx.stats.embedded;
+    // cross-encoder says no retrieved paragraph is about the question → no LLM calls
+    if (rerank !== undefined && rerank < RERANK_MIN) {
+      const reason = `No passage is about the question (best reranker score ${rerank.toFixed(3)} < ${RERANK_MIN}).`;
+      return { kind: "reject", by: "rerank", score: rerank, reason, rerank };
+    }
+    if (!ctx.hitCount) {
+      return { kind: "reject", by: "no-hits", score: 0, reason: "No paragraph matches the query by keyword or meaning.", rerank };
+    }
+    // cheap pre-screen: confident "tangential / unrelated" skips the strong model
+    if (gate && !(rerank !== undefined && rerank >= RERANK_TRUST)) {
+      const tGate = Date.now();
+      try {
+        const g = await gate.screen(kase, ctx);
+        if (g.reject) {
+          const pct = (n: number | undefined) => `${Math.round((n ?? 0) * 100)}%`;
+          const reason = `Pre-screen: ${g.choice} (on point ${pct(g.probabilities.on_point)}, tangential ${pct(g.probabilities.tangential)}, unrelated ${pct(g.probabilities.irrelevant)}).`;
+          return { kind: "reject", by: "gate", score: g.onPoint, reason, rerank };
+        }
+      } catch (err) {
+        if (signal?.aborted) throw err;
+        // fail open: the strong judge still runs (errors are counted in gate.stats)
+        console.warn(`[gate] ${kase.uri}:`, err instanceof Error ? err.message : err);
+      } finally {
+        stats.timings.gate += Date.now() - tGate;
+      }
+    }
+    const tJudge = Date.now();
+    const verdict = await judgeRelevance(query, kase, ctx, usage, signal);
+    stats.timings.judge += Date.now() - tJudge;
+    return { kind: "judged", verdict, rerank };
+  };
+
   const processCase = async (c: Candidate & { via?: string }) => {
     try {
       signal?.throwIfAborted();
@@ -313,51 +359,22 @@ export async function* runSearch(query: string, opts: SearchOptions = {}, signal
         await saveResult(search.id, kase.uri, 0, false, reason);
         return;
       }
-      const tRetrieve = Date.now();
-      const elements = await getElements(kase.uri);
-      const terms = expanded.ftsTerms.length ? expanded.ftsTerms : [expanded.original];
-      const ctx = await retrieveParagraphs(kase.uri, elements, terms, { queryVec, rerankQuery: query, signal });
-      const rerank = ctx.stats.rerankTop ?? undefined;
-      stats.timings.retrieve += Date.now() - tRetrieve;
-      stats.contextChars += ctx.stats.chars;
-      stats.paragraphsEmbedded += ctx.stats.embedded;
-      // cross-encoder says no retrieved paragraph is about the question → no LLM calls
-      if (rerank !== undefined && rerank < RERANK_MIN) {
-        stats.rerankRejected++;
-        const reason = `No passage is about the question (best reranker score ${rerank.toFixed(3)} < ${RERANK_MIN}).`;
-        events.push({ type: "rejected", uri: kase.uri, name: kase.name, score: rerank, reason, areas: kase.areas, rerank });
-        await saveResult(search.id, kase.uri, rerank, false, reason);
+      // retrieval → rerank → pre-screen → judge, or the cached outcome of a previous search
+      const key = decisionKey(query, kase.uri, kase.contentHash, { RERANK_MIN, RERANK_TRUST, JUDGE_GATE_REJECT: GATE_REJECT });
+      let decision = await readDecision(key);
+      if (decision) stats.decisionsCached++;
+      else {
+        decision = await decide(kase);
+        await writeDecision(key, decision);
+      }
+      const rerank = decision.rerank;
+      if (decision.kind === "reject") {
+        if (decision.by === "rerank") stats.rerankRejected++;
+        events.push({ type: "rejected", uri: kase.uri, name: kase.name, score: decision.score, reason: decision.reason, areas: kase.areas, rerank });
+        await saveResult(search.id, kase.uri, decision.score, false, decision.reason);
         return;
       }
-      if (!ctx.hitCount) {
-        const reason = "No paragraph matches the query by keyword or meaning.";
-        events.push({ type: "rejected", uri: kase.uri, name: kase.name, score: 0, reason, rerank });
-        await saveResult(search.id, kase.uri, 0, false, reason);
-        return;
-      }
-      // cheap pre-screen: confident "tangential / unrelated" skips the strong model
-      if (gate && !(rerank !== undefined && rerank >= RERANK_TRUST)) {
-        const tGate = Date.now();
-        try {
-          const g = await gate.screen(kase, ctx);
-          if (g.reject) {
-            const pct = (n: number | undefined) => `${Math.round((n ?? 0) * 100)}%`;
-            const reason = `Pre-screen: ${g.choice} (on point ${pct(g.probabilities.on_point)}, tangential ${pct(g.probabilities.tangential)}, unrelated ${pct(g.probabilities.irrelevant)}).`;
-            events.push({ type: "rejected", uri: kase.uri, name: kase.name, score: g.onPoint, reason, areas: kase.areas, rerank });
-            await saveResult(search.id, kase.uri, g.onPoint, false, reason);
-            return;
-          }
-        } catch (err) {
-          if (signal?.aborted) throw err;
-          // fail open: the strong judge still runs (errors are counted in gate.stats)
-          console.warn(`[gate] ${kase.uri}:`, err instanceof Error ? err.message : err);
-        } finally {
-          stats.timings.gate += Date.now() - tGate;
-        }
-      }
-      const tJudge = Date.now();
-      const verdict = await judgeRelevance(query, kase, ctx, usage, signal);
-      stats.timings.judge += Date.now() - tJudge;
+      const verdict = decision.verdict;
       const areas = await setClassifiedAreas(kase.uri, kase.court, verdict.areas);
       const relevant = verdict.relevant && verdict.score >= RELEVANCE_CUTOFF;
       const pass = relevant && verdict.highlights.length > 0 && inAreas(areas);
